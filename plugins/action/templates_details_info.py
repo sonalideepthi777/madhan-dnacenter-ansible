@@ -35,7 +35,7 @@ argument_spec.update(dict(
     productSeries=dict(type="str"),
     productType=dict(type="str"),
     filterConflictingTemplates=dict(type="bool"),
-    tags=dict(type="list"),
+    tags=dict(type="str"),
     unCommitted=dict(type="bool"),
     sortOrder=dict(type="str"),
     allTemplateAttributes=dict(type="bool"),

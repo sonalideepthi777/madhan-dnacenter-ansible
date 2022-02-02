@@ -26,10 +26,10 @@ argument_spec = dnac_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     deviceId=dict(type="str"),
-    nameList=dict(type="list"),
-    vendorEquipmentTypeList=dict(type="list"),
-    partNumberList=dict(type="list"),
-    operationalStateCodeList=dict(type="list"),
+    nameList=dict(type="str"),
+    vendorEquipmentTypeList=dict(type="str"),
+    partNumberList=dict(type="str"),
+    operationalStateCodeList=dict(type="str"),
     headers=dict(type="dict"),
 ))
 

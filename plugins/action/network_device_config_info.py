@@ -79,22 +79,11 @@ class ActionModule(ActionBase):
 
         dnac = DNACSDK(params=self._task.args)
 
-        id = self._task.args.get("networkDeviceId")
-        if id:
-            response = dnac.exec(
-                family="devices",
-                function='get_device_config_by_id',
-                params=self.get_object(self._task.args)
-            )
-            self._result.update(dict(dnac_response=response))
-            self._result.update(dnac.exit_json())
-            return self._result
-        if not id:
-            response = dnac.exec(
-                family="devices",
-                function='get_device_config_for_all_devices',
-                params=self.get_object(self._task.args),
-            )
-            self._result.update(dict(dnac_response=response))
-            self._result.update(dnac.exit_json())
-            return self._result
+        response = dnac.exec(
+            family="devices",
+            function='get_device_config_by_id',
+            params=self.get_object(self._task.args),
+        )
+        self._result.update(dict(dnac_response=response))
+        self._result.update(dnac.exit_json())
+        return self._result

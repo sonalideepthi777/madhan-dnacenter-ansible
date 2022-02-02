@@ -37,7 +37,7 @@ argument_spec.update(dict(
     id=dict(type="str"),
     lastUpdateTime=dict(type="int"),
     name=dict(type="str"),
-    templates=dict(type="list"),
+    templates=dict(type="dict"),
     projectId=dict(type="str"),
 ))
 
@@ -67,6 +67,7 @@ class ConfigurationTemplateProject(object):
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
         new_object_params['name'] = name or self.new_object.get('name')
+        new_object_params['sort_order'] = self.new_object.get('sort_order')
         return new_object_params
 
     def create_params(self):

@@ -33,8 +33,8 @@ argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
     siteNameHierarchy=dict(type="str"),
     multicastMethod=dict(type="str"),
-    muticastType=dict(type="str"),
-    multicastVnInfo=dict(type="dict"),
+    multicastType=dict(type="str"),
+    multicastVnInfo=dict(type="list"),
 ))
 
 required_if = [
@@ -50,7 +50,7 @@ class SdaMulticast(object):
         self.new_object = dict(
             siteNameHierarchy=params.get("siteNameHierarchy"),
             multicastMethod=params.get("multicastMethod"),
-            muticastType=params.get("muticastType"),
+            multicastType=params.get("multicastType"),
             multicastVnInfo=params.get("multicastVnInfo"),
             site_name_hierarchy=params.get("siteNameHierarchy"),
         )
@@ -64,7 +64,7 @@ class SdaMulticast(object):
         new_object_params = {}
         new_object_params['siteNameHierarchy'] = self.new_object.get('siteNameHierarchy')
         new_object_params['multicastMethod'] = self.new_object.get('multicastMethod')
-        new_object_params['muticastType'] = self.new_object.get('muticastType')
+        new_object_params['multicastType'] = self.new_object.get('multicastType')
         new_object_params['multicastVnInfo'] = self.new_object.get('multicastVnInfo')
         return new_object_params
 
@@ -92,7 +92,7 @@ class SdaMulticast(object):
 
     def get_object_by_id(self, id):
         result = None
-        # NOTE: Does not have a get by id method or it is in another action
+        # NOTICE: Does not have a get by id method or it is in another action
         return result
 
     def exists(self):
@@ -107,7 +107,7 @@ class SdaMulticast(object):
         obj_params = [
             ("siteNameHierarchy", "siteNameHierarchy"),
             ("multicastMethod", "multicastMethod"),
-            ("muticastType", "muticastType"),
+            ("multicastType", "multicastType"),
             ("multicastVnInfo", "multicastVnInfo"),
             ("siteNameHierarchy", "site_name_hierarchy"),
         ]

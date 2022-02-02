@@ -56,6 +56,11 @@ class EventSubscriptionSyslog(object):
         new_object_params['limit'] = self.new_object.get('limit')
         new_object_params['sort_by'] = self.new_object.get('sort_by')
         new_object_params['order'] = self.new_object.get('order')
+        new_object_params['domain'] = self.new_object.get('domain')
+        new_object_params['sub_domain'] = self.new_object.get('sub_domain')
+        new_object_params['category'] = self.new_object.get('category')
+        new_object_params['type'] = self.new_object.get('type')
+        new_object_params['name'] = name or self.new_object.get('name')
         return new_object_params
 
     def create_params(self):
@@ -87,7 +92,7 @@ class EventSubscriptionSyslog(object):
 
     def get_object_by_id(self, id):
         result = None
-        # NOTE: Does not have a get by id method or it is in another action
+        # NOTICE: Does not have a get by id method or it is in another action
         return result
 
     def exists(self):

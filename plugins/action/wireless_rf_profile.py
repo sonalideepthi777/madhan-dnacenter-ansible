@@ -40,6 +40,8 @@ argument_spec.update(dict(
     enableBrownField=dict(type="bool"),
     radioTypeAProperties=dict(type="dict"),
     radioTypeBProperties=dict(type="dict"),
+    radioTypeCProperties=dict(type="dict"),
+    enableRadioTypeC=dict(type="bool"),
     rfProfileName=dict(type="str"),
 ))
 
@@ -65,6 +67,8 @@ class WirelessRfProfile(object):
             enableBrownField=params.get("enableBrownField"),
             radioTypeAProperties=params.get("radioTypeAProperties"),
             radioTypeBProperties=params.get("radioTypeBProperties"),
+            radioTypeCProperties=params.get("radioTypeCProperties"),
+            enableRadioTypeC=params.get("enableRadioTypeC"),
             rf_profile_name=params.get("rfProfileName"),
         )
 
@@ -84,6 +88,8 @@ class WirelessRfProfile(object):
         new_object_params['enableBrownField'] = self.new_object.get('enableBrownField')
         new_object_params['radioTypeAProperties'] = self.new_object.get('radioTypeAProperties')
         new_object_params['radioTypeBProperties'] = self.new_object.get('radioTypeBProperties')
+        new_object_params['radioTypeCProperties'] = self.new_object.get('radioTypeCProperties')
+        new_object_params['enableRadioTypeC'] = self.new_object.get('enableRadioTypeC')
         return new_object_params
 
     def delete_by_name_params(self):
@@ -110,7 +116,7 @@ class WirelessRfProfile(object):
 
     def get_object_by_id(self, id):
         result = None
-        # NOTE: Does not have a get by id method or it is in another action
+        # NOTICE: Does not have a get by id method or it is in another action
         return result
 
     def exists(self):
@@ -153,6 +159,8 @@ class WirelessRfProfile(object):
             ("enableBrownField", "enableBrownField"),
             ("radioTypeAProperties", "radioTypeAProperties"),
             ("radioTypeBProperties", "radioTypeBProperties"),
+            ("radioTypeCProperties", "radioTypeCProperties"),
+            ("enableRadioTypeC", "enableRadioTypeC"),
             ("rfProfileName", "rf_profile_name"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

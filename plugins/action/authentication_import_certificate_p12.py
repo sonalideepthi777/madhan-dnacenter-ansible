@@ -27,7 +27,7 @@ argument_spec = dnac_argument_spec()
 argument_spec.update(dict(
     p12Password=dict(type="str", no_log=True),
     pkPassword=dict(type="str", no_log=True),
-    listOfUsers=dict(type="list"),
+    listOfUsers=dict(type="str"),
     p12FilePath=dict(type="str"),
 ))
 

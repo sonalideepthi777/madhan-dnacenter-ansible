@@ -26,7 +26,7 @@ argument_spec = dnac_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     pkPassword=dict(type="str", no_log=True),
-    listOfUsers=dict(type="list"),
+    listOfUsers=dict(type="str"),
     certFilePath=dict(type="str"),
     pkFilePath=dict(type="str"),
 ))

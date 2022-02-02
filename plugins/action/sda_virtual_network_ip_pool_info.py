@@ -25,8 +25,9 @@ from ansible_collections.cisco.dnac.plugins.plugin_utils.dnac import (
 argument_spec = dnac_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    ipPoolName=dict(type="str"),
+    siteNameHierarchy=dict(type="str"),
     virtualNetworkName=dict(type="str"),
+    ipPoolName=dict(type="str"),
     headers=dict(type="dict"),
 ))
 
@@ -65,8 +66,9 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            ip_pool_name=params.get("ipPoolName"),
+            site_name_hierarchy=params.get("siteNameHierarchy"),
             virtual_network_name=params.get("virtualNetworkName"),
+            ip_pool_name=params.get("ipPoolName"),
             headers=params.get("headers"),
         )
         return new_object

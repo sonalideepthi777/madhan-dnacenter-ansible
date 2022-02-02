@@ -26,7 +26,7 @@ argument_spec = dnac_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     serialNumber=dict(type="str"),
-    sort=dict(type="list"),
+    sort=dict(type="str"),
     sortOrder=dict(type="str"),
     headers=dict(type="dict"),
 ))

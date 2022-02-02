@@ -72,7 +72,7 @@ class SnmpProperties(object):
 
     def get_object_by_id(self, id):
         result = None
-        # NOTE: Does not have a get by id method or it is in another action
+        # NOTICE: Does not have a get by id method or it is in another action
         try:
             items = self.dnac.exec(
                 family="discovery",

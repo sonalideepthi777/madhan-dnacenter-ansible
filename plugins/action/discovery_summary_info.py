@@ -29,12 +29,12 @@ argument_spec.update(dict(
     taskId=dict(type="str"),
     sortBy=dict(type="str"),
     sortOrder=dict(type="str"),
-    ipAddress=dict(type="list"),
-    pingStatus=dict(type="list"),
-    snmpStatus=dict(type="list"),
-    cliStatus=dict(type="list"),
-    netconfStatus=dict(type="list"),
-    httpStatus=dict(type="list"),
+    ipAddress=dict(type="str"),
+    pingStatus=dict(type="str"),
+    snmpStatus=dict(type="str"),
+    cliStatus=dict(type="str"),
+    netconfStatus=dict(type="str"),
+    httpStatus=dict(type="str"),
     headers=dict(type="dict"),
 ))
 

@@ -27,10 +27,10 @@ argument_spec = dnac_argument_spec()
 argument_spec.update(dict(
     limit=dict(type="int"),
     offset=dict(type="int"),
-    sort=dict(type="list"),
+    sort=dict(type="str"),
     sortOrder=dict(type="str"),
-    type=dict(type="list"),
-    name=dict(type="list"),
+    type=dict(type="str"),
+    name=dict(type="str"),
     id=dict(type="str"),
     headers=dict(type="dict"),
 ))

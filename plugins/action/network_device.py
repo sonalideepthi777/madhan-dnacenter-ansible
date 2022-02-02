@@ -101,7 +101,6 @@ class NetworkDevice(object):
             snmpVersion=params.get("snmpVersion"),
             type=params.get("type"),
             updateMgmtIPaddressList=params.get("updateMgmtIPaddressList"),
-            managementIpAddress=params.get("managementIpAddress"),
             userName=params.get("userName"),
             id=params.get("id"),
             clean_config=params.get("cleanConfig"),
@@ -142,6 +141,8 @@ class NetworkDevice(object):
         new_object_params['module_operationstatecode'] = self.new_object.get('module_operationstatecode')
         new_object_params['id'] = id or self.new_object.get('id')
         new_object_params['device_support_level'] = self.new_object.get('device_support_level')
+        new_object_params['offset'] = self.new_object.get('offset')
+        new_object_params['limit'] = self.new_object.get('limit')
         return new_object_params
 
     def create_params(self):
@@ -210,7 +211,6 @@ class NetworkDevice(object):
         new_object_params['type'] = self.new_object.get('type')
         new_object_params['updateMgmtIPaddressList'] = self.new_object.get('updateMgmtIPaddressList')
         new_object_params['userName'] = self.new_object.get('userName')
-        new_object_params['id'] = self.new_object.get('id')
         return new_object_params
 
     def get_object_by_name(self, name):
