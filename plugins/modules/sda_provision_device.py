@@ -23,7 +23,7 @@ options:
       device currently provisioned in a fabric site.
     type: str
   siteNameHierarchy:
-    description: Site Name Hierarchy for device location(only building / floor level).
+    description: SiteNameHierarchy of the provisioned device.
     type: str
 requirements:
 - dnacentersdk == 2.4.5

@@ -52,11 +52,11 @@ options:
   tags:
     description:
     - Tags query parameter. Filter template(s) based on tags.
-    type: list
+    type: str
   projectNames:
     description:
     - ProjectNames query parameter. Filter template(s) based on project names.
-    type: list
+    type: str
   unCommitted:
     description:
     - UnCommitted query parameter. Filter template(s) based on template commited or not.
@@ -106,8 +106,8 @@ EXAMPLES = r"""
     productSeries: string
     productType: string
     filterConflictingTemplates: True
-    tags: []
-    projectNames: []
+    tags: string
+    projectNames: string
     unCommitted: True
     sortOrder: string
   register: result
@@ -249,7 +249,6 @@ dnac_response:
           "productType": "string"
         }
       ],
-      "documentDatabase": true,
       "failurePolicy": "string",
       "id": "string",
       "language": "string",
@@ -257,7 +256,6 @@ dnac_response:
       "latestVersionTime": 0,
       "name": "string",
       "parentTemplateId": "string",
-      "projectAssociated": true,
       "projectId": "string",
       "projectName": "string",
       "rollbackTemplateContent": "string",
@@ -336,12 +334,8 @@ dnac_response:
         }
       ],
       "validationErrors": {
-        "rollbackTemplateErrors": [
-          {}
-        ],
-        "templateErrors": [
-          {}
-        ],
+        "rollbackTemplateErrors": {},
+        "templateErrors": {},
         "templateId": "string",
         "templateVersion": "string"
       },

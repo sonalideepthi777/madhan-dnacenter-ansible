@@ -26,7 +26,7 @@ options:
   sort:
     description:
     - Sort query parameter. Comma seperated list of fields to sort on.
-    type: list
+    type: str
   sortOrder:
     description:
     - SortOrder query parameter. Sort Order Ascending (asc) or Descending (des).
@@ -56,7 +56,7 @@ EXAMPLES = r"""
     headers:
       custom: value
     serialNumber: string
-    sort: []
+    sort: string
     sortOrder: string
   register: result
 

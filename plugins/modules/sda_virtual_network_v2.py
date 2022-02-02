@@ -26,10 +26,7 @@ options:
     elements: str
     type: list
   virtualNetworkName:
-    description: Virtual Network Name to be assigned global level.
-    type: str
-  virtualNetworkType:
-    description: Virtual Network Type.
+    description: Virtual Network Name to be assigned at global level.
     type: str
 requirements:
 - dnacentersdk == 2.4.5
@@ -62,7 +59,6 @@ EXAMPLES = r"""
     scalableGroupNames:
     - string
     virtualNetworkName: string
-    virtualNetworkType: string
 
 - name: Delete all
   cisco.dnac.sda_virtual_network_v2:
@@ -90,7 +86,6 @@ EXAMPLES = r"""
     scalableGroupNames:
     - string
     virtualNetworkName: string
-    virtualNetworkType: string
 
 """
 

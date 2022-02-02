@@ -10,7 +10,8 @@ module: buildings_planned_access_points_info
 short_description: Information module for Buildings Planned Access Points
 description:
 - Get all Buildings Planned Access Points.
-version_added: '4.4.0'
+- Provides a list of Planned Access Points for the Building it is requested for.
+version_added: '6.0.0'
 extends_documentation_fragment:
   - cisco.dnac.module_info
 author: Rafael Campos (@racampos)
@@ -35,13 +36,15 @@ options:
     - Radios query parameter. Inlcude planned radio details.
     type: bool
 requirements:
-- dnacentersdk >= 2.4.0
+- dnacentersdk == 2.4.5
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Buildings Planned Access Points reference
-  description: Complete reference of the Buildings Planned Access Points object model.
-  link: https://dnacentersdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    devices.Devices.get_planned_access_points_for_building,
+
+  - Paths used are
+    get /dna/intent/api/v1/buildings/{buildingId}/planned-access-points,
+
 """
 
 EXAMPLES = r"""

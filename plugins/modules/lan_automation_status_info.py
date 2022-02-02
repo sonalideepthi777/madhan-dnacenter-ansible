@@ -11,7 +11,9 @@ short_description: Information module for Lan Automation Status
 description:
 - Get all Lan Automation Status.
 - Get Lan Automation Status by id.
-version_added: '4.4.0'
+- Invoke this API to get the LAN Automation session status based on the given Lan Automation session Id.
+- Invoke this API to get the LAN Automation session status.
+version_added: '6.0.0'
 extends_documentation_fragment:
   - cisco.dnac.module_info
 author: Rafael Campos (@racampos)
@@ -32,13 +34,17 @@ options:
     - Id path parameter. LAN Automation Session Identifier.
     type: str
 requirements:
-- dnacentersdk >= 2.4.0
+- dnacentersdk == 2.4.5
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Lan Automation Status reference
-  description: Complete reference of the Lan Automation Status object model.
-  link: https://dnacentersdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    lan_automation.LanAutomation.lan_automation_status,
+    lan_automation.LanAutomation.lan_automation_status_by_id,
+
+  - Paths used are
+    get /dna/intent/api/v1/lan-automation/status,
+    get /dna/intent/api/v1/lan-automation/status/{id},
+
 """
 
 EXAMPLES = r"""

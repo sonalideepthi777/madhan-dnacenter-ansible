@@ -6,11 +6,12 @@
 
 DOCUMENTATION = r"""
 ---
-module: event_webhook_crete
+module: event_webhook_create
 short_description: Resource module for Event Webhook Crete
 description:
 - Manage operation create of the resource Event Webhook Crete.
-version_added: '4.4.0'
+- Create Webhook Destination.
+version_added: '6.0.0'
 extends_documentation_fragment:
   - cisco.dnac.module
 author: Rafael Campos (@racampos)
@@ -50,18 +51,20 @@ options:
     description: Required only for update webhook configuration.
     type: str
 requirements:
-- dnacentersdk >= 2.4.0
+- dnacentersdk == 2.4.5
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Event Webhook Crete reference
-  description: Complete reference of the Event Webhook Crete object model.
-  link: https://dnacentersdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    event_management.EventManagement.create_webhook_destination,
+
+  - Paths used are
+    post /dna/intent/api/v1/event/webhook,
+
 """
 
 EXAMPLES = r"""
 - name: Create
-  cisco.dnac.event_webhook_crete:
+  cisco.dnac.event_webhook_create:
     dnac_host: "{{dnac_host}}"
     dnac_username: "{{dnac_username}}"
     dnac_password: "{{dnac_password}}"

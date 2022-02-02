@@ -489,12 +489,10 @@ options:
         suboptions:
           rollbackTemplateErrors:
             description: Validation or design conflicts errors of rollback template.
-            elements: dict
-            type: list
+            type: dict
           templateErrors:
             description: Validation or design conflicts errors.
-            elements: dict
-            type: list
+            type: dict
           templateId:
             description: UUID of template.
             type: str

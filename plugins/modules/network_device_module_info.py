@@ -11,7 +11,7 @@ short_description: Information module for Network Device Module
 description:
 - Get all Network Device Module.
 - Get Network Device Module by id.
-- Returns Module info by id.
+- Returns Module info by 'module id'.
 - Returns modules by specified device id.
 version_added: '3.1.0'
 extends_documentation_fragment:
@@ -36,22 +36,22 @@ options:
   nameList:
     description:
     - NameList query parameter.
-    type: list
+    type: str
   vendorEquipmentTypeList:
     description:
     - VendorEquipmentTypeList query parameter.
-    type: list
+    type: str
   partNumberList:
     description:
     - PartNumberList query parameter.
-    type: list
+    type: str
   operationalStateCodeList:
     description:
     - OperationalStateCodeList query parameter.
-    type: list
+    type: str
   id:
     description:
-    - Id path parameter.
+    - Id path parameter. Module id.
     type: str
 requirements:
 - dnacentersdk == 2.4.5
@@ -82,10 +82,10 @@ EXAMPLES = r"""
     deviceId: string
     limit: string
     offset: string
-    nameList: []
-    vendorEquipmentTypeList: []
-    partNumberList: []
-    operationalStateCodeList: []
+    nameList: string
+    vendorEquipmentTypeList: string
+    partNumberList: string
+    operationalStateCodeList: string
   register: result
 
 - name: Get Network Device Module by id

@@ -10,7 +10,8 @@ module: interface_operation_create
 short_description: Resource module for Interface Operation Create
 description:
 - Manage operation create of the resource Interface Operation Create.
-version_added: '4.4.0'
+- Clear mac-address on an individual port. In request body, operation needs to be specified as 'ClearMacAddress'. In the future more possible operations will be added to this API.
+version_added: '6.0.0'
 extends_documentation_fragment:
   - cisco.dnac.module
 author: Rafael Campos (@racampos)
@@ -30,13 +31,15 @@ options:
     description: Payload.
     type: dict
 requirements:
-- dnacentersdk >= 2.4.0
+- dnacentersdk == 2.4.5
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Interface Operation Create reference
-  description: Complete reference of the Interface Operation Create object model.
-  link: https://dnacentersdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    devices.Devices.clear_mac_address_table,
+
+  - Paths used are
+    post /dna/intent/api/v1/interface/{interfaceUuid}/operation,
+
 """
 
 EXAMPLES = r"""

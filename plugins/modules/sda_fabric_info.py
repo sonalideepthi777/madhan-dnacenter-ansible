@@ -61,9 +61,6 @@ dnac_response:
     {
       "status": "string",
       "description": "string",
-      "executionId": "string",
-      "fabricName": "string",
-      "fabricType": "string",
-      "fabricDomainType": "string"
+      "executionStatusUrl": "string"
     }
 """

@@ -19,7 +19,8 @@ author: Rafael Campos (@racampos)
 options:
   fabricName:
     version_added: "4.0.0"
-    description: Fabric Name (should be existing fabric name).
+    description: Should be an existing fabric name of your choice, otherwise "Default
+      LAN Fabric" will be used as fabricName.
     type: str
   siteNameHierarchy:
     description: SiteNameHierarchy query parameter. Site Name Hierarchy.

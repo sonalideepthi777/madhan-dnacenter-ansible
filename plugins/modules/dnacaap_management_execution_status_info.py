@@ -68,7 +68,6 @@ dnac_response:
       "endTimeEpoch": 0,
       "timeDuration": 0,
       "status": "string",
-      "bapiError": "string",
       "runtimeInstanceId": "string"
     }
 """

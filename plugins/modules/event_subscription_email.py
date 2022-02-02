@@ -26,8 +26,47 @@ options:
       filter:
         description: Event Subscription Email's filter.
         suboptions:
+          categories:
+            version_added: '6.0.0'
+            description: Categories.
+            elements: str
+            type: list
+          domainsSubdomains:
+            version_added: '6.0.0'
+            description: Event Subscription Email's domainsSubdomains.
+            suboptions:
+              domain:
+                version_added: '6.0.0'
+                description: Domain.
+                type: str
+              subDomains:
+                version_added: '6.0.0'
+                description: Sub Domains.
+                elements: str
+                type: list
+            type: list
           eventIds:
-            description: Event Ids (Comma separated event ids).
+            description: Event Ids.
+            elements: str
+            type: list
+          severities:
+            version_added: '6.0.0'
+            description: Severities.
+            elements: int
+            type: list
+          siteIds:
+            version_added: '6.0.0'
+            description: Site Ids.
+            elements: str
+            type: list
+          sources:
+            version_added: '6.0.0'
+            description: Sources.
+            elements: str
+            type: list
+          types:
+            version_added: '6.0.0'
+            description: Types.
             elements: str
             type: list
         type: dict
@@ -46,8 +85,16 @@ options:
               connectorType:
                 description: Connector Type (Must be EMAIL).
                 type: str
+              description:
+                version_added: '6.0.0'
+                description: Description.
+                type: str
               fromEmailAddress:
                 description: Senders Email Address.
+                type: str
+              name:
+                version_added: '6.0.0'
+                description: Name.
                 type: str
               subject:
                 description: Email Subject.
@@ -93,14 +140,30 @@ EXAMPLES = r"""
     payload:
     - description: string
       filter:
+        categories:
+        - string
+        domainsSubdomains:
+        - domain: string
+          subDomains:
+          - string
         eventIds:
+        - string
+        severities:
+        - 1
+        siteIds:
+        - string
+        sources:
+        - string
+        types:
         - string
       name: string
       subscriptionEndpoints:
       - instanceId: string
         subscriptionDetails:
           connectorType: string
+          description: string
           fromEmailAddress: string
+          name: string
           subject: string
           toEmailAddresses:
           - string
@@ -120,14 +183,30 @@ EXAMPLES = r"""
     payload:
     - description: string
       filter:
+        categories:
+        - string
+        domainsSubdomains:
+        - domain: string
+          subDomains:
+          - string
         eventIds:
+        - string
+        severities:
+        - 1
+        siteIds:
+        - string
+        sources:
+        - string
+        types:
         - string
       name: string
       subscriptionEndpoints:
       - instanceId: string
         subscriptionDetails:
           connectorType: string
+          description: string
           fromEmailAddress: string
+          name: string
           subject: string
           toEmailAddresses:
           - string

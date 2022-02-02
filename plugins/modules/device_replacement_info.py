@@ -46,11 +46,11 @@ options:
     - >
       ReplacementStatus query parameter. Device Replacement status READY-FOR-REPLACEMENT, REPLACEMENT-IN-PROGRESS,
       REPLACEMENT-SCHEDULED, REPLACED, ERROR, NETWORK_READINESS_REQUESTED, NETWORK_READINESS_FAILED.
-    type: list
+    type: str
   family:
     description:
     - Family query parameter. List of familiesRouters, Switches and Hubs, AP.
-    type: list
+    type: str
   sortBy:
     description:
     - SortBy query parameter. SortBy this field. SortBy is mandatory when order is used.
@@ -96,8 +96,8 @@ EXAMPLES = r"""
     replacementDevicePlatform: string
     faultyDeviceSerialNumber: string
     replacementDeviceSerialNumber: string
-    replacementStatus: []
-    family: []
+    replacementStatus: string
+    family: string
     sortBy: string
     sortOrder: string
     offset: 0

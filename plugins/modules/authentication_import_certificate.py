@@ -21,7 +21,7 @@ options:
     type: str
   listOfUsers:
     description: ListOfUsers query parameter.
-    type: list
+    type: str
   pkFilePath:
     description: Pk file absolute path.
     type: str
@@ -51,7 +51,7 @@ EXAMPLES = r"""
     dnac_version: "{{dnac_version}}"
     dnac_debug: "{{dnac_debug}}"
     certFilePath: /tmp/uploads/Test-242.pem
-    listOfUsers: []
+    listOfUsers: string
     pkFilePath: /tmp/uploads/Test-242.key
     pkPassword: string
 

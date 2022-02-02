@@ -10,7 +10,7 @@ module: event_subscription_info
 short_description: Information module for Event Subscription
 description:
 - Get all Event Subscription.
-- Gets the list of Subscriptions's based on provided offset and limit.
+- Gets the list of Subscriptions's based on provided offset and limit (Deprecated).
 version_added: '3.1.0'
 extends_documentation_fragment:
   - cisco.dnac.module_info
@@ -81,29 +81,78 @@ dnac_response:
   sample: >
     [
       {
-        "subscriptionId": "string",
-        "isPrivate": true,
-        "tenantId": "string",
         "version": "string",
+        "subscriptionId": "string",
         "name": "string",
         "description": "string",
         "subscriptionEndpoints": [
           {
             "instanceId": "string",
-            "id": "string",
             "subscriptionDetails": {
+              "connectorType": "string",
+              "instanceId": "string",
               "name": "string",
+              "description": "string",
               "url": "string",
+              "basePath": "string",
+              "resource": "string",
               "method": "string",
-              "connectorType": "string"
-            }
+              "trustCert": "string",
+              "headers": [
+                {
+                  "string": "string"
+                }
+              ],
+              "queryParams": [
+                {
+                  "string": "string"
+                }
+              ],
+              "pathParams": [
+                {
+                  "string": "string"
+                }
+              ],
+              "body": "string",
+              "connectTimeout": "string",
+              "readTimeout": "string"
+            },
+            "connectorType": "string"
           }
         ],
         "filter": {
           "eventIds": [
             "string"
+          ],
+          "others": [
+            "string"
+          ],
+          "domainsSubdomains": [
+            {
+              "domain": "string",
+              "subDomains": [
+                "string"
+              ]
+            }
+          ],
+          "types": [
+            "string"
+          ],
+          "categories": [
+            "string"
+          ],
+          "severities": [
+            "string"
+          ],
+          "sources": [
+            "string"
+          ],
+          "siteIds": [
+            "string"
           ]
-        }
+        },
+        "isPrivate": "string",
+        "tenantId": "string"
       }
     ]
 """

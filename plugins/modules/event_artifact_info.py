@@ -101,10 +101,10 @@ dnac_response:
         "tags": [
           "string"
         ],
-        "isTemplateEnabled": true,
+        "isTemplateEnabled": "string",
         "ciscoDNAEventLink": "string",
         "note": "string",
-        "isPrivate": true,
+        "isPrivate": "string",
         "eventPayload": {
           "eventId": "string",
           "version": "string",
@@ -121,7 +121,7 @@ dnac_response:
         "eventTemplates": [
           {}
         ],
-        "isTenantAware": true,
+        "isTenantAware": "string",
         "supportedConnectorTypes": [
           "string"
         ],

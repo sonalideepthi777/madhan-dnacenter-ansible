@@ -38,27 +38,27 @@ options:
   ipAddress:
     description:
     - IpAddress query parameter.
-    type: list
+    type: str
   pingStatus:
     description:
     - PingStatus query parameter.
-    type: list
+    type: str
   snmpStatus:
     description:
     - SnmpStatus query parameter.
-    type: list
+    type: str
   cliStatus:
     description:
     - CliStatus query parameter.
-    type: list
+    type: str
   netconfStatus:
     description:
     - NetconfStatus query parameter.
-    type: list
+    type: str
   httpStatus:
     description:
     - HttpStatus query parameter.
-    type: list
+    type: str
 requirements:
 - dnacentersdk == 2.4.5
 - python >= 3.5
@@ -86,12 +86,12 @@ EXAMPLES = r"""
     taskId: string
     sortBy: string
     sortOrder: string
-    ipAddress: []
-    pingStatus: []
-    snmpStatus: []
-    cliStatus: []
-    netconfStatus: []
-    httpStatus: []
+    ipAddress: string
+    pingStatus: string
+    snmpStatus: string
+    cliStatus: string
+    netconfStatus: string
+    httpStatus: string
     id: string
   register: result
 

@@ -10,7 +10,8 @@ module: event_email_config_update
 short_description: Resource module for Event Email Config Update
 description:
 - Manage operation update of the resource Event Email Config Update.
-version_added: '4.4.0'
+- Update Email Destination.
+version_added: '6.0.0'
 extends_documentation_fragment:
   - cisco.dnac.module
 author: Rafael Campos (@racampos)
@@ -60,13 +61,15 @@ options:
     description: To Email.
     type: str
 requirements:
-- dnacentersdk >= 2.4.0
+- dnacentersdk == 2.4.5
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Event Email Config Update reference
-  description: Complete reference of the Event Email Config Update object model.
-  link: https://dnacentersdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    event_management.EventManagement.update_email_destination,
+
+  - Paths used are
+    put /dna/intent/api/v1/event/email-config,
+
 """
 
 EXAMPLES = r"""

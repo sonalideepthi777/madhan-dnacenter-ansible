@@ -19,7 +19,7 @@ author: Rafael Campos (@racampos)
 options:
   authenticateTemplateName:
     version_added: "4.0.0"
-    description: Authenticate TemplateName associated to siteNameHierarchy.
+    description: Authenticate TemplateName associated to Fabric Site.
     type: str
   dataIpAddressPoolName:
     version_added: "4.0.0"
@@ -31,15 +31,14 @@ options:
     type: str
   interfaceDescription:
     version_added: "4.0.0"
-    description: Details or note of interface assignment.
+    description: Details or note of interface port assignment.
     type: str
   interfaceName:
     description: Interface Name of the edge device.
     type: str
   siteNameHierarchy:
     version_added: "4.0.0"
-    description: Site Name Hierarchy should be a valid fabric site name hierarchy. E.g
-      Global/USA/San Jose.
+    description: Path of sda Fabric Site.
     type: str
 requirements:
 - dnacentersdk == 2.4.5

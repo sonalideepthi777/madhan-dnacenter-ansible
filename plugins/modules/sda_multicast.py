@@ -20,33 +20,37 @@ options:
   multicastMethod:
     description: Multicast Methods.
     type: str
+  multicastType:
+    version_added: "6.0.0"
+    description: Multicast Type.
+    type: str
   multicastVnInfo:
     description: Sda Multicast's multicastVnInfo.
     suboptions:
       externalRpIpAddress:
-        description: External Rp Ip Address, required for muticastType=asm_with_external_rp.
+        description: External Rp Ip Address, required if multicastType is asm_with_external_rp.
         type: str
       ipPoolName:
-        description: Ip Pool Name, that is reserved to fabricSiteNameHierarchy.
-        type: str
-      ssmGroupRange:
-        description: Valid SSM group range ip address(e.g., 230.0.0.0).
+        description: Ip Pool Name, that is reserved to Fabric Site.
         type: str
       ssmInfo:
-        description: Source-specific multicast information, required if muticastType=ssm.
-        type: dict
-      ssmWildcardMask:
-        description: Valid SSM Wildcard Mask ip address(e.g.,0.255.255.255).
-        type: str
+        description: Sda Multicast's ssmInfo.
+        suboptions:
+          ssmGroupRange:
+            version_added: "6.0.0"
+            description: Valid SSM group range ip address(e.g., 230.0.0.0).
+            type: str
+          ssmWildcardMask:
+            version_added: "6.0.0"
+            description: Valid SSM Wildcard Mask ip address(e.g.,0.255.255.255).
+            type: str
+        type: list
       virtualNetworkName:
-        description: Virtual Network Name, that is associated to fabricSiteNameHierarchy.
+        description: Virtual Network Name, that is associated to Fabric Site.
         type: str
-    type: dict
-  muticastType:
-    description: Muticast Type.
-    type: str
+    type: list
   siteNameHierarchy:
-    description: Full path of sda fabric siteNameHierarchy.
+    description: Full path of sda Fabric Site.
     type: str
 requirements:
 - dnacentersdk == 2.4.5
@@ -74,14 +78,14 @@ EXAMPLES = r"""
     dnac_debug: "{{dnac_debug}}"
     state: present
     multicastMethod: string
+    multicastType: string
     multicastVnInfo:
-      externalRpIpAddress: string
+    - externalRpIpAddress: string
       ipPoolName: string
-      ssmGroupRange: string
-      ssmInfo: {}
-      ssmWildcardMask: string
+      ssmInfo:
+      - ssmGroupRange: string
+        ssmWildcardMask: string
       virtualNetworkName: string
-    muticastType: string
     siteNameHierarchy: string
 
 - name: Delete all

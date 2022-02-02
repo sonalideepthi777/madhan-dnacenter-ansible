@@ -10,7 +10,8 @@ module: file_import
 short_description: Resource module for File Import
 description:
 - Manage operation create of the resource File Import.
-version_added: '4.4.0'
+- Uploads a new file within a specific nameSpace.
+version_added: '6.0.0'
 extends_documentation_fragment:
   - cisco.dnac.module
 author: Rafael Campos (@racampos)
@@ -22,13 +23,15 @@ options:
     description: NameSpace path parameter.
     type: str
 requirements:
-- dnacentersdk >= 2.4.0
+- dnacentersdk == 2.4.5
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: File Import reference
-  description: Complete reference of the File Import object model.
-  link: https://dnacentersdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    file.File.upload_file,
+
+  - Paths used are
+    post /dna/intent/api/v1/file/{nameSpace},
+
 """
 
 EXAMPLES = r"""

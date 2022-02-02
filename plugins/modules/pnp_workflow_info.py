@@ -34,7 +34,7 @@ options:
   sort:
     description:
     - Sort query parameter. Comma seperated lost of fields to sort on.
-    type: list
+    type: str
   sortOrder:
     description:
     - SortOrder query parameter. Sort Order Ascending (asc) or Descending (des).
@@ -42,11 +42,11 @@ options:
   type:
     description:
     - Type query parameter. Workflow Type.
-    type: list
+    type: str
   name:
     description:
     - Name query parameter. Workflow Name.
-    type: list
+    type: str
   id:
     description:
     - Id path parameter.
@@ -79,10 +79,10 @@ EXAMPLES = r"""
       custom: value
     limit: 0
     offset: 0
-    sort: []
+    sort: string
     sortOrder: string
-    type: []
-    name: []
+    type: string
+    name: string
   register: result
 
 - name: Get Pnp Workflow by id

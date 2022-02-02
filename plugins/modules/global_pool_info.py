@@ -73,15 +73,15 @@ dnac_response:
           "gateways": [
             "string"
           ],
-          "createTime": 0,
-          "lastUpdateTime": 0,
-          "totalIpAddressCount": 0,
-          "usedIpAddressCount": 0,
+          "createTime": "string",
+          "lastUpdateTime": "string",
+          "totalIpAddressCount": "string",
+          "usedIpAddressCount": "string",
           "parentUuid": "string",
           "owner": "string",
-          "shared": true,
-          "overlapping": true,
-          "configureExternalDhcp": true,
+          "shared": "string",
+          "overlapping": "string",
+          "configureExternalDhcp": "string",
           "usedPercentage": "string",
           "clientOptions": {},
           "dnsServerIps": [
@@ -94,7 +94,7 @@ dnac_response:
               "contextValue": "string"
             }
           ],
-          "ipv6": true,
+          "ipv6": "string",
           "id": "string",
           "ipPoolCidr": "string"
         }

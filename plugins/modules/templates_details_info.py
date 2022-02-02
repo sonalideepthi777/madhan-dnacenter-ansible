@@ -62,7 +62,7 @@ options:
   tags:
     description:
     - Tags query parameter. Filter template(s) based on tags.
-    type: list
+    type: str
   unCommitted:
     description:
     - UnCommitted query parameter. Return uncommitted template.
@@ -121,7 +121,7 @@ EXAMPLES = r"""
     productSeries: string
     productType: string
     filterConflictingTemplates: True
-    tags: []
+    tags: string
     unCommitted: True
     sortOrder: string
     allTemplateAttributes: True
@@ -139,107 +139,11 @@ dnac_response:
   type: dict
   sample: >
     {
-      "response": [
+      "author": "string",
+      "composite": true,
+      "containingTemplates": [
         {
-          "author": "string",
           "composite": true,
-          "containingTemplates": [
-            {
-              "composite": true,
-              "description": "string",
-              "deviceTypes": [
-                {
-                  "productFamily": "string",
-                  "productSeries": "string",
-                  "productType": "string"
-                }
-              ],
-              "id": "string",
-              "language": "string",
-              "name": "string",
-              "projectName": "string",
-              "rollbackTemplateParams": [
-                {
-                  "binding": "string",
-                  "customOrder": 0,
-                  "dataType": "string",
-                  "defaultValue": "string",
-                  "description": "string",
-                  "displayName": "string",
-                  "group": "string",
-                  "id": "string",
-                  "instructionText": "string",
-                  "key": "string",
-                  "notParam": true,
-                  "order": 0,
-                  "paramArray": true,
-                  "parameterName": "string",
-                  "provider": "string",
-                  "range": [
-                    {
-                      "id": "string",
-                      "maxValue": 0,
-                      "minValue": 0
-                    }
-                  ],
-                  "required": true,
-                  "selection": {
-                    "defaultSelectedValues": [
-                      "string"
-                    ],
-                    "id": "string",
-                    "selectionType": "string",
-                    "selectionValues": {}
-                  }
-                }
-              ],
-              "tags": [
-                {
-                  "id": "string",
-                  "name": "string"
-                }
-              ],
-              "templateContent": "string",
-              "templateParams": [
-                {
-                  "binding": "string",
-                  "customOrder": 0,
-                  "dataType": "string",
-                  "defaultValue": "string",
-                  "description": "string",
-                  "displayName": "string",
-                  "group": "string",
-                  "id": "string",
-                  "instructionText": "string",
-                  "key": "string",
-                  "notParam": true,
-                  "order": 0,
-                  "paramArray": true,
-                  "parameterName": "string",
-                  "provider": "string",
-                  "range": [
-                    {
-                      "id": "string",
-                      "maxValue": 0,
-                      "minValue": 0
-                    }
-                  ],
-                  "required": true,
-                  "selection": {
-                    "defaultSelectedValues": [
-                      "string"
-                    ],
-                    "id": "string",
-                    "selectionType": "string",
-                    "selectionValues": {}
-                  }
-                }
-              ],
-              "version": "string"
-            }
-          ],
-          "createTime": 0,
-          "customParamsOrder": true,
           "description": "string",
           "deviceTypes": [
             {
@@ -248,18 +152,10 @@ dnac_response:
               "productType": "string"
             }
           ],
-          "documentDatabase": true,
-          "failurePolicy": "string",
           "id": "string",
           "language": "string",
-          "lastUpdateTime": 0,
-          "latestVersionTime": 0,
           "name": "string",
-          "parentTemplateId": "string",
-          "projectAssociated": true,
-          "projectId": "string",
           "projectName": "string",
-          "rollbackTemplateContent": "string",
           "rollbackTemplateParams": [
             {
               "binding": "string",
@@ -295,9 +191,6 @@ dnac_response:
               }
             }
           ],
-          "softwareType": "string",
-          "softwareVariant": "string",
-          "softwareVersion": "string",
           "tags": [
             {
               "id": "string",
@@ -340,29 +233,126 @@ dnac_response:
               }
             }
           ],
-          "validationErrors": {
-            "rollbackTemplateErrors": [
-              {}
-            ],
-            "templateErrors": [
-              {}
-            ],
-            "templateId": "string",
-            "templateVersion": "string"
-          },
-          "version": "string",
-          "versionsInfo": [
-            {
-              "author": "string",
-              "description": "string",
-              "id": "string",
-              "version": "string",
-              "versionComment": "string",
-              "versionTime": 0
-            }
-          ]
+          "version": "string"
         }
       ],
-      "version": "string"
+      "createTime": 0,
+      "customParamsOrder": true,
+      "description": "string",
+      "deviceTypes": [
+        {
+          "productFamily": "string",
+          "productSeries": "string",
+          "productType": "string"
+        }
+      ],
+      "failurePolicy": "string",
+      "id": "string",
+      "language": "string",
+      "lastUpdateTime": 0,
+      "latestVersionTime": 0,
+      "name": "string",
+      "parentTemplateId": "string",
+      "projectAssociated": true,
+      "projectId": "string",
+      "projectName": "string",
+      "rollbackTemplateContent": "string",
+      "rollbackTemplateParams": [
+        {
+          "binding": "string",
+          "customOrder": 0,
+          "dataType": "string",
+          "defaultValue": "string",
+          "description": "string",
+          "displayName": "string",
+          "group": "string",
+          "id": "string",
+          "instructionText": "string",
+          "key": "string",
+          "notParam": true,
+          "order": 0,
+          "paramArray": true,
+          "parameterName": "string",
+          "provider": "string",
+          "range": [
+            {
+              "id": "string",
+              "maxValue": 0,
+              "minValue": 0
+            }
+          ],
+          "required": true,
+          "selection": {
+            "defaultSelectedValues": [
+              "string"
+            ],
+            "id": "string",
+            "selectionType": "string",
+            "selectionValues": {}
+          }
+        }
+      ],
+      "softwareType": "string",
+      "softwareVariant": "string",
+      "softwareVersion": "string",
+      "tags": [
+        {
+          "id": "string",
+          "name": "string"
+        }
+      ],
+      "templateContent": "string",
+      "templateParams": [
+        {
+          "binding": "string",
+          "customOrder": 0,
+          "dataType": "string",
+          "defaultValue": "string",
+          "description": "string",
+          "displayName": "string",
+          "group": "string",
+          "id": "string",
+          "instructionText": "string",
+          "key": "string",
+          "notParam": true,
+          "order": 0,
+          "paramArray": true,
+          "parameterName": "string",
+          "provider": "string",
+          "range": [
+            {
+              "id": "string",
+              "maxValue": 0,
+              "minValue": 0
+            }
+          ],
+          "required": true,
+          "selection": {
+            "defaultSelectedValues": [
+              "string"
+            ],
+            "id": "string",
+            "selectionType": "string",
+            "selectionValues": {}
+          }
+        }
+      ],
+      "validationErrors": {
+        "rollbackTemplateErrors": {},
+        "templateErrors": {},
+        "templateId": "string",
+        "templateVersion": "string"
+      },
+      "version": "string",
+      "versionsInfo": [
+        {
+          "author": "string",
+          "description": "string",
+          "id": "string",
+          "version": "string",
+          "versionComment": "string",
+          "versionTime": 0
+        }
+      ]
     }
 """

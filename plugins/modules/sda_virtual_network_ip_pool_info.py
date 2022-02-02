@@ -19,13 +19,18 @@ options:
   headers:
     description: Additional headers.
     type: dict
-  ipPoolName:
+  siteNameHierarchy:
+    version_added: '6.0.0'
     description:
-    - IpPoolName query parameter.
+    - SiteNameHierarchy query parameter.
     type: str
   virtualNetworkName:
     description:
     - VirtualNetworkName query parameter.
+    type: str
+  ipPoolName:
+    description:
+    - IpPoolName query parameter.
     type: str
 requirements:
 - dnacentersdk == 2.4.5
@@ -51,8 +56,9 @@ EXAMPLES = r"""
     dnac_debug: "{{dnac_debug}}"
     headers:
       custom: value
-    ipPoolName: string
+    siteNameHierarchy: string
     virtualNetworkName: string
+    ipPoolName: string
   register: result
 
 """

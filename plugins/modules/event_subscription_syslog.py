@@ -26,8 +26,47 @@ options:
       filter:
         description: Event Subscription Syslog's filter.
         suboptions:
+          categories:
+            version_added: '6.0.0'
+            description: Categories.
+            elements: str
+            type: list
+          domainsSubdomains:
+            version_added: '6.0.0'
+            description: Event Subscription Syslog's domainsSubdomains.
+            suboptions:
+              domain:
+                version_added: '6.0.0'
+                description: Domain.
+                type: str
+              subDomains:
+                version_added: '6.0.0'
+                description: Sub Domains.
+                elements: str
+                type: list
+            type: list
           eventIds:
             description: Event Ids (Comma separated event ids).
+            elements: str
+            type: list
+          severities:
+            version_added: '6.0.0'
+            description: Severities.
+            elements: str
+            type: list
+          siteIds:
+            version_added: '6.0.0'
+            description: Site Ids.
+            elements: str
+            type: list
+          sources:
+            version_added: '6.0.0'
+            description: Sources.
+            elements: str
+            type: list
+          types:
+            version_added: '6.0.0'
+            description: Types.
             elements: str
             type: list
         type: dict
@@ -83,7 +122,21 @@ EXAMPLES = r"""
     payload:
     - description: string
       filter:
+        categories:
+        - string
+        domainsSubdomains:
+        - domain: string
+          subDomains:
+          - string
         eventIds:
+        - string
+        severities:
+        - string
+        siteIds:
+        - string
+        sources:
+        - string
+        types:
         - string
       name: string
       subscriptionEndpoints:
@@ -106,7 +159,21 @@ EXAMPLES = r"""
     payload:
     - description: string
       filter:
+        categories:
+        - string
+        domainsSubdomains:
+        - domain: string
+          subDomains:
+          - string
         eventIds:
+        - string
+        severities:
+        - string
+        siteIds:
+        - string
+        sources:
+        - string
+        types:
         - string
       name: string
       subscriptionEndpoints:

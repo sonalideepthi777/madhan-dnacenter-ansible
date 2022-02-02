@@ -28,7 +28,7 @@ options:
     description: Enable Basic Service Set Max Idle.
     type: bool
   enableBroadcastSSID:
-    description: Enable Broadcast SSID.
+    description: Enable Broadcase SSID.
     type: bool
   enableClientExclusion:
     description: Enable Client Exclusion.
@@ -37,7 +37,7 @@ options:
     description: Enable Directed Multicast Service.
     type: bool
   enableFastLane:
-    description: Enable Fast Lane.
+    description: Enable FastLane.
     type: bool
   enableMACFiltering:
     description: Enable MAC Filtering.
@@ -55,14 +55,14 @@ options:
     description: Management Frame Protection Client.
     type: str
   name:
-    description: Enter SSID Name.
+    description: SSID NAME.
     type: str
   passphrase:
-    description: Pass Phrase (Only applicable for SSID with PERSONAL security level).
+    description: Passphrase.
     type: str
   radioPolicy:
-    description: Radio Policy. Allowed values are 'Dual band operation (2.4GHz and 5GHz)',
-      'Dual band operation with band select', '5GHz only', '2.4GHz only'.
+    description: Radio Policy Enum (enum Triple band operation (2.4GHz, 5GHz and 6GHz),
+      Triple band operation with band select, 5GHz only, 2.4GHz only, 6GHz only).
     type: str
   securityLevel:
     description: Security Level.
@@ -74,7 +74,7 @@ options:
     description: SsidName path parameter. Enter the SSID name to be deleted.
     type: str
   trafficType:
-    description: Traffic Type.
+    description: Traffic Type Enum (voicedata or data ).
     type: str
 requirements:
 - dnacentersdk == 2.4.5

@@ -10,7 +10,8 @@ module: lan_automation_count_info
 short_description: Information module for Lan Automation Count
 description:
 - Get all Lan Automation Count.
-version_added: '4.4.0'
+- Invoke this API to get the total count of LAN Automation sessions.
+version_added: '6.0.0'
 extends_documentation_fragment:
   - cisco.dnac.module_info
 author: Rafael Campos (@racampos)
@@ -19,13 +20,15 @@ options:
     description: Additional headers.
     type: dict
 requirements:
-- dnacentersdk >= 2.4.0
+- dnacentersdk == 2.4.5
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Lan Automation Count reference
-  description: Complete reference of the Lan Automation Count object model.
-  link: https://dnacentersdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    lan_automation.LanAutomation.lan_automation_session_count,
+
+  - Paths used are
+    get /dna/intent/api/v1/lan-automation/count,
+
 """
 
 EXAMPLES = r"""

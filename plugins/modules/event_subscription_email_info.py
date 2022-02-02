@@ -10,7 +10,7 @@ module: event_subscription_email_info
 short_description: Information module for Event Subscription Email
 description:
 - Get all Event Subscription Email.
-- Gets the list of email Subscriptions's based on provided offset and limit.
+- Gets the list of email Subscriptions's based on provided query params.
 version_added: '3.1.0'
 extends_documentation_fragment:
   - cisco.dnac.module_info
@@ -41,6 +41,31 @@ options:
     description:
     - Order query parameter.
     type: str
+  domain:
+    version_added: '6.0.0'
+    description:
+    - Domain query parameter. List of email subscriptions related to the respective domain.
+    type: str
+  subDomain:
+    version_added: '6.0.0'
+    description:
+    - SubDomain query parameter. List of email subscriptions related to the respective sub-domain.
+    type: str
+  category:
+    version_added: '6.0.0'
+    description:
+    - Category query parameter. List of email subscriptions related to the respective category.
+    type: str
+  type:
+    version_added: '6.0.0'
+    description:
+    - Type query parameter. List of email subscriptions related to the respective type.
+    type: str
+  name:
+    version_added: '6.0.0'
+    description:
+    - Name query parameter. List of email subscriptions related to the respective name.
+    type: str
 requirements:
 - dnacentersdk == 2.4.5
 - python >= 3.5
@@ -70,6 +95,11 @@ EXAMPLES = r"""
     limit: 0
     sortBy: string
     order: string
+    domain: string
+    subDomain: string
+    category: string
+    type: string
+    name: string
   register: result
 
 """
@@ -112,7 +142,12 @@ dnac_response:
             "string"
           ],
           "domainsSubdomains": [
-            "string"
+            {
+              "domain": "string",
+              "subDomains": [
+                "string"
+              ]
+            }
           ],
           "types": [
             "string"
@@ -125,9 +160,12 @@ dnac_response:
           ],
           "sources": [
             "string"
+          ],
+          "siteIds": [
+            "string"
           ]
         },
-        "isPrivate": true,
+        "isPrivate": "string",
         "tenantId": "string"
       }
     ]

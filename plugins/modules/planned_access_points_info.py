@@ -10,7 +10,8 @@ module: planned_access_points_info
 short_description: Information module for Planned Access Points
 description:
 - Get all Planned Access Points.
-version_added: '4.4.0'
+- Provides a list of Planned Access Points for the Floor it is requested for.
+version_added: '6.0.0'
 extends_documentation_fragment:
   - cisco.dnac.module_info
 author: Rafael Campos (@racampos)
@@ -35,13 +36,15 @@ options:
     - Radios query parameter. Inlcude planned radio details.
     type: bool
 requirements:
-- dnacentersdk >= 2.4.0
+- dnacentersdk == 2.4.5
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Planned Access Points reference
-  description: Complete reference of the Planned Access Points object model.
-  link: https://dnacentersdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    devices.Devices.get_planned_access_points_for_floor,
+
+  - Paths used are
+    get /dna/intent/api/v1/floors/{floorId}/planned-access-points,
+
 """
 
 EXAMPLES = r"""

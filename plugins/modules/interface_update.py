@@ -10,7 +10,7 @@ module: interface_update
 short_description: Resource module for Interface Update
 description:
 - Manage operation update of the resource Interface Update.
-version_added: '4.4.0'
+version_added: '6.0.0'
 extends_documentation_fragment:
   - cisco.dnac.module
 author: Rafael Campos (@racampos)
@@ -45,13 +45,16 @@ options:
         type: str
     type: dict
 requirements:
-- dnacentersdk >= 2.4.0
+- dnacentersdk == 2.4.5
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Interface Update reference
-  description: Complete reference of the Interface Update object model.
-  link: https://dnacentersdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    devices.Devices.update_interface_details,
+
+  - Paths used are
+    put /dna/intent/api/v1/interface/{interfaceUuid}
+
+
 """
 
 EXAMPLES = r"""

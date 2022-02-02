@@ -61,14 +61,19 @@ dnac_response:
     {
       "siteNameHierarchy": "string",
       "multicastMethod": "string",
-      "muticastType": "string",
-      "multicastVnInfo": {
-        "virtualNetworkName": "string",
-        "ipPoolName": "string",
-        "externalRpIpAddress": "string",
-        "ssmInfo": {},
-        "ssmGroupRange": "string",
-        "ssmWildcardMask": "string"
-      }
+      "multicastType": "string",
+      "multicastVnInfo": [
+        {
+          "virtualNetworkName": "string",
+          "ipPoolName": "string",
+          "externalRpIpAddress": "string",
+          "ssmInfo": [
+            {
+              "ssmGroupRange": "string",
+              "ssmWildcardMask": "string"
+            }
+          ]
+        }
+      ]
     }
 """

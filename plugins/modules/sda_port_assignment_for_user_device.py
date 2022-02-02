@@ -19,9 +19,8 @@ author: Rafael Campos (@racampos)
 options:
   authenticateTemplateName:
     version_added: "4.0.0"
-    description: Authenticate TemplateName associated to siteNameHierarchy. Allowed
-      values are 'Open Authentication', 'Closed Authentication', 'Low Impact', 'No Authentication',
-      ''.
+    description: Authenticate TemplateName associated to siteNameHierarchy ( In the
+      case of scalableGroupName use only No Authentication is applied).
     type: str
   dataIpAddressPoolName:
     version_added: "4.0.0"
@@ -32,27 +31,24 @@ options:
     description: DeviceManagementIpAddress query parameter.
     type: str
   interfaceDescription:
-    version_added: "4.0.0"
-    description: Details or note of interface assignment.
+    description: Details or note of interface port assignment.
     type: str
   interfaceName:
     description: InterfaceName query parameter.
     type: str
   scalableGroupName:
     version_added: "4.0.0"
-    description: Valid name of a scalable group associated with virtual network(Scalable
-      groups are only supported on No Auth profile because the other profiles assign
-      SGTs from ISE).
+    description: Scalable Group name (for 2.2.2.6 allowed that scalableGroupName which
+      associated with vn).
     type: str
   siteNameHierarchy:
     version_added: "4.0.0"
-    description: Site Name Hierarchy should be a valid fabric site name hierarchy. E.g
-      Global/USA/San Jose.
+    description: Path of sda Fabric Site.
     type: str
   voiceIpAddressPoolName:
     version_added: "4.0.0"
     description: Ip Pool Name, that is assigned to virtual network with traffic type
-      as VOICE(can't be empty if dataIpAddressPoolName is emty).
+      as VOICE(can't be empty if dataIpAddressPoolName is empty).
     type: str
 requirements:
 - dnacentersdk == 2.4.5

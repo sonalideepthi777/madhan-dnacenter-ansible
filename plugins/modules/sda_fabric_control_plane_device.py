@@ -21,10 +21,18 @@ options:
     version_added: "4.0.0"
     description: DeviceManagementIpAddress query parameter.
     type: str
-  siteNameHierarchy:
-    version_added: "4.0.0"
-    description: Site Name Hierarchy of provisioned Device(site should be fabric site).
-    type: str
+  payload:
+    version_added: "6.0.0"
+    description: Sda Fabric Control Plane Device's payload.
+    suboptions:
+      deviceManagementIpAddress:
+        description: Management Ip Address of the Device which is provisioned successfully.
+        type: str
+      siteNameHierarchy:
+        description: SiteNameHierarchy of the Provisioned Device(site should be part
+          of Fabric Site(site should be part of Fabric Site).
+        type: str
+    type: list
 requirements:
 - dnacentersdk == 2.4.5
 - python >= 3.5
@@ -62,8 +70,9 @@ EXAMPLES = r"""
     dnac_version: "{{dnac_version}}"
     dnac_debug: "{{dnac_debug}}"
     state: present
-    deviceManagementIpAddress: string
-    siteNameHierarchy: string
+    payload:
+    - deviceManagementIpAddress: string
+      siteNameHierarchy: string
 
 """
 

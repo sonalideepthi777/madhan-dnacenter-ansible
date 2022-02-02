@@ -26,7 +26,7 @@ options:
     description: Main template UUID of versioned template.
     type: str
   memberTemplateDeploymentInfo:
-    description: MemberTemplateDeploymentInfo.
+    description: Configuration Template Deploy's memberTemplateDeploymentInfo.
     elements: dict
     type: list
   targetInfo:
@@ -43,8 +43,7 @@ options:
         type: dict
       resourceParams:
         description: Resource params to be provisioned.
-        elements: dict
-        type: list
+        type: dict
       type:
         description: Target type of device.
         type: str
@@ -86,8 +85,7 @@ EXAMPLES = r"""
     - hostName: string
       id: string
       params: {}
-      resourceParams:
-      - {}
+      resourceParams: {}
       type: string
       versionedTemplateId: string
     templateId: string

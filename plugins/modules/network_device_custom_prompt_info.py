@@ -10,7 +10,8 @@ module: network_device_custom_prompt_info
 short_description: Information module for Network Device Custom Prompt
 description:
 - Get all Network Device Custom Prompt.
-version_added: '4.4.0'
+- Returns supported custom prompts by DNAC.
+version_added: '6.0.0'
 extends_documentation_fragment:
   - cisco.dnac.module_info
 author: Rafael Campos (@racampos)
@@ -19,13 +20,15 @@ options:
     description: Additional headers.
     type: dict
 requirements:
-- dnacentersdk >= 2.4.0
+- dnacentersdk == 2.4.5
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Network Device Custom Prompt reference
-  description: Complete reference of the Network Device Custom Prompt object model.
-  link: https://dnacentersdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    system_settings.SystemSettings.custom_prompt_support_get_api,
+
+  - Paths used are
+    get /dna/intent/api/v1/network-device/custom-prompt,
+
 """
 
 EXAMPLES = r"""

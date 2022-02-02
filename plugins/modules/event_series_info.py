@@ -71,6 +71,21 @@ options:
     description:
     - Order query parameter. Ascending/Descending order asc/desc.
     type: str
+  tags:
+    version_added: '6.0.0'
+    description:
+    - Tags query parameter.
+    type: str
+  namespace:
+    version_added: '6.0.0'
+    description:
+    - Namespace query parameter.
+    type: str
+  siteId:
+    version_added: '6.0.0'
+    description:
+    - SiteId query parameter. Site Id.
+    type: str
 requirements:
 - dnacentersdk == 2.4.5
 - python >= 3.5
@@ -108,6 +123,9 @@ EXAMPLES = r"""
     limit: 0
     sortBy: string
     order: string
+    tags: string
+    namespace: string
+    siteId: string
   register: result
 
 """
@@ -123,7 +141,7 @@ dnac_response:
       {
         "eventId": "string",
         "instanceId": "string",
-        "nameSpace": "string",
+        "namespace": "string",
         "name": "string",
         "description": "string",
         "version": "string",
@@ -135,7 +153,11 @@ dnac_response:
         "source": "string",
         "timestamp": "string",
         "details": "string",
-        "eventHierarchy": "string"
+        "eventHierarchy": "string",
+        "network": {
+          "siteId": "string",
+          "deviceId": "string"
+        }
       }
     ]
 """

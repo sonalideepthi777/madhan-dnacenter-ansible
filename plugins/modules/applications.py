@@ -31,28 +31,6 @@ options:
             description: Id Ref.
             type: str
         type: dict
-      indicativeNetworkIdentity:
-        description: Applications's indicativeNetworkIdentity.
-        suboptions:
-          displayName:
-            description: DisplayName.
-            type: str
-          id:
-            description: Id.
-            type: str
-          lowerPort:
-            description: LowerPort.
-            type: int
-          ports:
-            description: Ports.
-            type: str
-          protocol:
-            description: Protocol.
-            type: str
-          upperPort:
-            description: UpperPort.
-            type: int
-        type: list
       name:
         description: Name.
         type: str
@@ -158,13 +136,6 @@ EXAMPLES = r"""
     payload:
     - applicationSet:
         idRef: string
-      indicativeNetworkIdentity:
-      - displayName: string
-        id: string
-        lowerPort: 1
-        ports: string
-        protocol: string
-        upperPort: 1
       name: string
       networkApplications:
       - appProtocol: string
@@ -252,7 +223,10 @@ dnac_response:
   type: dict
   sample: >
     {
-      "taskId": "string",
-      "url": "string"
+      "response": {
+        "taskId": "string",
+        "url": "string"
+      },
+      "version": "string"
     }
 """

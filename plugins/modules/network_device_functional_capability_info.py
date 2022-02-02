@@ -30,7 +30,7 @@ options:
   functionName:
     description:
     - FunctionName query parameter.
-    type: list
+    type: str
   id:
     description:
     - Id path parameter. Functional Capability UUID.
@@ -62,7 +62,7 @@ EXAMPLES = r"""
     headers:
       custom: value
     deviceId: string
-    functionName: []
+    functionName: string
   register: result
 
 - name: Get Network Device Functional Capability by id

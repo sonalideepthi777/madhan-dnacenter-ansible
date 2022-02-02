@@ -47,7 +47,7 @@ options:
     description: Network Device's httpUserName.
     type: str
   id:
-    description: Network Device's id.
+    description: Id path parameter. Device ID.
     type: str
   ipAddress:
     description: Network Device's ipAddress.
@@ -193,7 +193,6 @@ EXAMPLES = r"""
     httpPort: string
     httpSecure: true
     httpUserName: string
-    id: string
     ipAddress:
     - string
     merakiOrgId:

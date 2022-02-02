@@ -11,7 +11,7 @@ short_description: Information module for Network Device
 description:
 - Get all Network Device.
 - Get Network Device by id.
-- Returns list of network devices based on filter criteria such as management IP address, mac address, hostname, etc.
+- Returns list of network devices based on filter criteria such as management IP address, mac address, hostname, etc. You can use the .* in any value to conduct a wildcard search. For example, to find all hostnames beginning with myhost in the IP address range 192.25.18.n, issue the following request: GET /dna/intent/api/v1/network-device?hostname=myhost.*&managementIpAddress=192.25.18..*
 - Returns the network device details for the given device ID.
 version_added: '3.1.0'
 extends_documentation_fragment:
@@ -24,123 +24,123 @@ options:
   hostname:
     description:
     - Hostname query parameter.
-    type: list
+    type: str
   managementIpAddress:
     description:
     - ManagementIpAddress query parameter.
-    type: list
+    type: str
   macAddress:
     description:
     - MacAddress query parameter.
-    type: list
+    type: str
   locationName:
     description:
     - LocationName query parameter.
-    type: list
+    type: str
   serialNumber:
     description:
     - SerialNumber query parameter.
-    type: list
+    type: str
   location:
     description:
     - Location query parameter.
-    type: list
+    type: str
   family:
     description:
     - Family query parameter.
-    type: list
+    type: str
   type:
     description:
     - Type query parameter.
-    type: list
+    type: str
   series:
     description:
     - Series query parameter.
-    type: list
+    type: str
   collectionStatus:
     description:
     - CollectionStatus query parameter.
-    type: list
+    type: str
   collectionInterval:
     description:
     - CollectionInterval query parameter.
-    type: list
+    type: str
   notSyncedForMinutes:
     description:
     - NotSyncedForMinutes query parameter.
-    type: list
+    type: str
   errorCode:
     description:
     - ErrorCode query parameter.
-    type: list
+    type: str
   errorDescription:
     description:
     - ErrorDescription query parameter.
-    type: list
+    type: str
   softwareVersion:
     description:
     - SoftwareVersion query parameter.
-    type: list
+    type: str
   softwareType:
     description:
     - SoftwareType query parameter.
-    type: list
+    type: str
   platformId:
     description:
     - PlatformId query parameter.
-    type: list
+    type: str
   role:
     description:
     - Role query parameter.
-    type: list
+    type: str
   reachabilityStatus:
     description:
     - ReachabilityStatus query parameter.
-    type: list
+    type: str
   upTime:
     description:
     - UpTime query parameter.
-    type: list
+    type: str
   associatedWlcIp:
     description:
     - AssociatedWlcIp query parameter.
-    type: list
+    type: str
   license_name:
     description:
     - License.name query parameter.
-    type: list
+    type: str
   license_type:
     description:
     - License.type query parameter.
-    type: list
+    type: str
   license_status:
     description:
     - License.status query parameter.
-    type: list
+    type: str
   module_name:
     description:
     - Module+name query parameter.
-    type: list
+    type: str
   module_equpimenttype:
     description:
     - Module+equpimenttype query parameter.
-    type: list
+    type: str
   module_servicestate:
     description:
     - Module+servicestate query parameter.
-    type: list
+    type: str
   module_vendorequipmenttype:
     description:
     - Module+vendorequipmenttype query parameter.
-    type: list
+    type: str
   module_partnumber:
     description:
     - Module+partnumber query parameter.
-    type: list
+    type: str
   module_operationstatecode:
     description:
     - Module+operationstatecode query parameter.
-    type: list
+    type: str
   id:
     description:
     - >
@@ -151,6 +151,14 @@ options:
     description:
     - DeviceSupportLevel query parameter.
     type: str
+  offset:
+    description:
+    - Offset query parameter. Offset >= 1 X gives results from Xth device onwards.
+    type: int
+  limit:
+    description:
+    - Limit query parameter. 1 <= limit <= 500 max. No. Of devices to be returned in the result.
+    type: int
 requirements:
 - dnacentersdk == 2.4.5
 - python >= 3.5
@@ -177,38 +185,40 @@ EXAMPLES = r"""
     dnac_debug: "{{dnac_debug}}"
     headers:
       custom: value
-    hostname: []
-    managementIpAddress: []
-    macAddress: []
-    locationName: []
-    serialNumber: []
-    location: []
-    family: []
-    type: []
-    series: []
-    collectionStatus: []
-    collectionInterval: []
-    notSyncedForMinutes: []
-    errorCode: []
-    errorDescription: []
-    softwareVersion: []
-    softwareType: []
-    platformId: []
-    role: []
-    reachabilityStatus: []
-    upTime: []
-    associatedWlcIp: []
-    license_name: []
-    license_type: []
-    license_status: []
-    module_name: []
-    module_equpimenttype: []
-    module_servicestate: []
-    module_vendorequipmenttype: []
-    module_partnumber: []
-    module_operationstatecode: []
+    hostname: string
+    managementIpAddress: string
+    macAddress: string
+    locationName: string
+    serialNumber: string
+    location: string
+    family: string
+    type: string
+    series: string
+    collectionStatus: string
+    collectionInterval: string
+    notSyncedForMinutes: string
+    errorCode: string
+    errorDescription: string
+    softwareVersion: string
+    softwareType: string
+    platformId: string
+    role: string
+    reachabilityStatus: string
+    upTime: string
+    associatedWlcIp: string
+    license_name: string
+    license_type: string
+    license_status: string
+    module_name: string
+    module_equpimenttype: string
+    module_servicestate: string
+    module_vendorequipmenttype: string
+    module_partnumber: string
+    module_operationstatecode: string
     id: string
     deviceSupportLevel: string
+    offset: 0
+    limit: 0
   register: result
 
 - name: Get Network Device by id
@@ -249,7 +259,7 @@ dnac_response:
         "instanceUuid": "string",
         "interfaceCount": "string",
         "inventoryStatusDetail": "string",
-        "lastUpdateTime": 0,
+        "lastUpdateTime": "string",
         "lastUpdated": "string",
         "lineCardCount": "string",
         "lineCardId": "string",

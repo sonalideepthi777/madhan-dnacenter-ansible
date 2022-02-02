@@ -10,9 +10,9 @@ module: event_subscription
 short_description: Resource module for Event Subscription
 description:
 - Manage operations create, update and delete of the resource Event Subscription.
-- Subscribe SubscriptionEndpoint to list of registered events.
+- Subscribe SubscriptionEndpoint to list of registered events (Deprecated).
 - Delete EventSubscriptions.
-- Update SubscriptionEndpoint to list of registered events.
+- Update SubscriptionEndpoint to list of registered events(Deprecated).
 version_added: '3.1.0'
 extends_documentation_fragment:
   - cisco.dnac.module
@@ -27,8 +27,47 @@ options:
       filter:
         description: Event Subscription's filter.
         suboptions:
+          categories:
+            version_added: '6.0.0'
+            description: Categories.
+            elements: str
+            type: list
+          domainsSubdomains:
+            version_added: '6.0.0'
+            description: Event Subscription's domainsSubdomains.
+            suboptions:
+              domain:
+                version_added: '6.0.0'
+                description: Domain.
+                type: str
+              subDomains:
+                version_added: '6.0.0'
+                description: Sub Domains.
+                elements: str
+                type: list
+            type: list
           eventIds:
-            description: Event Ids.
+            description: Event Ids (Comma separated event ids).
+            elements: str
+            type: list
+          severities:
+            version_added: '6.0.0'
+            description: Severities.
+            elements: str
+            type: list
+          siteIds:
+            version_added: '6.0.0'
+            description: Site Ids.
+            elements: str
+            type: list
+          sources:
+            version_added: '6.0.0'
+            description: Sources.
+            elements: str
+            type: list
+          types:
+            version_added: '6.0.0'
+            description: Types.
             elements: str
             type: list
         type: dict
@@ -39,27 +78,18 @@ options:
         description: Event Subscription's subscriptionEndpoints.
         suboptions:
           instanceId:
-            description: Instance Id.
+            description: (From Get Rest/Webhook Subscription Details --> pick instanceId).
             type: str
           subscriptionDetails:
             description: Event Subscription's subscriptionDetails.
             suboptions:
               connectorType:
-                description: Connector Type.
-                type: str
-              method:
-                description: Method.
-                type: str
-              name:
-                description: Name.
-                type: str
-              url:
-                description: Url.
+                description: Connector Type (Must be REST).
                 type: str
             type: dict
         type: list
       subscriptionId:
-        description: Subscription Id.
+        description: Subscription Id (Unique UUID).
         type: str
       version:
         description: Version.
@@ -110,16 +140,27 @@ EXAMPLES = r"""
     payload:
     - description: string
       filter:
+        categories:
+        - string
+        domainsSubdomains:
+        - domain: string
+          subDomains:
+          - string
         eventIds:
+        - string
+        severities:
+        - string
+        siteIds:
+        - string
+        sources:
+        - string
+        types:
         - string
       name: string
       subscriptionEndpoints:
       - instanceId: string
         subscriptionDetails:
           connectorType: string
-          method: string
-          name: string
-          url: string
       subscriptionId: string
       version: string
 
@@ -136,16 +177,27 @@ EXAMPLES = r"""
     payload:
     - description: string
       filter:
+        categories:
+        - string
+        domainsSubdomains:
+        - domain: string
+          subDomains:
+          - string
         eventIds:
+        - string
+        severities:
+        - string
+        siteIds:
+        - string
+        sources:
+        - string
+        types:
         - string
       name: string
       subscriptionEndpoints:
       - instanceId: string
         subscriptionDetails:
           connectorType: string
-          method: string
-          name: string
-          url: string
       subscriptionId: string
       version: string
 

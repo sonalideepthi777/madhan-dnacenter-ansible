@@ -99,8 +99,7 @@ options:
     description: Priority for the rule.
     type: int
   ruleType:
-    description: Type of the rule. Allowed values are 'Cisco Default - Static', 'Cisco
-      Default - Dynamic', 'Custom Rule', 'ML Rule'.
+    description: Type of the rule.
     type: str
   ruleVersion:
     description: Version of the rule.

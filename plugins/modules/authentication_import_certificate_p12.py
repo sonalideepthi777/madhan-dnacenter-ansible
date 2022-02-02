@@ -18,7 +18,7 @@ author: Rafael Campos (@racampos)
 options:
   listOfUsers:
     description: ListOfUsers query parameter.
-    type: list
+    type: str
   p12FilePath:
     description: P12 file absolute path.
     type: str
@@ -50,7 +50,7 @@ EXAMPLES = r"""
     dnac_port: "{{dnac_port}}"
     dnac_version: "{{dnac_version}}"
     dnac_debug: "{{dnac_debug}}"
-    listOfUsers: []
+    listOfUsers: string
     p12FilePath: /tmp/uploads/Test-242.p12
     p12Password: string
     pkPassword: string

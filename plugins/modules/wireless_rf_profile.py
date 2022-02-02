@@ -18,25 +18,28 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   channelWidth:
-    description: Rf-profile channel width.
+    description: Channel Width.
     type: str
   defaultRfProfile:
-    description: IsDefault rf-profile.
+    description: Is Default Rf Profile.
     type: bool
   enableBrownField:
-    description: True if enable brown field for rf-profile else false.
+    description: Enable Brown Field.
     type: bool
   enableCustom:
-    description: True if enable custom rf-profile else false.
+    description: Enable Custom.
     type: bool
   enableRadioTypeA:
-    description: Tru if Enable Radio Type A else false.
+    description: Enable Radio Type A.
     type: bool
   enableRadioTypeB:
-    description: True if Enable Radio Type B else false.
+    description: Enable Radio Type B.
+    type: bool
+  enableRadioTypeC:
+    description: Enable Radio Type C (6GHz).
     type: bool
   name:
-    description: Custom RF profile name.
+    description: RF Profile Name.
     type: str
   radioTypeAProperties:
     description: Wireless Rf Profile's radioTypeAProperties.
@@ -51,10 +54,10 @@ options:
         description: Max Power Level.
         type: int
       minPowerLevel:
-        description: Min Power Level.
+        description: Rx Sop Threshold.
         type: int
       parentProfile:
-        description: Parent rf-profile name.
+        description: Parent Profile.
         type: str
       powerThresholdV1:
         description: Power Threshold V1.
@@ -82,7 +85,45 @@ options:
         description: Min Power Level.
         type: int
       parentProfile:
-        description: Parent rf-profile name.
+        version_added: '6.0.0'
+        description: Parent Profile.
+        type: str
+      powerThresholdV1:
+        version_added: '6.0.0'
+        description: Power Threshold V1.
+        type: int
+      radioChannels:
+        version_added: '6.0.0'
+        description: Radio Channels.
+        type: str
+      rxSopThreshold:
+        version_added: '6.0.0'
+        description: Rx Sop Threshold.
+        type: str
+    type: dict
+  radioTypeCProperties:
+    version_added: '6.0.0'
+    description: Wireless Rf Profile's radioTypeCProperties.
+    suboptions:
+      dataRates:
+        version_added: '6.0.0'
+        description: Data Rates.
+        type: str
+      mandatoryDataRates:
+        version_added: '6.0.0'
+        description: Mandatory Data Rates.
+        type: str
+      maxPowerLevel:
+        version_added: '6.0.0'
+        description: Max Power Level.
+        type: int
+      minPowerLevel:
+        version_added: '6.0.0'
+        description: Min Power Level.
+        type: int
+      parentProfile:
+        version_added: '6.0.0'
+        description: Parent Profile.
         type: str
       powerThresholdV1:
         description: Power Threshold V1.
@@ -129,6 +170,7 @@ EXAMPLES = r"""
     enableCustom: true
     enableRadioTypeA: true
     enableRadioTypeB: true
+    enableRadioTypeC: true
     name: string
     radioTypeAProperties:
       dataRates: string
@@ -140,6 +182,15 @@ EXAMPLES = r"""
       radioChannels: string
       rxSopThreshold: string
     radioTypeBProperties:
+      dataRates: string
+      mandatoryDataRates: string
+      maxPowerLevel: 0
+      minPowerLevel: 0
+      parentProfile: string
+      powerThresholdV1: 0
+      radioChannels: string
+      rxSopThreshold: string
+    radioTypeCProperties:
       dataRates: string
       mandatoryDataRates: string
       maxPowerLevel: 0

@@ -87,12 +87,12 @@ dnac_response:
       "response": [
         {
           "complianceType": "string",
-          "lastSyncTime": 0,
+          "lastSyncTime": "string",
           "deviceUuid": "string",
           "displayName": "string",
           "status": "string",
           "category": "string",
-          "lastUpdateTime": 0,
+          "lastUpdateTime": "string",
           "state": "string"
         }
       ]

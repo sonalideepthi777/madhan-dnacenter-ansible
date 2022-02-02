@@ -10,7 +10,8 @@ module: lan_automation_create
 short_description: Resource module for Lan Automation Create
 description:
 - Manage operation create of the resource Lan Automation Create.
-version_added: '4.4.0'
+- Invoke this API to start LAN Automation for the given site.
+version_added: '6.0.0'
 extends_documentation_fragment:
   - cisco.dnac.module
 author: Rafael Campos (@racampos)
@@ -57,13 +58,15 @@ options:
         type: str
     type: list
 requirements:
-- dnacentersdk >= 2.4.0
+- dnacentersdk == 2.4.5
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Lan Automation Create reference
-  description: Complete reference of the Lan Automation Create object model.
-  link: https://dnacentersdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    lan_automation.LanAutomation.lan_automation_start,
+
+  - Paths used are
+    post /dna/intent/api/v1/lan-automation,
+
 """
 
 EXAMPLES = r"""
@@ -76,6 +79,19 @@ EXAMPLES = r"""
     dnac_port: "{{dnac_port}}"
     dnac_version: "{{dnac_version}}"
     dnac_debug: "{{dnac_debug}}"
+    payload:
+    - discoveredDeviceSiteNameHierarchy: string
+      hostNameFileId: string
+      hostNamePrefix: string
+      ipPools:
+      - ipPoolName: string
+        ipPoolRole: string
+      isisDomainPwd: string
+      mulitcastEnabled: true
+      peerDeviceManagmentIPAddress: string
+      primaryDeviceInterfaceNames:
+      - string
+      primaryDeviceManagmentIPAddress: string
 
 """
 

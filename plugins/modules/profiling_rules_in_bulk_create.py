@@ -10,9 +10,7 @@ module: profiling_rules_in_bulk_create
 short_description: Resource module for Profiling Rules In Bulk Create
 description:
 - Manage operation create of the resource Profiling Rules In Bulk Create.
-- This API imports the given list of profiling rules. For each record,
-  1) If 'ruleType' for a record is not 'Custom Rule', then it is rejected.
-  2) If 'ruleId' is provided in the input record,
+- This API imports the given list of profiling rules. For each record, 1) If 'ruleType' for a record is not 'Custom Rule', then it is rejected. 2) If 'ruleId' is provided in the input record,
 version_added: '4.0.0'
 extends_documentation_fragment:
   - cisco.dnac.module
@@ -104,8 +102,7 @@ options:
         description: Priority for the rule.
         type: int
       ruleType:
-        description: Type of the rule. Allowed values are 'Cisco Default - Static',
-          'Cisco Default - Dynamic', 'Custom Rule', 'ML Rule'.
+        description: Type of the rule.
         type: str
       ruleVersion:
         description: Version of the rule.

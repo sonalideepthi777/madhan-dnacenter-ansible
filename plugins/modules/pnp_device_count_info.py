@@ -22,55 +22,55 @@ options:
   serialNumber:
     description:
     - SerialNumber query parameter. Device Serial Number.
-    type: list
+    type: str
   state_:
     description:
     - State query parameter. Device State.
-    type: list
+    type: str
   onbState:
     description:
     - OnbState query parameter. Device Onboarding State.
-    type: list
+    type: str
   cmState:
     description:
     - CmState query parameter. Device Connection Manager State.
-    type: list
+    type: str
   name:
     description:
     - Name query parameter. Device Name.
-    type: list
+    type: str
   pid:
     description:
     - Pid query parameter. Device ProductId.
-    type: list
+    type: str
   source:
     description:
     - Source query parameter. Device Source.
-    type: list
+    type: str
   projectId:
     description:
     - ProjectId query parameter. Device Project Id.
-    type: list
+    type: str
   workflowId:
     description:
     - WorkflowId query parameter. Device Workflow Id.
-    type: list
+    type: str
   projectName:
     description:
     - ProjectName query parameter. Device Project Name.
-    type: list
+    type: str
   workflowName:
     description:
     - WorkflowName query parameter. Device Workflow Name.
-    type: list
+    type: str
   smartAccountId:
     description:
     - SmartAccountId query parameter. Device Smart Account.
-    type: list
+    type: str
   virtualAccountId:
     description:
     - VirtualAccountId query parameter. Device Virtual Account.
-    type: list
+    type: str
   lastContact:
     description:
     - LastContact query parameter. Device Has Contacted lastContact > 0.
@@ -99,19 +99,19 @@ EXAMPLES = r"""
     dnac_debug: "{{dnac_debug}}"
     headers:
       custom: value
-    serialNumber: []
-    state_: []
-    onbState: []
-    cmState: []
-    name: []
-    pid: []
-    source: []
-    projectId: []
-    workflowId: []
-    projectName: []
-    workflowName: []
-    smartAccountId: []
-    virtualAccountId: []
+    serialNumber: string
+    state_: string
+    onbState: string
+    cmState: string
+    name: string
+    pid: string
+    source: string
+    projectId: string
+    workflowId: string
+    projectName: string
+    workflowName: string
+    smartAccountId: string
+    virtualAccountId: string
     lastContact: True
   register: result
 

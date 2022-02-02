@@ -24,7 +24,7 @@ options:
     - >
       ReplacementStatus query parameter. Device Replacement status listREADY-FOR-REPLACEMENT, REPLACEMENT-IN-
       PROGRESS, REPLACEMENT-SCHEDULED, REPLACED, ERROR.
-    type: list
+    type: str
 requirements:
 - dnacentersdk == 2.4.5
 - python >= 3.5
@@ -49,7 +49,7 @@ EXAMPLES = r"""
     dnac_debug: "{{dnac_debug}}"
     headers:
       custom: value
-    replacementStatus: []
+    replacementStatus: string
   register: result
 
 """

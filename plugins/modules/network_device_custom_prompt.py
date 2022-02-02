@@ -10,7 +10,8 @@ module: network_device_custom_prompt
 short_description: Resource module for Network Device Custom Prompt
 description:
 - Manage operation create of the resource Network Device Custom Prompt.
-version_added: '4.4.0'
+- Save custom prompt added by user in DNAC . API will always override the existing prompts. User should provide all the custom prompt in case of any update.
+version_added: '6.0.0'
 extends_documentation_fragment:
   - cisco.dnac.module
 author: Rafael Campos (@racampos)
@@ -22,13 +23,15 @@ options:
     description: Username Prompt.
     type: str
 requirements:
-- dnacentersdk >= 2.4.0
+- dnacentersdk == 2.4.5
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Network Device Custom Prompt reference
-  description: Complete reference of the Network Device Custom Prompt object model.
-  link: https://dnacentersdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    system_settings.SystemSettings.custom_prompt_post_api,
+
+  - Paths used are
+    post /dna/intent/api/v1/network-device/custom-prompt,
+
 """
 
 EXAMPLES = r"""

@@ -22,7 +22,7 @@ options:
   name:
     description:
     - Name query parameter. Workflow Name.
-    type: list
+    type: str
 requirements:
 - dnacentersdk == 2.4.5
 - python >= 3.5
@@ -47,7 +47,7 @@ EXAMPLES = r"""
     dnac_debug: "{{dnac_debug}}"
     headers:
       custom: value
-    name: []
+    name: string
   register: result
 
 """

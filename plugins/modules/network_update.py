@@ -10,7 +10,6 @@ module: network_update
 short_description: Resource module for Network Update
 description:
 - Manage operation update of the resource Network Update.
-- API to update network for DHCP and DNS center server settings.
 version_added: '3.1.0'
 extends_documentation_fragment:
   - cisco.dnac.module
@@ -23,7 +22,7 @@ options:
         description: Network Update's clientAndEndpoint_aaa.
         suboptions:
           ipAddress:
-            description: IP address for ISE serve (eg 1.1.1.4). Mandatory for ISE servers.
+            description: IP address for ISE serve (eg 1.1.1.4).
             type: str
           network:
             description: IP address for AAA or ISE server (eg 2.2.2.1).
@@ -35,7 +34,7 @@ options:
             description: Server type AAA or ISE server (eg AAA).
             type: str
           sharedSecret:
-            description: Shared secret for ISE server. Supported only by ISE servers.
+            description: Shared secret for ISE server.
             type: str
         type: dict
       dhcpServer:
@@ -46,16 +45,13 @@ options:
         description: Network Update's dnsServer.
         suboptions:
           domainName:
-            description: Domain name of DHCP (eg; cisco). It can only contain alphanumeric
-              characters or hyphen.
+            description: Domain name of DHCP (eg; cisco).
             type: str
           primaryIpAddress:
-            description: Primary ip address for DHCP (eg 2.2.2.2). Valid range 1.0.0.0
-              - 223.255.255.255.
+            description: Primary ip address for DHCP (eg 2.2.2.2).
             type: str
           secondaryIpAddress:
-            description: Secondary ip address for DHCP (eg 3.3.3.3. Valid range 1.0.0.0
-              - 223.255.255.255).
+            description: Secondary ip address for DHCP (eg 3.3.3.3).
             type: str
         type: dict
       messageOfTheday:
@@ -82,12 +78,10 @@ options:
         description: Network Update's network_aaa.
         suboptions:
           ipAddress:
-            description: IP address for AAA and ISE server (eg 1.1.1.1). Mandatory for
-              ISE servers and for AAA consider this as additional Ip.
+            description: IP address for AAA and ISE server (eg 1.1.1.1).
             type: str
           network:
-            description: IP address for AAA or ISE server (eg 2.2.2.2). For AAA server
-              consider it as primary IP and For ISE consider as Network.
+            description: IP address for AAA or ISE server (eg 2.2.2.2).
             type: str
           protocol:
             description: Protocol for AAA or ISE serve (eg RADIUS).
@@ -96,7 +90,7 @@ options:
             description: Server type for AAA network (eg AAA).
             type: str
           sharedSecret:
-            description: Shared secret for ISE server. Supported only by ISE servers.
+            description: Shared secret for ISE server.
             type: str
         type: dict
       ntpServer:

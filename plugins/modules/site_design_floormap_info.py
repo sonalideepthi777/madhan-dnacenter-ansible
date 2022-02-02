@@ -37,6 +37,8 @@ notes:
     get /dna/intent/api/v1/wireless/floormap/all,
     get /dna/intent/api/v1/wireless/floormap/{floorId},
 
+  - Module works when 'dnac_version' and Cisco DNA Center version is 2.2.3.3.
+
 """
 
 EXAMPLES = r"""

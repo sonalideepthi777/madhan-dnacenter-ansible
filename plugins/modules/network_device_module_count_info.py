@@ -26,19 +26,19 @@ options:
   nameList:
     description:
     - NameList query parameter.
-    type: list
+    type: str
   vendorEquipmentTypeList:
     description:
     - VendorEquipmentTypeList query parameter.
-    type: list
+    type: str
   partNumberList:
     description:
     - PartNumberList query parameter.
-    type: list
+    type: str
   operationalStateCodeList:
     description:
     - OperationalStateCodeList query parameter.
-    type: list
+    type: str
 requirements:
 - dnacentersdk == 2.4.5
 - python >= 3.5
@@ -64,10 +64,10 @@ EXAMPLES = r"""
     headers:
       custom: value
     deviceId: string
-    nameList: []
-    vendorEquipmentTypeList: []
-    partNumberList: []
-    operationalStateCodeList: []
+    nameList: string
+    vendorEquipmentTypeList: string
+    partNumberList: string
+    operationalStateCodeList: string
   register: result
 
 """

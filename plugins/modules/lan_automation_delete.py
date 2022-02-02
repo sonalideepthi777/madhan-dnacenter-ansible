@@ -10,7 +10,8 @@ module: lan_automation_delete
 short_description: Resource module for Lan Automation Delete
 description:
 - Manage operation delete of the resource Lan Automation Delete.
-version_added: '4.4.0'
+- Invoke this API to stop LAN Automation for the given site.
+version_added: '6.0.0'
 extends_documentation_fragment:
   - cisco.dnac.module
 author: Rafael Campos (@racampos)
@@ -19,13 +20,15 @@ options:
     description: Id path parameter. LAN Automation Id needs to be retrived via /dna/intent/status.
     type: str
 requirements:
-- dnacentersdk >= 2.4.0
+- dnacentersdk == 2.4.5
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Lan Automation Delete reference
-  description: Complete reference of the Lan Automation Delete object model.
-  link: https://dnacentersdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    lan_automation.LanAutomation.lan_automation_stop,
+
+  - Paths used are
+    delete /dna/intent/api/v1/lan-automation/{id},
+
 """
 
 EXAMPLES = r"""
