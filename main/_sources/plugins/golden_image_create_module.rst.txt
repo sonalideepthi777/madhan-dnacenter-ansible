@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -17,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -42,19 +42,19 @@ cisco.dnac.golden_image_create module -- Resource module for Golden Image Create
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.3.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.7.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.dnac`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.dnac.golden_image_create_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.dnac.golden_image_create`.
 
 .. version_added
 
-.. versionadded:: 4.0.0 of cisco.dnac
+.. rst-class:: ansible-version-added
+
+New in cisco.dnac 4.0.0
 
 .. contents::
    :local:
@@ -79,12 +79,18 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.dnac.golden_image_create_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- dnacentersdk >= 2.4.8
-- python >= 3.5
+- dnacentersdk \>= 2.5.5
+- python \>= 3.5
+
+
+
+
 
 
 .. Options
@@ -107,7 +113,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-deviceFamilyIdentifier"></div>
 
-      .. _ansible_collections.cisco.dnac.golden_image_create_module__parameter-deviceFamilyIdentifier:
+      .. _ansible_collections.cisco.dnac.golden_image_create_module__parameter-devicefamilyidentifier:
 
       .. rst-class:: ansible-option-title
 
@@ -141,7 +147,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-deviceRole"></div>
 
-      .. _ansible_collections.cisco.dnac.golden_image_create_module__parameter-deviceRole:
+      .. _ansible_collections.cisco.dnac.golden_image_create_module__parameter-devicerole:
 
       .. rst-class:: ansible-option-title
 
@@ -204,8 +210,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -395,8 +402,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -434,7 +442,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.2.3.3"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.3.5.3"`
 
       .. raw:: html
 
@@ -445,7 +453,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-imageId"></div>
 
-      .. _ansible_collections.cisco.dnac.golden_image_create_module__parameter-imageId:
+      .. _ansible_collections.cisco.dnac.golden_image_create_module__parameter-imageid:
 
       .. rst-class:: ansible-option-title
 
@@ -479,7 +487,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-siteId"></div>
 
-      .. _ansible_collections.cisco.dnac.golden_image_create_module__parameter-siteId:
+      .. _ansible_collections.cisco.dnac.golden_image_create_module__parameter-siteid:
 
       .. rst-class:: ansible-option-title
 
@@ -542,8 +550,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -559,14 +568,21 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are software_image_management_swim.SoftwareImageManagementSwim.tag_as_golden_image,
+   - SDK Method used are software\_image\_management\_swim.SoftwareImageManagementSwim.tag\_as\_golden\_image,
    - Paths used are post /dna/intent/api/v1/image/importation/golden,
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco DNA Center documentation for Software Image Management (SWIM) TagAsGoldenImage <https://developer.cisco.com/docs/dna-center/#!tag-as-golden-image>`_
+       Complete reference of the TagAsGoldenImage API.
 
 .. Examples
 
@@ -650,7 +666,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"version\\": \\"string\\",\\n  \\"response\\": {\\n    \\"url\\": \\"string\\",\\n    \\"taskId\\": \\"string\\"\\n  }\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"response": {"taskId": "string", "url": "string"}, "version": "string"}`
 
 
       .. raw:: html

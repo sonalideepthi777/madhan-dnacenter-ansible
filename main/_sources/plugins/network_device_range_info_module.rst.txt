@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -17,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -42,19 +42,19 @@ cisco.dnac.network_device_range_info module -- Information module for Network De
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.3.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.7.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.dnac`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.dnac.network_device_range_info_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.dnac.network_device_range_info`.
 
 .. version_added
 
-.. versionadded:: 3.1.0 of cisco.dnac
+.. rst-class:: ansible-version-added
+
+New in cisco.dnac 3.1.0
 
 .. contents::
    :local:
@@ -69,7 +69,8 @@ Synopsis
 .. Description
 
 - Get all Network Device Range.
-- Returns the list of network devices for the given pagination range.
+- Returns the list of network devices for the given pagination range. The maximum number of records that can be retrieved is 500.
+
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -79,12 +80,18 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.dnac.network_device_range_info_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- dnacentersdk >= 2.4.8
-- python >= 3.5
+- dnacentersdk \>= 2.5.5
+- python \>= 3.5
+
+
+
+
 
 
 .. Options
@@ -136,8 +143,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -327,8 +335,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -366,7 +375,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.2.3.3"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.3.5.3"`
 
       .. raw:: html
 
@@ -411,7 +420,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-recordsToReturn"></div>
 
-      .. _ansible_collections.cisco.dnac.network_device_range_info_module__parameter-recordsToReturn:
+      .. _ansible_collections.cisco.dnac.network_device_range_info_module__parameter-recordstoreturn:
 
       .. rst-class:: ansible-option-title
 
@@ -433,7 +442,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      RecordsToReturn path parameter. Number of records to return.
+      RecordsToReturn path parameter. Number of records to return 1\<= recordsToReturn \<= 500.
 
 
       .. raw:: html
@@ -445,7 +454,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-startIndex"></div>
 
-      .. _ansible_collections.cisco.dnac.network_device_range_info_module__parameter-startIndex:
+      .. _ansible_collections.cisco.dnac.network_device_range_info_module__parameter-startindex:
 
       .. rst-class:: ansible-option-title
 
@@ -467,7 +476,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      StartIndex path parameter. Start index.
+      StartIndex path parameter. Start index \>=1.
 
 
       .. raw:: html
@@ -508,8 +517,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -525,14 +535,21 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.get_network_device_by_pagination_range,
+   - SDK Method used are devices.Devices.get\_network\_device\_by\_pagination\_range,
    - Paths used are get /dna/intent/api/v1/network-device/{startIndex}/{recordsToReturn},
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco DNA Center documentation for Devices GetNetworkDeviceByPaginationRange <https://developer.cisco.com/docs/dna-center/#!get-network-device-by-pagination-range>`_
+       Complete reference of the GetNetworkDeviceByPaginationRange API.
 
 .. Examples
 
@@ -551,8 +568,7 @@ Examples
         dnac_port: "{{dnac_port}}"
         dnac_version: "{{dnac_version}}"
         dnac_debug: "{{dnac_debug}}"
-        headers:
-          custom: value
+        headers: "{{my_headers | from_json}}"
         startIndex: 0
         recordsToReturn: 0
       register: result
@@ -617,7 +633,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"response\\": [\\n    {\\n      \\"apManagerInterfaceIp\\": \\"string\\",\\n      \\"associatedWlcIp\\": \\"string\\",\\n      \\"bootDateTime\\": \\"string\\",\\n      \\"collectionInterval\\": \\"string\\",\\n      \\"collectionStatus\\": \\"string\\",\\n      \\"errorCode\\": \\"string\\",\\n      \\"errorDescription\\": \\"string\\",\\n      \\"family\\": \\"string\\",\\n      \\"hostname\\": \\"string\\",\\n      \\"id\\": \\"string\\",\\n      \\"instanceTenantId\\": \\"string\\",\\n      \\"instanceUuid\\": \\"string\\",\\n      \\"interfaceCount\\": \\"string\\",\\n      \\"inventoryStatusDetail\\": \\"string\\",\\n      \\"lastUpdateTime\\": \\"string\\",\\n      \\"lastUpdated\\": \\"string\\",\\n      \\"lineCardCount\\": \\"string\\",\\n      \\"lineCardId\\": \\"string\\",\\n      \\"location\\": \\"string\\",\\n      \\"locationName\\": \\"string\\",\\n      \\"macAddress\\": \\"string\\",\\n      \\"managementIpAddress\\": \\"string\\",\\n      \\"memorySize\\": \\"string\\",\\n      \\"platformId\\": \\"string\\",\\n      \\"reachabilityFailureReason\\": \\"string\\",\\n      \\"reachabilityStatus\\": \\"string\\",\\n      \\"role\\": \\"string\\",\\n      \\"roleSource\\": \\"string\\",\\n      \\"serialNumber\\": \\"string\\",\\n      \\"series\\": \\"string\\",\\n      \\"snmpContact\\": \\"string\\",\\n      \\"snmpLocation\\": \\"string\\",\\n      \\"softwareType\\": \\"string\\",\\n      \\"softwareVersion\\": \\"string\\",\\n      \\"tagCount\\": \\"string\\",\\n      \\"tunnelUdpPort\\": \\"string\\",\\n      \\"type\\": \\"string\\",\\n      \\"upTime\\": \\"string\\",\\n      \\"waasDeviceMode\\": \\"string\\"\\n    }\\n  ],\\n  \\"version\\": \\"string\\"\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"response": [{"apManagerInterfaceIp": "string", "associatedWlcIp": "string", "bootDateTime": "string", "collectionInterval": "string", "collectionStatus": "string", "errorCode": "string", "errorDescription": "string", "family": "string", "hostname": "string", "id": "string", "instanceTenantId": "string", "instanceUuid": "string", "interfaceCount": "string", "inventoryStatusDetail": "string", "lastUpdateTime": 0, "lastUpdated": "string", "lineCardCount": "string", "lineCardId": "string", "location": "string", "locationName": "string", "macAddress": "string", "managementIpAddress": "string", "memorySize": "string", "platformId": "string", "reachabilityFailureReason": "string", "reachabilityStatus": "string", "role": "string", "roleSource": "string", "serialNumber": "string", "series": "string", "snmpContact": "string", "snmpLocation": "string", "softwareType": "string", "softwareVersion": "string", "tagCount": "string", "tunnelUdpPort": "string", "type": "string", "upTime": "string", "waasDeviceMode": "string"}], "version": "string"}`
 
 
       .. raw:: html

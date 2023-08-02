@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -17,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -42,19 +42,19 @@ cisco.dnac.app_policy_intent_create module -- Resource module for App Policy Int
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.3.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.7.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.dnac`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.dnac.app_policy_intent_create_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.dnac.app_policy_intent_create`.
 
 .. version_added
 
-.. versionadded:: 4.0.0 of cisco.dnac
+.. rst-class:: ansible-version-added
+
+New in cisco.dnac 4.0.0
 
 .. contents::
    :local:
@@ -79,12 +79,18 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.dnac.app_policy_intent_create_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- dnacentersdk >= 2.4.8
-- python >= 3.5
+- dnacentersdk \>= 2.5.5
+- python \>= 3.5
+
+
+
+
 
 
 .. Options
@@ -107,7 +113,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist:
 
       .. rst-class:: ansible-option-title
 
@@ -141,7 +147,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/advancedPolicyScope"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/advancedPolicyScope:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/advancedpolicyscope:
 
       .. rst-class:: ansible-option-title
 
@@ -175,7 +181,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/advancedPolicyScope/advancedPolicyScopeElement"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/advancedPolicyScope/advancedPolicyScopeElement:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/advancedpolicyscope/advancedpolicyscopeelement:
 
       .. rst-class:: ansible-option-title
 
@@ -209,7 +215,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/advancedPolicyScope/advancedPolicyScopeElement/groupId"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/advancedPolicyScope/advancedPolicyScopeElement/groupId:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/advancedpolicyscope/advancedpolicyscopeelement/groupid:
 
       .. rst-class:: ansible-option-title
 
@@ -243,7 +249,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/advancedPolicyScope/advancedPolicyScopeElement/ssid"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/advancedPolicyScope/advancedPolicyScopeElement/ssid:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/advancedpolicyscope/advancedpolicyscopeelement/ssid:
 
       .. rst-class:: ansible-option-title
 
@@ -278,7 +284,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/advancedPolicyScope/name"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/advancedPolicyScope/name:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/advancedpolicyscope/name:
 
       .. rst-class:: ansible-option-title
 
@@ -313,7 +319,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/consumer"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/consumer:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/consumer:
 
       .. rst-class:: ansible-option-title
 
@@ -347,7 +353,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/consumer/scalableGroup"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/consumer/scalableGroup:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/consumer/scalablegroup:
 
       .. rst-class:: ansible-option-title
 
@@ -381,7 +387,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/consumer/scalableGroup/idRef"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/consumer/scalableGroup/idRef:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/consumer/scalablegroup/idref:
 
       .. rst-class:: ansible-option-title
 
@@ -417,7 +423,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/contract"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/contract:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/contract:
 
       .. rst-class:: ansible-option-title
 
@@ -451,7 +457,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/contract/idRef"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/contract/idRef:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/contract/idref:
 
       .. rst-class:: ansible-option-title
 
@@ -486,7 +492,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/deletePolicyStatus"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/deletePolicyStatus:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/deletepolicystatus:
 
       .. rst-class:: ansible-option-title
 
@@ -520,7 +526,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/exclusiveContract"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/exclusiveContract:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/exclusivecontract:
 
       .. rst-class:: ansible-option-title
 
@@ -554,7 +560,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/exclusiveContract/clause"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/exclusiveContract/clause:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/exclusivecontract/clause:
 
       .. rst-class:: ansible-option-title
 
@@ -588,7 +594,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/exclusiveContract/clause/deviceRemovalBehavior"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/exclusiveContract/clause/deviceRemovalBehavior:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/exclusivecontract/clause/deviceremovalbehavior:
 
       .. rst-class:: ansible-option-title
 
@@ -622,7 +628,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/exclusiveContract/clause/hostTrackingEnabled"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/exclusiveContract/clause/hostTrackingEnabled:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/exclusivecontract/clause/hosttrackingenabled:
 
       .. rst-class:: ansible-option-title
 
@@ -651,8 +657,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -663,7 +670,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/exclusiveContract/clause/relevanceLevel"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/exclusiveContract/clause/relevanceLevel:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/exclusivecontract/clause/relevancelevel:
 
       .. rst-class:: ansible-option-title
 
@@ -697,7 +704,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/exclusiveContract/clause/type"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/exclusiveContract/clause/type:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/exclusivecontract/clause/type:
 
       .. rst-class:: ansible-option-title
 
@@ -733,7 +740,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/name"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/name:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/name:
 
       .. rst-class:: ansible-option-title
 
@@ -755,7 +762,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Concatination of <polcy name>_<application-set-name> or <polcy name>_global_policy_configuration or <polcy name>_queuing_customization.
+      Concatination of \<polcy name\>\_\<application-set-name\> or \<polcy name\>\_global\_policy\_configuration or \<polcy name\>\_queuing\_customization.
 
 
       .. raw:: html
@@ -767,7 +774,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/policyScope"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/policyScope:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/policyscope:
 
       .. rst-class:: ansible-option-title
 
@@ -801,7 +808,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/priority"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/priority:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/priority:
 
       .. rst-class:: ansible-option-title
 
@@ -835,7 +842,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/producer"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/producer:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/producer:
 
       .. rst-class:: ansible-option-title
 
@@ -869,7 +876,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/producer/scalableGroup"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/producer/scalableGroup:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/producer/scalablegroup:
 
       .. rst-class:: ansible-option-title
 
@@ -903,7 +910,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createList/producer/scalableGroup/idRef"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createList/producer/scalableGroup/idRef:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-createlist/producer/scalablegroup/idref:
 
       .. rst-class:: ansible-option-title
 
@@ -940,7 +947,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-deleteList"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-deleteList:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-deletelist:
 
       .. rst-class:: ansible-option-title
 
@@ -1003,8 +1010,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -1194,8 +1202,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -1233,7 +1242,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.2.3.3"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.3.5.3"`
 
       .. raw:: html
 
@@ -1244,7 +1253,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist:
 
       .. rst-class:: ansible-option-title
 
@@ -1278,7 +1287,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/advancedPolicyScope"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/advancedPolicyScope:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/advancedpolicyscope:
 
       .. rst-class:: ansible-option-title
 
@@ -1312,7 +1321,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/advancedPolicyScope/advancedPolicyScopeElement"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/advancedPolicyScope/advancedPolicyScopeElement:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/advancedpolicyscope/advancedpolicyscopeelement:
 
       .. rst-class:: ansible-option-title
 
@@ -1346,7 +1355,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/advancedPolicyScope/advancedPolicyScopeElement/groupId"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/advancedPolicyScope/advancedPolicyScopeElement/groupId:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/advancedpolicyscope/advancedpolicyscopeelement/groupid:
 
       .. rst-class:: ansible-option-title
 
@@ -1380,7 +1389,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/advancedPolicyScope/advancedPolicyScopeElement/id"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/advancedPolicyScope/advancedPolicyScopeElement/id:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/advancedpolicyscope/advancedpolicyscopeelement/id:
 
       .. rst-class:: ansible-option-title
 
@@ -1414,7 +1423,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/advancedPolicyScope/advancedPolicyScopeElement/ssid"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/advancedPolicyScope/advancedPolicyScopeElement/ssid:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/advancedpolicyscope/advancedpolicyscopeelement/ssid:
 
       .. rst-class:: ansible-option-title
 
@@ -1449,7 +1458,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/advancedPolicyScope/id"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/advancedPolicyScope/id:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/advancedpolicyscope/id:
 
       .. rst-class:: ansible-option-title
 
@@ -1483,7 +1492,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/advancedPolicyScope/name"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/advancedPolicyScope/name:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/advancedpolicyscope/name:
 
       .. rst-class:: ansible-option-title
 
@@ -1518,7 +1527,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/consumer"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/consumer:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/consumer:
 
       .. rst-class:: ansible-option-title
 
@@ -1552,7 +1561,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/consumer/id"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/consumer/id:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/consumer/id:
 
       .. rst-class:: ansible-option-title
 
@@ -1586,7 +1595,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/consumer/scalableGroup"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/consumer/scalableGroup:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/consumer/scalablegroup:
 
       .. rst-class:: ansible-option-title
 
@@ -1620,7 +1629,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/consumer/scalableGroup/idRef"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/consumer/scalableGroup/idRef:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/consumer/scalablegroup/idref:
 
       .. rst-class:: ansible-option-title
 
@@ -1656,7 +1665,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/contract"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/contract:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/contract:
 
       .. rst-class:: ansible-option-title
 
@@ -1690,7 +1699,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/contract/idRef"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/contract/idRef:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/contract/idref:
 
       .. rst-class:: ansible-option-title
 
@@ -1725,7 +1734,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/deletePolicyStatus"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/deletePolicyStatus:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/deletepolicystatus:
 
       .. rst-class:: ansible-option-title
 
@@ -1759,7 +1768,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/exclusiveContract"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/exclusiveContract:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/exclusivecontract:
 
       .. rst-class:: ansible-option-title
 
@@ -1793,7 +1802,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/exclusiveContract/clause"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/exclusiveContract/clause:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/exclusivecontract/clause:
 
       .. rst-class:: ansible-option-title
 
@@ -1827,7 +1836,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/exclusiveContract/clause/deviceRemovalBehavior"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/exclusiveContract/clause/deviceRemovalBehavior:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/exclusivecontract/clause/deviceremovalbehavior:
 
       .. rst-class:: ansible-option-title
 
@@ -1861,7 +1870,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/exclusiveContract/clause/hostTrackingEnabled"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/exclusiveContract/clause/hostTrackingEnabled:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/exclusivecontract/clause/hosttrackingenabled:
 
       .. rst-class:: ansible-option-title
 
@@ -1890,8 +1899,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -1902,7 +1912,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/exclusiveContract/clause/id"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/exclusiveContract/clause/id:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/exclusivecontract/clause/id:
 
       .. rst-class:: ansible-option-title
 
@@ -1936,7 +1946,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/exclusiveContract/clause/relevanceLevel"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/exclusiveContract/clause/relevanceLevel:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/exclusivecontract/clause/relevancelevel:
 
       .. rst-class:: ansible-option-title
 
@@ -1970,7 +1980,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/exclusiveContract/clause/type"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/exclusiveContract/clause/type:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/exclusivecontract/clause/type:
 
       .. rst-class:: ansible-option-title
 
@@ -2005,7 +2015,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/exclusiveContract/id"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/exclusiveContract/id:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/exclusivecontract/id:
 
       .. rst-class:: ansible-option-title
 
@@ -2040,7 +2050,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/id"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/id:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/id:
 
       .. rst-class:: ansible-option-title
 
@@ -2074,7 +2084,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/name"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/name:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/name:
 
       .. rst-class:: ansible-option-title
 
@@ -2096,7 +2106,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Concatination of <polcy name>_<application-set-name> or <polcy name>_global_policy_configuration or <polcy name>_queuing_customization.
+      Concatination of \<polcy name\>\_\<application-set-name\> or \<polcy name\>\_global\_policy\_configuration or \<polcy name\>\_queuing\_customization.
 
 
       .. raw:: html
@@ -2108,7 +2118,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/policyScope"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/policyScope:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/policyscope:
 
       .. rst-class:: ansible-option-title
 
@@ -2142,7 +2152,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/priority"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/priority:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/priority:
 
       .. rst-class:: ansible-option-title
 
@@ -2176,7 +2186,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/producer"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/producer:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/producer:
 
       .. rst-class:: ansible-option-title
 
@@ -2210,7 +2220,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/producer/id"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/producer/id:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/producer/id:
 
       .. rst-class:: ansible-option-title
 
@@ -2244,7 +2254,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/producer/scalableGroup"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/producer/scalableGroup:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/producer/scalablegroup:
 
       .. rst-class:: ansible-option-title
 
@@ -2278,7 +2288,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-updateList/producer/scalableGroup/idRef"></div>
 
-      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updateList/producer/scalableGroup/idRef:
+      .. _ansible_collections.cisco.dnac.app_policy_intent_create_module__parameter-updatelist/producer/scalablegroup/idref:
 
       .. rst-class:: ansible-option-title
 
@@ -2344,8 +2354,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -2361,14 +2372,21 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are application_policy.ApplicationPolicy.application_policy_intent,
+   - SDK Method used are application\_policy.ApplicationPolicy.application\_policy\_intent,
    - Paths used are post /dna/intent/api/v1/app-policy-intent,
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco DNA Center documentation for Application Policy ApplicationPolicyIntent <https://developer.cisco.com/docs/dna-center/#!application-policy-intent>`_
+       Complete reference of the ApplicationPolicyIntent API.
 
 .. Examples
 
@@ -2509,7 +2527,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"response\\": {\\n    \\"taskId\\": \\"string\\",\\n    \\"url\\": \\"string\\"\\n  },\\n  \\"version\\": \\"string\\"\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"response": {"taskId": "string", "url": "string"}, "version": "string"}`
 
 
       .. raw:: html

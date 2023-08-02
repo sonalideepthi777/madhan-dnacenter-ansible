@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -17,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -42,19 +42,19 @@ cisco.dnac.compliance_device_details_info module -- Information module for Compl
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.3.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.7.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.dnac`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.dnac.compliance_device_details_info_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.dnac.compliance_device_details_info`.
 
 .. version_added
 
-.. versionadded:: 3.1.0 of cisco.dnac
+.. rst-class:: ansible-version-added
+
+New in cisco.dnac 3.1.0
 
 .. contents::
    :local:
@@ -79,12 +79,18 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.dnac.compliance_device_details_info_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- dnacentersdk >= 2.4.8
-- python >= 3.5
+- dnacentersdk \>= 2.5.5
+- python \>= 3.5
+
+
+
+
 
 
 .. Options
@@ -107,7 +113,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-complianceStatus"></div>
 
-      .. _ansible_collections.cisco.dnac.compliance_device_details_info_module__parameter-complianceStatus:
+      .. _ansible_collections.cisco.dnac.compliance_device_details_info_module__parameter-compliancestatus:
 
       .. rst-class:: ansible-option-title
 
@@ -129,7 +135,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      ComplianceStatus query parameter. Compliance status can have value among 'COMPLIANT', 'NON_COMPLIANT', 'IN_PROGRESS', 'NOT_AVAILABLE', 'NOT_APPLICABLE', 'ERROR'.
+      ComplianceStatus query parameter. Compliance status can have value among 'COMPLIANT', 'NON\_COMPLIANT', 'IN\_PROGRESS', 'NOT\_AVAILABLE', 'NOT\_APPLICABLE', 'ERROR'.
           
 
 
@@ -142,7 +148,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-complianceType"></div>
 
-      .. _ansible_collections.cisco.dnac.compliance_device_details_info_module__parameter-complianceType:
+      .. _ansible_collections.cisco.dnac.compliance_device_details_info_module__parameter-compliancetype:
 
       .. rst-class:: ansible-option-title
 
@@ -164,7 +170,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      ComplianceType query parameter. ComplianceType can have any value among 'NETWORK_PROFILE', 'IMAGE', 'APPLICATION_VISIBILITY', 'FABRIC', 'PSIRT', 'RUNNING_CONFIG', 'WORKFLOW'.
+      ComplianceType query parameter. ComplianceType can have any value among 'NETWORK\_PROFILE', 'IMAGE', 'APPLICATION\_VISIBILITY', 'FABRIC', 'PSIRT', 'RUNNING\_CONFIG', 'WORKFLOW'.
           
 
 
@@ -177,7 +183,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-deviceUuid"></div>
 
-      .. _ansible_collections.cisco.dnac.compliance_device_details_info_module__parameter-deviceUuid:
+      .. _ansible_collections.cisco.dnac.compliance_device_details_info_module__parameter-deviceuuid:
 
       .. rst-class:: ansible-option-title
 
@@ -240,8 +246,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -431,8 +438,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -470,7 +478,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.2.3.3"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.3.5.3"`
 
       .. raw:: html
 
@@ -527,7 +535,7 @@ Parameters
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`string`
+      :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -561,7 +569,7 @@ Parameters
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`string`
+      :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -612,8 +620,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -629,14 +638,21 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are compliance.Compliance.get_compliance_detail,
+   - SDK Method used are compliance.Compliance.get\_compliance\_detail,
    - Paths used are get /dna/intent/api/v1/compliance/detail,
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco DNA Center documentation for Compliance GetComplianceDetail <https://developer.cisco.com/docs/dna-center/#!get-compliance-detail>`_
+       Complete reference of the GetComplianceDetail API.
 
 .. Examples
 
@@ -655,13 +671,12 @@ Examples
         dnac_port: "{{dnac_port}}"
         dnac_version: "{{dnac_version}}"
         dnac_debug: "{{dnac_debug}}"
-        headers:
-          custom: value
+        headers: "{{my_headers | from_json}}"
         complianceType: string
         complianceStatus: string
         deviceUuid: string
-        offset: string
-        limit: string
+        offset: 0
+        limit: 0
       register: result
 
 
@@ -724,7 +739,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"version\\": \\"string\\",\\n  \\"response\\": [\\n    {\\n      \\"complianceType\\": \\"string\\",\\n      \\"lastSyncTime\\": 0,\\n      \\"deviceUuid\\": \\"string\\",\\n      \\"displayName\\": \\"string\\",\\n      \\"status\\": \\"string\\",\\n      \\"category\\": \\"string\\",\\n      \\"lastUpdateTime\\": 0,\\n      \\"state\\": \\"string\\"\\n    }\\n  ]\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"response": [{"category": "string", "complianceType": "string", "deviceUuid": "string", "displayName": "string", "lastSyncTime": 0, "lastUpdateTime": 0, "state": "string", "status": "string"}], "version": "string"}`
 
 
       .. raw:: html

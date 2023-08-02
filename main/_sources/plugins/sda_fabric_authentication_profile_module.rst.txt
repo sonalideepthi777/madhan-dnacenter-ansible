@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -17,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -42,19 +42,19 @@ cisco.dnac.sda_fabric_authentication_profile module -- Resource module for Sda F
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.3.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.7.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.dnac`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.dnac.sda_fabric_authentication_profile_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.dnac.sda_fabric_authentication_profile`.
 
 .. version_added
 
-.. versionadded:: 3.1.0 of cisco.dnac
+.. rst-class:: ansible-version-added
+
+New in cisco.dnac 3.1.0
 
 .. contents::
    :local:
@@ -69,8 +69,8 @@ Synopsis
 .. Description
 
 - Manage operations create, update and delete of the resource Sda Fabric Authentication Profile.
-- Deploy authentication template in SDA Fabric.
-- Add default authentication profile in SDA Fabric.
+- Add default authentication template in SDA Fabric.
+- Delete default authentication profile in SDA Fabric.
 - Update default authentication profile in SDA Fabric.
 
 .. note::
@@ -81,12 +81,18 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.dnac.sda_fabric_authentication_profile_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- dnacentersdk >= 2.4.8
-- python >= 3.5
+- dnacentersdk \>= 2.5.5
+- python \>= 3.5
+
+
+
+
 
 
 .. Options
@@ -103,80 +109,6 @@ Parameters
 
   * - Parameter
     - Comments
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-authenticateTemplateName"></div>
-
-      .. _ansible_collections.cisco.dnac.sda_fabric_authentication_profile_module__parameter-authenticateTemplateName:
-
-      .. rst-class:: ansible-option-title
-
-      **authenticateTemplateName**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-authenticateTemplateName" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      :ansible-option-versionadded:`added in 4.0.0 of cisco.dnac`
-
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Authenticate Template Name. Allowed values are 'No Authentication ', 'Open Authentication', 'Closed Authentication', 'Low Impact'.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-authenticationOrder"></div>
-
-      .. _ansible_collections.cisco.dnac.sda_fabric_authentication_profile_module__parameter-authenticationOrder:
-
-      .. rst-class:: ansible-option-title
-
-      **authenticationOrder**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-authenticationOrder" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      :ansible-option-versionadded:`added in 4.0.0 of cisco.dnac`
-
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Authentication Order. Allowed values are 'dot1x ', 'mac'.
-
-
-      .. raw:: html
-
-        </div>
 
   * - .. raw:: html
 
@@ -212,8 +144,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -403,8 +336,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -442,7 +376,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.2.3.3"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.3.5.3"`
 
       .. raw:: html
 
@@ -451,24 +385,21 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-dot1xToMabFallbackTimeout"></div>
+        <div class="ansibleOptionAnchor" id="parameter-payload"></div>
 
-      .. _ansible_collections.cisco.dnac.sda_fabric_authentication_profile_module__parameter-dot1xToMabFallbackTimeout:
+      .. _ansible_collections.cisco.dnac.sda_fabric_authentication_profile_module__parameter-payload:
 
       .. rst-class:: ansible-option-title
 
-      **dot1xToMabFallbackTimeout**
+      **payload**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-dot1xToMabFallbackTimeout" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-payload" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`string`
-
-      :ansible-option-versionadded:`added in 4.0.0 of cisco.dnac`
-
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
@@ -478,33 +409,33 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      In a network that includes both devices that support and devices that do not support IEEE 802.1X, MAB can be deployed as a fallback, or complementary, mechanism to IEEE 802.1X. If the network does not have any IEEE 802.1X-capable devices, MAB can be deployed as a standalone authentication mechanism (e.g. 3-120).
+      Sda Fabric Authentication Profile's payload.
 
 
       .. raw:: html
 
         </div>
-
+    
   * - .. raw:: html
 
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-numberOfHosts"></div>
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/authenticateTemplateName"></div>
 
-      .. _ansible_collections.cisco.dnac.sda_fabric_authentication_profile_module__parameter-numberOfHosts:
+      .. _ansible_collections.cisco.dnac.sda_fabric_authentication_profile_module__parameter-payload/authenticatetemplatename:
 
       .. rst-class:: ansible-option-title
 
-      **numberOfHosts**
+      **authenticateTemplateName**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-numberOfHosts" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-payload/authenticateTemplateName" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
       :ansible-option-type:`string`
 
-      :ansible-option-versionadded:`added in 4.0.0 of cisco.dnac`
+      :ansible-option-versionadded:`added in cisco.dnac 4.0.0`
 
 
       .. raw:: html
@@ -513,21 +444,56 @@ Parameters
 
     - .. raw:: html
 
-        <div class="ansible-option-cell">
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Number of hosts specifies the number of data hosts that can be connected to a port. With Single selected, you can have only one data client on the port. With Unlimited selected, you can have multiple data clients and one voice client on the port.
+      Authenticate Template Name.
 
 
       .. raw:: html
 
         </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/siteNameHierarchy"></div>
+
+      .. _ansible_collections.cisco.dnac.sda_fabric_authentication_profile_module__parameter-payload/sitenamehierarchy:
+
+      .. rst-class:: ansible-option-title
+
+      **siteNameHierarchy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/siteNameHierarchy" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Path of sda Fabric Site.
+
+
+      .. raw:: html
+
+        </div>
+
 
   * - .. raw:: html
 
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-siteNameHierarchy"></div>
 
-      .. _ansible_collections.cisco.dnac.sda_fabric_authentication_profile_module__parameter-siteNameHierarchy:
+      .. _ansible_collections.cisco.dnac.sda_fabric_authentication_profile_module__parameter-sitenamehierarchy:
 
       .. rst-class:: ansible-option-title
 
@@ -549,7 +515,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Site Name Hierarchy should be a valid fabric site name hierarchy. E.g Global/USA/San Jose.
+      SiteNameHierarchy query parameter.
 
 
       .. raw:: html
@@ -590,52 +556,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
 
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-wakeOnLan"></div>
-
-      .. _ansible_collections.cisco.dnac.sda_fabric_authentication_profile_module__parameter-wakeOnLan:
-
-      .. rst-class:: ansible-option-title
-
-      **wakeOnLan**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-wakeOnLan" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`boolean`
-
-      :ansible-option-versionadded:`added in 4.0.0 of cisco.dnac`
-
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      The IEEE 802.1X Wake on LAN (WoL) Support feature allows dormant systems to be powered up when the switch receives a specific Ethernet frame. You can use this feature in cases when hosts on power save and needs to receive a magic packet to turn them on. This feature works on a per subnet basis and send the subnet broadcast to all hosts in the subnet.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
 
       .. raw:: html
 
@@ -651,14 +574,25 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are sda.Sda.add_default_authentication_profile, sda.Sda.delete_default_authentication_profile, sda.Sda.update_default_authentication_profile,
+   - SDK Method used are sda.Sda.add\_default\_authentication\_profile, sda.Sda.delete\_default\_authentication\_profile, sda.Sda.update\_default\_authentication\_profile,
    - Paths used are post /dna/intent/api/v1/business/sda/authentication-profile, delete /dna/intent/api/v1/business/sda/authentication-profile, put /dna/intent/api/v1/business/sda/authentication-profile,
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco DNA Center documentation for SDA AddDefaultAuthenticationTemplateInSDAFabric <https://developer.cisco.com/docs/dna-center/#!add-default-authentication-template-in-sda-fabric>`_
+       Complete reference of the AddDefaultAuthenticationTemplateInSDAFabric API.
+   `Cisco DNA Center documentation for SDA DeleteDefaultAuthenticationProfileFromSDAFabric <https://developer.cisco.com/docs/dna-center/#!delete-default-authentication-profile-from-sda-fabric>`_
+       Complete reference of the DeleteDefaultAuthenticationProfileFromSDAFabric API.
+   `Cisco DNA Center documentation for SDA UpdateDefaultAuthenticationProfileInSDAFabric <https://developer.cisco.com/docs/dna-center/#!update-default-authentication-profile-in-sda-fabric>`_
+       Complete reference of the UpdateDefaultAuthenticationProfileInSDAFabric API.
 
 .. Examples
 
@@ -678,8 +612,9 @@ Examples
         dnac_version: "{{dnac_version}}"
         dnac_debug: "{{dnac_debug}}"
         state: present
-        authenticateTemplateName: string
-        siteNameHierarchy: string
+        payload:
+        - authenticateTemplateName: string
+          siteNameHierarchy: string
 
     - name: Update all
       cisco.dnac.sda_fabric_authentication_profile:
@@ -691,12 +626,13 @@ Examples
         dnac_version: "{{dnac_version}}"
         dnac_debug: "{{dnac_debug}}"
         state: present
-        authenticateTemplateName: string
-        authenticationOrder: string
-        dot1xToMabFallbackTimeout: string
-        numberOfHosts: string
-        siteNameHierarchy: string
-        wakeOnLan: true
+        payload:
+        - authenticateTemplateName: string
+          authenticationOrder: string
+          dot1xToMabFallbackTimeout: string
+          numberOfHosts: string
+          siteNameHierarchy: string
+          wakeOnLan: true
 
     - name: Delete all
       cisco.dnac.sda_fabric_authentication_profile:
@@ -770,7 +706,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"status\\": \\"string\\",\\n  \\"description\\": \\"string\\",\\n  \\"taskId\\": \\"string\\",\\n  \\"taskStatusUrl\\": \\"string\\",\\n  \\"executionStatusUrl\\": \\"string\\",\\n  \\"executionId\\": \\"string\\"\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"description": "string", "executionId": "string", "executionStatusUrl": "string", "status": "string", "taskId": "string", "taskStatusUrl": "string"}`
 
 
       .. raw:: html

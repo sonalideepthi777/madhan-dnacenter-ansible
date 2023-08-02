@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -17,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -42,19 +42,19 @@ cisco.dnac.pnp_virtual_account_add module -- Resource module for Pnp Virtual Acc
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.3.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.7.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.dnac`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.dnac.pnp_virtual_account_add_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.dnac.pnp_virtual_account_add`.
 
 .. version_added
 
-.. versionadded:: 3.1.0 of cisco.dnac
+.. rst-class:: ansible-version-added
+
+New in cisco.dnac 3.1.0
 
 .. contents::
    :local:
@@ -71,6 +71,7 @@ Synopsis
 - Manage operation create of the resource Pnp Virtual Account Add.
 - Registers a Smart Account, Virtual Account and the relevant server profile info with the PnP System & database. The devices present in the registered virtual account are synced with the PnP database as well. The response payload returns the new profile.
 
+
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
 
@@ -79,12 +80,18 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- dnacentersdk >= 2.4.8
-- python >= 3.5
+- dnacentersdk \>= 2.5.5
+- python \>= 3.5
+
+
+
+
 
 
 .. Options
@@ -107,7 +114,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-autoSyncPeriod"></div>
 
-      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-autoSyncPeriod:
+      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-autosyncperiod:
 
       .. rst-class:: ansible-option-title
 
@@ -141,7 +148,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ccoUser"></div>
 
-      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-ccoUser:
+      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-ccouser:
 
       .. rst-class:: ansible-option-title
 
@@ -204,8 +211,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -395,8 +403,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -434,7 +443,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.2.3.3"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.3.5.3"`
 
       .. raw:: html
 
@@ -479,7 +488,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-lastSync"></div>
 
-      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-lastSync:
+      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-lastsync:
 
       .. rst-class:: ansible-option-title
 
@@ -547,7 +556,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-profile/addressFqdn"></div>
 
-      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-profile/addressFqdn:
+      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-profile/addressfqdn:
 
       .. rst-class:: ansible-option-title
 
@@ -581,7 +590,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-profile/addressIpV4"></div>
 
-      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-profile/addressIpV4:
+      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-profile/addressipv4:
 
       .. rst-class:: ansible-option-title
 
@@ -649,7 +658,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-profile/makeDefault"></div>
 
-      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-profile/makeDefault:
+      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-profile/makedefault:
 
       .. rst-class:: ansible-option-title
 
@@ -678,8 +687,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -758,7 +768,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-profile/profileId"></div>
 
-      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-profile/profileId:
+      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-profile/profileid:
 
       .. rst-class:: ansible-option-title
 
@@ -821,8 +831,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -834,7 +845,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-smartAccountId"></div>
 
-      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-smartAccountId:
+      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-smartaccountid:
 
       .. rst-class:: ansible-option-title
 
@@ -868,7 +879,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-syncResult"></div>
 
-      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-syncResult:
+      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-syncresult:
 
       .. rst-class:: ansible-option-title
 
@@ -902,7 +913,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-syncResult/syncList"></div>
 
-      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-syncResult/syncList:
+      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-syncresult/synclist:
 
       .. rst-class:: ansible-option-title
 
@@ -936,7 +947,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-syncResult/syncList/deviceSnList"></div>
 
-      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-syncResult/syncList/deviceSnList:
+      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-syncresult/synclist/devicesnlist:
 
       .. rst-class:: ansible-option-title
 
@@ -970,7 +981,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-syncResult/syncList/syncType"></div>
 
-      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-syncResult/syncList/syncType:
+      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-syncresult/synclist/synctype:
 
       .. rst-class:: ansible-option-title
 
@@ -1005,7 +1016,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-syncResult/syncMsg"></div>
 
-      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-syncResult/syncMsg:
+      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-syncresult/syncmsg:
 
       .. rst-class:: ansible-option-title
 
@@ -1040,7 +1051,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-syncResultStr"></div>
 
-      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-syncResultStr:
+      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-syncresultstr:
 
       .. rst-class:: ansible-option-title
 
@@ -1074,7 +1085,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-syncStartTime"></div>
 
-      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-syncStartTime:
+      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-syncstarttime:
 
       .. rst-class:: ansible-option-title
 
@@ -1108,7 +1119,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-syncStatus"></div>
 
-      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-syncStatus:
+      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-syncstatus:
 
       .. rst-class:: ansible-option-title
 
@@ -1142,7 +1153,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-tenantId"></div>
 
-      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-tenantId:
+      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-tenantid:
 
       .. rst-class:: ansible-option-title
 
@@ -1239,8 +1250,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -1251,7 +1263,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-virtualAccountId"></div>
 
-      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-virtualAccountId:
+      .. _ansible_collections.cisco.dnac.pnp_virtual_account_add_module__parameter-virtualaccountid:
 
       .. rst-class:: ansible-option-title
 
@@ -1290,14 +1302,21 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are device_onboarding_pnp.DeviceOnboardingPnp.add_virtual_account,
+   - SDK Method used are device\_onboarding\_pnp.DeviceOnboardingPnp.add\_virtual\_account,
    - Paths used are post /dna/intent/api/v1/onboarding/pnp-settings/savacct,
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco DNA Center documentation for Device Onboarding (PnP) AddVirtualAccount <https://developer.cisco.com/docs/dna-center/#!add-virtual-account>`_
+       Complete reference of the AddVirtualAccount API.
 
 .. Examples
 
@@ -1403,7 +1422,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"virtualAccountId\\": \\"string\\",\\n  \\"autoSyncPeriod\\": 0,\\n  \\"syncResultStr\\": \\"string\\",\\n  \\"profile\\": {\\n    \\"proxy\\": true,\\n    \\"makeDefault\\": true,\\n    \\"port\\": 0,\\n    \\"profileId\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"addressIpV4\\": \\"string\\",\\n    \\"cert\\": \\"string\\",\\n    \\"addressFqdn\\": \\"string\\"\\n  },\\n  \\"ccoUser\\": \\"string\\",\\n  \\"syncResult\\": {\\n    \\"syncList\\": [\\n      {\\n        \\"syncType\\": \\"string\\",\\n        \\"deviceSnList\\": [\\n          \\"string\\"\\n        ]\\n      }\\n    ],\\n    \\"syncMsg\\": \\"string\\"\\n  },\\n  \\"token\\": \\"string\\",\\n  \\"syncStartTime\\": 0,\\n  \\"lastSync\\": 0,\\n  \\"tenantId\\": \\"string\\",\\n  \\"smartAccountId\\": \\"string\\",\\n  \\"expiry\\": 0,\\n  \\"syncStatus\\": \\"string\\"\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"autoSyncPeriod": 0, "ccoUser": "string", "expiry": 0, "lastSync": 0, "profile": {"addressFqdn": "string", "addressIpV4": "string", "cert": "string", "makeDefault": true, "name": "string", "port": 0, "profileId": "string", "proxy": true}, "smartAccountId": "string", "syncResult": {"syncList": [{"deviceSnList": ["string"], "syncType": "string"}], "syncMsg": "string"}, "syncResultStr": "string", "syncStartTime": 0, "syncStatus": "string", "tenantId": "string", "token": "string", "virtualAccountId": "string"}`
 
 
       .. raw:: html

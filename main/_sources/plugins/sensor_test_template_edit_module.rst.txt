@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -17,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -42,19 +42,19 @@ cisco.dnac.sensor_test_template_edit module -- Resource module for Sensor Test T
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.3.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.7.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.dnac`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.dnac.sensor_test_template_edit_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.dnac.sensor_test_template_edit`.
 
 .. version_added
 
-.. versionadded:: 3.1.0 of cisco.dnac
+.. rst-class:: ansible-version-added
+
+New in cisco.dnac 3.1.0
 
 .. contents::
    :local:
@@ -79,12 +79,18 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.dnac.sensor_test_template_edit_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- dnacentersdk >= 2.4.8
-- python >= 3.5
+- dnacentersdk \>= 2.5.5
+- python \>= 3.5
+
+
+
+
 
 
 .. Options
@@ -136,8 +142,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -327,8 +334,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -366,7 +374,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.2.3.3"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.3.5.3"`
 
       .. raw:: html
 
@@ -377,7 +385,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-locationInfoList"></div>
 
-      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-locationInfoList:
+      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-locationinfolist:
 
       .. rst-class:: ansible-option-title
 
@@ -411,7 +419,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-locationInfoList/allSensors"></div>
 
-      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-locationInfoList/allSensors:
+      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-locationinfolist/allsensors:
 
       .. rst-class:: ansible-option-title
 
@@ -440,8 +448,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -452,7 +461,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-locationInfoList/locationId"></div>
 
-      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-locationInfoList/locationId:
+      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-locationinfolist/locationid:
 
       .. rst-class:: ansible-option-title
 
@@ -486,7 +495,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-locationInfoList/locationType"></div>
 
-      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-locationInfoList/locationType:
+      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-locationinfolist/locationtype:
 
       .. rst-class:: ansible-option-title
 
@@ -520,7 +529,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-locationInfoList/siteHierarchy"></div>
 
-      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-locationInfoList/siteHierarchy:
+      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-locationinfolist/sitehierarchy:
 
       .. rst-class:: ansible-option-title
 
@@ -692,7 +701,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-schedule/scheduleRange"></div>
 
-      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-schedule/scheduleRange:
+      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-schedule/schedulerange:
 
       .. rst-class:: ansible-option-title
 
@@ -726,7 +735,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-schedule/scheduleRange/day"></div>
 
-      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-schedule/scheduleRange/day:
+      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-schedule/schedulerange/day:
 
       .. rst-class:: ansible-option-title
 
@@ -760,7 +769,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-schedule/scheduleRange/timeRange"></div>
 
-      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-schedule/scheduleRange/timeRange:
+      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-schedule/schedulerange/timerange:
 
       .. rst-class:: ansible-option-title
 
@@ -794,7 +803,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-schedule/scheduleRange/timeRange/frequency"></div>
 
-      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-schedule/scheduleRange/timeRange/frequency:
+      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-schedule/schedulerange/timerange/frequency:
 
       .. rst-class:: ansible-option-title
 
@@ -828,7 +837,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-schedule/scheduleRange/timeRange/frequency/unit"></div>
 
-      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-schedule/scheduleRange/timeRange/frequency/unit:
+      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-schedule/schedulerange/timerange/frequency/unit:
 
       .. rst-class:: ansible-option-title
 
@@ -862,7 +871,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-schedule/scheduleRange/timeRange/frequency/value"></div>
 
-      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-schedule/scheduleRange/timeRange/frequency/value:
+      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-schedule/schedulerange/timerange/frequency/value:
 
       .. rst-class:: ansible-option-title
 
@@ -897,7 +906,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-schedule/scheduleRange/timeRange/from"></div>
 
-      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-schedule/scheduleRange/timeRange/from:
+      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-schedule/schedulerange/timerange/from:
 
       .. rst-class:: ansible-option-title
 
@@ -931,7 +940,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-schedule/scheduleRange/timeRange/to"></div>
 
-      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-schedule/scheduleRange/timeRange/to:
+      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-schedule/schedulerange/timerange/to:
 
       .. rst-class:: ansible-option-title
 
@@ -967,7 +976,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-schedule/testScheduleMode"></div>
 
-      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-schedule/testScheduleMode:
+      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-schedule/testschedulemode:
 
       .. rst-class:: ansible-option-title
 
@@ -1002,7 +1011,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateName"></div>
 
-      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-templateName:
+      .. _ansible_collections.cisco.dnac.sensor_test_template_edit_module__parameter-templatename:
 
       .. rst-class:: ansible-option-title
 
@@ -1065,8 +1074,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -1082,14 +1092,21 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are sensors.Sensors.edit_sensor_test_template,
+   - SDK Method used are sensors.Sensors.edit\_sensor\_test\_template,
    - Paths used are put /dna/intent/api/v1/AssuranceScheduleSensorTest,
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco DNA Center documentation for Sensors EditSensorTestTemplate <https://developer.cisco.com/docs/dna-center/#!edit-sensor-test-template>`_
+       Complete reference of the EditSensorTestTemplate API.
 
 .. Examples
 
@@ -1188,7 +1205,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"version\\": \\"string\\",\\n  \\"response\\": {\\n    \\"\_id\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"version\\": 0,\\n    \\"modelVersion\\": 0,\\n    \\"startTime\\": 0,\\n    \\"lastModifiedTime\\": 0,\\n    \\"numAssociatedSensor\\": 0,\\n    \\"location\\": {},\\n    \\"siteHierarchy\\": {},\\n    \\"status\\": \\"string\\",\\n    \\"connection\\": \\"string\\",\\n    \\"frequency\\": {},\\n    \\"rssiThreshold\\": 0,\\n    \\"numNeighborAPThreshold\\": 0,\\n    \\"scheduleInDays\\": 0,\\n    \\"wlans\\": [\\n      {}\\n    ],\\n    \\"ssids\\": [\\n      {\\n        \\"bands\\": {},\\n        \\"ssid\\": \\"string\\",\\n        \\"profileName\\": \\"string\\",\\n        \\"authType\\": \\"string\\",\\n        \\"authTypeRcvd\\": {},\\n        \\"psk\\": \\"string\\",\\n        \\"username\\": {},\\n        \\"password\\": {},\\n        \\"eapMethod\\": {},\\n        \\"scep\\": true,\\n        \\"authProtocol\\": {},\\n        \\"certfilename\\": {},\\n        \\"certxferprotocol\\": \\"string\\",\\n        \\"certstatus\\": \\"string\\",\\n        \\"certpassphrase\\": {},\\n        \\"certdownloadurl\\": {},\\n        \\"numAps\\": 0,\\n        \\"numSensors\\": 0,\\n        \\"layer3webAuthsecurity\\": {},\\n        \\"layer3webAuthuserName\\": {},\\n        \\"layer3webAuthpassword\\": {},\\n        \\"extWebAuthVirtualIp\\": {},\\n        \\"layer3webAuthEmailAddress\\": {},\\n        \\"qosPolicy\\": \\"string\\",\\n        \\"extWebAuth\\": true,\\n        \\"whiteList\\": true,\\n        \\"extWebAuthPortal\\": {},\\n        \\"extWebAuthAccessUrl\\": {},\\n        \\"extWebAuthHtmlTag\\": [\\n          {}\\n        ],\\n        \\"thirdParty\\": {\\n          \\"selected\\": true\\n        },\\n        \\"id\\": 0,\\n        \\"wlanId\\": 0,\\n        \\"wlc\\": {},\\n        \\"validFrom\\": 0,\\n        \\"validTo\\": 0,\\n        \\"status\\": \\"string\\",\\n        \\"tests\\": [\\n          {\\n            \\"name\\": \\"string\\",\\n            \\"config\\": [\\n              {}\\n            ]\\n          }\\n        ]\\n      }\\n    ],\\n    \\"testScheduleMode\\": \\"string\\",\\n    \\"showWlcUpgradeBanner\\": true,\\n    \\"radioAsSensorRemoved\\": true,\\n    \\"encryptionMode\\": \\"string\\",\\n    \\"runNow\\": \\"string\\",\\n    \\"locationInfoList\\": [\\n      {\\n        \\"locationId\\": \\"string\\",\\n        \\"locationType\\": \\"string\\",\\n        \\"allSensors\\": true,\\n        \\"siteHierarchy\\": \\"string\\",\\n        \\"macAddressList\\": [\\n          {}\\n        ]\\n      }\\n    ],\\n    \\"schedule\\": {\\n      \\"testScheduleMode\\": \\"string\\",\\n      \\"scheduleRange\\": [\\n        {\\n          \\"timeRange\\": [\\n            {\\n              \\"from\\": \\"string\\",\\n              \\"to\\": \\"string\\",\\n              \\"frequency\\": {\\n                \\"value\\": 0,\\n                \\"unit\\": \\"string\\"\\n              }\\n            }\\n          ],\\n          \\"day\\": \\"string\\"\\n        }\\n      ],\\n      \\"startTime\\": 0,\\n      \\"frequency\\": {\\n        \\"value\\": 0,\\n        \\"unit\\": \\"string\\"\\n      }\\n    },\\n    \\"tests\\": {},\\n    \\"sensors\\": [\\n      {}\\n    ],\\n    \\"apCoverage\\": [\\n      {\\n        \\"bands\\": \\"string\\",\\n        \\"numberOfApsToTest\\": 0,\\n        \\"rssiThreshold\\": 0\\n      }\\n    ],\\n    \\"testDurationEstimate\\": 0,\\n    \\"testTemplate\\": true,\\n    \\"legacyTestSuite\\": true,\\n    \\"tenantId\\": \\"string\\"\\n  }\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"response": {"\_id": "string", "apCoverage": [{"bands": "string", "numberOfApsToTest": 0, "rssiThreshold": 0}], "connection": "string", "encryptionMode": "string", "frequency": {}, "lastModifiedTime": 0, "legacyTestSuite": true, "location": {}, "locationInfoList": [{"allSensors": true, "locationId": "string", "locationType": "string", "macAddressList": [{}], "siteHierarchy": "string"}], "modelVersion": 0, "name": "string", "numAssociatedSensor": 0, "numNeighborAPThreshold": 0, "radioAsSensorRemoved": true, "rssiThreshold": 0, "runNow": "string", "schedule": {"frequency": {"unit": "string", "value": 0}, "scheduleRange": [{"day": "string", "timeRange": [{"frequency": {"unit": "string", "value": 0}, "from": "string", "to": "string"}]}], "startTime": 0, "testScheduleMode": "string"}, "scheduleInDays": 0, "sensors": [{}], "showWlcUpgradeBanner": true, "siteHierarchy": {}, "ssids": [{"authProtocol": {}, "authType": "string", "authTypeRcvd": {}, "bands": {}, "certdownloadurl": {}, "certfilename": {}, "certpassphrase": {}, "certstatus": "string", "certxferprotocol": "string", "eapMethod": {}, "extWebAuth": true, "extWebAuthAccessUrl": {}, "extWebAuthHtmlTag": [{}], "extWebAuthPortal": {}, "extWebAuthVirtualIp": {}, "id": 0, "layer3webAuthEmailAddress": {}, "layer3webAuthpassword": {}, "layer3webAuthsecurity": {}, "layer3webAuthuserName": {}, "numAps": 0, "numSensors": 0, "password": {}, "profileName": "string", "psk": "string", "qosPolicy": "string", "scep": true, "ssid": "string", "status": "string", "tests": [{"config": [{}], "name": "string"}], "thirdParty": {"selected": true}, "username": {}, "validFrom": 0, "validTo": 0, "whiteList": true, "wlanId": 0, "wlc": {}}], "startTime": 0, "status": "string", "tenantId": "string", "testDurationEstimate": 0, "testScheduleMode": "string", "testTemplate": true, "tests": {}, "version": 0, "wlans": [{}]}, "version": "string"}`
 
 
       .. raw:: html

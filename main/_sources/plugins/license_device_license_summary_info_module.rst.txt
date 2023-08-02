@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -17,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -42,19 +42,19 @@ cisco.dnac.license_device_license_summary_info module -- Information module for 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.3.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.7.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.dnac`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.dnac.license_device_license_summary_info_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.dnac.license_device_license_summary_info`.
 
 .. version_added
 
-.. versionadded:: 3.1.0 of cisco.dnac
+.. rst-class:: ansible-version-added
+
+New in cisco.dnac 3.1.0
 
 .. contents::
    :local:
@@ -69,7 +69,7 @@ Synopsis
 .. Description
 
 - Get all License Device License Summary.
-- Show license summary of device(s).
+- Show license summary of devices.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -79,12 +79,18 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.dnac.license_device_license_summary_info_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- dnacentersdk >= 2.4.8
-- python >= 3.5
+- dnacentersdk \>= 2.5.5
+- python \>= 3.5
+
+
+
+
 
 
 .. Options
@@ -129,7 +135,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Device_type query parameter. Type of device.
+      Device\_type query parameter. Type of device.
 
 
       .. raw:: html
@@ -163,7 +169,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Device_uuid query parameter. Id of device.
+      Device\_uuid query parameter. Id of device.
 
 
       .. raw:: html
@@ -197,7 +203,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Dna_level query parameter. Device Cisco DNA license level.
+      Dna\_level query parameter. Device Cisco DNA license level.
 
 
       .. raw:: html
@@ -238,8 +244,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -429,8 +436,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -468,7 +476,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.2.3.3"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.3.5.3"`
 
       .. raw:: html
 
@@ -603,7 +611,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Page_number query parameter. Page number of response.
+      Page\_number query parameter. Page number of response.
 
 
       .. raw:: html
@@ -637,7 +645,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Registration_status query parameter. Smart license registration status of device.
+      Registration\_status query parameter. Smart license registration status of device.
 
 
       .. raw:: html
@@ -671,7 +679,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Smart_account_id query parameter. Id of smart account.
+      Smart\_account\_id query parameter. Id of smart account.
 
 
       .. raw:: html
@@ -705,7 +713,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Sort_by query parameter. Sort result by field.
+      Sort\_by query parameter. Sort result by field.
 
 
       .. raw:: html
@@ -746,8 +754,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -780,7 +789,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Virtual_account_name query parameter. Name of virtual account.
+      Virtual\_account\_name query parameter. Name of virtual account.
 
 
       .. raw:: html
@@ -797,14 +806,21 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are licenses.Licenses.device_license_summary,
+   - SDK Method used are licenses.Licenses.device\_license\_summary2,
    - Paths used are get /dna/intent/api/v1/licenses/device/summary,
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco DNA Center documentation for Licenses DeviceLicenseSummary2 <https://developer.cisco.com/docs/dna-center/#!device-license-summary-2>`_
+       Complete reference of the DeviceLicenseSummary2 API.
 
 .. Examples
 
@@ -823,8 +839,7 @@ Examples
         dnac_port: "{{dnac_port}}"
         dnac_version: "{{dnac_version}}"
         dnac_debug: "{{dnac_debug}}"
-        headers:
-          custom: value
+        headers: "{{my_headers | from_json}}"
         page_number: 0
         order: string
         sort_by: string
@@ -897,7 +912,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "[\\n  {\\n    \\"authorization\_status\\": \\"string\\",\\n    \\"last\_updated\_time\\": \\"string\\",\\n    \\"is\_performance\_allowed\\": true,\\n    \\"sle\_auth\_code\\": \\"string\\",\\n    \\"throughput\_level\\": \\"string\\",\\n    \\"hsec\_status\\": \\"string\\",\\n    \\"device\_uuid\\": \\"string\\",\\n    \\"site\\": \\"string\\",\\n    \\"total\_access\_point\_count\\": 0,\\n    \\"model\\": \\"string\\",\\n    \\"is\_wireless\_capable\\": true,\\n    \\"registration\_status\\": \\"string\\",\\n    \\"sle\_state\\": \\"string\\",\\n    \\"performance\_license\\": \\"string\\",\\n    \\"license\_mode\\": \\"string\\",\\n    \\"is\_license\_expired\\": true,\\n    \\"software\_version\\": \\"string\\",\\n    \\"reservation\_status\\": \\"string\\",\\n    \\"is\_wireless\\": true,\\n    \\"network\_license\\": \\"string\\",\\n    \\"evaluation\_license\_expiry\\": \\"string\\",\\n    \\"wireless\_capable\_network\_license\\": \\"string\\",\\n    \\"device\_name\\": \\"string\\",\\n    \\"device\_type\\": \\"string\\",\\n    \\"dna\_level\\": \\"string\\",\\n    \\"virtual\_account\_name\\": \\"string\\",\\n    \\"last\_successful\_rum\_usage\_upload\_time\\": \\"string\\",\\n    \\"ip\_address\\": \\"string\\",\\n    \\"wireless\_capable\_dna\_license\\": \\"string\\",\\n    \\"mac\_address\\": \\"string\\",\\n    \\"customer\_tag1\\": \\"string\\",\\n    \\"customer\_tag2\\": \\"string\\",\\n    \\"customer\_tag3\\": \\"string\\",\\n    \\"customer\_tag4\\": \\"string\\",\\n    \\"smart\_account\_name\\": \\"string\\"\\n  }\\n]\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"authorization\_status\\": \\"string\\",\\n    \\"last\_updated\_time\\": \\"string\\",\\n    \\"is\_performance\_allowed\\": true,\\n    \\"sle\_auth\_code\\": \\"string\\",\\n    \\"throughput\_level\\": \\"string\\",\\n    \\"hsec\_status\\": \\"string\\",\\n    \\"device\_uuid\\": \\"string\\",\\n    \\"site\\": \\"string\\",\\n    \\"total\_access\_point\_count\\": 0,\\n    \\"model\\": \\"string\\",\\n    \\"is\_wireless\_capable\\": true,\\n    \\"registration\_status\\": \\"string\\",\\n    \\"sle\_state\\": \\"string\\",\\n    \\"performance\_license\\": \\"string\\",\\n    \\"license\_mode\\": \\"string\\",\\n    \\"is\_license\_expired\\": true,\\n    \\"software\_version\\": \\"string\\",\\n    \\"reservation\_status\\": \\"string\\",\\n    \\"is\_wireless\\": true,\\n    \\"network\_license\\": \\"string\\",\\n    \\"evaluation\_license\_expiry\\": \\"string\\",\\n    \\"wireless\_capable\_network\_license\\": \\"string\\",\\n    \\"device\_name\\": \\"string\\",\\n    \\"device\_type\\": \\"string\\",\\n    \\"dna\_level\\": \\"string\\",\\n    \\"virtual\_account\_name\\": \\"string\\",\\n    \\"last\_successful\_rum\_usage\_upload\_time\\": \\"string\\",\\n    \\"ip\_address\\": \\"string\\",\\n    \\"wireless\_capable\_dna\_license\\": \\"string\\",\\n    \\"mac\_address\\": \\"string\\",\\n    \\"customer\_tag1\\": \\"string\\",\\n    \\"customer\_tag2\\": \\"string\\",\\n    \\"customer\_tag3\\": \\"string\\",\\n    \\"customer\_tag4\\": \\"string\\",\\n    \\"smart\_account\_name\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

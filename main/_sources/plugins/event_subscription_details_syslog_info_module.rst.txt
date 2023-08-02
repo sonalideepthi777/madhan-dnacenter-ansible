@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -17,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -42,19 +42,19 @@ cisco.dnac.event_subscription_details_syslog_info module -- Information module f
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.3.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.7.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.dnac`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.dnac.event_subscription_details_syslog_info_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.dnac.event_subscription_details_syslog_info`.
 
 .. version_added
 
-.. versionadded:: 3.1.0 of cisco.dnac
+.. rst-class:: ansible-version-added
+
+New in cisco.dnac 3.1.0
 
 .. contents::
    :local:
@@ -79,12 +79,18 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.dnac.event_subscription_details_syslog_info_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- dnacentersdk >= 2.4.8
-- python >= 3.5
+- dnacentersdk \>= 2.5.5
+- python \>= 3.5
+
+
+
+
 
 
 .. Options
@@ -101,40 +107,6 @@ Parameters
 
   * - Parameter
     - Comments
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-connectorType"></div>
-
-      .. _ansible_collections.cisco.dnac.event_subscription_details_syslog_info_module__parameter-connectorType:
-
-      .. rst-class:: ansible-option-title
-
-      **connectorType**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-connectorType" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      ConnectorType query parameter. Connector Type SYSLOG.
-
-
-      .. raw:: html
-
-        </div>
 
   * - .. raw:: html
 
@@ -170,8 +142,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -361,8 +334,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -400,7 +374,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.2.3.3"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.3.5.3"`
 
       .. raw:: html
 
@@ -445,7 +419,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-instanceId"></div>
 
-      .. _ansible_collections.cisco.dnac.event_subscription_details_syslog_info_module__parameter-instanceId:
+      .. _ansible_collections.cisco.dnac.event_subscription_details_syslog_info_module__parameter-instanceid:
 
       .. rst-class:: ansible-option-title
 
@@ -468,6 +442,40 @@ Parameters
         <div class="ansible-option-cell">
 
       InstanceId query parameter. Instance Id of the specific configuration.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-limit"></div>
+
+      .. _ansible_collections.cisco.dnac.event_subscription_details_syslog_info_module__parameter-limit:
+
+      .. rst-class:: ansible-option-title
+
+      **limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-limit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Limit query parameter. The number of Syslog Subscription detail's to limit in the resultset whose default value 10.
 
 
       .. raw:: html
@@ -511,6 +519,109 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-offset"></div>
+
+      .. _ansible_collections.cisco.dnac.event_subscription_details_syslog_info_module__parameter-offset:
+
+      .. rst-class:: ansible-option-title
+
+      **offset**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-offset" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Offset query parameter. The number of Syslog Subscription detail's to offset in the resultset whose default value 0.
+          
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-order"></div>
+
+      .. _ansible_collections.cisco.dnac.event_subscription_details_syslog_info_module__parameter-order:
+
+      .. rst-class:: ansible-option-title
+
+      **order**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-order" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Order query parameter.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-sortBy"></div>
+
+      .. _ansible_collections.cisco.dnac.event_subscription_details_syslog_info_module__parameter-sortby:
+
+      .. rst-class:: ansible-option-title
+
+      **sortBy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-sortBy" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      SortBy query parameter. SortBy field name.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-validate_response_schema"></div>
 
       .. _ansible_collections.cisco.dnac.event_subscription_details_syslog_info_module__parameter-validate_response_schema:
@@ -542,8 +653,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -559,14 +671,21 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are event_management.EventManagement.get_syslog_subscription_details,
+   - SDK Method used are event\_management.EventManagement.get\_syslog\_subscription\_details,
    - Paths used are get /dna/intent/api/v1/event/subscription-details/syslog,
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco DNA Center documentation for Event Management GetSyslogSubscriptionDetails <https://developer.cisco.com/docs/dna-center/#!get-syslog-subscription-details>`_
+       Complete reference of the GetSyslogSubscriptionDetails API.
 
 .. Examples
 
@@ -585,11 +704,13 @@ Examples
         dnac_port: "{{dnac_port}}"
         dnac_version: "{{dnac_version}}"
         dnac_debug: "{{dnac_debug}}"
-        headers:
-          custom: value
-        connectorType: string
+        headers: "{{my_headers | from_json}}"
         name: string
         instanceId: string
+        offset: 0
+        limit: 0
+        sortBy: string
+        order: string
       register: result
 
 
@@ -652,7 +773,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "[\\n  {\\n    \\"instanceId\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"description\\": \\"string\\",\\n    \\"connectorType\\": \\"string\\",\\n    \\"syslogConfig\\": {\\n      \\"configId\\": \\"string\\",\\n      \\"name\\": \\"string\\",\\n      \\"description\\": \\"string\\",\\n      \\"host\\": \\"string\\",\\n      \\"port\\": \\"string\\",\\n      \\"protocol\\": \\"string\\"\\n    }\\n  }\\n]\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"instanceId\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"description\\": \\"string\\",\\n    \\"connectorType\\": \\"string\\",\\n    \\"syslogConfig\\": {\\n      \\"configId\\": \\"string\\",\\n      \\"name\\": \\"string\\",\\n      \\"description\\": \\"string\\",\\n      \\"host\\": \\"string\\",\\n      \\"port\\": \\"string\\",\\n      \\"protocol\\": \\"string\\"\\n    }\\n  }\\n]\\n"`
 
 
       .. raw:: html

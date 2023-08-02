@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -17,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -42,19 +42,19 @@ cisco.dnac.network_device_info module -- Information module for Network Device
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.3.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.7.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.dnac`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.dnac.network_device_info_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.dnac.network_device_info`.
 
 .. version_added
 
-.. versionadded:: 3.1.0 of cisco.dnac
+.. rst-class:: ansible-version-added
+
+New in cisco.dnac 3.1.0
 
 .. contents::
    :local:
@@ -81,12 +81,18 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.dnac.network_device_info_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- dnacentersdk >= 2.4.8
-- python >= 3.5
+- dnacentersdk \>= 2.5.5
+- python \>= 3.5
+
+
+
+
 
 
 .. Options
@@ -109,7 +115,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-associatedWlcIp"></div>
 
-      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-associatedWlcIp:
+      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-associatedwlcip:
 
       .. rst-class:: ansible-option-title
 
@@ -143,7 +149,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-collectionInterval"></div>
 
-      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-collectionInterval:
+      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-collectioninterval:
 
       .. rst-class:: ansible-option-title
 
@@ -177,7 +183,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-collectionStatus"></div>
 
-      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-collectionStatus:
+      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-collectionstatus:
 
       .. rst-class:: ansible-option-title
 
@@ -211,7 +217,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-deviceSupportLevel"></div>
 
-      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-deviceSupportLevel:
+      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-devicesupportlevel:
 
       .. rst-class:: ansible-option-title
 
@@ -274,8 +280,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -465,8 +472,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -504,7 +512,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.2.3.3"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.3.5.3"`
 
       .. raw:: html
 
@@ -515,7 +523,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-errorCode"></div>
 
-      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-errorCode:
+      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-errorcode:
 
       .. rst-class:: ansible-option-title
 
@@ -549,7 +557,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-errorDescription"></div>
 
-      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-errorDescription:
+      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-errordescription:
 
       .. rst-class:: ansible-option-title
 
@@ -820,6 +828,40 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-limit"></div>
+
+      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-limit:
+
+      .. rst-class:: ansible-option-title
+
+      **limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-limit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Limit query parameter. 1 \<= limit \<= 500 max. No. Of devices to be returned in the result.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-location"></div>
 
       .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-location:
@@ -856,7 +898,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-locationName"></div>
 
-      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-locationName:
+      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-locationname:
 
       .. rst-class:: ansible-option-title
 
@@ -890,7 +932,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-macAddress"></div>
 
-      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-macAddress:
+      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-macaddress:
 
       .. rst-class:: ansible-option-title
 
@@ -924,7 +966,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-managementIpAddress"></div>
 
-      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-managementIpAddress:
+      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-managementipaddress:
 
       .. rst-class:: ansible-option-title
 
@@ -1162,7 +1204,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-notSyncedForMinutes"></div>
 
-      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-notSyncedForMinutes:
+      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-notsyncedforminutes:
 
       .. rst-class:: ansible-option-title
 
@@ -1194,9 +1236,43 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-offset"></div>
+
+      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-offset:
+
+      .. rst-class:: ansible-option-title
+
+      **offset**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-offset" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Offset query parameter. Offset \>= 1 X gives results from Xth device onwards.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-platformId"></div>
 
-      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-platformId:
+      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-platformid:
 
       .. rst-class:: ansible-option-title
 
@@ -1230,7 +1306,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-reachabilityStatus"></div>
 
-      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-reachabilityStatus:
+      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-reachabilitystatus:
 
       .. rst-class:: ansible-option-title
 
@@ -1298,7 +1374,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-serialNumber"></div>
 
-      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-serialNumber:
+      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-serialnumber:
 
       .. rst-class:: ansible-option-title
 
@@ -1366,7 +1442,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-softwareType"></div>
 
-      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-softwareType:
+      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-softwaretype:
 
       .. rst-class:: ansible-option-title
 
@@ -1400,7 +1476,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-softwareVersion"></div>
 
-      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-softwareVersion:
+      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-softwareversion:
 
       .. rst-class:: ansible-option-title
 
@@ -1468,7 +1544,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-upTime"></div>
 
-      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-upTime:
+      .. _ansible_collections.cisco.dnac.network_device_info_module__parameter-uptime:
 
       .. rst-class:: ansible-option-title
 
@@ -1531,8 +1607,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -1548,14 +1625,23 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.get_device_by_id, devices.Devices.get_device_list,
+   - SDK Method used are devices.Devices.get\_device\_by\_id, devices.Devices.get\_device\_list,
    - Paths used are get /dna/intent/api/v1/network-device, get /dna/intent/api/v1/network-device/{id},
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco DNA Center documentation for Devices GetDeviceByID <https://developer.cisco.com/docs/dna-center/#!get-device-by-id>`_
+       Complete reference of the GetDeviceByID API.
+   `Cisco DNA Center documentation for Devices GetDeviceList <https://developer.cisco.com/docs/dna-center/#!get-device-list>`_
+       Complete reference of the GetDeviceList API.
 
 .. Examples
 
@@ -1574,8 +1660,7 @@ Examples
         dnac_port: "{{dnac_port}}"
         dnac_version: "{{dnac_version}}"
         dnac_debug: "{{dnac_debug}}"
-        headers:
-          custom: value
+        headers: "{{my_headers | from_json}}"
         hostname: []
         managementIpAddress: []
         macAddress: []
@@ -1608,6 +1693,8 @@ Examples
         module_operationstatecode: []
         id: string
         deviceSupportLevel: string
+        offset: 0
+        limit: 0
       register: result
 
     - name: Get Network Device by id
@@ -1619,8 +1706,7 @@ Examples
         dnac_port: "{{dnac_port}}"
         dnac_version: "{{dnac_version}}"
         dnac_debug: "{{dnac_debug}}"
-        headers:
-          custom: value
+        headers: "{{my_headers | from_json}}"
         id: string
       register: result
 
@@ -1684,7 +1770,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"response\\": {\\n    \\"apManagerInterfaceIp\\": \\"string\\",\\n    \\"associatedWlcIp\\": \\"string\\",\\n    \\"bootDateTime\\": \\"string\\",\\n    \\"collectionInterval\\": \\"string\\",\\n    \\"collectionStatus\\": \\"string\\",\\n    \\"errorCode\\": \\"string\\",\\n    \\"errorDescription\\": \\"string\\",\\n    \\"family\\": \\"string\\",\\n    \\"hostname\\": \\"string\\",\\n    \\"id\\": \\"string\\",\\n    \\"instanceTenantId\\": \\"string\\",\\n    \\"instanceUuid\\": \\"string\\",\\n    \\"interfaceCount\\": \\"string\\",\\n    \\"inventoryStatusDetail\\": \\"string\\",\\n    \\"lastUpdateTime\\": 0,\\n    \\"lastUpdated\\": \\"string\\",\\n    \\"lineCardCount\\": \\"string\\",\\n    \\"lineCardId\\": \\"string\\",\\n    \\"location\\": \\"string\\",\\n    \\"locationName\\": \\"string\\",\\n    \\"macAddress\\": \\"string\\",\\n    \\"managementIpAddress\\": \\"string\\",\\n    \\"memorySize\\": \\"string\\",\\n    \\"platformId\\": \\"string\\",\\n    \\"reachabilityFailureReason\\": \\"string\\",\\n    \\"reachabilityStatus\\": \\"string\\",\\n    \\"role\\": \\"string\\",\\n    \\"roleSource\\": \\"string\\",\\n    \\"serialNumber\\": \\"string\\",\\n    \\"series\\": \\"string\\",\\n    \\"snmpContact\\": \\"string\\",\\n    \\"snmpLocation\\": \\"string\\",\\n    \\"softwareType\\": \\"string\\",\\n    \\"softwareVersion\\": \\"string\\",\\n    \\"tagCount\\": \\"string\\",\\n    \\"tunnelUdpPort\\": \\"string\\",\\n    \\"type\\": \\"string\\",\\n    \\"upTime\\": \\"string\\",\\n    \\"waasDeviceMode\\": \\"string\\"\\n  },\\n  \\"version\\": \\"string\\"\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"response": {"apManagerInterfaceIp": "string", "associatedWlcIp": "string", "bootDateTime": "string", "collectionInterval": "string", "collectionStatus": "string", "errorCode": "string", "errorDescription": "string", "family": "string", "hostname": "string", "id": "string", "instanceTenantId": "string", "instanceUuid": "string", "interfaceCount": "string", "inventoryStatusDetail": "string", "lastUpdateTime": 0, "lastUpdated": "string", "lineCardCount": "string", "lineCardId": "string", "location": "string", "locationName": "string", "macAddress": "string", "managementIpAddress": "string", "memorySize": "string", "platformId": "string", "reachabilityFailureReason": "string", "reachabilityStatus": "string", "role": "string", "roleSource": "string", "serialNumber": "string", "series": "string", "snmpContact": "string", "snmpLocation": "string", "softwareType": "string", "softwareVersion": "string", "tagCount": "string", "tunnelUdpPort": "string", "type": "string", "upTime": "string", "waasDeviceMode": "string"}, "version": "string"}`
 
 
       .. raw:: html

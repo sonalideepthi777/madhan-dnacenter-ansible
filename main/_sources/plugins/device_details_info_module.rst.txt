@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -17,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -42,19 +42,19 @@ cisco.dnac.device_details_info module -- Information module for Device Details
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.3.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.7.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.dnac`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.dnac.device_details_info_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.dnac.device_details_info`.
 
 .. version_added
 
-.. versionadded:: 3.1.0 of cisco.dnac
+.. rst-class:: ansible-version-added
+
+New in cisco.dnac 3.1.0
 
 .. contents::
    :local:
@@ -79,12 +79,18 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.dnac.device_details_info_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- dnacentersdk >= 2.4.8
-- python >= 3.5
+- dnacentersdk \>= 2.5.5
+- python \>= 3.5
+
+
+
+
 
 
 .. Options
@@ -136,8 +142,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -327,8 +334,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -366,7 +374,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.2.3.3"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.3.5.3"`
 
       .. raw:: html
 
@@ -445,7 +453,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-searchBy"></div>
 
-      .. _ansible_collections.cisco.dnac.device_details_info_module__parameter-searchBy:
+      .. _ansible_collections.cisco.dnac.device_details_info_module__parameter-searchby:
 
       .. rst-class:: ansible-option-title
 
@@ -542,8 +550,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -559,14 +568,21 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.get_device_detail,
+   - SDK Method used are devices.Devices.get\_device\_detail,
    - Paths used are get /dna/intent/api/v1/device-detail,
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco DNA Center documentation for Devices GetDeviceDetail <https://developer.cisco.com/docs/dna-center/#!get-device-detail>`_
+       Complete reference of the GetDeviceDetail API.
 
 .. Examples
 
@@ -585,8 +601,7 @@ Examples
         dnac_port: "{{dnac_port}}"
         dnac_version: "{{dnac_version}}"
         dnac_debug: "{{dnac_debug}}"
-        headers:
-          custom: value
+        headers: "{{my_headers | from_json}}"
         timestamp: string
         searchBy: string
         identifier: string
@@ -652,7 +667,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"HALastResetReason\\": \\"string\\",\\n  \\"managementIpAddr\\": \\"string\\",\\n  \\"HAPrimaryPowerStatus\\": \\"string\\",\\n  \\"redundancyMode\\": \\"string\\",\\n  \\"communicationState\\": \\"string\\",\\n  \\"nwDeviceName\\": \\"string\\",\\n  \\"redundancyUnit\\": \\"string\\",\\n  \\"platformId\\": \\"string\\",\\n  \\"redundancyPeerState\\": \\"string\\",\\n  \\"nwDeviceId\\": \\"string\\",\\n  \\"redundancyState\\": \\"string\\",\\n  \\"nwDeviceRole\\": \\"string\\",\\n  \\"nwDeviceFamily\\": \\"string\\",\\n  \\"macAddress\\": \\"string\\",\\n  \\"collectionStatus\\": \\"string\\",\\n  \\"deviceSeries\\": \\"string\\",\\n  \\"osType\\": \\"string\\",\\n  \\"clientCount\\": \\"string\\",\\n  \\"HASecondaryPowerStatus\\": \\"string\\",\\n  \\"softwareVersion\\": \\"string\\",\\n  \\"nwDeviceType\\": \\"string\\",\\n  \\"overallHealth\\": 0,\\n  \\"memoryScore\\": 0,\\n  \\"cpuScore\\": 0,\\n  \\"noiseScore\\": 0,\\n  \\"utilizationScore\\": 0,\\n  \\"airQualityScore\\": 0,\\n  \\"interferenceScore\\": 0,\\n  \\"wqeScore\\": 0,\\n  \\"freeMbufScore\\": 0,\\n  \\"packetPoolScore\\": 0,\\n  \\"freeTimerScore\\": 0,\\n  \\"memory\\": \\"string\\",\\n  \\"cpu\\": \\"string\\",\\n  \\"noise\\": \\"string\\",\\n  \\"utilization\\": \\"string\\",\\n  \\"airQuality\\": \\"string\\",\\n  \\"interference\\": \\"string\\",\\n  \\"wqe\\": \\"string\\",\\n  \\"freeMbuf\\": \\"string\\",\\n  \\"packetPool\\": \\"string\\",\\n  \\"freeTimer\\": \\"string\\",\\n  \\"location\\": \\"string\\",\\n  \\"timestamp\\": \\"string\\"\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"HALastResetReason": "string", "HAPrimaryPowerStatus": "string", "HASecondaryPowerStatus": "string", "airQuality": "string", "airQualityScore": 0, "clientCount": "string", "collectionStatus": "string", "communicationState": "string", "cpu": "string", "cpuScore": 0, "deviceSeries": "string", "freeMbuf": "string", "freeMbufScore": 0, "freeTimer": "string", "freeTimerScore": 0, "interference": "string", "interferenceScore": 0, "location": "string", "macAddress": "string", "managementIpAddr": "string", "memory": "string", "memoryScore": 0, "noise": "string", "noiseScore": 0, "nwDeviceFamily": "string", "nwDeviceId": "string", "nwDeviceName": "string", "nwDeviceRole": "string", "nwDeviceType": "string", "osType": "string", "overallHealth": 0, "packetPool": "string", "packetPoolScore": 0, "platformId": "string", "redundancyMode": "string", "redundancyPeerState": "string", "redundancyState": "string", "redundancyUnit": "string", "softwareVersion": "string", "timestamp": "string", "utilization": "string", "utilizationScore": 0, "wqe": "string", "wqeScore": 0}`
 
 
       .. raw:: html

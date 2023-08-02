@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -17,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -42,19 +42,19 @@ cisco.dnac.event_series_audit_logs_parent_records_info module -- Information mod
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.3.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.7.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.dnac`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.dnac.event_series_audit_logs_parent_records_info`.
 
 .. version_added
 
-.. versionadded:: 3.1.0 of cisco.dnac
+.. rst-class:: ansible-version-added
+
+New in cisco.dnac 3.1.0
 
 .. contents::
    :local:
@@ -79,12 +79,18 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- dnacentersdk >= 2.4.8
-- python >= 3.5
+- dnacentersdk \>= 2.5.5
+- python \>= 3.5
+
+
+
+
 
 
 .. Options
@@ -129,7 +135,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Category query parameter. Audit Log notification's event category. Supported values INFO, WARN, ERROR, ALERT, TASK_PROGRESS, TASK_FAILURE, TASK_COMPLETE, COMMAND, QUERY, CONVERSATION.
+      Category query parameter. Audit Log notification's event category. Supported values INFO, WARN, ERROR, ALERT, TASK\_PROGRESS, TASK\_FAILURE, TASK\_COMPLETE, COMMAND, QUERY, CONVERSATION.
           
 
 
@@ -211,7 +217,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-deviceId"></div>
 
-      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-deviceId:
+      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-deviceid:
 
       .. rst-class:: ansible-option-title
 
@@ -274,8 +280,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -465,8 +472,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -504,7 +512,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.2.3.3"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.3.5.3"`
 
       .. raw:: html
 
@@ -549,7 +557,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-endTime"></div>
 
-      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-endTime:
+      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-endtime:
 
       .. rst-class:: ansible-option-title
 
@@ -584,7 +592,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-eventHierarchy"></div>
 
-      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-eventHierarchy:
+      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-eventhierarchy:
 
       .. rst-class:: ansible-option-title
 
@@ -619,7 +627,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-eventId"></div>
 
-      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-eventId:
+      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-eventid:
 
       .. rst-class:: ansible-option-title
 
@@ -687,7 +695,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-instanceId"></div>
 
-      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-instanceId:
+      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-instanceid:
 
       .. rst-class:: ansible-option-title
 
@@ -721,7 +729,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-isSystemEvents"></div>
 
-      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-isSystemEvents:
+      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-issystemevents:
 
       .. rst-class:: ansible-option-title
 
@@ -750,8 +758,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -933,7 +942,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-siteId"></div>
 
-      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-siteId:
+      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-siteid:
 
       .. rst-class:: ansible-option-title
 
@@ -967,7 +976,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sortBy"></div>
 
-      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-sortBy:
+      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-sortby:
 
       .. rst-class:: ansible-option-title
 
@@ -1036,7 +1045,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-startTime"></div>
 
-      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-startTime:
+      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-starttime:
 
       .. rst-class:: ansible-option-title
 
@@ -1071,7 +1080,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-subDomain"></div>
 
-      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-subDomain:
+      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-subdomain:
 
       .. rst-class:: ansible-option-title
 
@@ -1105,7 +1114,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-userId"></div>
 
-      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-userId:
+      .. _ansible_collections.cisco.dnac.event_series_audit_logs_parent_records_info_module__parameter-userid:
 
       .. rst-class:: ansible-option-title
 
@@ -1168,8 +1177,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -1185,14 +1195,21 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are event_management.EventManagement.get_auditlog_parent_records,
+   - SDK Method used are event\_management.EventManagement.get\_auditlog\_parent\_records,
    - Paths used are get /dna/data/api/v1/event/event-series/audit-log/parent-records,
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco DNA Center documentation for Event Management GetAuditLogParentRecords <https://developer.cisco.com/docs/dna-center/#!get-audit-log-parent-records>`_
+       Complete reference of the GetAuditLogParentRecords API.
 
 .. Examples
 
@@ -1211,8 +1228,7 @@ Examples
         dnac_port: "{{dnac_port}}"
         dnac_version: "{{dnac_version}}"
         dnac_debug: "{{dnac_debug}}"
-        headers:
-          custom: value
+        headers: "{{my_headers | from_json}}"
         instanceId: string
         name: string
         eventId: string
@@ -1296,7 +1312,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "[\\n  {\\n    \\"version\\": \\"string\\",\\n    \\"instanceId\\": \\"string\\",\\n    \\"eventId\\": \\"string\\",\\n    \\"namespace\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"description\\": \\"string\\",\\n    \\"type\\": \\"string\\",\\n    \\"category\\": \\"string\\",\\n    \\"domain\\": \\"string\\",\\n    \\"subDomain\\": \\"string\\",\\n    \\"severity\\": 0,\\n    \\"source\\": \\"string\\",\\n    \\"timestamp\\": 0,\\n    \\"tags\\": [\\n      {}\\n    ],\\n    \\"details\\": {},\\n    \\"ciscoDnaEventLink\\": \\"string\\",\\n    \\"note\\": \\"string\\",\\n    \\"tntId\\": \\"string\\",\\n    \\"context\\": \\"string\\",\\n    \\"userId\\": \\"string\\",\\n    \\"i18n\\": \\"string\\",\\n    \\"eventHierarchy\\": \\"string\\",\\n    \\"message\\": \\"string\\",\\n    \\"messageParams\\": \\"string\\",\\n    \\"additionalDetails\\": {},\\n    \\"parentInstanceId\\": \\"string\\",\\n    \\"network\\": \\"string\\",\\n    \\"childCount\\": 0,\\n    \\"tenantId\\": \\"string\\"\\n  }\\n]\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"version\\": \\"string\\",\\n    \\"instanceId\\": \\"string\\",\\n    \\"eventId\\": \\"string\\",\\n    \\"namespace\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"description\\": \\"string\\",\\n    \\"type\\": \\"string\\",\\n    \\"category\\": \\"string\\",\\n    \\"domain\\": \\"string\\",\\n    \\"subDomain\\": \\"string\\",\\n    \\"severity\\": 0,\\n    \\"source\\": \\"string\\",\\n    \\"timestamp\\": 0,\\n    \\"tags\\": [\\n      {}\\n    ],\\n    \\"details\\": {},\\n    \\"ciscoDnaEventLink\\": \\"string\\",\\n    \\"note\\": \\"string\\",\\n    \\"tntId\\": \\"string\\",\\n    \\"context\\": \\"string\\",\\n    \\"userId\\": \\"string\\",\\n    \\"i18n\\": \\"string\\",\\n    \\"eventHierarchy\\": \\"string\\",\\n    \\"message\\": \\"string\\",\\n    \\"messageParams\\": \\"string\\",\\n    \\"additionalDetails\\": {},\\n    \\"parentInstanceId\\": \\"string\\",\\n    \\"network\\": \\"string\\",\\n    \\"childCount\\": 0,\\n    \\"tenantId\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

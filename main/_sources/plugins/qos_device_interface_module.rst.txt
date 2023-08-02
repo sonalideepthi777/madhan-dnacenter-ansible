@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -17,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -42,19 +42,19 @@ cisco.dnac.qos_device_interface module -- Resource module for Qos Device Interfa
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.3.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.7.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.dnac`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.dnac.qos_device_interface_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.dnac.qos_device_interface`.
 
 .. version_added
 
-.. versionadded:: 4.0.0 of cisco.dnac
+.. rst-class:: ansible-version-added
+
+New in cisco.dnac 4.0.0
 
 .. contents::
    :local:
@@ -70,6 +70,7 @@ Synopsis
 
 - Manage operations create, update and delete of the resource Qos Device Interface.
 - Create qos device interface infos associate with network device id to allow the user to mark specific interfaces as WAN, to associate WAN interfaces with specific SP Profile and to be able to define a shaper on WAN interfaces.
+
 - Delete all qos device interface infos associate with network device id.
 - Update existing qos device interface infos associate with network device id.
 
@@ -81,12 +82,18 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.dnac.qos_device_interface_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- dnacentersdk >= 2.4.8
-- python >= 3.5
+- dnacentersdk \>= 2.5.5
+- python \>= 3.5
+
+
+
+
 
 
 .. Options
@@ -138,8 +145,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -329,8 +337,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -368,7 +377,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.2.3.3"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.3.5.3"`
 
       .. raw:: html
 
@@ -447,7 +456,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-payload/excludedInterfaces"></div>
 
-      .. _ansible_collections.cisco.dnac.qos_device_interface_module__parameter-payload/excludedInterfaces:
+      .. _ansible_collections.cisco.dnac.qos_device_interface_module__parameter-payload/excludedinterfaces:
 
       .. rst-class:: ansible-option-title
 
@@ -549,7 +558,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-payload/networkDeviceId"></div>
 
-      .. _ansible_collections.cisco.dnac.qos_device_interface_module__parameter-payload/networkDeviceId:
+      .. _ansible_collections.cisco.dnac.qos_device_interface_module__parameter-payload/networkdeviceid:
 
       .. rst-class:: ansible-option-title
 
@@ -583,7 +592,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-payload/qosDeviceInterfaceInfo"></div>
 
-      .. _ansible_collections.cisco.dnac.qos_device_interface_module__parameter-payload/qosDeviceInterfaceInfo:
+      .. _ansible_collections.cisco.dnac.qos_device_interface_module__parameter-payload/qosdeviceinterfaceinfo:
 
       .. rst-class:: ansible-option-title
 
@@ -617,7 +626,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-payload/qosDeviceInterfaceInfo/dmvpnRemoteSitesBw"></div>
 
-      .. _ansible_collections.cisco.dnac.qos_device_interface_module__parameter-payload/qosDeviceInterfaceInfo/dmvpnRemoteSitesBw:
+      .. _ansible_collections.cisco.dnac.qos_device_interface_module__parameter-payload/qosdeviceinterfaceinfo/dmvpnremotesitesbw:
 
       .. rst-class:: ansible-option-title
 
@@ -651,7 +660,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-payload/qosDeviceInterfaceInfo/instanceId"></div>
 
-      .. _ansible_collections.cisco.dnac.qos_device_interface_module__parameter-payload/qosDeviceInterfaceInfo/instanceId:
+      .. _ansible_collections.cisco.dnac.qos_device_interface_module__parameter-payload/qosdeviceinterfaceinfo/instanceid:
 
       .. rst-class:: ansible-option-title
 
@@ -685,7 +694,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-payload/qosDeviceInterfaceInfo/interfaceId"></div>
 
-      .. _ansible_collections.cisco.dnac.qos_device_interface_module__parameter-payload/qosDeviceInterfaceInfo/interfaceId:
+      .. _ansible_collections.cisco.dnac.qos_device_interface_module__parameter-payload/qosdeviceinterfaceinfo/interfaceid:
 
       .. rst-class:: ansible-option-title
 
@@ -719,7 +728,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-payload/qosDeviceInterfaceInfo/interfaceName"></div>
 
-      .. _ansible_collections.cisco.dnac.qos_device_interface_module__parameter-payload/qosDeviceInterfaceInfo/interfaceName:
+      .. _ansible_collections.cisco.dnac.qos_device_interface_module__parameter-payload/qosdeviceinterfaceinfo/interfacename:
 
       .. rst-class:: ansible-option-title
 
@@ -753,7 +762,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-payload/qosDeviceInterfaceInfo/label"></div>
 
-      .. _ansible_collections.cisco.dnac.qos_device_interface_module__parameter-payload/qosDeviceInterfaceInfo/label:
+      .. _ansible_collections.cisco.dnac.qos_device_interface_module__parameter-payload/qosdeviceinterfaceinfo/label:
 
       .. rst-class:: ansible-option-title
 
@@ -787,7 +796,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-payload/qosDeviceInterfaceInfo/role"></div>
 
-      .. _ansible_collections.cisco.dnac.qos_device_interface_module__parameter-payload/qosDeviceInterfaceInfo/role:
+      .. _ansible_collections.cisco.dnac.qos_device_interface_module__parameter-payload/qosdeviceinterfaceinfo/role:
 
       .. rst-class:: ansible-option-title
 
@@ -821,7 +830,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-payload/qosDeviceInterfaceInfo/uploadBW"></div>
 
-      .. _ansible_collections.cisco.dnac.qos_device_interface_module__parameter-payload/qosDeviceInterfaceInfo/uploadBW:
+      .. _ansible_collections.cisco.dnac.qos_device_interface_module__parameter-payload/qosdeviceinterfaceinfo/uploadbw:
 
       .. rst-class:: ansible-option-title
 
@@ -886,8 +895,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -903,14 +913,25 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are application_policy.ApplicationPolicy.create_qos_device_interface_info, application_policy.ApplicationPolicy.delete_qos_device_interface_info, application_policy.ApplicationPolicy.update_qos_device_interface_info,
+   - SDK Method used are application\_policy.ApplicationPolicy.create\_qos\_device\_interface\_info, application\_policy.ApplicationPolicy.delete\_qos\_device\_interface\_info, application\_policy.ApplicationPolicy.update\_qos\_device\_interface\_info,
    - Paths used are post /dna/intent/api/v1/qos-device-interface-info, delete /dna/intent/api/v1/qos-device-interface-info/{id}, put /dna/intent/api/v1/qos-device-interface-info,
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco DNA Center documentation for Application Policy CreateQosDeviceInterfaceInfo <https://developer.cisco.com/docs/dna-center/#!create-qos-device-interface-info>`_
+       Complete reference of the CreateQosDeviceInterfaceInfo API.
+   `Cisco DNA Center documentation for Application Policy DeleteQosDeviceInterfaceInfo <https://developer.cisco.com/docs/dna-center/#!delete-qos-device-interface-info>`_
+       Complete reference of the DeleteQosDeviceInterfaceInfo API.
+   `Cisco DNA Center documentation for Application Policy UpdateQosDeviceInterfaceInfo <https://developer.cisco.com/docs/dna-center/#!update-qos-device-interface-info>`_
+       Complete reference of the UpdateQosDeviceInterfaceInfo API.
 
 .. Examples
 
@@ -938,13 +959,13 @@ Examples
           networkDeviceId: string
           qosDeviceInterfaceInfo:
           - dmvpnRemoteSitesBw:
-            - 1
-            instanceId: 1
+            - 0
+            instanceId: 0
             interfaceId: string
             interfaceName: string
             label: string
             role: string
-            uploadBW: 1
+            uploadBW: 0
 
     - name: Create
       cisco.dnac.qos_device_interface:
@@ -963,12 +984,12 @@ Examples
           networkDeviceId: string
           qosDeviceInterfaceInfo:
           - dmvpnRemoteSitesBw:
-            - 1
+            - 0
             interfaceId: string
             interfaceName: string
             label: string
             role: string
-            uploadBW: 1
+            uploadBW: 0
 
     - name: Delete by id
       cisco.dnac.qos_device_interface:
@@ -1042,7 +1063,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"response\\": {\\n    \\"taskId\\": \\"string\\",\\n    \\"url\\": \\"string\\"\\n  },\\n  \\"version\\": \\"string\\"\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"response": {"taskId": "string", "url": "string"}, "version": "string"}`
 
 
       .. raw:: html

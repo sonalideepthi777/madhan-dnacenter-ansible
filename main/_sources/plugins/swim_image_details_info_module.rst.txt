@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -17,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -42,19 +42,19 @@ cisco.dnac.swim_image_details_info module -- Information module for Swim Image D
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.3.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.7.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.dnac`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.dnac.swim_image_details_info_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.dnac.swim_image_details_info`.
 
 .. version_added
 
-.. versionadded:: 3.1.0 of cisco.dnac
+.. rst-class:: ansible-version-added
+
+New in cisco.dnac 3.1.0
 
 .. contents::
    :local:
@@ -69,7 +69,7 @@ Synopsis
 .. Description
 
 - Get all Swim Image Details.
-- Returns software image list based on a filter criteria. For example, "filterbyName = cat3k%".
+- Returns software image list based on a filter criteria. For example "filterbyName = cat3k%".
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -79,12 +79,18 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.dnac.swim_image_details_info_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- dnacentersdk >= 2.4.4
-- python >= 3.5
+- dnacentersdk \>= 2.5.5
+- python \>= 3.5
+
+
+
+
 
 
 .. Options
@@ -107,7 +113,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-applicationType"></div>
 
-      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-applicationType:
+      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-applicationtype:
 
       .. rst-class:: ansible-option-title
 
@@ -141,7 +147,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createdTime"></div>
 
-      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-createdTime:
+      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-createdtime:
 
       .. rst-class:: ansible-option-title
 
@@ -204,8 +210,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -395,8 +402,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -434,7 +442,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.2.3.3"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.3.5.3"`
 
       .. raw:: html
 
@@ -513,7 +521,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-imageIntegrityStatus"></div>
 
-      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-imageIntegrityStatus:
+      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-imageintegritystatus:
 
       .. rst-class:: ansible-option-title
 
@@ -547,7 +555,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-imageName"></div>
 
-      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-imageName:
+      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-imagename:
 
       .. rst-class:: ansible-option-title
 
@@ -581,7 +589,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-imageSeries"></div>
 
-      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-imageSeries:
+      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-imageseries:
 
       .. rst-class:: ansible-option-title
 
@@ -615,7 +623,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-imageSizeGreaterThan"></div>
 
-      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-imageSizeGreaterThan:
+      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-imagesizegreaterthan:
 
       .. rst-class:: ansible-option-title
 
@@ -649,7 +657,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-imageSizeLesserThan"></div>
 
-      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-imageSizeLesserThan:
+      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-imagesizelesserthan:
 
       .. rst-class:: ansible-option-title
 
@@ -683,7 +691,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-imageUuid"></div>
 
-      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-imageUuid:
+      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-imageuuid:
 
       .. rst-class:: ansible-option-title
 
@@ -717,7 +725,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-isCCOLatest"></div>
 
-      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-isCCOLatest:
+      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-isccolatest:
 
       .. rst-class:: ansible-option-title
 
@@ -746,8 +754,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -758,7 +767,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-isCCORecommended"></div>
 
-      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-isCCORecommended:
+      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-isccorecommended:
 
       .. rst-class:: ansible-option-title
 
@@ -787,8 +796,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -799,7 +809,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-isTaggedGolden"></div>
 
-      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-isTaggedGolden:
+      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-istaggedgolden:
 
       .. rst-class:: ansible-option-title
 
@@ -828,8 +838,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -942,7 +953,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sortBy"></div>
 
-      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-sortBy:
+      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-sortby:
 
       .. rst-class:: ansible-option-title
 
@@ -976,7 +987,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sortOrder"></div>
 
-      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-sortOrder:
+      .. _ansible_collections.cisco.dnac.swim_image_details_info_module__parameter-sortorder:
 
       .. rst-class:: ansible-option-title
 
@@ -1039,8 +1050,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -1090,14 +1102,21 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are software_image_management_swim.SoftwareImageManagementSwim.get_software_image_details,
+   - SDK Method used are software\_image\_management\_swim.SoftwareImageManagementSwim.get\_software\_image\_details,
    - Paths used are get /dna/intent/api/v1/image/importation,
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco DNA Center documentation for Software Image Management (SWIM) GetSoftwareImageDetails <https://developer.cisco.com/docs/dna-center/#!get-software-image-details>`_
+       Complete reference of the GetSoftwareImageDetails API.
 
 .. Examples
 
@@ -1116,8 +1135,7 @@ Examples
         dnac_port: "{{dnac_port}}"
         dnac_version: "{{dnac_version}}"
         dnac_debug: "{{dnac_debug}}"
-        headers:
-          custom: value
+        headers: "{{my_headers | from_json}}"
         imageUuid: string
         name: string
         family: string
@@ -1198,7 +1216,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"response\\": [\\n    {\\n      \\"applicableDevicesForImage\\": [\\n        {\\n          \\"mdfId\\": \\"string\\",\\n          \\"productId\\": [\\n            \\"string\\"\\n          ],\\n          \\"productName\\": \\"string\\"\\n        }\\n      ],\\n      \\"applicationType\\": \\"string\\",\\n      \\"createdTime\\": \\"string\\",\\n      \\"extendedAttributes\\": {},\\n      \\"family\\": \\"string\\",\\n      \\"feature\\": \\"string\\",\\n      \\"fileServiceId\\": \\"string\\",\\n      \\"fileSize\\": \\"string\\",\\n      \\"imageIntegrityStatus\\": \\"string\\",\\n      \\"imageName\\": \\"string\\",\\n      \\"imageSeries\\": [\\n        \\"string\\"\\n      ],\\n      \\"imageSource\\": \\"string\\",\\n      \\"imageType\\": \\"string\\",\\n      \\"imageUuid\\": \\"string\\",\\n      \\"importSourceType\\": \\"string\\",\\n      \\"isTaggedGolden\\": true,\\n      \\"md5Checksum\\": \\"string\\",\\n      \\"name\\": \\"string\\",\\n      \\"profileInfo\\": [\\n        {\\n          \\"description\\": \\"string\\",\\n          \\"extendedAttributes\\": {},\\n          \\"memory\\": 0,\\n          \\"productType\\": \\"string\\",\\n          \\"profileName\\": \\"string\\",\\n          \\"shares\\": 0,\\n          \\"vCpu\\": 0\\n        }\\n      ],\\n      \\"shaCheckSum\\": \\"string\\",\\n      \\"vendor\\": \\"string\\",\\n      \\"version\\": \\"string\\"\\n    }\\n  ],\\n  \\"version\\": \\"string\\"\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"response": [{"applicableDevicesForImage": [{"mdfId": "string", "productId": ["string"], "productName": "string"}], "applicationType": "string", "createdTime": "string", "extendedAttributes": {}, "family": "string", "feature": "string", "fileServiceId": "string", "fileSize": "string", "imageIntegrityStatus": "string", "imageName": "string", "imageSeries": ["string"], "imageSource": "string", "imageType": "string", "imageUuid": "string", "importSourceType": "string", "isTaggedGolden": true, "md5Checksum": "string", "name": "string", "profileInfo": [{"description": "string", "extendedAttributes": {}, "memory": 0, "productType": "string", "profileName": "string", "shares": 0, "vCpu": 0}], "shaCheckSum": "string", "vendor": "string", "version": "string"}], "version": "string"}`
 
 
       .. raw:: html

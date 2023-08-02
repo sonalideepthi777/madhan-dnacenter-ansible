@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -17,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -42,19 +42,19 @@ cisco.dnac.sda_fabric_border_device module -- Resource module for Sda Fabric Bor
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.3.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.7.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.dnac`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.dnac.sda_fabric_border_device_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.dnac.sda_fabric_border_device`.
 
 .. version_added
 
-.. versionadded:: 3.1.0 of cisco.dnac
+.. rst-class:: ansible-version-added
+
+New in cisco.dnac 3.1.0
 
 .. contents::
    :local:
@@ -69,8 +69,8 @@ Synopsis
 .. Description
 
 - Manage operations create and delete of the resource Sda Fabric Border Device.
-- Adds border device in SDA Fabric.
-- Deletes border device from SDA Fabric.
+- Add border device in SDA Fabric.
+- Delete border device from SDA Fabric.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -80,12 +80,18 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.dnac.sda_fabric_border_device_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- dnacentersdk >= 2.4.8
-- python >= 3.5
+- dnacentersdk \>= 2.5.5
+- python \>= 3.5
+
+
+
+
 
 
 .. Options
@@ -106,90 +112,9 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-borderSessionType"></div>
-
-      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-borderSessionType:
-
-      .. rst-class:: ansible-option-title
-
-      **borderSessionType**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-borderSessionType" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      :ansible-option-versionadded:`added in 4.0.0 of cisco.dnac`
-
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Border Session Type.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-connectedToInternet"></div>
-
-      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-connectedToInternet:
-
-      .. rst-class:: ansible-option-title
-
-      **connectedToInternet**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-connectedToInternet" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`boolean`
-
-      :ansible-option-versionadded:`added in 4.0.0 of cisco.dnac`
-
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Connected to Internet.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-deviceManagementIpAddress"></div>
 
-      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-deviceManagementIpAddress:
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-devicemanagementipaddress:
 
       .. rst-class:: ansible-option-title
 
@@ -203,7 +128,7 @@ Parameters
 
       :ansible-option-type:`string`
 
-      :ansible-option-versionadded:`added in 4.0.0 of cisco.dnac`
+      :ansible-option-versionadded:`added in cisco.dnac 4.0.0`
 
 
       .. raw:: html
@@ -214,7 +139,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Management Ip Address of the Device which is provisioned successfully.
+      DeviceManagementIpAddress query parameter.
 
 
       .. raw:: html
@@ -255,8 +180,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -446,8 +372,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -485,7 +412,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.2.3.3"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.3.5.3"`
 
       .. raw:: html
 
@@ -494,9 +421,272 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-externalConnectivityIpPoolName"></div>
+        <div class="ansibleOptionAnchor" id="parameter-payload"></div>
 
-      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-externalConnectivityIpPoolName:
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload:
+
+      .. rst-class:: ansible-option-title
+
+      **payload**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Sda Fabric Border Device's payload.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/borderPriority"></div>
+
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/borderpriority:
+
+      .. rst-class:: ansible-option-title
+
+      **borderPriority**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/borderPriority" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Border priority associated with a given device. Allowed range for Border Priority is 1-9. A lower value indicates higher priority. E.g., a priority of 1 takes precedence over 5. Default priority would be set to 10.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/borderSessionType"></div>
+
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/bordersessiontype:
+
+      .. rst-class:: ansible-option-title
+
+      **borderSessionType**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/borderSessionType" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      :ansible-option-versionadded:`added in cisco.dnac 4.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Border Session Type.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/borderWithExternalConnectivity"></div>
+
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/borderwithexternalconnectivity:
+
+      .. rst-class:: ansible-option-title
+
+      **borderWithExternalConnectivity**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/borderWithExternalConnectivity" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Border With External Connectivity (Note True for transit and False for non-transit border).
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/connectedToInternet"></div>
+
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/connectedtointernet:
+
+      .. rst-class:: ansible-option-title
+
+      **connectedToInternet**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/connectedToInternet" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in cisco.dnac 4.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Connected to Internet.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/deviceManagementIpAddress"></div>
+
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/devicemanagementipaddress:
+
+      .. rst-class:: ansible-option-title
+
+      **deviceManagementIpAddress**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/deviceManagementIpAddress" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      :ansible-option-versionadded:`added in cisco.dnac 4.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Management Ip Address of the provisioned Device.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/deviceRole"></div>
+
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/devicerole:
+
+      .. rst-class:: ansible-option-title
+
+      **deviceRole**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/deviceRole" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Supported Device Roles in SD-Access fabric. Allowed roles are "Border\_Node","Control\_Plane\_Nod... E.g. "Border\_Node" or "Border\_Node", "Control\_Plane\_Node" or "Border\_Node", "Control\_Plane\_Node","Edge\_Node".
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/externalConnectivityIpPoolName"></div>
+
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/externalconnectivityippoolname:
 
       .. rst-class:: ansible-option-title
 
@@ -504,13 +694,13 @@ Parameters
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-externalConnectivityIpPoolName" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-payload/externalConnectivityIpPoolName" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
       :ansible-option-type:`string`
 
-      :ansible-option-versionadded:`added in 4.0.0 of cisco.dnac`
+      :ansible-option-versionadded:`added in cisco.dnac 4.0.0`
 
 
       .. raw:: html
@@ -519,9 +709,9 @@ Parameters
 
     - .. raw:: html
 
-        <div class="ansible-option-cell">
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      IP pool to use to automate IP routing between the border node and remote peer.
+      External Connectivity IpPool Name.
 
 
       .. raw:: html
@@ -530,10 +720,10 @@ Parameters
 
   * - .. raw:: html
 
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-externalConnectivitySettings"></div>
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/externalConnectivitySettings"></div>
 
-      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-externalConnectivitySettings:
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/externalconnectivitysettings:
 
       .. rst-class:: ansible-option-title
 
@@ -541,13 +731,13 @@ Parameters
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-externalConnectivitySettings" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-payload/externalConnectivitySettings" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
       :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
-      :ansible-option-versionadded:`added in 4.0.0 of cisco.dnac`
+      :ansible-option-versionadded:`added in cisco.dnac 4.0.0`
 
 
       .. raw:: html
@@ -556,7 +746,7 @@ Parameters
 
     - .. raw:: html
 
-        <div class="ansible-option-cell">
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
       Sda Fabric Border Device's externalConnectivitySettings.
 
@@ -567,10 +757,10 @@ Parameters
     
   * - .. raw:: html
 
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-externalConnectivitySettings/externalAutonomouSystemNumber"></div>
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/externalConnectivitySettings/externalAutonomouSystemNumber"></div>
 
-      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-externalConnectivitySettings/externalAutonomouSystemNumber:
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/externalconnectivitysettings/externalautonomousystemnumber:
 
       .. rst-class:: ansible-option-title
 
@@ -578,124 +768,13 @@ Parameters
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-externalConnectivitySettings/externalAutonomouSystemNumber" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-payload/externalConnectivitySettings/externalAutonomouSystemNumber" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
       :ansible-option-type:`string`
 
-      :ansible-option-versionadded:`added in 4.0.0 of cisco.dnac`
-
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      External Autonomous System Number peer (e.g.,1-65535).
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-externalConnectivitySettings/interfaceName"></div>
-
-      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-externalConnectivitySettings/interfaceName:
-
-      .. rst-class:: ansible-option-title
-
-      **interfaceName**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-externalConnectivitySettings/interfaceName" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      :ansible-option-versionadded:`added in 4.0.0 of cisco.dnac`
-
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Interface Name.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-externalConnectivitySettings/l3Handoff"></div>
-
-      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-externalConnectivitySettings/l3Handoff:
-
-      .. rst-class:: ansible-option-title
-
-      **l3Handoff**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-externalConnectivitySettings/l3Handoff" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
-
-      :ansible-option-versionadded:`added in 4.0.0 of cisco.dnac`
-
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Sda Fabric Border Device's l3Handoff.
-
-
-      .. raw:: html
-
-        </div>
-    
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-externalConnectivitySettings/l3Handoff/virtualNetwork"></div>
-
-      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-externalConnectivitySettings/l3Handoff/virtualNetwork:
-
-      .. rst-class:: ansible-option-title
-
-      **virtualNetwork**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-externalConnectivitySettings/l3Handoff/virtualNetwork" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`dictionary`
-
-      :ansible-option-versionadded:`added in 4.0.0 of cisco.dnac`
+      :ansible-option-versionadded:`added in cisco.dnac 4.0.0`
 
 
       .. raw:: html
@@ -706,7 +785,112 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Sda Fabric Border Device's virtualNetwork.
+      External Autonomous System Number peer (e.g.,1-65535).
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/externalConnectivitySettings/interfaceDescription"></div>
+
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/externalconnectivitysettings/interfacedescription:
+
+      .. rst-class:: ansible-option-title
+
+      **interfaceDescription**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/externalConnectivitySettings/interfaceDescription" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Interface Description.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/externalConnectivitySettings/interfaceName"></div>
+
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/externalconnectivitysettings/interfacename:
+
+      .. rst-class:: ansible-option-title
+
+      **interfaceName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/externalConnectivitySettings/interfaceName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      :ansible-option-versionadded:`added in cisco.dnac 4.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Interface Name.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/externalConnectivitySettings/l2Handoff"></div>
+
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/externalconnectivitysettings/l2handoff:
+
+      .. rst-class:: ansible-option-title
+
+      **l2Handoff**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/externalConnectivitySettings/l2Handoff" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sda Fabric Border Device's l2Handoff.
 
 
       .. raw:: html
@@ -716,9 +900,9 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-externalConnectivitySettings/l3Handoff/virtualNetwork/virtualNetworkName"></div>
+        <div class="ansibleOptionAnchor" id="parameter-payload/externalConnectivitySettings/l2Handoff/virtualNetworkName"></div>
 
-      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-externalConnectivitySettings/l3Handoff/virtualNetwork/virtualNetworkName:
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/externalconnectivitysettings/l2handoff/virtualnetworkname:
 
       .. rst-class:: ansible-option-title
 
@@ -726,13 +910,13 @@ Parameters
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-externalConnectivitySettings/l3Handoff/virtualNetwork/virtualNetworkName" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-payload/externalConnectivitySettings/l2Handoff/virtualNetworkName" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
       :ansible-option-type:`string`
 
-      :ansible-option-versionadded:`added in 4.0.0 of cisco.dnac`
+      :ansible-option-versionadded:`added in cisco.dnac 4.0.0`
 
 
       .. raw:: html
@@ -753,23 +937,95 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-externalConnectivitySettings/l3Handoff/virtualNetwork/vlanId"></div>
+        <div class="ansibleOptionAnchor" id="parameter-payload/externalConnectivitySettings/l2Handoff/vlanName"></div>
 
-      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-externalConnectivitySettings/l3Handoff/virtualNetwork/vlanId:
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/externalconnectivitysettings/l2handoff/vlanname:
 
       .. rst-class:: ansible-option-title
 
-      **vlanId**
+      **vlanName**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-externalConnectivitySettings/l3Handoff/virtualNetwork/vlanId" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-payload/externalConnectivitySettings/l2Handoff/vlanName" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
       :ansible-option-type:`string`
 
-      :ansible-option-versionadded:`added in 4.0.0 of cisco.dnac`
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Vlan Name of L2 Handoff.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/externalConnectivitySettings/l3Handoff"></div>
+
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/externalconnectivitysettings/l3handoff:
+
+      .. rst-class:: ansible-option-title
+
+      **l3Handoff**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/externalConnectivitySettings/l3Handoff" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      :ansible-option-versionadded:`added in cisco.dnac 4.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sda Fabric Border Device's l3Handoff.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/externalConnectivitySettings/l3Handoff/virtualNetwork"></div>
+
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/externalconnectivitysettings/l3handoff/virtualnetwork:
+
+      .. rst-class:: ansible-option-title
+
+      **virtualNetwork**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/externalConnectivitySettings/l3Handoff/virtualNetwork" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      :ansible-option-versionadded:`added in cisco.dnac 4.0.0`
 
 
       .. raw:: html
@@ -779,6 +1035,80 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sda Fabric Border Device's virtualNetwork.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/externalConnectivitySettings/l3Handoff/virtualNetwork/virtualNetworkName"></div>
+
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/externalconnectivitysettings/l3handoff/virtualnetwork/virtualnetworkname:
+
+      .. rst-class:: ansible-option-title
+
+      **virtualNetworkName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/externalConnectivitySettings/l3Handoff/virtualNetwork/virtualNetworkName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      :ansible-option-versionadded:`added in cisco.dnac 4.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Virtual Network Name, that is associated to Fabric Site.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/externalConnectivitySettings/l3Handoff/virtualNetwork/vlanId"></div>
+
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/externalconnectivitysettings/l3handoff/virtualnetwork/vlanid:
+
+      .. rst-class:: ansible-option-title
+
+      **vlanId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/externalConnectivitySettings/l3Handoff/virtualNetwork/vlanId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      :ansible-option-versionadded:`added in cisco.dnac 4.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
       Vlan Id (e.g.,2-4096 except for reserved VLANs (1002-1005, 2046, 4095)).
 
@@ -792,10 +1122,10 @@ Parameters
 
   * - .. raw:: html
 
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-externalDomainRoutingProtocolName"></div>
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/externalDomainRoutingProtocolName"></div>
 
-      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-externalDomainRoutingProtocolName:
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/externaldomainroutingprotocolname:
 
       .. rst-class:: ansible-option-title
 
@@ -803,14 +1133,11 @@ Parameters
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-externalDomainRoutingProtocolName" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-payload/externalDomainRoutingProtocolName" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
       :ansible-option-type:`string`
-
-      :ansible-option-versionadded:`added in 4.0.0 of cisco.dnac`
-
 
       .. raw:: html
 
@@ -818,9 +1145,9 @@ Parameters
 
     - .. raw:: html
 
-        <div class="ansible-option-cell">
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      External Domain Routing Protocol Name. (Example BGP).
+      External Domain Routing Protocol Name.
 
 
       .. raw:: html
@@ -829,10 +1156,10 @@ Parameters
 
   * - .. raw:: html
 
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-internalAutonomouSystemNumber"></div>
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/internalAutonomouSystemNumber"></div>
 
-      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-internalAutonomouSystemNumber:
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/internalautonomousystemnumber:
 
       .. rst-class:: ansible-option-title
 
@@ -840,14 +1167,11 @@ Parameters
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-internalAutonomouSystemNumber" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-payload/internalAutonomouSystemNumber" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
       :ansible-option-type:`string`
-
-      :ansible-option-versionadded:`added in 4.0.0 of cisco.dnac`
-
 
       .. raw:: html
 
@@ -855,9 +1179,9 @@ Parameters
 
     - .. raw:: html
 
-        <div class="ansible-option-cell">
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Internal Autonomouns System Number used by border node to communicate with remote peer (e.g.,1-65535).
+      Internal Autonomouns System Number (e.g.,1-65535).
 
 
       .. raw:: html
@@ -866,25 +1190,22 @@ Parameters
 
   * - .. raw:: html
 
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-siteNameHierarchy"></div>
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/routeDistributionProtocol"></div>
 
-      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-siteNameHierarchy:
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/routedistributionprotocol:
 
       .. rst-class:: ansible-option-title
 
-      **siteNameHierarchy**
+      **routeDistributionProtocol**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-siteNameHierarchy" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-payload/routeDistributionProtocol" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
       :ansible-option-type:`string`
-
-      :ansible-option-versionadded:`added in 4.0.0 of cisco.dnac`
-
 
       .. raw:: html
 
@@ -892,14 +1213,83 @@ Parameters
 
     - .. raw:: html
 
-        <div class="ansible-option-cell">
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Site Name Hierarchy for device location(site should be fabric site).
+      Route Distribution Protocol for Control Plane Device. Allowed values are "LISP\_BGP" or "LISP\_PUB\_SUB". Default value is "LISP\_BGP".
 
 
       .. raw:: html
 
         </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/sdaTransitNetworkName"></div>
+
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/sdatransitnetworkname:
+
+      .. rst-class:: ansible-option-title
+
+      **sdaTransitNetworkName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/sdaTransitNetworkName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      SD-Access Transit Network Name.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/siteNameHierarchy"></div>
+
+      .. _ansible_collections.cisco.dnac.sda_fabric_border_device_module__parameter-payload/sitenamehierarchy:
+
+      .. rst-class:: ansible-option-title
+
+      **siteNameHierarchy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/siteNameHierarchy" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Site Name Hierarchy of provisioned Device(site should be part of Fabric Site).
+
+
+      .. raw:: html
+
+        </div>
+
 
   * - .. raw:: html
 
@@ -935,8 +1325,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -952,14 +1343,23 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are sda.Sda.adds_border_device, sda.Sda.deletes_border_device,
+   - SDK Method used are sda.Sda.adds\_border\_device, sda.Sda.deletes\_border\_device,
    - Paths used are post /dna/intent/api/v1/business/sda/border-device, delete /dna/intent/api/v1/business/sda/border-device,
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco DNA Center documentation for SDA AddBorderDeviceInSDAFabric <https://developer.cisco.com/docs/dna-center/#!add-border-device-in-sda-fabric>`_
+       Complete reference of the AddBorderDeviceInSDAFabric API.
+   `Cisco DNA Center documentation for SDA DeleteBorderDeviceFromSDAFabric <https://developer.cisco.com/docs/dna-center/#!delete-border-device-from-sda-fabric>`_
+       Complete reference of the DeleteBorderDeviceFromSDAFabric API.
 
 .. Examples
 
@@ -979,20 +1379,31 @@ Examples
         dnac_version: "{{dnac_version}}"
         dnac_debug: "{{dnac_debug}}"
         state: present
-        borderSessionType: string
-        connectedToInternet: true
-        deviceManagementIpAddress: string
-        externalConnectivityIpPoolName: string
-        externalConnectivitySettings:
-        - externalAutonomouSystemNumber: string
-          interfaceName: string
-          l3Handoff:
-          - virtualNetwork:
-              virtualNetworkName: string
-              vlanId: string
-        externalDomainRoutingProtocolName: string
-        internalAutonomouSystemNumber: string
-        siteNameHierarchy: string
+        payload:
+        - borderPriority: string
+          borderSessionType: string
+          borderWithExternalConnectivity: true
+          connectedToInternet: true
+          deviceManagementIpAddress: string
+          deviceRole:
+          - string
+          externalConnectivityIpPoolName: string
+          externalConnectivitySettings:
+          - externalAutonomouSystemNumber: string
+            interfaceDescription: string
+            interfaceName: string
+            l2Handoff:
+            - virtualNetworkName: string
+              vlanName: string
+            l3Handoff:
+            - virtualNetwork:
+                virtualNetworkName: string
+                vlanId: string
+          externalDomainRoutingProtocolName: string
+          internalAutonomouSystemNumber: string
+          routeDistributionProtocol: string
+          sdaTransitNetworkName: string
+          siteNameHierarchy: string
 
     - name: Delete all
       cisco.dnac.sda_fabric_border_device:
@@ -1066,7 +1477,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"status\\": \\"string\\",\\n  \\"description\\": \\"string\\",\\n  \\"taskId\\": \\"string\\",\\n  \\"taskStatusUrl\\": \\"string\\",\\n  \\"executionStatusUrl\\": \\"string\\",\\n  \\"executionId\\": \\"string\\"\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"description": "string", "executionId": "string", "executionStatusUrl": "string", "status": "string", "taskId": "string", "taskStatusUrl": "string"}`
 
 
       .. raw:: html

@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -17,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -42,19 +42,19 @@ cisco.dnac.path_trace module -- Resource module for Path Trace
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.3.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.7.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.dnac`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.dnac.path_trace_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.dnac.path_trace`.
 
 .. version_added
 
-.. versionadded:: 3.1.0 of cisco.dnac
+.. rst-class:: ansible-version-added
+
+New in cisco.dnac 3.1.0
 
 .. contents::
    :local:
@@ -70,6 +70,7 @@ Synopsis
 
 - Manage operations create and delete of the resource Path Trace.
 - Initiates a new flow analysis with periodic refresh and stat collection options. Returns a request id and a task id to get results and follow progress.
+
 - Deletes a flow analysis request by its id.
 
 .. note::
@@ -80,12 +81,18 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.dnac.path_trace_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- dnacentersdk >= 2.4.8
-- python >= 3.5
+- dnacentersdk \>= 2.5.5
+- python \>= 3.5
+
+
+
+
 
 
 .. Options
@@ -108,7 +115,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-controlPath"></div>
 
-      .. _ansible_collections.cisco.dnac.path_trace_module__parameter-controlPath:
+      .. _ansible_collections.cisco.dnac.path_trace_module__parameter-controlpath:
 
       .. rst-class:: ansible-option-title
 
@@ -130,15 +137,16 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      ControlPath flag.
+      Control path tracing.
 
 
       .. rst-class:: ansible-option-line
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -149,7 +157,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destIP"></div>
 
-      .. _ansible_collections.cisco.dnac.path_trace_module__parameter-destIP:
+      .. _ansible_collections.cisco.dnac.path_trace_module__parameter-destip:
 
       .. rst-class:: ansible-option-title
 
@@ -171,7 +179,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Path Trace's destIP.
+      Destination IP address.
 
 
       .. raw:: html
@@ -183,7 +191,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destPort"></div>
 
-      .. _ansible_collections.cisco.dnac.path_trace_module__parameter-destPort:
+      .. _ansible_collections.cisco.dnac.path_trace_module__parameter-destport:
 
       .. rst-class:: ansible-option-title
 
@@ -205,7 +213,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Path Trace's destPort.
+      Destination Port.
 
 
       .. raw:: html
@@ -246,8 +254,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -437,8 +446,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -476,7 +486,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.2.3.3"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.3.5.3"`
 
       .. raw:: html
 
@@ -487,7 +497,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-flowAnalysisId"></div>
 
-      .. _ansible_collections.cisco.dnac.path_trace_module__parameter-flowAnalysisId:
+      .. _ansible_collections.cisco.dnac.path_trace_module__parameter-flowanalysisid:
 
       .. rst-class:: ansible-option-title
 
@@ -543,7 +553,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Path Trace's inclusions.
+      Subset of {INTERFACE-STATS, QOS-STATS, DEVICE-STATS, PERFORMANCE-STATS, ACL-TRACE}.
 
 
       .. raw:: html
@@ -555,7 +565,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-periodicRefresh"></div>
 
-      .. _ansible_collections.cisco.dnac.path_trace_module__parameter-periodicRefresh:
+      .. _ansible_collections.cisco.dnac.path_trace_module__parameter-periodicrefresh:
 
       .. rst-class:: ansible-option-title
 
@@ -577,15 +587,16 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      PeriodicRefresh flag.
+      Periodic refresh of path for every 30 sec.
 
 
       .. rst-class:: ansible-option-line
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -618,7 +629,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Path Trace's protocol.
+      Protocol.
 
 
       .. raw:: html
@@ -630,7 +641,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sourceIP"></div>
 
-      .. _ansible_collections.cisco.dnac.path_trace_module__parameter-sourceIP:
+      .. _ansible_collections.cisco.dnac.path_trace_module__parameter-sourceip:
 
       .. rst-class:: ansible-option-title
 
@@ -652,7 +663,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Path Trace's sourceIP.
+      Source IP address.
 
 
       .. raw:: html
@@ -664,7 +675,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sourcePort"></div>
 
-      .. _ansible_collections.cisco.dnac.path_trace_module__parameter-sourcePort:
+      .. _ansible_collections.cisco.dnac.path_trace_module__parameter-sourceport:
 
       .. rst-class:: ansible-option-title
 
@@ -686,7 +697,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Path Trace's sourcePort.
+      Source Port.
 
 
       .. raw:: html
@@ -727,8 +738,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -744,14 +756,23 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are path_trace.PathTrace.deletes_pathtrace_by_id, path_trace.PathTrace.initiate_a_new_pathtrace,
+   - SDK Method used are path\_trace.PathTrace.deletes\_pathtrace\_by\_id, path\_trace.PathTrace.initiate\_a\_new\_pathtrace,
    - Paths used are post /dna/intent/api/v1/flow-analysis, delete /dna/intent/api/v1/flow-analysis/{flowAnalysisId},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco DNA Center documentation for Path Trace InitiateANewPathtrace <https://developer.cisco.com/docs/dna-center/#!initiate-a-new-pathtrace>`_
+       Complete reference of the InitiateANewPathtrace API.
+   `Cisco DNA Center documentation for Path Trace DeletesPathtraceById <https://developer.cisco.com/docs/dna-center/#!deletes-pathtrace-by-id>`_
+       Complete reference of the DeletesPathtraceById API.
 
 .. Examples
 
@@ -853,7 +874,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"response\\": {\\n    \\"flowAnalysisId\\": \\"string\\",\\n    \\"taskId\\": \\"string\\",\\n    \\"url\\": \\"string\\"\\n  },\\n  \\"version\\": \\"string\\"\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"response": {"flowAnalysisId": "string", "taskId": "string", "url": "string"}, "version": "string"}`
 
 
       .. raw:: html

@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -17,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -42,19 +42,19 @@ cisco.dnac.configuration_template module -- Resource module for Configuration Te
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.3.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.7.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.dnac`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.dnac.configuration_template_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.dnac.configuration_template`.
 
 .. version_added
 
-.. versionadded:: 3.1.0 of cisco.dnac
+.. rst-class:: ansible-version-added
+
+New in cisco.dnac 3.1.0
 
 .. contents::
    :local:
@@ -80,12 +80,18 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.dnac.configuration_template_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- dnacentersdk >= 2.4.8
-- python >= 3.5
+- dnacentersdk \>= 2.5.5
+- python \>= 3.5
+
+
+
+
 
 
 .. Options
@@ -171,8 +177,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -183,7 +190,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates:
 
       .. rst-class:: ansible-option-title
 
@@ -217,7 +224,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/composite"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/composite:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/composite:
 
       .. rst-class:: ansible-option-title
 
@@ -246,8 +253,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -258,7 +266,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/description"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/description:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/description:
 
       .. rst-class:: ansible-option-title
 
@@ -292,7 +300,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/deviceTypes"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/deviceTypes:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/devicetypes:
 
       .. rst-class:: ansible-option-title
 
@@ -326,7 +334,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/deviceTypes/productFamily"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/deviceTypes/productFamily:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/devicetypes/productfamily:
 
       .. rst-class:: ansible-option-title
 
@@ -360,7 +368,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/deviceTypes/productSeries"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/deviceTypes/productSeries:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/devicetypes/productseries:
 
       .. rst-class:: ansible-option-title
 
@@ -394,7 +402,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/deviceTypes/productType"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/deviceTypes/productType:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/devicetypes/producttype:
 
       .. rst-class:: ansible-option-title
 
@@ -429,7 +437,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/id"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/id:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/id:
 
       .. rst-class:: ansible-option-title
 
@@ -463,7 +471,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/language"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/language:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/language:
 
       .. rst-class:: ansible-option-title
 
@@ -497,7 +505,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/name"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/name:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/name:
 
       .. rst-class:: ansible-option-title
 
@@ -531,7 +539,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/projectName"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/projectName:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/projectname:
 
       .. rst-class:: ansible-option-title
 
@@ -565,7 +573,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams:
 
       .. rst-class:: ansible-option-title
 
@@ -599,7 +607,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/binding"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/binding:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/binding:
 
       .. rst-class:: ansible-option-title
 
@@ -633,7 +641,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/customOrder"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/customOrder:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/customorder:
 
       .. rst-class:: ansible-option-title
 
@@ -667,7 +675,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/dataType"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/dataType:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/datatype:
 
       .. rst-class:: ansible-option-title
 
@@ -701,7 +709,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/defaultValue"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/defaultValue:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/defaultvalue:
 
       .. rst-class:: ansible-option-title
 
@@ -735,7 +743,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/description"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/description:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/description:
 
       .. rst-class:: ansible-option-title
 
@@ -769,7 +777,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/displayName"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/displayName:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/displayname:
 
       .. rst-class:: ansible-option-title
 
@@ -803,7 +811,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/group"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/group:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/group:
 
       .. rst-class:: ansible-option-title
 
@@ -837,7 +845,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/id"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/id:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/id:
 
       .. rst-class:: ansible-option-title
 
@@ -871,7 +879,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/instructionText"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/instructionText:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/instructiontext:
 
       .. rst-class:: ansible-option-title
 
@@ -905,7 +913,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/key"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/key:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/key:
 
       .. rst-class:: ansible-option-title
 
@@ -939,7 +947,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/notParam"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/notParam:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/notparam:
 
       .. rst-class:: ansible-option-title
 
@@ -968,8 +976,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -980,7 +989,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/order"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/order:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/order:
 
       .. rst-class:: ansible-option-title
 
@@ -1014,7 +1023,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/paramArray"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/paramArray:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/paramarray:
 
       .. rst-class:: ansible-option-title
 
@@ -1043,8 +1052,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -1055,7 +1065,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/parameterName"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/parameterName:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/parametername:
 
       .. rst-class:: ansible-option-title
 
@@ -1089,7 +1099,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/provider"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/provider:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/provider:
 
       .. rst-class:: ansible-option-title
 
@@ -1123,7 +1133,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/range"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/range:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/range:
 
       .. rst-class:: ansible-option-title
 
@@ -1157,7 +1167,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/range/id"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/range/id:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/range/id:
 
       .. rst-class:: ansible-option-title
 
@@ -1191,7 +1201,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/range/maxValue"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/range/maxValue:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/range/maxvalue:
 
       .. rst-class:: ansible-option-title
 
@@ -1225,7 +1235,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/range/minValue"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/range/minValue:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/range/minvalue:
 
       .. rst-class:: ansible-option-title
 
@@ -1260,7 +1270,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/required"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/required:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/required:
 
       .. rst-class:: ansible-option-title
 
@@ -1289,8 +1299,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -1301,7 +1312,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/selection"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/selection:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/selection:
 
       .. rst-class:: ansible-option-title
 
@@ -1335,7 +1346,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/selection/defaultSelectedValues"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/selection/defaultSelectedValues:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/selection/defaultselectedvalues:
 
       .. rst-class:: ansible-option-title
 
@@ -1369,7 +1380,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/selection/id"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/selection/id:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/selection/id:
 
       .. rst-class:: ansible-option-title
 
@@ -1403,7 +1414,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/selection/selectionType"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/selection/selectionType:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/selection/selectiontype:
 
       .. rst-class:: ansible-option-title
 
@@ -1425,7 +1436,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Type of selection(SINGLE_SELECT or MULTI_SELECT).
+      Type of selection(SINGLE\_SELECT or MULTI\_SELECT).
 
 
       .. raw:: html
@@ -1437,7 +1448,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/rollbackTemplateParams/selection/selectionValues"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/rollbackTemplateParams/selection/selectionValues:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/rollbacktemplateparams/selection/selectionvalues:
 
       .. rst-class:: ansible-option-title
 
@@ -1473,7 +1484,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/tags"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/tags:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/tags:
 
       .. rst-class:: ansible-option-title
 
@@ -1507,7 +1518,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/tags/id"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/tags/id:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/tags/id:
 
       .. rst-class:: ansible-option-title
 
@@ -1541,7 +1552,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/tags/name"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/tags/name:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/tags/name:
 
       .. rst-class:: ansible-option-title
 
@@ -1576,7 +1587,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateContent"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateContent:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templatecontent:
 
       .. rst-class:: ansible-option-title
 
@@ -1610,7 +1621,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams:
 
       .. rst-class:: ansible-option-title
 
@@ -1644,7 +1655,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/binding"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/binding:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/binding:
 
       .. rst-class:: ansible-option-title
 
@@ -1678,7 +1689,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/customOrder"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/customOrder:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/customorder:
 
       .. rst-class:: ansible-option-title
 
@@ -1712,7 +1723,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/dataType"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/dataType:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/datatype:
 
       .. rst-class:: ansible-option-title
 
@@ -1746,7 +1757,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/defaultValue"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/defaultValue:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/defaultvalue:
 
       .. rst-class:: ansible-option-title
 
@@ -1780,7 +1791,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/description"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/description:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/description:
 
       .. rst-class:: ansible-option-title
 
@@ -1814,7 +1825,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/displayName"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/displayName:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/displayname:
 
       .. rst-class:: ansible-option-title
 
@@ -1848,7 +1859,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/group"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/group:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/group:
 
       .. rst-class:: ansible-option-title
 
@@ -1882,7 +1893,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/id"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/id:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/id:
 
       .. rst-class:: ansible-option-title
 
@@ -1916,7 +1927,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/instructionText"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/instructionText:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/instructiontext:
 
       .. rst-class:: ansible-option-title
 
@@ -1950,7 +1961,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/key"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/key:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/key:
 
       .. rst-class:: ansible-option-title
 
@@ -1984,7 +1995,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/notParam"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/notParam:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/notparam:
 
       .. rst-class:: ansible-option-title
 
@@ -2013,8 +2024,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -2025,7 +2037,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/order"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/order:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/order:
 
       .. rst-class:: ansible-option-title
 
@@ -2059,7 +2071,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/paramArray"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/paramArray:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/paramarray:
 
       .. rst-class:: ansible-option-title
 
@@ -2088,8 +2100,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -2100,7 +2113,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/parameterName"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/parameterName:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/parametername:
 
       .. rst-class:: ansible-option-title
 
@@ -2134,7 +2147,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/provider"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/provider:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/provider:
 
       .. rst-class:: ansible-option-title
 
@@ -2168,7 +2181,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/range"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/range:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/range:
 
       .. rst-class:: ansible-option-title
 
@@ -2202,7 +2215,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/range/id"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/range/id:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/range/id:
 
       .. rst-class:: ansible-option-title
 
@@ -2236,7 +2249,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/range/maxValue"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/range/maxValue:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/range/maxvalue:
 
       .. rst-class:: ansible-option-title
 
@@ -2270,7 +2283,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/range/minValue"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/range/minValue:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/range/minvalue:
 
       .. rst-class:: ansible-option-title
 
@@ -2305,7 +2318,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/required"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/required:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/required:
 
       .. rst-class:: ansible-option-title
 
@@ -2334,8 +2347,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -2346,7 +2360,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/selection"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/selection:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/selection:
 
       .. rst-class:: ansible-option-title
 
@@ -2380,7 +2394,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/selection/defaultSelectedValues"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/selection/defaultSelectedValues:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/selection/defaultselectedvalues:
 
       .. rst-class:: ansible-option-title
 
@@ -2414,7 +2428,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/selection/id"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/selection/id:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/selection/id:
 
       .. rst-class:: ansible-option-title
 
@@ -2448,7 +2462,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/selection/selectionType"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/selection/selectionType:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/selection/selectiontype:
 
       .. rst-class:: ansible-option-title
 
@@ -2470,7 +2484,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Type of selection(SINGLE_SELECT or MULTI_SELECT).
+      Type of selection(SINGLE\_SELECT or MULTI\_SELECT).
 
 
       .. raw:: html
@@ -2482,7 +2496,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/templateParams/selection/selectionValues"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/templateParams/selection/selectionValues:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/templateparams/selection/selectionvalues:
 
       .. rst-class:: ansible-option-title
 
@@ -2518,7 +2532,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-containingTemplates/version"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingTemplates/version:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-containingtemplates/version:
 
       .. rst-class:: ansible-option-title
 
@@ -2553,7 +2567,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createTime"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-createTime:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-createtime:
 
       .. rst-class:: ansible-option-title
 
@@ -2587,7 +2601,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-customParamsOrder"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-customParamsOrder:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-customparamsorder:
 
       .. rst-class:: ansible-option-title
 
@@ -2616,8 +2630,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -2662,7 +2677,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-deviceTypes"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-deviceTypes:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-devicetypes:
 
       .. rst-class:: ansible-option-title
 
@@ -2696,7 +2711,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-deviceTypes/productFamily"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-deviceTypes/productFamily:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-devicetypes/productfamily:
 
       .. rst-class:: ansible-option-title
 
@@ -2730,7 +2745,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-deviceTypes/productSeries"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-deviceTypes/productSeries:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-devicetypes/productseries:
 
       .. rst-class:: ansible-option-title
 
@@ -2764,7 +2779,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-deviceTypes/productType"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-deviceTypes/productType:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-devicetypes/producttype:
 
       .. rst-class:: ansible-option-title
 
@@ -2828,8 +2843,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -3019,8 +3035,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -3058,7 +3075,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.2.3.3"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.3.5.3"`
 
       .. raw:: html
 
@@ -3069,7 +3086,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-failurePolicy"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-failurePolicy:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-failurepolicy:
 
       .. rst-class:: ansible-option-title
 
@@ -3171,7 +3188,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-lastUpdateTime"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-lastUpdateTime:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-lastupdatetime:
 
       .. rst-class:: ansible-option-title
 
@@ -3205,7 +3222,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-latestVersionTime"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-latestVersionTime:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-latestversiontime:
 
       .. rst-class:: ansible-option-title
 
@@ -3273,7 +3290,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-parentTemplateId"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-parentTemplateId:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-parenttemplateid:
 
       .. rst-class:: ansible-option-title
 
@@ -3307,7 +3324,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-projectId"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-projectId:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-projectid:
 
       .. rst-class:: ansible-option-title
 
@@ -3341,7 +3358,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-projectName"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-projectName:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-projectname:
 
       .. rst-class:: ansible-option-title
 
@@ -3375,7 +3392,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateContent"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateContent:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplatecontent:
 
       .. rst-class:: ansible-option-title
 
@@ -3409,7 +3426,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams:
 
       .. rst-class:: ansible-option-title
 
@@ -3443,7 +3460,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/binding"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/binding:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/binding:
 
       .. rst-class:: ansible-option-title
 
@@ -3477,7 +3494,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/customOrder"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/customOrder:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/customorder:
 
       .. rst-class:: ansible-option-title
 
@@ -3511,7 +3528,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/dataType"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/dataType:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/datatype:
 
       .. rst-class:: ansible-option-title
 
@@ -3545,7 +3562,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/defaultValue"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/defaultValue:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/defaultvalue:
 
       .. rst-class:: ansible-option-title
 
@@ -3579,7 +3596,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/description"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/description:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/description:
 
       .. rst-class:: ansible-option-title
 
@@ -3613,7 +3630,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/displayName"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/displayName:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/displayname:
 
       .. rst-class:: ansible-option-title
 
@@ -3647,7 +3664,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/group"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/group:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/group:
 
       .. rst-class:: ansible-option-title
 
@@ -3681,7 +3698,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/id"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/id:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/id:
 
       .. rst-class:: ansible-option-title
 
@@ -3715,7 +3732,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/instructionText"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/instructionText:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/instructiontext:
 
       .. rst-class:: ansible-option-title
 
@@ -3749,7 +3766,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/key"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/key:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/key:
 
       .. rst-class:: ansible-option-title
 
@@ -3783,7 +3800,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/notParam"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/notParam:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/notparam:
 
       .. rst-class:: ansible-option-title
 
@@ -3812,8 +3829,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -3824,7 +3842,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/order"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/order:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/order:
 
       .. rst-class:: ansible-option-title
 
@@ -3858,7 +3876,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/paramArray"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/paramArray:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/paramarray:
 
       .. rst-class:: ansible-option-title
 
@@ -3887,8 +3905,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -3899,7 +3918,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/parameterName"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/parameterName:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/parametername:
 
       .. rst-class:: ansible-option-title
 
@@ -3933,7 +3952,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/provider"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/provider:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/provider:
 
       .. rst-class:: ansible-option-title
 
@@ -3967,7 +3986,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/range"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/range:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/range:
 
       .. rst-class:: ansible-option-title
 
@@ -4001,7 +4020,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/range/id"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/range/id:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/range/id:
 
       .. rst-class:: ansible-option-title
 
@@ -4035,7 +4054,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/range/maxValue"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/range/maxValue:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/range/maxvalue:
 
       .. rst-class:: ansible-option-title
 
@@ -4069,7 +4088,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/range/minValue"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/range/minValue:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/range/minvalue:
 
       .. rst-class:: ansible-option-title
 
@@ -4104,7 +4123,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/required"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/required:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/required:
 
       .. rst-class:: ansible-option-title
 
@@ -4133,8 +4152,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -4145,7 +4165,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/selection"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/selection:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/selection:
 
       .. rst-class:: ansible-option-title
 
@@ -4179,7 +4199,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/selection/defaultSelectedValues"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/selection/defaultSelectedValues:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/selection/defaultselectedvalues:
 
       .. rst-class:: ansible-option-title
 
@@ -4213,7 +4233,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/selection/id"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/selection/id:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/selection/id:
 
       .. rst-class:: ansible-option-title
 
@@ -4247,7 +4267,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/selection/selectionType"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/selection/selectionType:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/selection/selectiontype:
 
       .. rst-class:: ansible-option-title
 
@@ -4269,7 +4289,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Type of selection(SINGLE_SELECT or MULTI_SELECT).
+      Type of selection(SINGLE\_SELECT or MULTI\_SELECT).
 
 
       .. raw:: html
@@ -4281,7 +4301,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rollbackTemplateParams/selection/selectionValues"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbackTemplateParams/selection/selectionValues:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-rollbacktemplateparams/selection/selectionvalues:
 
       .. rst-class:: ansible-option-title
 
@@ -4317,7 +4337,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-softwareType"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-softwareType:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-softwaretype:
 
       .. rst-class:: ansible-option-title
 
@@ -4351,7 +4371,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-softwareVariant"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-softwareVariant:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-softwarevariant:
 
       .. rst-class:: ansible-option-title
 
@@ -4385,7 +4405,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-softwareVersion"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-softwareVersion:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-softwareversion:
 
       .. rst-class:: ansible-option-title
 
@@ -4522,7 +4542,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateContent"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateContent:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templatecontent:
 
       .. rst-class:: ansible-option-title
 
@@ -4556,7 +4576,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateId"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateId:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateid:
 
       .. rst-class:: ansible-option-title
 
@@ -4590,7 +4610,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams:
 
       .. rst-class:: ansible-option-title
 
@@ -4624,7 +4644,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/binding"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/binding:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/binding:
 
       .. rst-class:: ansible-option-title
 
@@ -4658,7 +4678,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/customOrder"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/customOrder:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/customorder:
 
       .. rst-class:: ansible-option-title
 
@@ -4692,7 +4712,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/dataType"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/dataType:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/datatype:
 
       .. rst-class:: ansible-option-title
 
@@ -4726,7 +4746,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/defaultValue"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/defaultValue:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/defaultvalue:
 
       .. rst-class:: ansible-option-title
 
@@ -4760,7 +4780,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/description"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/description:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/description:
 
       .. rst-class:: ansible-option-title
 
@@ -4794,7 +4814,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/displayName"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/displayName:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/displayname:
 
       .. rst-class:: ansible-option-title
 
@@ -4828,7 +4848,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/group"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/group:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/group:
 
       .. rst-class:: ansible-option-title
 
@@ -4862,7 +4882,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/id"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/id:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/id:
 
       .. rst-class:: ansible-option-title
 
@@ -4896,7 +4916,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/instructionText"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/instructionText:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/instructiontext:
 
       .. rst-class:: ansible-option-title
 
@@ -4930,7 +4950,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/key"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/key:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/key:
 
       .. rst-class:: ansible-option-title
 
@@ -4964,7 +4984,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/notParam"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/notParam:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/notparam:
 
       .. rst-class:: ansible-option-title
 
@@ -4993,8 +5013,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -5005,7 +5026,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/order"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/order:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/order:
 
       .. rst-class:: ansible-option-title
 
@@ -5039,7 +5060,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/paramArray"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/paramArray:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/paramarray:
 
       .. rst-class:: ansible-option-title
 
@@ -5068,8 +5089,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -5080,7 +5102,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/parameterName"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/parameterName:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/parametername:
 
       .. rst-class:: ansible-option-title
 
@@ -5114,7 +5136,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/provider"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/provider:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/provider:
 
       .. rst-class:: ansible-option-title
 
@@ -5148,7 +5170,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/range"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/range:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/range:
 
       .. rst-class:: ansible-option-title
 
@@ -5182,7 +5204,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/range/id"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/range/id:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/range/id:
 
       .. rst-class:: ansible-option-title
 
@@ -5216,7 +5238,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/range/maxValue"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/range/maxValue:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/range/maxvalue:
 
       .. rst-class:: ansible-option-title
 
@@ -5250,7 +5272,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/range/minValue"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/range/minValue:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/range/minvalue:
 
       .. rst-class:: ansible-option-title
 
@@ -5285,7 +5307,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/required"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/required:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/required:
 
       .. rst-class:: ansible-option-title
 
@@ -5314,8 +5336,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -5326,7 +5349,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/selection"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/selection:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/selection:
 
       .. rst-class:: ansible-option-title
 
@@ -5360,7 +5383,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/selection/defaultSelectedValues"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/selection/defaultSelectedValues:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/selection/defaultselectedvalues:
 
       .. rst-class:: ansible-option-title
 
@@ -5394,7 +5417,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/selection/id"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/selection/id:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/selection/id:
 
       .. rst-class:: ansible-option-title
 
@@ -5428,7 +5451,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/selection/selectionType"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/selection/selectionType:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/selection/selectiontype:
 
       .. rst-class:: ansible-option-title
 
@@ -5450,7 +5473,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Type of selection(SINGLE_SELECT or MULTI_SELECT).
+      Type of selection(SINGLE\_SELECT or MULTI\_SELECT).
 
 
       .. raw:: html
@@ -5462,7 +5485,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-templateParams/selection/selectionValues"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateParams/selection/selectionValues:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-templateparams/selection/selectionvalues:
 
       .. rst-class:: ansible-option-title
 
@@ -5527,8 +5550,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -5539,7 +5563,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-validationErrors"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-validationErrors:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-validationerrors:
 
       .. rst-class:: ansible-option-title
 
@@ -5573,7 +5597,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-validationErrors/rollbackTemplateErrors"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-validationErrors/rollbackTemplateErrors:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-validationerrors/rollbacktemplateerrors:
 
       .. rst-class:: ansible-option-title
 
@@ -5585,7 +5609,7 @@ Parameters
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+      :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -5607,7 +5631,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-validationErrors/templateErrors"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-validationErrors/templateErrors:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-validationerrors/templateerrors:
 
       .. rst-class:: ansible-option-title
 
@@ -5619,7 +5643,7 @@ Parameters
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+      :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -5641,7 +5665,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-validationErrors/templateId"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-validationErrors/templateId:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-validationerrors/templateid:
 
       .. rst-class:: ansible-option-title
 
@@ -5675,7 +5699,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-validationErrors/templateVersion"></div>
 
-      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-validationErrors/templateVersion:
+      .. _ansible_collections.cisco.dnac.configuration_template_module__parameter-validationerrors/templateversion:
 
       .. rst-class:: ansible-option-title
 
@@ -5749,14 +5773,23 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are configuration_templates.ConfigurationTemplates.deletes_the_template, configuration_templates.ConfigurationTemplates.update_template,
+   - SDK Method used are configuration\_templates.ConfigurationTemplates.deletes\_the\_template, configuration\_templates.ConfigurationTemplates.update\_template,
    - Paths used are delete /dna/intent/api/v1/template-programmer/template/{templateId}, put /dna/intent/api/v1/template-programmer/template,
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco DNA Center documentation for Configuration Templates DeletesTheTemplate <https://developer.cisco.com/docs/dna-center/#!deletes-the-template>`_
+       Complete reference of the DeletesTheTemplate API.
+   `Cisco DNA Center documentation for Configuration Templates UpdateTemplate <https://developer.cisco.com/docs/dna-center/#!update-template>`_
+       Complete reference of the UpdateTemplate API.
 
 .. Examples
 
@@ -5927,10 +5960,8 @@ Examples
             selectionType: string
             selectionValues: {}
         validationErrors:
-          rollbackTemplateErrors:
-          - {}
-          templateErrors:
-          - {}
+          rollbackTemplateErrors: {}
+          templateErrors: {}
           templateId: string
           templateVersion: string
         version: string
@@ -6007,7 +6038,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"response\\": {\\n    \\"taskId\\": \\"string\\",\\n    \\"url\\": \\"string\\"\\n  },\\n  \\"version\\": \\"string\\"\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"response": {"taskId": "string", "url": "string"}, "version": "string"}`
 
 
       .. raw:: html

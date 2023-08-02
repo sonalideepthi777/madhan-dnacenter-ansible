@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -17,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -42,19 +42,19 @@ cisco.dnac.tag module -- Resource module for Tag
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.3.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.7.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.dnac`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.dnac.tag_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.dnac.tag`.
 
 .. version_added
 
-.. versionadded:: 3.1.0 of cisco.dnac
+.. rst-class:: ansible-version-added
+
+New in cisco.dnac 3.1.0
 
 .. contents::
    :local:
@@ -81,12 +81,18 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.dnac.tag_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- dnacentersdk >= 2.4.8
-- python >= 3.5
+- dnacentersdk \>= 2.5.5
+- python \>= 3.5
+
+
+
+
 
 
 .. Options
@@ -172,8 +178,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -363,8 +370,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -402,7 +410,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.2.3.3"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.3.5.3"`
 
       .. raw:: html
 
@@ -413,7 +421,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-dynamicRules"></div>
 
-      .. _ansible_collections.cisco.dnac.tag_module__parameter-dynamicRules:
+      .. _ansible_collections.cisco.dnac.tag_module__parameter-dynamicrules:
 
       .. rst-class:: ansible-option-title
 
@@ -447,7 +455,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-dynamicRules/memberType"></div>
 
-      .. _ansible_collections.cisco.dnac.tag_module__parameter-dynamicRules/memberType:
+      .. _ansible_collections.cisco.dnac.tag_module__parameter-dynamicrules/membertype:
 
       .. rst-class:: ansible-option-title
 
@@ -481,7 +489,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-dynamicRules/rules"></div>
 
-      .. _ansible_collections.cisco.dnac.tag_module__parameter-dynamicRules/rules:
+      .. _ansible_collections.cisco.dnac.tag_module__parameter-dynamicrules/rules:
 
       .. rst-class:: ansible-option-title
 
@@ -515,7 +523,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-dynamicRules/rules/items"></div>
 
-      .. _ansible_collections.cisco.dnac.tag_module__parameter-dynamicRules/rules/items:
+      .. _ansible_collections.cisco.dnac.tag_module__parameter-dynamicrules/rules/items:
 
       .. rst-class:: ansible-option-title
 
@@ -527,7 +535,7 @@ Parameters
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
@@ -549,7 +557,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-dynamicRules/rules/name"></div>
 
-      .. _ansible_collections.cisco.dnac.tag_module__parameter-dynamicRules/rules/name:
+      .. _ansible_collections.cisco.dnac.tag_module__parameter-dynamicrules/rules/name:
 
       .. rst-class:: ansible-option-title
 
@@ -583,7 +591,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-dynamicRules/rules/operation"></div>
 
-      .. _ansible_collections.cisco.dnac.tag_module__parameter-dynamicRules/rules/operation:
+      .. _ansible_collections.cisco.dnac.tag_module__parameter-dynamicrules/rules/operation:
 
       .. rst-class:: ansible-option-title
 
@@ -617,7 +625,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-dynamicRules/rules/value"></div>
 
-      .. _ansible_collections.cisco.dnac.tag_module__parameter-dynamicRules/rules/value:
+      .. _ansible_collections.cisco.dnac.tag_module__parameter-dynamicrules/rules/value:
 
       .. rst-class:: ansible-option-title
 
@@ -651,7 +659,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-dynamicRules/rules/values"></div>
 
-      .. _ansible_collections.cisco.dnac.tag_module__parameter-dynamicRules/rules/values:
+      .. _ansible_collections.cisco.dnac.tag_module__parameter-dynamicrules/rules/values:
 
       .. rst-class:: ansible-option-title
 
@@ -721,7 +729,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-instanceTenantId"></div>
 
-      .. _ansible_collections.cisco.dnac.tag_module__parameter-instanceTenantId:
+      .. _ansible_collections.cisco.dnac.tag_module__parameter-instancetenantid:
 
       .. rst-class:: ansible-option-title
 
@@ -789,7 +797,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-systemTag"></div>
 
-      .. _ansible_collections.cisco.dnac.tag_module__parameter-systemTag:
+      .. _ansible_collections.cisco.dnac.tag_module__parameter-systemtag:
 
       .. rst-class:: ansible-option-title
 
@@ -818,8 +826,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -859,8 +868,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -876,14 +886,25 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are tag.Tag.create_tag, tag.Tag.delete_tag, tag.Tag.update_tag,
+   - SDK Method used are tag.Tag.create\_tag, tag.Tag.delete\_tag, tag.Tag.update\_tag,
    - Paths used are post /dna/intent/api/v1/tag, delete /dna/intent/api/v1/tag/{id}, put /dna/intent/api/v1/tag,
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco DNA Center documentation for Tag CreateTag <https://developer.cisco.com/docs/dna-center/#!create-tag>`_
+       Complete reference of the CreateTag API.
+   `Cisco DNA Center documentation for Tag DeleteTag <https://developer.cisco.com/docs/dna-center/#!delete-tag>`_
+       Complete reference of the DeleteTag API.
+   `Cisco DNA Center documentation for Tag UpdateTag <https://developer.cisco.com/docs/dna-center/#!update-tag>`_
+       Complete reference of the UpdateTag API.
 
 .. Examples
 
@@ -908,7 +929,7 @@ Examples
         - memberType: string
           rules:
             items:
-            - {}
+            - string
             name: string
             operation: string
             value: string
@@ -933,8 +954,7 @@ Examples
         dynamicRules:
         - memberType: string
           rules:
-            items:
-            - {}
+            items: string
             name: string
             operation: string
             value: string
@@ -1017,7 +1037,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"version\\": \\"string\\",\\n  \\"response\\": {\\n    \\"taskId\\": \\"string\\",\\n    \\"url\\": \\"string\\"\\n  }\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"response": {"taskId": "string", "url": "string"}, "version": "string"}`
 
 
       .. raw:: html

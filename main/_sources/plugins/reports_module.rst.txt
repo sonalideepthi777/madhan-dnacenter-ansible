@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -17,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -42,19 +42,19 @@ cisco.dnac.reports module -- Resource module for Reports
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.3.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.7.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.dnac`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.dnac.reports_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.dnac.reports`.
 
 .. version_added
 
-.. versionadded:: 3.1.0 of cisco.dnac
+.. rst-class:: ansible-version-added
+
+New in cisco.dnac 3.1.0
 
 .. contents::
    :local:
@@ -70,6 +70,7 @@ Synopsis
 
 - Manage operations create and delete of the resource Reports.
 - Create/Schedule a report configuration. Use "Get view details for a given view group & view" API to get the metadata required to configure a report.
+
 - Delete a scheduled report configuration. Deletes the report executions also.
 
 .. note::
@@ -80,12 +81,18 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.dnac.reports_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- dnacentersdk >= 2.4.8
-- python >= 3.5
+- dnacentersdk \>= 2.5.5
+- python \>= 3.5
+
+
+
+
 
 
 .. Options
@@ -171,8 +178,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -362,8 +370,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -401,7 +410,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.2.3.3"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.3.5.3"`
 
       .. raw:: html
 
@@ -446,7 +455,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-reportId"></div>
 
-      .. _ansible_collections.cisco.dnac.reports_module__parameter-reportId:
+      .. _ansible_collections.cisco.dnac.reports_module__parameter-reportid:
 
       .. rst-class:: ansible-option-title
 
@@ -577,8 +586,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -623,7 +633,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-view/fieldGroups"></div>
 
-      .. _ansible_collections.cisco.dnac.reports_module__parameter-view/fieldGroups:
+      .. _ansible_collections.cisco.dnac.reports_module__parameter-view/fieldgroups:
 
       .. rst-class:: ansible-option-title
 
@@ -657,7 +667,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-view/fieldGroups/fieldGroupDisplayName"></div>
 
-      .. _ansible_collections.cisco.dnac.reports_module__parameter-view/fieldGroups/fieldGroupDisplayName:
+      .. _ansible_collections.cisco.dnac.reports_module__parameter-view/fieldgroups/fieldgroupdisplayname:
 
       .. rst-class:: ansible-option-title
 
@@ -691,7 +701,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-view/fieldGroups/fieldGroupName"></div>
 
-      .. _ansible_collections.cisco.dnac.reports_module__parameter-view/fieldGroups/fieldGroupName:
+      .. _ansible_collections.cisco.dnac.reports_module__parameter-view/fieldgroups/fieldgroupname:
 
       .. rst-class:: ansible-option-title
 
@@ -725,7 +735,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-view/fieldGroups/fields"></div>
 
-      .. _ansible_collections.cisco.dnac.reports_module__parameter-view/fieldGroups/fields:
+      .. _ansible_collections.cisco.dnac.reports_module__parameter-view/fieldgroups/fields:
 
       .. rst-class:: ansible-option-title
 
@@ -759,7 +769,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-view/fieldGroups/fields/displayName"></div>
 
-      .. _ansible_collections.cisco.dnac.reports_module__parameter-view/fieldGroups/fields/displayName:
+      .. _ansible_collections.cisco.dnac.reports_module__parameter-view/fieldgroups/fields/displayname:
 
       .. rst-class:: ansible-option-title
 
@@ -793,7 +803,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-view/fieldGroups/fields/name"></div>
 
-      .. _ansible_collections.cisco.dnac.reports_module__parameter-view/fieldGroups/fields/name:
+      .. _ansible_collections.cisco.dnac.reports_module__parameter-view/fieldgroups/fields/name:
 
       .. rst-class:: ansible-option-title
 
@@ -863,7 +873,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-view/filters/displayName"></div>
 
-      .. _ansible_collections.cisco.dnac.reports_module__parameter-view/filters/displayName:
+      .. _ansible_collections.cisco.dnac.reports_module__parameter-view/filters/displayname:
 
       .. rst-class:: ansible-option-title
 
@@ -1034,7 +1044,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-view/format/formatType"></div>
 
-      .. _ansible_collections.cisco.dnac.reports_module__parameter-view/format/formatType:
+      .. _ansible_collections.cisco.dnac.reports_module__parameter-view/format/formattype:
 
       .. rst-class:: ansible-option-title
 
@@ -1137,7 +1147,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-view/viewId"></div>
 
-      .. _ansible_collections.cisco.dnac.reports_module__parameter-view/viewId:
+      .. _ansible_collections.cisco.dnac.reports_module__parameter-view/viewid:
 
       .. rst-class:: ansible-option-title
 
@@ -1172,7 +1182,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-viewGroupId"></div>
 
-      .. _ansible_collections.cisco.dnac.reports_module__parameter-viewGroupId:
+      .. _ansible_collections.cisco.dnac.reports_module__parameter-viewgroupid:
 
       .. rst-class:: ansible-option-title
 
@@ -1206,7 +1216,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-viewGroupVersion"></div>
 
-      .. _ansible_collections.cisco.dnac.reports_module__parameter-viewGroupVersion:
+      .. _ansible_collections.cisco.dnac.reports_module__parameter-viewgroupversion:
 
       .. rst-class:: ansible-option-title
 
@@ -1245,14 +1255,23 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are reports.Reports.create_or_schedule_a_report, reports.Reports.delete_a_scheduled_report,
+   - SDK Method used are reports.Reports.create\_or\_schedule\_a\_report, reports.Reports.delete\_a\_scheduled\_report,
    - Paths used are post /dna/intent/api/v1/data/reports, delete /dna/intent/api/v1/data/reports/{reportId},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco DNA Center documentation for Reports CreateOrScheduleAReport <https://developer.cisco.com/docs/dna-center/#!create-or-schedule-a-report>`_
+       Complete reference of the CreateOrScheduleAReport API.
+   `Cisco DNA Center documentation for Reports DeleteAScheduledReport <https://developer.cisco.com/docs/dna-center/#!delete-a-scheduled-report>`_
+       Complete reference of the DeleteAScheduledReport API.
 
 .. Examples
 
@@ -1370,7 +1389,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"tags\\": [\\n    \\"string\\"\\n  ],\\n  \\"dataCategory\\": \\"string\\",\\n  \\"deliveries\\": [\\n    {}\\n  ],\\n  \\"executionCount\\": 0,\\n  \\"executions\\": [\\n    {\\n      \\"endTime\\": 0,\\n      \\"errors\\": [\\n        \\"string\\"\\n      ],\\n      \\"executionId\\": \\"string\\",\\n      \\"processStatus\\": \\"string\\",\\n      \\"requestStatus\\": \\"string\\",\\n      \\"startTime\\": 0,\\n      \\"warnings\\": [\\n        \\"string\\"\\n      ]\\n    }\\n  ],\\n  \\"name\\": \\"string\\",\\n  \\"reportId\\": \\"string\\",\\n  \\"reportWasExecuted\\": true,\\n  \\"schedule\\": {},\\n  \\"view\\": {\\n    \\"fieldGroups\\": [\\n      {\\n        \\"fieldGroupDisplayName\\": \\"string\\",\\n        \\"fieldGroupName\\": \\"string\\",\\n        \\"fields\\": [\\n          {\\n            \\"displayName\\": \\"string\\",\\n            \\"name\\": \\"string\\"\\n          }\\n        ]\\n      }\\n    ],\\n    \\"filters\\": [\\n      {\\n        \\"displayName\\": \\"string\\",\\n        \\"name\\": \\"string\\",\\n        \\"type\\": \\"string\\",\\n        \\"value\\": {}\\n      }\\n    ],\\n    \\"format\\": {\\n      \\"formatType\\": \\"string\\",\\n      \\"name\\": \\"string\\"\\n    },\\n    \\"name\\": \\"string\\",\\n    \\"viewId\\": \\"string\\",\\n    \\"description\\": \\"string\\",\\n    \\"viewInfo\\": \\"string\\"\\n  },\\n  \\"viewGroupId\\": \\"string\\",\\n  \\"viewGroupVersion\\": \\"string\\"\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"dataCategory": "string", "deliveries": [{}], "executionCount": 0, "executions": [{"endTime": 0, "errors": ["string"], "executionId": "string", "processStatus": "string", "requestStatus": "string", "startTime": 0, "warnings": ["string"]}], "name": "string", "reportId": "string", "reportWasExecuted": true, "schedule": {}, "tags": ["string"], "view": {"description": "string", "fieldGroups": [{"fieldGroupDisplayName": "string", "fieldGroupName": "string", "fields": [{"displayName": "string", "name": "string"}]}], "filters": [{"displayName": "string", "name": "string", "type": "string", "value": {}}], "format": {"formatType": "string", "name": "string"}, "name": "string", "viewId": "string", "viewInfo": "string"}, "viewGroupId": "string", "viewGroupVersion": "string"}`
 
 
       .. raw:: html

@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -17,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -42,19 +42,19 @@ cisco.dnac.path_trace_info module -- Information module for Path Trace
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.3.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.7.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.dnac`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.dnac.path_trace_info_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.dnac.path_trace_info`.
 
 .. version_added
 
-.. versionadded:: 3.1.0 of cisco.dnac
+.. rst-class:: ansible-version-added
+
+New in cisco.dnac 3.1.0
 
 .. contents::
    :local:
@@ -81,12 +81,18 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.dnac.path_trace_info_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- dnacentersdk >= 2.4.8
-- python >= 3.5
+- dnacentersdk \>= 2.5.5
+- python \>= 3.5
+
+
+
+
 
 
 .. Options
@@ -109,7 +115,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destIP"></div>
 
-      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-destIP:
+      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-destip:
 
       .. rst-class:: ansible-option-title
 
@@ -143,7 +149,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destPort"></div>
 
-      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-destPort:
+      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-destport:
 
       .. rst-class:: ansible-option-title
 
@@ -206,8 +212,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -397,8 +404,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -436,7 +444,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.2.3.3"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"2.3.5.3"`
 
       .. raw:: html
 
@@ -447,7 +455,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-flowAnalysisId"></div>
 
-      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-flowAnalysisId:
+      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-flowanalysisid:
 
       .. rst-class:: ansible-option-title
 
@@ -481,7 +489,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-gtCreateTime"></div>
 
-      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-gtCreateTime:
+      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-gtcreatetime:
 
       .. rst-class:: ansible-option-title
 
@@ -549,7 +557,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-lastUpdateTime"></div>
 
-      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-lastUpdateTime:
+      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-lastupdatetime:
 
       .. rst-class:: ansible-option-title
 
@@ -595,7 +603,7 @@ Parameters
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`string`
+      :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -617,7 +625,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ltCreateTime"></div>
 
-      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-ltCreateTime:
+      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-ltcreatetime:
 
       .. rst-class:: ansible-option-title
 
@@ -663,7 +671,7 @@ Parameters
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`string`
+      :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -719,7 +727,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-periodicRefresh"></div>
 
-      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-periodicRefresh:
+      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-periodicrefresh:
 
       .. rst-class:: ansible-option-title
 
@@ -748,8 +756,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -794,7 +803,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sortBy"></div>
 
-      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-sortBy:
+      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-sortby:
 
       .. rst-class:: ansible-option-title
 
@@ -828,7 +837,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sourceIP"></div>
 
-      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-sourceIP:
+      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-sourceip:
 
       .. rst-class:: ansible-option-title
 
@@ -862,7 +871,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sourcePort"></div>
 
-      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-sourcePort:
+      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-sourceport:
 
       .. rst-class:: ansible-option-title
 
@@ -930,7 +939,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-taskId"></div>
 
-      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-taskId:
+      .. _ansible_collections.cisco.dnac.path_trace_info_module__parameter-taskid:
 
       .. rst-class:: ansible-option-title
 
@@ -993,8 +1002,9 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
 
       .. raw:: html
 
@@ -1010,14 +1020,23 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are path_trace.PathTrace.retrieves_previous_pathtrace, path_trace.PathTrace.retrives_all_previous_pathtraces_summary,
+   - SDK Method used are path\_trace.PathTrace.retrieves\_previous\_pathtrace, path\_trace.PathTrace.retrives\_all\_previous\_pathtraces\_summary,
    - Paths used are get /dna/intent/api/v1/flow-analysis, get /dna/intent/api/v1/flow-analysis/{flowAnalysisId},
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco DNA Center documentation for Path Trace RetrievesPreviousPathtrace <https://developer.cisco.com/docs/dna-center/#!retrieves-previous-pathtrace>`_
+       Complete reference of the RetrievesPreviousPathtrace API.
+   `Cisco DNA Center documentation for Path Trace RetrivesAllPreviousPathtracesSummary <https://developer.cisco.com/docs/dna-center/#!retrives-all-previous-pathtraces-summary>`_
+       Complete reference of the RetrivesAllPreviousPathtracesSummary API.
 
 .. Examples
 
@@ -1036,8 +1055,7 @@ Examples
         dnac_port: "{{dnac_port}}"
         dnac_version: "{{dnac_version}}"
         dnac_debug: "{{dnac_debug}}"
-        headers:
-          custom: value
+        headers: "{{my_headers | from_json}}"
         periodicRefresh: True
         sourceIP: string
         destIP: string
@@ -1049,8 +1067,8 @@ Examples
         status: string
         taskId: string
         lastUpdateTime: string
-        limit: string
-        offset: string
+        limit: 0
+        offset: 0
         order: string
         sortBy: string
       register: result
@@ -1064,8 +1082,7 @@ Examples
         dnac_port: "{{dnac_port}}"
         dnac_version: "{{dnac_version}}"
         dnac_debug: "{{dnac_debug}}"
-        headers:
-          custom: value
+        headers: "{{my_headers | from_json}}"
         flowAnalysisId: string
       register: result
 
@@ -1129,7 +1146,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"response\\": {\\n    \\"detailedStatus\\": {\\n      \\"aclTraceCalculation\\": \\"string\\",\\n      \\"aclTraceCalculationFailureReason\\": \\"string\\"\\n    },\\n    \\"lastUpdate\\": \\"string\\",\\n    \\"networkElements\\": [\\n      {\\n        \\"accuracyList\\": [\\n          {\\n            \\"percent\\": 0,\\n            \\"reason\\": \\"string\\"\\n          }\\n        ],\\n        \\"detailedStatus\\": {\\n          \\"aclTraceCalculation\\": \\"string\\",\\n          \\"aclTraceCalculationFailureReason\\": \\"string\\"\\n        },\\n        \\"deviceStatistics\\": {\\n          \\"cpuStatistics\\": {\\n            \\"fiveMinUsageInPercentage\\": 0,\\n            \\"fiveSecsUsageInPercentage\\": 0,\\n            \\"oneMinUsageInPercentage\\": 0,\\n            \\"refreshedAt\\": 0\\n          },\\n          \\"memoryStatistics\\": {\\n            \\"memoryUsage\\": 0,\\n            \\"refreshedAt\\": 0,\\n            \\"totalMemory\\": 0\\n          }\\n        },\\n        \\"deviceStatsCollection\\": \\"string\\",\\n        \\"deviceStatsCollectionFailureReason\\": \\"string\\",\\n        \\"egressPhysicalInterface\\": {\\n          \\"aclAnalysis\\": {\\n            \\"aclName\\": \\"string\\",\\n            \\"matchingAces\\": [\\n              {\\n                \\"ace\\": \\"string\\",\\n                \\"matchingPorts\\": [\\n                  {\\n                    \\"ports\\": [\\n                      {\\n                        \\"destPorts\\": [\\n                          \\"string\\"\\n                        ],\\n                        \\"sourcePorts\\": [\\n                          \\"string\\"\\n                        ]\\n                      }\\n                    ],\\n                    \\"protocol\\": \\"string\\"\\n                  }\\n                ],\\n                \\"result\\": \\"string\\"\\n              }\\n            ],\\n            \\"result\\": \\"string\\"\\n          },\\n          \\"id\\": \\"string\\",\\n          \\"interfaceStatistics\\": {\\n            \\"adminStatus\\": \\"string\\",\\n            \\"inputPackets\\": 0,\\n            \\"inputQueueCount\\": 0,\\n            \\"inputQueueDrops\\": 0,\\n            \\"inputQueueFlushes\\": 0,\\n            \\"inputQueueMaxDepth\\": 0,\\n            \\"inputRatebps\\": 0,\\n            \\"operationalStatus\\": \\"string\\",\\n            \\"outputDrop\\": 0,\\n            \\"outputPackets\\": 0,\\n            \\"outputQueueCount\\": 0,\\n            \\"outputQueueDepth\\": 0,\\n            \\"outputRatebps\\": 0,\\n            \\"refreshedAt\\": 0\\n          },\\n          \\"interfaceStatsCollection\\": \\"string\\",\\n          \\"interfaceStatsCollectionFailureReason\\": \\"string\\",\\n          \\"name\\": \\"string\\",\\n          \\"pathOverlayInfo\\": [\\n            {\\n              \\"controlPlane\\": \\"string\\",\\n              \\"dataPacketEncapsulation\\": \\"string\\",\\n              \\"destIp\\": \\"string\\",\\n              \\"destPort\\": \\"string\\",\\n              \\"protocol\\": \\"string\\",\\n              \\"sourceIp\\": \\"string\\",\\n              \\"sourcePort\\": \\"string\\",\\n              \\"vxlanInfo\\": {\\n                \\"dscp\\": \\"string\\",\\n                \\"vnid\\": \\"string\\"\\n              }\\n            }\\n          ],\\n          \\"qosStatistics\\": [\\n            {\\n              \\"classMapName\\": \\"string\\",\\n              \\"dropRate\\": 0,\\n              \\"numBytes\\": 0,\\n              \\"numPackets\\": 0,\\n              \\"offeredRate\\": 0,\\n              \\"queueBandwidthbps\\": \\"string\\",\\n              \\"queueDepth\\": 0,\\n              \\"queueNoBufferDrops\\": 0,\\n              \\"queueTotalDrops\\": 0,\\n              \\"refreshedAt\\": 0\\n            }\\n          ],\\n          \\"qosStatsCollection\\": \\"string\\",\\n          \\"qosStatsCollectionFailureReason\\": \\"string\\",\\n          \\"usedVlan\\": \\"string\\",\\n          \\"vrfName\\": \\"string\\"\\n        },\\n        \\"egressVirtualInterface\\": {\\n          \\"aclAnalysis\\": {\\n            \\"aclName\\": \\"string\\",\\n            \\"matchingAces\\": [\\n              {\\n                \\"ace\\": \\"string\\",\\n                \\"matchingPorts\\": [\\n                  {\\n                    \\"ports\\": [\\n                      {\\n                        \\"destPorts\\": [\\n                          \\"string\\"\\n                        ],\\n                        \\"sourcePorts\\": [\\n                          \\"string\\"\\n                        ]\\n                      }\\n                    ],\\n                    \\"protocol\\": \\"string\\"\\n                  }\\n                ],\\n                \\"result\\": \\"string\\"\\n              }\\n            ],\\n            \\"result\\": \\"string\\"\\n          },\\n          \\"id\\": \\"string\\",\\n          \\"interfaceStatistics\\": {\\n            \\"adminStatus\\": \\"string\\",\\n            \\"inputPackets\\": 0,\\n            \\"inputQueueCount\\": 0,\\n            \\"inputQueueDrops\\": 0,\\n            \\"inputQueueFlushes\\": 0,\\n            \\"inputQueueMaxDepth\\": 0,\\n            \\"inputRatebps\\": 0,\\n            \\"operationalStatus\\": \\"string\\",\\n            \\"outputDrop\\": 0,\\n            \\"outputPackets\\": 0,\\n            \\"outputQueueCount\\": 0,\\n            \\"outputQueueDepth\\": 0,\\n            \\"outputRatebps\\": 0,\\n            \\"refreshedAt\\": 0\\n          },\\n          \\"interfaceStatsCollection\\": \\"string\\",\\n          \\"interfaceStatsCollectionFailureReason\\": \\"string\\",\\n          \\"name\\": \\"string\\",\\n          \\"pathOverlayInfo\\": [\\n            {\\n              \\"controlPlane\\": \\"string\\",\\n              \\"dataPacketEncapsulation\\": \\"string\\",\\n              \\"destIp\\": \\"string\\",\\n              \\"destPort\\": \\"string\\",\\n              \\"protocol\\": \\"string\\",\\n              \\"sourceIp\\": \\"string\\",\\n              \\"sourcePort\\": \\"string\\",\\n              \\"vxlanInfo\\": {\\n                \\"dscp\\": \\"string\\",\\n                \\"vnid\\": \\"string\\"\\n              }\\n            }\\n          ],\\n          \\"qosStatistics\\": [\\n            {\\n              \\"classMapName\\": \\"string\\",\\n              \\"dropRate\\": 0,\\n              \\"numBytes\\": 0,\\n              \\"numPackets\\": 0,\\n              \\"offeredRate\\": 0,\\n              \\"queueBandwidthbps\\": \\"string\\",\\n              \\"queueDepth\\": 0,\\n              \\"queueNoBufferDrops\\": 0,\\n              \\"queueTotalDrops\\": 0,\\n              \\"refreshedAt\\": 0\\n            }\\n          ],\\n          \\"qosStatsCollection\\": \\"string\\",\\n          \\"qosStatsCollectionFailureReason\\": \\"string\\",\\n          \\"usedVlan\\": \\"string\\",\\n          \\"vrfName\\": \\"string\\"\\n        },\\n        \\"flexConnect\\": {\\n          \\"authentication\\": \\"string\\",\\n          \\"dataSwitching\\": \\"string\\",\\n          \\"egressAclAnalysis\\": {\\n            \\"aclName\\": \\"string\\",\\n            \\"matchingAces\\": [\\n              {\\n                \\"ace\\": \\"string\\",\\n                \\"matchingPorts\\": [\\n                  {\\n                    \\"ports\\": [\\n                      {\\n                        \\"destPorts\\": [\\n                          \\"string\\"\\n                        ],\\n                        \\"sourcePorts\\": [\\n                          \\"string\\"\\n                        ]\\n                      }\\n                    ],\\n                    \\"protocol\\": \\"string\\"\\n                  }\\n                ],\\n                \\"result\\": \\"string\\"\\n              }\\n            ],\\n            \\"result\\": \\"string\\"\\n          },\\n          \\"ingressAclAnalysis\\": {\\n            \\"aclName\\": \\"string\\",\\n            \\"matchingAces\\": [\\n              {\\n                \\"ace\\": \\"string\\",\\n                \\"matchingPorts\\": [\\n                  {\\n                    \\"ports\\": [\\n                      {\\n                        \\"destPorts\\": [\\n                          \\"string\\"\\n                        ],\\n                        \\"sourcePorts\\": [\\n                          \\"string\\"\\n                        ]\\n                      }\\n                    ],\\n                    \\"protocol\\": \\"string\\"\\n                  }\\n                ],\\n                \\"result\\": \\"string\\"\\n              }\\n            ],\\n            \\"result\\": \\"string\\"\\n          },\\n          \\"wirelessLanControllerId\\": \\"string\\",\\n          \\"wirelessLanControllerName\\": \\"string\\"\\n        },\\n        \\"id\\": \\"string\\",\\n        \\"ingressPhysicalInterface\\": {\\n          \\"aclAnalysis\\": {\\n            \\"aclName\\": \\"string\\",\\n            \\"matchingAces\\": [\\n              {\\n                \\"ace\\": \\"string\\",\\n                \\"matchingPorts\\": [\\n                  {\\n                    \\"ports\\": [\\n                      {\\n                        \\"destPorts\\": [\\n                          \\"string\\"\\n                        ],\\n                        \\"sourcePorts\\": [\\n                          \\"string\\"\\n                        ]\\n                      }\\n                    ],\\n                    \\"protocol\\": \\"string\\"\\n                  }\\n                ],\\n                \\"result\\": \\"string\\"\\n              }\\n            ],\\n            \\"result\\": \\"string\\"\\n          },\\n          \\"id\\": \\"string\\",\\n          \\"interfaceStatistics\\": {\\n            \\"adminStatus\\": \\"string\\",\\n            \\"inputPackets\\": 0,\\n            \\"inputQueueCount\\": 0,\\n            \\"inputQueueDrops\\": 0,\\n            \\"inputQueueFlushes\\": 0,\\n            \\"inputQueueMaxDepth\\": 0,\\n            \\"inputRatebps\\": 0,\\n            \\"operationalStatus\\": \\"string\\",\\n            \\"outputDrop\\": 0,\\n            \\"outputPackets\\": 0,\\n            \\"outputQueueCount\\": 0,\\n            \\"outputQueueDepth\\": 0,\\n            \\"outputRatebps\\": 0,\\n            \\"refreshedAt\\": 0\\n          },\\n          \\"interfaceStatsCollection\\": \\"string\\",\\n          \\"interfaceStatsCollectionFailureReason\\": \\"string\\",\\n          \\"name\\": \\"string\\",\\n          \\"pathOverlayInfo\\": [\\n            {\\n              \\"controlPlane\\": \\"string\\",\\n              \\"dataPacketEncapsulation\\": \\"string\\",\\n              \\"destIp\\": \\"string\\",\\n              \\"destPort\\": \\"string\\",\\n              \\"protocol\\": \\"string\\",\\n              \\"sourceIp\\": \\"string\\",\\n              \\"sourcePort\\": \\"string\\",\\n              \\"vxlanInfo\\": {\\n                \\"dscp\\": \\"string\\",\\n                \\"vnid\\": \\"string\\"\\n              }\\n            }\\n          ],\\n          \\"qosStatistics\\": [\\n            {\\n              \\"classMapName\\": \\"string\\",\\n              \\"dropRate\\": 0,\\n              \\"numBytes\\": 0,\\n              \\"numPackets\\": 0,\\n              \\"offeredRate\\": 0,\\n              \\"queueBandwidthbps\\": \\"string\\",\\n              \\"queueDepth\\": 0,\\n              \\"queueNoBufferDrops\\": 0,\\n              \\"queueTotalDrops\\": 0,\\n              \\"refreshedAt\\": 0\\n            }\\n          ],\\n          \\"qosStatsCollection\\": \\"string\\",\\n          \\"qosStatsCollectionFailureReason\\": \\"string\\",\\n          \\"usedVlan\\": \\"string\\",\\n          \\"vrfName\\": \\"string\\"\\n        },\\n        \\"ingressVirtualInterface\\": {\\n          \\"aclAnalysis\\": {\\n            \\"aclName\\": \\"string\\",\\n            \\"matchingAces\\": [\\n              {\\n                \\"ace\\": \\"string\\",\\n                \\"matchingPorts\\": [\\n                  {\\n                    \\"ports\\": [\\n                      {\\n                        \\"destPorts\\": [\\n                          \\"string\\"\\n                        ],\\n                        \\"sourcePorts\\": [\\n                          \\"string\\"\\n                        ]\\n                      }\\n                    ],\\n                    \\"protocol\\": \\"string\\"\\n                  }\\n                ],\\n                \\"result\\": \\"string\\"\\n              }\\n            ],\\n            \\"result\\": \\"string\\"\\n          },\\n          \\"id\\": \\"string\\",\\n          \\"interfaceStatistics\\": {\\n            \\"adminStatus\\": \\"string\\",\\n            \\"inputPackets\\": 0,\\n            \\"inputQueueCount\\": 0,\\n            \\"inputQueueDrops\\": 0,\\n            \\"inputQueueFlushes\\": 0,\\n            \\"inputQueueMaxDepth\\": 0,\\n            \\"inputRatebps\\": 0,\\n            \\"operationalStatus\\": \\"string\\",\\n            \\"outputDrop\\": 0,\\n            \\"outputPackets\\": 0,\\n            \\"outputQueueCount\\": 0,\\n            \\"outputQueueDepth\\": 0,\\n            \\"outputRatebps\\": 0,\\n            \\"refreshedAt\\": 0\\n          },\\n          \\"interfaceStatsCollection\\": \\"string\\",\\n          \\"interfaceStatsCollectionFailureReason\\": \\"string\\",\\n          \\"name\\": \\"string\\",\\n          \\"pathOverlayInfo\\": [\\n            {\\n              \\"controlPlane\\": \\"string\\",\\n              \\"dataPacketEncapsulation\\": \\"string\\",\\n              \\"destIp\\": \\"string\\",\\n              \\"destPort\\": \\"string\\",\\n              \\"protocol\\": \\"string\\",\\n              \\"sourceIp\\": \\"string\\",\\n              \\"sourcePort\\": \\"string\\",\\n              \\"vxlanInfo\\": {\\n                \\"dscp\\": \\"string\\",\\n                \\"vnid\\": \\"string\\"\\n              }\\n            }\\n          ],\\n          \\"qosStatistics\\": [\\n            {\\n              \\"classMapName\\": \\"string\\",\\n              \\"dropRate\\": 0,\\n              \\"numBytes\\": 0,\\n              \\"numPackets\\": 0,\\n              \\"offeredRate\\": 0,\\n              \\"queueBandwidthbps\\": \\"string\\",\\n              \\"queueDepth\\": 0,\\n              \\"queueNoBufferDrops\\": 0,\\n              \\"queueTotalDrops\\": 0,\\n              \\"refreshedAt\\": 0\\n            }\\n          ],\\n          \\"qosStatsCollection\\": \\"string\\",\\n          \\"qosStatsCollectionFailureReason\\": \\"string\\",\\n          \\"usedVlan\\": \\"string\\",\\n          \\"vrfName\\": \\"string\\"\\n        },\\n        \\"ip\\": \\"string\\",\\n        \\"linkInformationSource\\": \\"string\\",\\n        \\"name\\": \\"string\\",\\n        \\"perfMonCollection\\": \\"string\\",\\n        \\"perfMonCollectionFailureReason\\": \\"string\\",\\n        \\"perfMonStatistics\\": [\\n          {\\n            \\"byteRate\\": 0,\\n            \\"destIpAddress\\": \\"string\\",\\n            \\"destPort\\": \\"string\\",\\n            \\"inputInterface\\": \\"string\\",\\n            \\"ipv4DSCP\\": \\"string\\",\\n            \\"ipv4TTL\\": 0,\\n            \\"outputInterface\\": \\"string\\",\\n            \\"packetBytes\\": 0,\\n            \\"packetCount\\": 0,\\n            \\"packetLoss\\": 0,\\n            \\"packetLossPercentage\\": 0,\\n            \\"protocol\\": \\"string\\",\\n            \\"refreshedAt\\": 0,\\n            \\"rtpJitterMax\\": 0,\\n            \\"rtpJitterMean\\": 0,\\n            \\"rtpJitterMin\\": 0,\\n            \\"sourceIpAddress\\": \\"string\\",\\n            \\"sourcePort\\": \\"string\\"\\n          }\\n        ],\\n        \\"role\\": \\"string\\",\\n        \\"ssid\\": \\"string\\",\\n        \\"tunnels\\": [\\n          \\"string\\"\\n        ],\\n        \\"type\\": \\"string\\",\\n        \\"wlanId\\": \\"string\\"\\n      }\\n    ],\\n    \\"networkElementsInfo\\": [\\n      {\\n        \\"accuracyList\\": [\\n          {\\n            \\"percent\\": 0,\\n            \\"reason\\": \\"string\\"\\n          }\\n        ],\\n        \\"detailedStatus\\": {\\n          \\"aclTraceCalculation\\": \\"string\\",\\n          \\"aclTraceCalculationFailureReason\\": \\"string\\"\\n        },\\n        \\"deviceStatistics\\": {\\n          \\"cpuStatistics\\": {\\n            \\"fiveMinUsageInPercentage\\": 0,\\n            \\"fiveSecsUsageInPercentage\\": 0,\\n            \\"oneMinUsageInPercentage\\": 0,\\n            \\"refreshedAt\\": 0\\n          },\\n          \\"memoryStatistics\\": {\\n            \\"memoryUsage\\": 0,\\n            \\"refreshedAt\\": 0,\\n            \\"totalMemory\\": 0\\n          }\\n        },\\n        \\"deviceStatsCollection\\": \\"string\\",\\n        \\"deviceStatsCollectionFailureReason\\": \\"string\\",\\n        \\"egressInterface\\": {\\n          \\"physicalInterface\\": {\\n            \\"aclAnalysis\\": {\\n              \\"aclName\\": \\"string\\",\\n              \\"matchingAces\\": [\\n                {\\n                  \\"ace\\": \\"string\\",\\n                  \\"matchingPorts\\": [\\n                    {\\n                      \\"ports\\": [\\n                        {\\n                          \\"destPorts\\": [\\n                            \\"string\\"\\n                          ],\\n                          \\"sourcePorts\\": [\\n                            \\"string\\"\\n                          ]\\n                        }\\n                      ],\\n                      \\"protocol\\": \\"string\\"\\n                    }\\n                  ],\\n                  \\"result\\": \\"string\\"\\n                }\\n              ],\\n              \\"result\\": \\"string\\"\\n            },\\n            \\"id\\": \\"string\\",\\n            \\"interfaceStatistics\\": {\\n              \\"adminStatus\\": \\"string\\",\\n              \\"inputPackets\\": 0,\\n              \\"inputQueueCount\\": 0,\\n              \\"inputQueueDrops\\": 0,\\n              \\"inputQueueFlushes\\": 0,\\n              \\"inputQueueMaxDepth\\": 0,\\n              \\"inputRatebps\\": 0,\\n              \\"operationalStatus\\": \\"string\\",\\n              \\"outputDrop\\": 0,\\n              \\"outputPackets\\": 0,\\n              \\"outputQueueCount\\": 0,\\n              \\"outputQueueDepth\\": 0,\\n              \\"outputRatebps\\": 0,\\n              \\"refreshedAt\\": 0\\n            },\\n            \\"interfaceStatsCollection\\": \\"string\\",\\n            \\"interfaceStatsCollectionFailureReason\\": \\"string\\",\\n            \\"name\\": \\"string\\",\\n            \\"pathOverlayInfo\\": [\\n              {\\n                \\"controlPlane\\": \\"string\\",\\n                \\"dataPacketEncapsulation\\": \\"string\\",\\n                \\"destIp\\": \\"string\\",\\n                \\"destPort\\": \\"string\\",\\n                \\"protocol\\": \\"string\\",\\n                \\"sourceIp\\": \\"string\\",\\n                \\"sourcePort\\": \\"string\\",\\n                \\"vxlanInfo\\": {\\n                  \\"dscp\\": \\"string\\",\\n                  \\"vnid\\": \\"string\\"\\n                }\\n              }\\n            ],\\n            \\"qosStatistics\\": [\\n              {\\n                \\"classMapName\\": \\"string\\",\\n                \\"dropRate\\": 0,\\n                \\"numBytes\\": 0,\\n                \\"numPackets\\": 0,\\n                \\"offeredRate\\": 0,\\n                \\"queueBandwidthbps\\": \\"string\\",\\n                \\"queueDepth\\": 0,\\n                \\"queueNoBufferDrops\\": 0,\\n                \\"queueTotalDrops\\": 0,\\n                \\"refreshedAt\\": 0\\n              }\\n            ],\\n            \\"qosStatsCollection\\": \\"string\\",\\n            \\"qosStatsCollectionFailureReason\\": \\"string\\",\\n            \\"usedVlan\\": \\"string\\",\\n            \\"vrfName\\": \\"string\\"\\n          },\\n          \\"virtualInterface\\": [\\n            {\\n              \\"aclAnalysis\\": {\\n                \\"aclName\\": \\"string\\",\\n                \\"matchingAces\\": [\\n                  {\\n                    \\"ace\\": \\"string\\",\\n                    \\"matchingPorts\\": [\\n                      {\\n                        \\"ports\\": [\\n                          {\\n                            \\"destPorts\\": [\\n                              \\"string\\"\\n                            ],\\n                            \\"sourcePorts\\": [\\n                              \\"string\\"\\n                            ]\\n                          }\\n                        ],\\n                        \\"protocol\\": \\"string\\"\\n                      }\\n                    ],\\n                    \\"result\\": \\"string\\"\\n                  }\\n                ],\\n                \\"result\\": \\"string\\"\\n              },\\n              \\"id\\": \\"string\\",\\n              \\"interfaceStatistics\\": {\\n                \\"adminStatus\\": \\"string\\",\\n                \\"inputPackets\\": 0,\\n                \\"inputQueueCount\\": 0,\\n                \\"inputQueueDrops\\": 0,\\n                \\"inputQueueFlushes\\": 0,\\n                \\"inputQueueMaxDepth\\": 0,\\n                \\"inputRatebps\\": 0,\\n                \\"operationalStatus\\": \\"string\\",\\n                \\"outputDrop\\": 0,\\n                \\"outputPackets\\": 0,\\n                \\"outputQueueCount\\": 0,\\n                \\"outputQueueDepth\\": 0,\\n                \\"outputRatebps\\": 0,\\n                \\"refreshedAt\\": 0\\n              },\\n              \\"interfaceStatsCollection\\": \\"string\\",\\n              \\"interfaceStatsCollectionFailureReason\\": \\"string\\",\\n              \\"name\\": \\"string\\",\\n              \\"pathOverlayInfo\\": [\\n                {\\n                  \\"controlPlane\\": \\"string\\",\\n                  \\"dataPacketEncapsulation\\": \\"string\\",\\n                  \\"destIp\\": \\"string\\",\\n                  \\"destPort\\": \\"string\\",\\n                  \\"protocol\\": \\"string\\",\\n                  \\"sourceIp\\": \\"string\\",\\n                  \\"sourcePort\\": \\"string\\",\\n                  \\"vxlanInfo\\": {\\n                    \\"dscp\\": \\"string\\",\\n                    \\"vnid\\": \\"string\\"\\n                  }\\n                }\\n              ],\\n              \\"qosStatistics\\": [\\n                {\\n                  \\"classMapName\\": \\"string\\",\\n                  \\"dropRate\\": 0,\\n                  \\"numBytes\\": 0,\\n                  \\"numPackets\\": 0,\\n                  \\"offeredRate\\": 0,\\n                  \\"queueBandwidthbps\\": \\"string\\",\\n                  \\"queueDepth\\": 0,\\n                  \\"queueNoBufferDrops\\": 0,\\n                  \\"queueTotalDrops\\": 0,\\n                  \\"refreshedAt\\": 0\\n                }\\n              ],\\n              \\"qosStatsCollection\\": \\"string\\",\\n              \\"qosStatsCollectionFailureReason\\": \\"string\\",\\n              \\"usedVlan\\": \\"string\\",\\n              \\"vrfName\\": \\"string\\"\\n            }\\n          ]\\n        },\\n        \\"flexConnect\\": {\\n          \\"authentication\\": \\"string\\",\\n          \\"dataSwitching\\": \\"string\\",\\n          \\"egressAclAnalysis\\": {\\n            \\"aclName\\": \\"string\\",\\n            \\"matchingAces\\": [\\n              {\\n                \\"ace\\": \\"string\\",\\n                \\"matchingPorts\\": [\\n                  {\\n                    \\"ports\\": [\\n                      {\\n                        \\"destPorts\\": [\\n                          \\"string\\"\\n                        ],\\n                        \\"sourcePorts\\": [\\n                          \\"string\\"\\n                        ]\\n                      }\\n                    ],\\n                    \\"protocol\\": \\"string\\"\\n                  }\\n                ],\\n                \\"result\\": \\"string\\"\\n              }\\n            ],\\n            \\"result\\": \\"string\\"\\n          },\\n          \\"ingressAclAnalysis\\": {\\n            \\"aclName\\": \\"string\\",\\n            \\"matchingAces\\": [\\n              {\\n                \\"ace\\": \\"string\\",\\n                \\"matchingPorts\\": [\\n                  {\\n                    \\"ports\\": [\\n                      {\\n                        \\"destPorts\\": [\\n                          \\"string\\"\\n                        ],\\n                        \\"sourcePorts\\": [\\n                          \\"string\\"\\n                        ]\\n                      }\\n                    ],\\n                    \\"protocol\\": \\"string\\"\\n                  }\\n                ],\\n                \\"result\\": \\"string\\"\\n              }\\n            ],\\n            \\"result\\": \\"string\\"\\n          },\\n          \\"wirelessLanControllerId\\": \\"string\\",\\n          \\"wirelessLanControllerName\\": \\"string\\"\\n        },\\n        \\"id\\": \\"string\\",\\n        \\"ingressInterface\\": {\\n          \\"physicalInterface\\": {\\n            \\"aclAnalysis\\": {\\n              \\"aclName\\": \\"string\\",\\n              \\"matchingAces\\": [\\n                {\\n                  \\"ace\\": \\"string\\",\\n                  \\"matchingPorts\\": [\\n                    {\\n                      \\"ports\\": [\\n                        {\\n                          \\"destPorts\\": [\\n                            \\"string\\"\\n                          ],\\n                          \\"sourcePorts\\": [\\n                            \\"string\\"\\n                          ]\\n                        }\\n                      ],\\n                      \\"protocol\\": \\"string\\"\\n                    }\\n                  ],\\n                  \\"result\\": \\"string\\"\\n                }\\n              ],\\n              \\"result\\": \\"string\\"\\n            },\\n            \\"id\\": \\"string\\",\\n            \\"interfaceStatistics\\": {\\n              \\"adminStatus\\": \\"string\\",\\n              \\"inputPackets\\": 0,\\n              \\"inputQueueCount\\": 0,\\n              \\"inputQueueDrops\\": 0,\\n              \\"inputQueueFlushes\\": 0,\\n              \\"inputQueueMaxDepth\\": 0,\\n              \\"inputRatebps\\": 0,\\n              \\"operationalStatus\\": \\"string\\",\\n              \\"outputDrop\\": 0,\\n              \\"outputPackets\\": 0,\\n              \\"outputQueueCount\\": 0,\\n              \\"outputQueueDepth\\": 0,\\n              \\"outputRatebps\\": 0,\\n              \\"refreshedAt\\": 0\\n            },\\n            \\"interfaceStatsCollection\\": \\"string\\",\\n            \\"interfaceStatsCollectionFailureReason\\": \\"string\\",\\n            \\"name\\": \\"string\\",\\n            \\"pathOverlayInfo\\": [\\n              {\\n                \\"controlPlane\\": \\"string\\",\\n                \\"dataPacketEncapsulation\\": \\"string\\",\\n                \\"destIp\\": \\"string\\",\\n                \\"destPort\\": \\"string\\",\\n                \\"protocol\\": \\"string\\",\\n                \\"sourceIp\\": \\"string\\",\\n                \\"sourcePort\\": \\"string\\",\\n                \\"vxlanInfo\\": {\\n                  \\"dscp\\": \\"string\\",\\n                  \\"vnid\\": \\"string\\"\\n                }\\n              }\\n            ],\\n            \\"qosStatistics\\": [\\n              {\\n                \\"classMapName\\": \\"string\\",\\n                \\"dropRate\\": 0,\\n                \\"numBytes\\": 0,\\n                \\"numPackets\\": 0,\\n                \\"offeredRate\\": 0,\\n                \\"queueBandwidthbps\\": \\"string\\",\\n                \\"queueDepth\\": 0,\\n                \\"queueNoBufferDrops\\": 0,\\n                \\"queueTotalDrops\\": 0,\\n                \\"refreshedAt\\": 0\\n              }\\n            ],\\n            \\"qosStatsCollection\\": \\"string\\",\\n            \\"qosStatsCollectionFailureReason\\": \\"string\\",\\n            \\"usedVlan\\": \\"string\\",\\n            \\"vrfName\\": \\"string\\"\\n          },\\n          \\"virtualInterface\\": [\\n            {\\n              \\"aclAnalysis\\": {\\n                \\"aclName\\": \\"string\\",\\n                \\"matchingAces\\": [\\n                  {\\n                    \\"ace\\": \\"string\\",\\n                    \\"matchingPorts\\": [\\n                      {\\n                        \\"ports\\": [\\n                          {\\n                            \\"destPorts\\": [\\n                              \\"string\\"\\n                            ],\\n                            \\"sourcePorts\\": [\\n                              \\"string\\"\\n                            ]\\n                          }\\n                        ],\\n                        \\"protocol\\": \\"string\\"\\n                      }\\n                    ],\\n                    \\"result\\": \\"string\\"\\n                  }\\n                ],\\n                \\"result\\": \\"string\\"\\n              },\\n              \\"id\\": \\"string\\",\\n              \\"interfaceStatistics\\": {\\n                \\"adminStatus\\": \\"string\\",\\n                \\"inputPackets\\": 0,\\n                \\"inputQueueCount\\": 0,\\n                \\"inputQueueDrops\\": 0,\\n                \\"inputQueueFlushes\\": 0,\\n                \\"inputQueueMaxDepth\\": 0,\\n                \\"inputRatebps\\": 0,\\n                \\"operationalStatus\\": \\"string\\",\\n                \\"outputDrop\\": 0,\\n                \\"outputPackets\\": 0,\\n                \\"outputQueueCount\\": 0,\\n                \\"outputQueueDepth\\": 0,\\n                \\"outputRatebps\\": 0,\\n                \\"refreshedAt\\": 0\\n              },\\n              \\"interfaceStatsCollection\\": \\"string\\",\\n              \\"interfaceStatsCollectionFailureReason\\": \\"string\\",\\n              \\"name\\": \\"string\\",\\n              \\"pathOverlayInfo\\": [\\n                {\\n                  \\"controlPlane\\": \\"string\\",\\n                  \\"dataPacketEncapsulation\\": \\"string\\",\\n                  \\"destIp\\": \\"string\\",\\n                  \\"destPort\\": \\"string\\",\\n                  \\"protocol\\": \\"string\\",\\n                  \\"sourceIp\\": \\"string\\",\\n                  \\"sourcePort\\": \\"string\\",\\n                  \\"vxlanInfo\\": {\\n                    \\"dscp\\": \\"string\\",\\n                    \\"vnid\\": \\"string\\"\\n                  }\\n                }\\n              ],\\n              \\"qosStatistics\\": [\\n                {\\n                  \\"classMapName\\": \\"string\\",\\n                  \\"dropRate\\": 0,\\n                  \\"numBytes\\": 0,\\n                  \\"numPackets\\": 0,\\n                  \\"offeredRate\\": 0,\\n                  \\"queueBandwidthbps\\": \\"string\\",\\n                  \\"queueDepth\\": 0,\\n                  \\"queueNoBufferDrops\\": 0,\\n                  \\"queueTotalDrops\\": 0,\\n                  \\"refreshedAt\\": 0\\n                }\\n              ],\\n              \\"qosStatsCollection\\": \\"string\\",\\n              \\"qosStatsCollectionFailureReason\\": \\"string\\",\\n              \\"usedVlan\\": \\"string\\",\\n              \\"vrfName\\": \\"string\\"\\n            }\\n          ]\\n        },\\n        \\"ip\\": \\"string\\",\\n        \\"linkInformationSource\\": \\"string\\",\\n        \\"name\\": \\"string\\",\\n        \\"perfMonCollection\\": \\"string\\",\\n        \\"perfMonCollectionFailureReason\\": \\"string\\",\\n        \\"perfMonitorStatistics\\": [\\n          {\\n            \\"byteRate\\": 0,\\n            \\"destIpAddress\\": \\"string\\",\\n            \\"destPort\\": \\"string\\",\\n            \\"inputInterface\\": \\"string\\",\\n            \\"ipv4DSCP\\": \\"string\\",\\n            \\"ipv4TTL\\": 0,\\n            \\"outputInterface\\": \\"string\\",\\n            \\"packetBytes\\": 0,\\n            \\"packetCount\\": 0,\\n            \\"packetLoss\\": 0,\\n            \\"packetLossPercentage\\": 0,\\n            \\"protocol\\": \\"string\\",\\n            \\"refreshedAt\\": 0,\\n            \\"rtpJitterMax\\": 0,\\n            \\"rtpJitterMean\\": 0,\\n            \\"rtpJitterMin\\": 0,\\n            \\"sourceIpAddress\\": \\"string\\",\\n            \\"sourcePort\\": \\"string\\"\\n          }\\n        ],\\n        \\"role\\": \\"string\\",\\n        \\"ssid\\": \\"string\\",\\n        \\"tunnels\\": [\\n          \\"string\\"\\n        ],\\n        \\"type\\": \\"string\\",\\n        \\"wlanId\\": \\"string\\"\\n      }\\n    ],\\n    \\"properties\\": [\\n      \\"string\\"\\n    ],\\n    \\"request\\": {\\n      \\"controlPath\\": true,\\n      \\"createTime\\": 0,\\n      \\"destIP\\": \\"string\\",\\n      \\"destPort\\": \\"string\\",\\n      \\"failureReason\\": \\"string\\",\\n      \\"id\\": \\"string\\",\\n      \\"inclusions\\": [\\n        \\"string\\"\\n      ],\\n      \\"lastUpdateTime\\": 0,\\n      \\"periodicRefresh\\": true,\\n      \\"protocol\\": \\"string\\",\\n      \\"sourceIP\\": \\"string\\",\\n      \\"sourcePort\\": \\"string\\",\\n      \\"status\\": \\"string\\"\\n    }\\n  },\\n  \\"version\\": \\"string\\"\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"response": {"detailedStatus": {"aclTraceCalculation": "string", "aclTraceCalculationFailureReason": "string"}, "lastUpdate": "string", "networkElements": [{"accuracyList": [{"percent": 0, "reason": "string"}], "detailedStatus": {"aclTraceCalculation": "string", "aclTraceCalculationFailureReason": "string"}, "deviceStatistics": {"cpuStatistics": {"fiveMinUsageInPercentage": 0, "fiveSecsUsageInPercentage": 0, "oneMinUsageInPercentage": 0, "refreshedAt": 0}, "memoryStatistics": {"memoryUsage": 0, "refreshedAt": 0, "totalMemory": 0}}, "deviceStatsCollection": "string", "deviceStatsCollectionFailureReason": "string", "egressPhysicalInterface": {"aclAnalysis": {"aclName": "string", "matchingAces": [{"ace": "string", "matchingPorts": [{"ports": [{"destPorts": ["string"], "sourcePorts": ["string"]}], "protocol": "string"}], "result": "string"}], "result": "string"}, "id": "string", "interfaceStatistics": {"adminStatus": "string", "inputPackets": 0, "inputQueueCount": 0, "inputQueueDrops": 0, "inputQueueFlushes": 0, "inputQueueMaxDepth": 0, "inputRatebps": 0, "operationalStatus": "string", "outputDrop": 0, "outputPackets": 0, "outputQueueCount": 0, "outputQueueDepth": 0, "outputRatebps": 0, "refreshedAt": 0}, "interfaceStatsCollection": "string", "interfaceStatsCollectionFailureReason": "string", "name": "string", "pathOverlayInfo": [{"controlPlane": "string", "dataPacketEncapsulation": "string", "destIp": "string", "destPort": "string", "protocol": "string", "sourceIp": "string", "sourcePort": "string", "vxlanInfo": {"dscp": "string", "vnid": "string"}}], "qosStatistics": [{"classMapName": "string", "dropRate": 0, "numBytes": 0, "numPackets": 0, "offeredRate": 0, "queueBandwidthbps": "string", "queueDepth": 0, "queueNoBufferDrops": 0, "queueTotalDrops": 0, "refreshedAt": 0}], "qosStatsCollection": "string", "qosStatsCollectionFailureReason": "string", "usedVlan": "string", "vrfName": "string"}, "egressVirtualInterface": {"aclAnalysis": {"aclName": "string", "matchingAces": [{"ace": "string", "matchingPorts": [{"ports": [{"destPorts": ["string"], "sourcePorts": ["string"]}], "protocol": "string"}], "result": "string"}], "result": "string"}, "id": "string", "interfaceStatistics": {"adminStatus": "string", "inputPackets": 0, "inputQueueCount": 0, "inputQueueDrops": 0, "inputQueueFlushes": 0, "inputQueueMaxDepth": 0, "inputRatebps": 0, "operationalStatus": "string", "outputDrop": 0, "outputPackets": 0, "outputQueueCount": 0, "outputQueueDepth": 0, "outputRatebps": 0, "refreshedAt": 0}, "interfaceStatsCollection": "string", "interfaceStatsCollectionFailureReason": "string", "name": "string", "pathOverlayInfo": [{"controlPlane": "string", "dataPacketEncapsulation": "string", "destIp": "string", "destPort": "string", "protocol": "string", "sourceIp": "string", "sourcePort": "string", "vxlanInfo": {"dscp": "string", "vnid": "string"}}], "qosStatistics": [{"classMapName": "string", "dropRate": 0, "numBytes": 0, "numPackets": 0, "offeredRate": 0, "queueBandwidthbps": "string", "queueDepth": 0, "queueNoBufferDrops": 0, "queueTotalDrops": 0, "refreshedAt": 0}], "qosStatsCollection": "string", "qosStatsCollectionFailureReason": "string", "usedVlan": "string", "vrfName": "string"}, "flexConnect": {"authentication": "string", "dataSwitching": "string", "egressAclAnalysis": {"aclName": "string", "matchingAces": [{"ace": "string", "matchingPorts": [{"ports": [{"destPorts": ["string"], "sourcePorts": ["string"]}], "protocol": "string"}], "result": "string"}], "result": "string"}, "ingressAclAnalysis": {"aclName": "string", "matchingAces": [{"ace": "string", "matchingPorts": [{"ports": [{"destPorts": ["string"], "sourcePorts": ["string"]}], "protocol": "string"}], "result": "string"}], "result": "string"}, "wirelessLanControllerId": "string", "wirelessLanControllerName": "string"}, "id": "string", "ingressPhysicalInterface": {"aclAnalysis": {"aclName": "string", "matchingAces": [{"ace": "string", "matchingPorts": [{"ports": [{"destPorts": ["string"], "sourcePorts": ["string"]}], "protocol": "string"}], "result": "string"}], "result": "string"}, "id": "string", "interfaceStatistics": {"adminStatus": "string", "inputPackets": 0, "inputQueueCount": 0, "inputQueueDrops": 0, "inputQueueFlushes": 0, "inputQueueMaxDepth": 0, "inputRatebps": 0, "operationalStatus": "string", "outputDrop": 0, "outputPackets": 0, "outputQueueCount": 0, "outputQueueDepth": 0, "outputRatebps": 0, "refreshedAt": 0}, "interfaceStatsCollection": "string", "interfaceStatsCollectionFailureReason": "string", "name": "string", "pathOverlayInfo": [{"controlPlane": "string", "dataPacketEncapsulation": "string", "destIp": "string", "destPort": "string", "protocol": "string", "sourceIp": "string", "sourcePort": "string", "vxlanInfo": {"dscp": "string", "vnid": "string"}}], "qosStatistics": [{"classMapName": "string", "dropRate": 0, "numBytes": 0, "numPackets": 0, "offeredRate": 0, "queueBandwidthbps": "string", "queueDepth": 0, "queueNoBufferDrops": 0, "queueTotalDrops": 0, "refreshedAt": 0}], "qosStatsCollection": "string", "qosStatsCollectionFailureReason": "string", "usedVlan": "string", "vrfName": "string"}, "ingressVirtualInterface": {"aclAnalysis": {"aclName": "string", "matchingAces": [{"ace": "string", "matchingPorts": [{"ports": [{"destPorts": ["string"], "sourcePorts": ["string"]}], "protocol": "string"}], "result": "string"}], "result": "string"}, "id": "string", "interfaceStatistics": {"adminStatus": "string", "inputPackets": 0, "inputQueueCount": 0, "inputQueueDrops": 0, "inputQueueFlushes": 0, "inputQueueMaxDepth": 0, "inputRatebps": 0, "operationalStatus": "string", "outputDrop": 0, "outputPackets": 0, "outputQueueCount": 0, "outputQueueDepth": 0, "outputRatebps": 0, "refreshedAt": 0}, "interfaceStatsCollection": "string", "interfaceStatsCollectionFailureReason": "string", "name": "string", "pathOverlayInfo": [{"controlPlane": "string", "dataPacketEncapsulation": "string", "destIp": "string", "destPort": "string", "protocol": "string", "sourceIp": "string", "sourcePort": "string", "vxlanInfo": {"dscp": "string", "vnid": "string"}}], "qosStatistics": [{"classMapName": "string", "dropRate": 0, "numBytes": 0, "numPackets": 0, "offeredRate": 0, "queueBandwidthbps": "string", "queueDepth": 0, "queueNoBufferDrops": 0, "queueTotalDrops": 0, "refreshedAt": 0}], "qosStatsCollection": "string", "qosStatsCollectionFailureReason": "string", "usedVlan": "string", "vrfName": "string"}, "ip": "string", "linkInformationSource": "string", "name": "string", "perfMonCollection": "string", "perfMonCollectionFailureReason": "string", "perfMonStatistics": [{"byteRate": 0, "destIpAddress": "string", "destPort": "string", "inputInterface": "string", "ipv4DSCP": "string", "ipv4TTL": 0, "outputInterface": "string", "packetBytes": 0, "packetCount": 0, "packetLoss": 0, "packetLossPercentage": 0, "protocol": "string", "refreshedAt": 0, "rtpJitterMax": 0, "rtpJitterMean": 0, "rtpJitterMin": 0, "sourceIpAddress": "string", "sourcePort": "string"}], "role": "string", "ssid": "string", "tunnels": ["string"], "type": "string", "wlanId": "string"}], "networkElementsInfo": [{"accuracyList": [{"percent": 0, "reason": "string"}], "detailedStatus": {"aclTraceCalculation": "string", "aclTraceCalculationFailureReason": "string"}, "deviceStatistics": {"cpuStatistics": {"fiveMinUsageInPercentage": 0, "fiveSecsUsageInPercentage": 0, "oneMinUsageInPercentage": 0, "refreshedAt": 0}, "memoryStatistics": {"memoryUsage": 0, "refreshedAt": 0, "totalMemory": 0}}, "deviceStatsCollection": "string", "deviceStatsCollectionFailureReason": "string", "egressInterface": {"physicalInterface": {"aclAnalysis": {"aclName": "string", "matchingAces": [{"ace": "string", "matchingPorts": [{"ports": [{"destPorts": ["string"], "sourcePorts": ["string"]}], "protocol": "string"}], "result": "string"}], "result": "string"}, "id": "string", "interfaceStatistics": {"adminStatus": "string", "inputPackets": 0, "inputQueueCount": 0, "inputQueueDrops": 0, "inputQueueFlushes": 0, "inputQueueMaxDepth": 0, "inputRatebps": 0, "operationalStatus": "string", "outputDrop": 0, "outputPackets": 0, "outputQueueCount": 0, "outputQueueDepth": 0, "outputRatebps": 0, "refreshedAt": 0}, "interfaceStatsCollection": "string", "interfaceStatsCollectionFailureReason": "string", "name": "string", "pathOverlayInfo": [{"controlPlane": "string", "dataPacketEncapsulation": "string", "destIp": "string", "destPort": "string", "protocol": "string", "sourceIp": "string", "sourcePort": "string", "vxlanInfo": {"dscp": "string", "vnid": "string"}}], "qosStatistics": [{"classMapName": "string", "dropRate": 0, "numBytes": 0, "numPackets": 0, "offeredRate": 0, "queueBandwidthbps": "string", "queueDepth": 0, "queueNoBufferDrops": 0, "queueTotalDrops": 0, "refreshedAt": 0}], "qosStatsCollection": "string", "qosStatsCollectionFailureReason": "string", "usedVlan": "string", "vrfName": "string"}, "virtualInterface": [{"aclAnalysis": {"aclName": "string", "matchingAces": [{"ace": "string", "matchingPorts": [{"ports": [{"destPorts": ["string"], "sourcePorts": ["string"]}], "protocol": "string"}], "result": "string"}], "result": "string"}, "id": "string", "interfaceStatistics": {"adminStatus": "string", "inputPackets": 0, "inputQueueCount": 0, "inputQueueDrops": 0, "inputQueueFlushes": 0, "inputQueueMaxDepth": 0, "inputRatebps": 0, "operationalStatus": "string", "outputDrop": 0, "outputPackets": 0, "outputQueueCount": 0, "outputQueueDepth": 0, "outputRatebps": 0, "refreshedAt": 0}, "interfaceStatsCollection": "string", "interfaceStatsCollectionFailureReason": "string", "name": "string", "pathOverlayInfo": [{"controlPlane": "string", "dataPacketEncapsulation": "string", "destIp": "string", "destPort": "string", "protocol": "string", "sourceIp": "string", "sourcePort": "string", "vxlanInfo": {"dscp": "string", "vnid": "string"}}], "qosStatistics": [{"classMapName": "string", "dropRate": 0, "numBytes": 0, "numPackets": 0, "offeredRate": 0, "queueBandwidthbps": "string", "queueDepth": 0, "queueNoBufferDrops": 0, "queueTotalDrops": 0, "refreshedAt": 0}], "qosStatsCollection": "string", "qosStatsCollectionFailureReason": "string", "usedVlan": "string", "vrfName": "string"}]}, "flexConnect": {"authentication": "string", "dataSwitching": "string", "egressAclAnalysis": {"aclName": "string", "matchingAces": [{"ace": "string", "matchingPorts": [{"ports": [{"destPorts": ["string"], "sourcePorts": ["string"]}], "protocol": "string"}], "result": "string"}], "result": "string"}, "ingressAclAnalysis": {"aclName": "string", "matchingAces": [{"ace": "string", "matchingPorts": [{"ports": [{"destPorts": ["string"], "sourcePorts": ["string"]}], "protocol": "string"}], "result": "string"}], "result": "string"}, "wirelessLanControllerId": "string", "wirelessLanControllerName": "string"}, "id": "string", "ingressInterface": {"physicalInterface": {"aclAnalysis": {"aclName": "string", "matchingAces": [{"ace": "string", "matchingPorts": [{"ports": [{"destPorts": ["string"], "sourcePorts": ["string"]}], "protocol": "string"}], "result": "string"}], "result": "string"}, "id": "string", "interfaceStatistics": {"adminStatus": "string", "inputPackets": 0, "inputQueueCount": 0, "inputQueueDrops": 0, "inputQueueFlushes": 0, "inputQueueMaxDepth": 0, "inputRatebps": 0, "operationalStatus": "string", "outputDrop": 0, "outputPackets": 0, "outputQueueCount": 0, "outputQueueDepth": 0, "outputRatebps": 0, "refreshedAt": 0}, "interfaceStatsCollection": "string", "interfaceStatsCollectionFailureReason": "string", "name": "string", "pathOverlayInfo": [{"controlPlane": "string", "dataPacketEncapsulation": "string", "destIp": "string", "destPort": "string", "protocol": "string", "sourceIp": "string", "sourcePort": "string", "vxlanInfo": {"dscp": "string", "vnid": "string"}}], "qosStatistics": [{"classMapName": "string", "dropRate": 0, "numBytes": 0, "numPackets": 0, "offeredRate": 0, "queueBandwidthbps": "string", "queueDepth": 0, "queueNoBufferDrops": 0, "queueTotalDrops": 0, "refreshedAt": 0}], "qosStatsCollection": "string", "qosStatsCollectionFailureReason": "string", "usedVlan": "string", "vrfName": "string"}, "virtualInterface": [{"aclAnalysis": {"aclName": "string", "matchingAces": [{"ace": "string", "matchingPorts": [{"ports": [{"destPorts": ["string"], "sourcePorts": ["string"]}], "protocol": "string"}], "result": "string"}], "result": "string"}, "id": "string", "interfaceStatistics": {"adminStatus": "string", "inputPackets": 0, "inputQueueCount": 0, "inputQueueDrops": 0, "inputQueueFlushes": 0, "inputQueueMaxDepth": 0, "inputRatebps": 0, "operationalStatus": "string", "outputDrop": 0, "outputPackets": 0, "outputQueueCount": 0, "outputQueueDepth": 0, "outputRatebps": 0, "refreshedAt": 0}, "interfaceStatsCollection": "string", "interfaceStatsCollectionFailureReason": "string", "name": "string", "pathOverlayInfo": [{"controlPlane": "string", "dataPacketEncapsulation": "string", "destIp": "string", "destPort": "string", "protocol": "string", "sourceIp": "string", "sourcePort": "string", "vxlanInfo": {"dscp": "string", "vnid": "string"}}], "qosStatistics": [{"classMapName": "string", "dropRate": 0, "numBytes": 0, "numPackets": 0, "offeredRate": 0, "queueBandwidthbps": "string", "queueDepth": 0, "queueNoBufferDrops": 0, "queueTotalDrops": 0, "refreshedAt": 0}], "qosStatsCollection": "string", "qosStatsCollectionFailureReason": "string", "usedVlan": "string", "vrfName": "string"}]}, "ip": "string", "linkInformationSource": "string", "name": "string", "perfMonCollection": "string", "perfMonCollectionFailureReason": "string", "perfMonitorStatistics": [{"byteRate": 0, "destIpAddress": "string", "destPort": "string", "inputInterface": "string", "ipv4DSCP": "string", "ipv4TTL": 0, "outputInterface": "string", "packetBytes": 0, "packetCount": 0, "packetLoss": 0, "packetLossPercentage": 0, "protocol": "string", "refreshedAt": 0, "rtpJitterMax": 0, "rtpJitterMean": 0, "rtpJitterMin": 0, "sourceIpAddress": "string", "sourcePort": "string"}], "role": "string", "ssid": "string", "tunnels": ["string"], "type": "string", "wlanId": "string"}], "properties": ["string"], "request": {"controlPath": true, "createTime": 0, "destIP": "string", "destPort": "string", "failureReason": "string", "id": "string", "inclusions": ["string"], "lastUpdateTime": 0, "periodicRefresh": true, "protocol": "string", "sourceIP": "string", "sourcePort": "string", "status": "string"}}, "version": "string"}`
 
 
       .. raw:: html
