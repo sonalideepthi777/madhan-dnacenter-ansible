@@ -355,7 +355,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Create's deviceTypes.
+      deviceTypes on which templates would be applied.
 
 
       .. raw:: html
@@ -592,7 +592,7 @@ Parameters
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`string`
+      :ansible-option-type:`string` / :ansible-option-required:`required`
 
       .. raw:: html
 
@@ -602,7 +602,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Project name.
+      Name of the project under which templates are managed.
 
 
       .. raw:: html
@@ -636,7 +636,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Create's rollbackTemplateParams.
+      Params required for template rollback.
 
 
       .. raw:: html
@@ -2706,7 +2706,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Create's deviceTypes.
+      Configuration Template Create's deviceTypes. This field is mandatory to create a new template.
 
 
       .. raw:: html
@@ -4034,7 +4034,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Applicable device software type.
+      Applicable device software type. This field is mandatory to create a new template.
 
 
       .. raw:: html
@@ -4307,7 +4307,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Name of template.
+      Name of template. This field is mandatory to create a new template.
 
 
       .. raw:: html

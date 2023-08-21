@@ -573,7 +573,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-template
 <div class="ansibleOptionAnchor" id="parameter-config/containingTemplates/deviceTypes"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-template-intent-module-parameter-config-containingtemplates-devicetypes"><strong>deviceTypes</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/containingTemplates/deviceTypes" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Configuration Template Create’s deviceTypes.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>deviceTypes on which templates would be applied.</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -625,16 +625,16 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-template
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/containingTemplates/projectName"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-template-intent-module-parameter-config-containingtemplates-projectname"><strong>projectName</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/containingTemplates/projectName" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+<a class="ansibleOptionLink" href="#parameter-config/containingTemplates/projectName" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span> / <span class="ansible-option-required">required</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Project name.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Name of the project under which templates are managed.</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/containingTemplates/rollbackTemplateParams"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-template-intent-module-parameter-config-containingtemplates-rollbacktemplateparams"><strong>rollbackTemplateParams</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/containingTemplates/rollbackTemplateParams" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Configuration Template Create’s rollbackTemplateParams.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Params required for template rollback.</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -1082,7 +1082,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-template
 <div class="ansibleOptionAnchor" id="parameter-config/deviceTypes"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-template-intent-module-parameter-config-devicetypes"><strong>deviceTypes</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/deviceTypes" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Configuration Template Create’s deviceTypes.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Configuration Template Create’s deviceTypes. This field is mandatory to create a new template.</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -1368,7 +1368,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-template
 <div class="ansibleOptionAnchor" id="parameter-config/softwareType"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-template-intent-module-parameter-config-softwaretype"><strong>softwareType</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/softwareType" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Applicable device software type.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Applicable device software type. This field is mandatory to create a new template.</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -1424,7 +1424,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-template
 <div class="ansibleOptionAnchor" id="parameter-config/templateName"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-template-intent-module-parameter-config-templatename"><strong>templateName</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/templateName" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Name of template.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Name of template. This field is mandatory to create a new template.</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
