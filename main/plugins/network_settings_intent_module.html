@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>cisco.dnac.network_create module – Resource module for Network Create &mdash; DNACenterAnsibleActions  documentation</title>
+  <title>cisco.dnac.network_settings_intent module – Resource module for IP Address pools and network functions &mdash; DNACenterAnsibleActions  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/ansible-basic-sphinx-ext.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="cisco.dnac.network_device module – Resource module for Network Device" href="network_device_module.html" />
-    <link rel="prev" title="cisco.dnac.netconf_credential module – Resource module for Netconf Credential" href="netconf_credential_module.html" /> 
+    <link rel="next" title="cisco.dnac.network_update module – Resource module for Network Update" href="network_update_module.html" />
+    <link rel="prev" title="cisco.dnac.network_info module – Information module for Network" href="network_info_module.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -222,7 +222,7 @@
 <li class="toctree-l4"><a class="reference internal" href="license_virtual_account_change_module.html">cisco.dnac.license_virtual_account_change module – Resource module for License Virtual Account Change</a></li>
 <li class="toctree-l4"><a class="reference internal" href="license_virtual_account_details_info_module.html">cisco.dnac.license_virtual_account_details_info module – Information module for License Virtual Account Details</a></li>
 <li class="toctree-l4"><a class="reference internal" href="netconf_credential_module.html">cisco.dnac.netconf_credential module – Resource module for Netconf Credential</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">cisco.dnac.network_create module – Resource module for Network Create</a></li>
+<li class="toctree-l4"><a class="reference internal" href="network_create_module.html">cisco.dnac.network_create module – Resource module for Network Create</a></li>
 <li class="toctree-l4"><a class="reference internal" href="network_device_module.html">cisco.dnac.network_device module – Resource module for Network Device</a></li>
 <li class="toctree-l4"><a class="reference internal" href="network_device_by_ip_info_module.html">cisco.dnac.network_device_by_ip_info module – Information module for Network Device By Ip</a></li>
 <li class="toctree-l4"><a class="reference internal" href="network_device_by_serial_number_info_module.html">cisco.dnac.network_device_by_serial_number_info module – Information module for Network Device By Serial Number</a></li>
@@ -260,7 +260,7 @@
 <li class="toctree-l4"><a class="reference internal" href="network_device_wireless_lan_info_module.html">cisco.dnac.network_device_wireless_lan_info module – Information module for Network Device Wireless Lan</a></li>
 <li class="toctree-l4"><a class="reference internal" href="network_device_with_snmp_v3_des_info_module.html">cisco.dnac.network_device_with_snmp_v3_des_info module – Information module for Network Device With Snmp V3 Des</a></li>
 <li class="toctree-l4"><a class="reference internal" href="network_info_module.html">cisco.dnac.network_info module – Information module for Network</a></li>
-<li class="toctree-l4"><a class="reference internal" href="network_settings_intent_module.html">cisco.dnac.network_settings_intent module – Resource module for IP Address pools and network functions</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">cisco.dnac.network_settings_intent module – Resource module for IP Address pools and network functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="network_update_module.html">cisco.dnac.network_update module – Resource module for Network Update</a></li>
 <li class="toctree-l4"><a class="reference internal" href="network_v2_module.html">cisco.dnac.network_v2 module – Resource module for Network V2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="network_v2_info_module.html">cisco.dnac.network_v2_info module – Information module for Network V2</a></li>
@@ -461,9 +461,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Cisco.Dnac</a></li>
-      <li class="breadcrumb-item active">cisco.dnac.network_create module – Resource module for Network Create</li>
+      <li class="breadcrumb-item active">cisco.dnac.network_settings_intent module – Resource module for IP Address pools and network functions</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/plugins/network_create_module.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/plugins/network_settings_intent_module.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -471,49 +471,46 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <span class="target" id="ansible-collections-cisco-dnac-network-create-module"></span><section id="cisco-dnac-network-create-module-resource-module-for-network-create">
-<h1>cisco.dnac.network_create module – Resource module for Network Create<a class="headerlink" href="#cisco-dnac-network-create-module-resource-module-for-network-create" title="Permalink to this heading"></a></h1>
+  <span class="target" id="ansible-collections-cisco-dnac-network-settings-intent-module"></span><section id="cisco-dnac-network-settings-intent-module-resource-module-for-ip-address-pools-and-network-functions">
+<h1>cisco.dnac.network_settings_intent module – Resource module for IP Address pools and network functions<a class="headerlink" href="#cisco-dnac-network-settings-intent-module-resource-module-for-ip-address-pools-and-network-functions" title="Permalink to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/dnac">cisco.dnac collection</a> (version 6.7.5).</p>
 <p>To install it, use: <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">cisco.dnac</span></code>.
 You need further requirements to be able to use this module,
-see <a class="reference internal" href="#ansible-collections-cisco-dnac-network-create-module-requirements"><span class="std std-ref">Requirements</span></a> for details.</p>
-<p>To use it in a playbook, specify: <code class="code docutils literal notranslate"><span class="pre">cisco.dnac.network_create</span></code>.</p>
+see <a class="reference internal" href="#ansible-collections-cisco-dnac-network-settings-intent-module-requirements"><span class="std std-ref">Requirements</span></a> for details.</p>
+<p>To use it in a playbook, specify: <code class="code docutils literal notranslate"><span class="pre">cisco.dnac.network_settings_intent</span></code>.</p>
 </div>
-<p class="ansible-version-added">New in cisco.dnac 3.1.0</p>
+<p class="ansible-version-added">New in cisco.dnac 6.6.0</p>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#synopsis" id="id29">Synopsis</a></p></li>
-<li><p><a class="reference internal" href="#requirements" id="id30">Requirements</a></p></li>
-<li><p><a class="reference internal" href="#parameters" id="id31">Parameters</a></p></li>
-<li><p><a class="reference internal" href="#notes" id="id32">Notes</a></p></li>
-<li><p><a class="reference internal" href="#see-also" id="id33">See Also</a></p></li>
-<li><p><a class="reference internal" href="#examples" id="id34">Examples</a></p></li>
-<li><p><a class="reference internal" href="#return-values" id="id35">Return Values</a></p></li>
+<li><p><a class="reference internal" href="#synopsis" id="id57">Synopsis</a></p></li>
+<li><p><a class="reference internal" href="#requirements" id="id58">Requirements</a></p></li>
+<li><p><a class="reference internal" href="#parameters" id="id59">Parameters</a></p></li>
+<li><p><a class="reference internal" href="#notes" id="id60">Notes</a></p></li>
+<li><p><a class="reference internal" href="#examples" id="id61">Examples</a></p></li>
+<li><p><a class="reference internal" href="#return-values" id="id62">Return Values</a></p></li>
 </ul>
 </nav>
 <section id="synopsis">
-<h2><a class="toc-backref" href="#id29" role="doc-backlink">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id57" role="doc-backlink">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this heading"></a></h2>
 <ul class="simple">
-<li><p>Manage operation create of the resource Network Create.</p></li>
-<li><p>API to create a network for DHCP, Syslog, SNMP, NTP, Network AAA, Client and EndPoint AAA, and/or DNS center server settings.</p></li>
+<li><p>Manage operations on Global Pool, Reserve Pool, Network resources.</p></li>
+<li><p>API to create/update/delete global pool.</p></li>
+<li><p>API to reserve/update/delete an ip subpool from the global pool.</p></li>
+<li><p>API to update network settings for DHCP, Syslog, SNMP, NTP, Network AAA, Client and Endpoint AAA, and/or DNS center server settings.</p></li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This module has a corresponding <a class="reference external" href="https://docs.ansible.com/ansible/latest/plugins/action.html#action-plugins" title="(in Ansible v8)"><span class="xref std std-ref">action plugin</span></a>.</p>
-</div>
 </section>
 <section id="requirements">
-<span id="ansible-collections-cisco-dnac-network-create-module-requirements"></span><h2><a class="toc-backref" href="#id30" role="doc-backlink">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
+<span id="ansible-collections-cisco-dnac-network-settings-intent-module-requirements"></span><h2><a class="toc-backref" href="#id58" role="doc-backlink">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
 <p>The below requirements are needed on the host that executes this module.</p>
 <ul class="simple">
-<li><p>dnacentersdk &gt;= 2.5.5</p></li>
+<li><p>dnacentersdk == 2.4.5</p></li>
 <li><p>python &gt;= 3.5</p></li>
 </ul>
 </section>
 <section id="parameters">
-<h2><a class="toc-backref" href="#id31" role="doc-backlink">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id59" role="doc-backlink">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
 <table class="ansible-option-table docutils align-default" style="width: 100%">
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
@@ -522,326 +519,609 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-network-
 </thead>
 <tbody>
 <tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-dnac_debug"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-dnac-debug"><strong>dnac_debug</strong></p>
+<div class="ansibleOptionAnchor" id="parameter-config"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config"><strong>config</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span> / <span class="ansible-option-required">required</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>List of details of global pool, reserved pool, network being managed.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/GlobalPoolDetails"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-globalpooldetails"><strong>GlobalPoolDetails</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/GlobalPoolDetails" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Global ip pool manages IPv4 and IPv6 IP pools.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/GlobalPoolDetails/settings"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-globalpooldetails-settings"><strong>settings</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/GlobalPoolDetails/settings" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Global Pool’s settings.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/GlobalPoolDetails/settings/ippool"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-globalpooldetails-settings-ippool"><strong>ippool</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/GlobalPoolDetails/settings/ippool" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Global Pool’s ippool.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/GlobalPoolDetails/settings/ippool/dhcpServerIps"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-globalpooldetails-settings-ippool-dhcpserverips"><strong>dhcpServerIps</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/GlobalPoolDetails/settings/ippool/dhcpServerIps" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Dhcp Server Ips.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/GlobalPoolDetails/settings/ippool/dnsServerIps"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-globalpooldetails-settings-ippool-dnsserverips"><strong>dnsServerIps</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/GlobalPoolDetails/settings/ippool/dnsServerIps" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Dns Server Ips.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/GlobalPoolDetails/settings/ippool/gateway"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-globalpooldetails-settings-ippool-gateway"><strong>gateway</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/GlobalPoolDetails/settings/ippool/gateway" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Gateway.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/GlobalPoolDetails/settings/ippool/IpAddressSpace"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-globalpooldetails-settings-ippool-ipaddressspace"><strong>IpAddressSpace</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/GlobalPoolDetails/settings/ippool/IpAddressSpace" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Ip address space.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/GlobalPoolDetails/settings/ippool/ipPoolCidr"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-globalpooldetails-settings-ippool-ippoolcidr"><strong>ipPoolCidr</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/GlobalPoolDetails/settings/ippool/ipPoolCidr" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Ip pool cidr.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/GlobalPoolDetails/settings/ippool/ipPoolName"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-globalpooldetails-settings-ippool-ippoolname"><strong>ipPoolName</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/GlobalPoolDetails/settings/ippool/ipPoolName" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Ip Pool Name.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/GlobalPoolDetails/settings/ippool/prev_name"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-globalpooldetails-settings-ippool-prev-name"><strong>prev_name</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/GlobalPoolDetails/settings/ippool/prev_name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>previous name.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails"><strong>NetworkManagementDetails</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Set default network settings for the site</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings"><strong>settings</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network management details settings.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/clientAndEndpoint_aaa"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-clientandendpoint-aaa"><strong>clientAndEndpoint_aaa</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/clientAndEndpoint_aaa" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network V2’s clientAndEndpoint_aaa.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/clientAndEndpoint_aaa/ipAddress"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-clientandendpoint-aaa-ipaddress"><strong>ipAddress</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/clientAndEndpoint_aaa/ipAddress" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IP address for ISE serve (eg 1.1.1.4).</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/clientAndEndpoint_aaa/network"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-clientandendpoint-aaa-network"><strong>network</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/clientAndEndpoint_aaa/network" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IP address for AAA or ISE server (eg 2.2.2.1).</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/clientAndEndpoint_aaa/protocol"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-clientandendpoint-aaa-protocol"><strong>protocol</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/clientAndEndpoint_aaa/protocol" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Protocol for AAA or ISE serve (eg RADIUS).</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/clientAndEndpoint_aaa/servers"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-clientandendpoint-aaa-servers"><strong>servers</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/clientAndEndpoint_aaa/servers" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Server type AAA or ISE server (eg AAA).</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/clientAndEndpoint_aaa/sharedSecret"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-clientandendpoint-aaa-sharedsecret"><strong>sharedSecret</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/clientAndEndpoint_aaa/sharedSecret" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Shared secret for ISE server.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/dhcpServer"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-dhcpserver"><strong>dhcpServer</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/dhcpServer" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>DHCP Server IP (eg 1.1.1.1).</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/dnsServer"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-dnsserver"><strong>dnsServer</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/dnsServer" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network V2’s dnsServer.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/dnsServer/domainName"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-dnsserver-domainname"><strong>domainName</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/dnsServer/domainName" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Domain Name of DHCP (eg; cisco).</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/dnsServer/primaryIpAddress"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-dnsserver-primaryipaddress"><strong>primaryIpAddress</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/dnsServer/primaryIpAddress" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Primary IP Address for DHCP (eg 2.2.2.2).</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/dnsServer/secondaryIpAddress"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-dnsserver-secondaryipaddress"><strong>secondaryIpAddress</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/dnsServer/secondaryIpAddress" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Secondary IP Address for DHCP (eg 3.3.3.3).</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/messageOfTheday"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-messageoftheday"><strong>messageOfTheday</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/messageOfTheday" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network V2’s messageOfTheday.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/messageOfTheday/bannerMessage"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-messageoftheday-bannermessage"><strong>bannerMessage</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/messageOfTheday/bannerMessage" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Massage for Banner message (eg; Good day).</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/messageOfTheday/retainExistingBanner"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-messageoftheday-retainexistingbanner"><strong>retainExistingBanner</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/messageOfTheday/retainExistingBanner" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Retain existing Banner Message (eg “true” or “false”).</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/netflowcollector"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-netflowcollector"><strong>netflowcollector</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/netflowcollector" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network V2’s netflowcollector.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/netflowcollector/ipAddress"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-netflowcollector-ipaddress"><strong>ipAddress</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/netflowcollector/ipAddress" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IP Address for NetFlow collector (eg 3.3.3.1).</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/netflowcollector/port"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-netflowcollector-port"><strong>port</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/netflowcollector/port" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Port for NetFlow Collector (eg; 443).</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/network_aaa"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-network-aaa"><strong>network_aaa</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/network_aaa" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network V2’s network_aaa.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/network_aaa/ipAddress"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-network-aaa-ipaddress"><strong>ipAddress</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/network_aaa/ipAddress" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IP address for AAA and ISE server (eg 1.1.1.1).</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/network_aaa/network"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-network-aaa-network"><strong>network</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/network_aaa/network" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IP Address for AAA or ISE server (eg 2.2.2.2).</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/network_aaa/protocol"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-network-aaa-protocol"><strong>protocol</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/network_aaa/protocol" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Protocol for AAA or ISE serve (eg RADIUS).</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/network_aaa/servers"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-network-aaa-servers"><strong>servers</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/network_aaa/servers" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Server type for AAA Network (eg AAA).</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/network_aaa/sharedSecret"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-network-aaa-sharedsecret"><strong>sharedSecret</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/network_aaa/sharedSecret" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Shared secret for ISE Server.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/ntpServer"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-ntpserver"><strong>ntpServer</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/ntpServer" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IP address for NTP server (eg 1.1.1.2).</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/snmpServer"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-snmpserver"><strong>snmpServer</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/snmpServer" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network V2’s snmpServer.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/snmpServer/configureDnacIP"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-snmpserver-configurednacip"><strong>configureDnacIP</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/snmpServer/configureDnacIP" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Configuration DNAC IP for SNMP Server (eg true).</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><a href="#id1"><span class="problematic" id="id2">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id3"><span class="problematic" id="id4">:ansible-option-choices-entry:`true`</span></a></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/snmpServer/ipAddresses"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-snmpserver-ipaddresses"><strong>ipAddresses</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/snmpServer/ipAddresses" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IP Address for SNMP Server (eg 4.4.4.1).</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/syslogServer"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-syslogserver"><strong>syslogServer</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/syslogServer" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network V2’s syslogServer.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/syslogServer/configureDnacIP"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-syslogserver-configurednacip"><strong>configureDnacIP</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/syslogServer/configureDnacIP" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Configuration DNAC IP for syslog server (eg true).</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><a href="#id5"><span class="problematic" id="id6">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id7"><span class="problematic" id="id8">:ansible-option-choices-entry:`true`</span></a></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/syslogServer/ipAddresses"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-syslogserver-ipaddresses"><strong>ipAddresses</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/syslogServer/ipAddresses" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IP Address for syslog server (eg 4.4.4.4).</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/settings/timezone"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-settings-timezone"><strong>timezone</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/settings/timezone" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Input for time zone (eg Africa/Abidjan).</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/NetworkManagementDetails/siteName"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-networkmanagementdetails-sitename"><strong>siteName</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/NetworkManagementDetails/siteName" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Site name path parameter.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails"><strong>ReservePoolDetails</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Reserving IP subpool from the global pool</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/ipv4DhcpServers"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-ipv4dhcpservers"><strong>ipv4DhcpServers</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/ipv4DhcpServers" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IPv4 input for dhcp server ip example 1.1.1.1.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/ipv4DnsServers"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-ipv4dnsservers"><strong>ipv4DnsServers</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/ipv4DnsServers" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IPv4 input for dns server ip example 4.4.4.4.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/ipv4GateWay"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-ipv4gateway"><strong>ipv4GateWay</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/ipv4GateWay" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+<p><span class="ansible-option-versionadded">added in cisco.dnac 4.0.0</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Gateway ip address details, example 175.175.0.1.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/ipv4GlobalPool"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-ipv4globalpool"><strong>ipv4GlobalPool</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/ipv4GlobalPool" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IP v4 Global pool address with cidr, example 175.175.0.0/16.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/ipv4Prefix"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-ipv4prefix"><strong>ipv4Prefix</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/ipv4Prefix" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>ip4 prefix length is enabled or ipv4 total Host input is enabled</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><a href="#id9"><span class="problematic" id="id10">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id11"><span class="problematic" id="id12">:ansible-option-choices-entry:`true`</span></a></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/ipv4PrefixLength"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-ipv4prefixlength"><strong>ipv4PrefixLength</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/ipv4PrefixLength" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The ipv4 prefix length is required when ipv4prefix value is true.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/ipv4Subnet"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-ipv4subnet"><strong>ipv4Subnet</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/ipv4Subnet" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IPv4 Subnet address, example 175.175.0.0.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/ipv4TotalHost"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-ipv4totalhost"><strong>ipv4TotalHost</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/ipv4TotalHost" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IPv4 total host is required when ipv4prefix value is false.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/ipv6AddressSpace"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-ipv6addressspace"><strong>ipv6AddressSpace</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/ipv6AddressSpace" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>If the value is false only ipv4 input are required, otherwise both ipv6 and ipv4 are required.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><a href="#id13"><span class="problematic" id="id14">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id15"><span class="problematic" id="id16">:ansible-option-choices-entry:`true`</span></a></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/ipv6DhcpServers"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-ipv6dhcpservers"><strong>ipv6DhcpServers</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/ipv6DhcpServers" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IPv6 format dhcp server as input example 2001 db8 1234.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/ipv6DnsServers"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-ipv6dnsservers"><strong>ipv6DnsServers</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/ipv6DnsServers" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IPv6 format dns server input example 2001 db8 1234.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/ipv6GateWay"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-ipv6gateway"><strong>ipv6GateWay</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/ipv6GateWay" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Gateway ip address details, example 2001 db8 85a3 0 100 1.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/ipv6GlobalPool"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-ipv6globalpool"><strong>ipv6GlobalPool</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/ipv6GlobalPool" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IPv6 Global pool address with cidr this is required when Ipv6AddressSpace value is true, example 2001 db8 85a3 /64.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/ipv6Prefix"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-ipv6prefix"><strong>ipv6Prefix</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/ipv6Prefix" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Ipv6 prefix value is true, the ip6 prefix length input field is enabled, if it is false ipv6 total Host input is enable.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><a href="#id17"><span class="problematic" id="id18">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id19"><span class="problematic" id="id20">:ansible-option-choices-entry:`true`</span></a></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/ipv6PrefixLength"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-ipv6prefixlength"><strong>ipv6PrefixLength</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/ipv6PrefixLength" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IPv6 prefix length is required when the ipv6prefix value is true.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/ipv6Subnet"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-ipv6subnet"><strong>ipv6Subnet</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/ipv6Subnet" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IPv6 Subnet address, example 2001 db8 85a3 0 100.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/ipv6TotalHost"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-ipv6totalhost"><strong>ipv6TotalHost</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/ipv6TotalHost" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IPv6 total host is required when ipv6prefix value is false.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/name"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-name"><strong>name</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Name of the reserve ip sub pool.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/prev_name"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-prev-name"><strong>prev_name</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/prev_name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Previous name of the reserve ip sub pool.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/siteName"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-sitename"><strong>siteName</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/siteName" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Site name path parameter. Site name to reserve the ip sub pool.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/slaacSupport"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-slaacsupport"><strong>slaacSupport</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/slaacSupport" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Slaac Support.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><a href="#id21"><span class="problematic" id="id22">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id23"><span class="problematic" id="id24">:ansible-option-choices-entry:`true`</span></a></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/ReservePoolDetails/type"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-reservepooldetails-type"><strong>type</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/ReservePoolDetails/type" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Type of the reserve ip sub pool.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-dnac_debug"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-dnac-debug"><strong>dnac_debug</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_debug" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Flag for Cisco DNA Center SDK to enable debugging.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id1"><span class="problematic" id="id2">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id3"><span class="problematic" id="id4">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><a href="#id25"><span class="problematic" id="id26">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id27"><span class="problematic" id="id28">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-dnac_host"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-dnac-host"><strong>dnac_host</strong></p>
+<div class="ansibleOptionAnchor" id="parameter-dnac_host"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-dnac-host"><strong>dnac_host</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_host" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span> / <span class="ansible-option-required">required</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>The Cisco DNA Center hostname.</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-dnac_password"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-dnac-password"><strong>dnac_password</strong></p>
+<div class="ansibleOptionAnchor" id="parameter-dnac_log"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-dnac-log"><strong>dnac_log</strong></p>
+<a class="ansibleOptionLink" href="#parameter-dnac_log" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Flag for logging playbook execution details. If set to true the log file will be created at the location of the execution with the name dnac.log</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><a href="#id29"><span class="problematic" id="id30">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id31"><span class="problematic" id="id32">:ansible-option-choices-entry:`true`</span></a></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-dnac_password"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-dnac-password"><strong>dnac_password</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_password" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>The Cisco DNA Center password to authenticate.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-dnac_port"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-dnac-port"><strong>dnac_port</strong></p>
-<a class="ansibleOptionLink" href="#parameter-dnac_port" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-dnac_port"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-dnac-port"><strong>dnac_port</strong></p>
+<a class="ansibleOptionLink" href="#parameter-dnac_port" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>The Cisco DNA Center port.</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id5"><span class="problematic" id="id6">:ansible-option-default:`443`</span></a></p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id33"><span class="problematic" id="id34">:ansible-option-default:`&quot;443&quot;`</span></a></p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-dnac_username"></div>
-<div class="ansibleOptionAnchor" id="parameter-user"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-user"><span id="ansible-collections-cisco-dnac-network-create-module-parameter-dnac-username"></span><strong>dnac_username</strong></p>
+<div class="ansibleOptionAnchor" id="parameter-user"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-user"><span id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-dnac-username"></span><strong>dnac_username</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_username" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-aliases">aliases: user</span></p>
 <p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>The Cisco DNA Center username to authenticate.</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id7"><span class="problematic" id="id8">:ansible-option-default:`&quot;admin&quot;`</span></a></p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id35"><span class="problematic" id="id36">:ansible-option-default:`&quot;admin&quot;`</span></a></p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-dnac_verify"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-dnac-verify"><strong>dnac_verify</strong></p>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-dnac_verify"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-dnac-verify"><strong>dnac_verify</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_verify" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Flag to enable or disable SSL certificate verification.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id9"><span class="problematic" id="id10">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id11"><span class="problematic" id="id12">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id37"><span class="problematic" id="id38">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id39"><span class="problematic" id="id40">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-dnac_version"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-dnac-version"><strong>dnac_version</strong></p>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-dnac_version"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-dnac-version"><strong>dnac_version</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_version" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Informs the SDK which version of Cisco DNA Center to use.</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id13"><span class="problematic" id="id14">:ansible-option-default:`&quot;2.3.5.3&quot;`</span></a></p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-headers"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-headers"><strong>headers</strong></p>
-<a class="ansibleOptionLink" href="#parameter-headers" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>Additional headers.</p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id41"><span class="problematic" id="id42">:ansible-option-default:`&quot;2.2.3.3&quot;`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings"><strong>settings</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+<div class="ansibleOptionAnchor" id="parameter-state"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-state"><strong>state</strong></p>
+<a class="ansibleOptionLink" href="#parameter-state" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-cell"><p>Network Create’s settings.</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/clientAndEndpoint_aaa"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-clientandendpoint-aaa"><strong>clientAndEndpoint_aaa</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/clientAndEndpoint_aaa" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Create’s clientAndEndpoint_aaa.</p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/clientAndEndpoint_aaa/ipAddress"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-clientandendpoint-aaa-ipaddress"><strong>ipAddress</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/clientAndEndpoint_aaa/ipAddress" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IP address for ISE serve (eg 1.1.1.4).</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/clientAndEndpoint_aaa/network"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-clientandendpoint-aaa-network"><strong>network</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/clientAndEndpoint_aaa/network" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IP address for AAA or ISE server (eg 2.2.2.1).</p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/clientAndEndpoint_aaa/protocol"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-clientandendpoint-aaa-protocol"><strong>protocol</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/clientAndEndpoint_aaa/protocol" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Protocol for AAA or ISE serve (eg RADIUS).</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/clientAndEndpoint_aaa/servers"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-clientandendpoint-aaa-servers"><strong>servers</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/clientAndEndpoint_aaa/servers" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Server type AAA or ISE server (eg AAA).</p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/clientAndEndpoint_aaa/sharedSecret"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-clientandendpoint-aaa-sharedsecret"><strong>sharedSecret</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/clientAndEndpoint_aaa/sharedSecret" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Shared secret for ISE server.</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/dhcpServer"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-dhcpserver"><strong>dhcpServer</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/dhcpServer" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>DHCP Server IP (eg 1.1.1.1).</p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/dnsServer"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-dnsserver"><strong>dnsServer</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/dnsServer" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Create’s dnsServer.</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/dnsServer/domainName"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-dnsserver-domainname"><strong>domainName</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/dnsServer/domainName" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Domain Name of DHCP (eg; cisco).</p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/dnsServer/primaryIpAddress"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-dnsserver-primaryipaddress"><strong>primaryIpAddress</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/dnsServer/primaryIpAddress" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Primary IP Address for DHCP (eg 2.2.2.2).</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/dnsServer/secondaryIpAddress"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-dnsserver-secondaryipaddress"><strong>secondaryIpAddress</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/dnsServer/secondaryIpAddress" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Secondary IP Address for DHCP (eg 3.3.3.3).</p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/messageOfTheday"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-messageoftheday"><strong>messageOfTheday</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/messageOfTheday" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Create’s messageOfTheday.</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/messageOfTheday/bannerMessage"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-messageoftheday-bannermessage"><strong>bannerMessage</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/messageOfTheday/bannerMessage" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Massage for Banner message (eg; Good day).</p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/messageOfTheday/retainExistingBanner"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-messageoftheday-retainexistingbanner"><strong>retainExistingBanner</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/messageOfTheday/retainExistingBanner" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Retain existing Banner Message (eg “true” or “false”).</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/netflowcollector"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-netflowcollector"><strong>netflowcollector</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/netflowcollector" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Create’s netflowcollector.</p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/netflowcollector/ipAddress"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-netflowcollector-ipaddress"><strong>ipAddress</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/netflowcollector/ipAddress" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IP Address for NetFlow collector (eg 3.3.3.1).</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/netflowcollector/port"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-netflowcollector-port"><strong>port</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/netflowcollector/port" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Port for NetFlow Collector (eg; 443).</p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/network_aaa"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-network-aaa"><strong>network_aaa</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/network_aaa" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Create’s network_aaa.</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/network_aaa/ipAddress"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-network-aaa-ipaddress"><strong>ipAddress</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/network_aaa/ipAddress" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IP address for AAA and ISE server (eg 1.1.1.1).</p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/network_aaa/network"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-network-aaa-network"><strong>network</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/network_aaa/network" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IP Address for AAA or ISE server (eg 2.2.2.2).</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/network_aaa/protocol"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-network-aaa-protocol"><strong>protocol</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/network_aaa/protocol" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Protocol for AAA or ISE serve (eg RADIUS).</p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/network_aaa/servers"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-network-aaa-servers"><strong>servers</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/network_aaa/servers" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Server type for AAA Network (eg AAA).</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/network_aaa/sharedSecret"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-network-aaa-sharedsecret"><strong>sharedSecret</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/network_aaa/sharedSecret" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Shared secret for ISE Server.</p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/ntpServer"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-ntpserver"><strong>ntpServer</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/ntpServer" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IP address for NTP server (eg 1.1.1.2).</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/snmpServer"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-snmpserver"><strong>snmpServer</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/snmpServer" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Create’s snmpServer.</p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/snmpServer/configureDnacIP"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-snmpserver-configurednacip"><strong>configureDnacIP</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/snmpServer/configureDnacIP" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Configuration DNAC IP for SNMP Server (eg true).</p>
+<td><div class="ansible-option-cell"><p>The state of DNAC after module completion.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id15"><span class="problematic" id="id16">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id17"><span class="problematic" id="id18">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><a href="#id43"><span class="problematic" id="id44">:ansible-option-choices-entry-default:`&quot;merged&quot;`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id45"><span class="problematic" id="id46">:ansible-option-choices-entry:`&quot;deleted&quot;`</span></a></p></li>
 </ul>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/snmpServer/ipAddresses"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-snmpserver-ipaddresses"><strong>ipAddresses</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/snmpServer/ipAddresses" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IP Address for SNMP Server (eg 4.4.4.1).</p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/syslogServer"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-syslogserver"><strong>syslogServer</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/syslogServer" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Create’s syslogServer.</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/syslogServer/configureDnacIP"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-syslogserver-configurednacip"><strong>configureDnacIP</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/syslogServer/configureDnacIP" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Configuration DNAC IP for syslog server (eg true).</p>
-<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
-<ul class="simple">
-<li><p><a href="#id19"><span class="problematic" id="id20">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id21"><span class="problematic" id="id22">:ansible-option-choices-entry:`true`</span></a></p></li>
-</ul>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/syslogServer/ipAddresses"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-syslogserver-ipaddresses"><strong>ipAddresses</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/syslogServer/ipAddresses" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IP Address for syslog server (eg 4.4.4.4).</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-settings/timezone"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-settings-timezone"><strong>timezone</strong></p>
-<a class="ansibleOptionLink" href="#parameter-settings/timezone" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Input for time zone (eg Africa/Abidjan).</p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-siteId"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-siteid"><strong>siteId</strong></p>
-<a class="ansibleOptionLink" href="#parameter-siteId" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>SiteId path parameter. Site id to which site details to associate with the network settings.</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-validate_response_schema"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-parameter-validate-response-schema"><strong>validate_response_schema</strong></p>
+<div class="ansibleOptionAnchor" id="parameter-validate_response_schema"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-validate-response-schema"><strong>validate_response_schema</strong></p>
 <a class="ansibleOptionLink" href="#parameter-validate_response_schema" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Flag for Cisco DNA Center SDK to enable the validation of request bodies against a JSON schema.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id23"><span class="problematic" id="id24">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id25"><span class="problematic" id="id26">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id47"><span class="problematic" id="id48">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id49"><span class="problematic" id="id50">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -849,32 +1129,22 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-network-
 </table>
 </section>
 <section id="notes">
-<h2><a class="toc-backref" href="#id32" role="doc-backlink">Notes</a><a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id60" role="doc-backlink">Notes</a><a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p>SDK Method used are network_settings.NetworkSettings.create_network,</p></li>
-<li><p>Paths used are post /dna/intent/api/v1/network/{siteId},</p></li>
+<li><p>SDK Method used are network_settings.NetworkSettings.create_global_pool, network_settings.NetworkSettings.delete_global_ip_pool, network_settings.NetworkSettings.update_global_pool, network_settings.NetworkSettings.release_reserve_ip_subpool, network_settings.NetworkSettings.reserve_ip_subpool, network_settings.NetworkSettings.update_reserve_ip_subpool, network_settings.NetworkSettings.update_network_v2,</p></li>
+<li><p>Paths used are post /dna/intent/api/v1/global-pool, delete /dna/intent/api/v1/global-pool/{id}, put /dna/intent/api/v1/global-pool, post /dna/intent/api/v1/reserve-ip-subpool/{siteId}, delete /dna/intent/api/v1/reserve-ip-subpool/{id}, put /dna/intent/api/v1/reserve-ip-subpool/{siteId}, put /dna/intent/api/v2/network/{siteId},</p></li>
 <li><p>Does not support <code class="docutils literal notranslate"><span class="pre">check_mode</span></code></p></li>
 <li><p>The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK</p></li>
 <li><p>The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection</p></li>
 </ul>
 </div>
 </section>
-<section id="see-also">
-<h2><a class="toc-backref" href="#id33" role="doc-backlink">See Also</a><a class="headerlink" href="#see-also" title="Permalink to this heading"></a></h2>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<dl class="simple">
-<dt><a class="reference external" href="https://developer.cisco.com/docs/dna-center/#!create-network">Cisco DNA Center documentation for Network Settings CreateNetwork</a></dt><dd><p>Complete reference of the CreateNetwork API.</p>
-</dd>
-</dl>
-</div>
-</section>
 <section id="examples">
-<h2><a class="toc-backref" href="#id34" role="doc-backlink">Examples</a><a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
-<div class="highlight-yaml+jinja notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create</span>
-<span class="w">  </span><span class="nt">cisco.dnac.network_create</span><span class="p">:</span>
+<h2><a class="toc-backref" href="#id61" role="doc-backlink">Examples</a><a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<div class="highlight-yaml+jinja notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create global pool, reserve an ip pool and network</span>
+<span class="w">  </span><span class="nt">cisco.dnac.network_settings_intent</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">dnac_host</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_host</span><span class="cp">}}</span><span class="s">&quot;</span>
 <span class="w">    </span><span class="nt">dnac_username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_username</span><span class="cp">}}</span><span class="s">&quot;</span>
 <span class="w">    </span><span class="nt">dnac_password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_password</span><span class="cp">}}</span><span class="s">&quot;</span>
@@ -882,49 +1152,67 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-network-
 <span class="w">    </span><span class="nt">dnac_port</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_port</span><span class="cp">}}</span><span class="s">&quot;</span>
 <span class="w">    </span><span class="nt">dnac_version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_version</span><span class="cp">}}</span><span class="s">&quot;</span>
 <span class="w">    </span><span class="nt">dnac_debug</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_debug</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">headers</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;</span><span class="cp">{{</span><span class="nv">my_headers</span> <span class="o">|</span> <span class="nf">from_json</span><span class="cp">}}</span><span class="s">&#39;</span>
-<span class="w">    </span><span class="nt">settings</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">clientAndEndpoint_aaa</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">ipAddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">        </span><span class="nt">network</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">        </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">        </span><span class="nt">servers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">        </span><span class="nt">sharedSecret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">      </span><span class="nt">dhcpServer</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">      </span><span class="nt">dnsServer</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">domainName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">        </span><span class="nt">primaryIpAddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">        </span><span class="nt">secondaryIpAddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">      </span><span class="nt">messageOfTheday</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">bannerMessage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">        </span><span class="nt">retainExistingBanner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">      </span><span class="nt">netflowcollector</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">ipAddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">        </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
-<span class="w">      </span><span class="nt">network_aaa</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">ipAddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">        </span><span class="nt">network</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">        </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">        </span><span class="nt">servers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">        </span><span class="nt">sharedSecret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">      </span><span class="nt">ntpServer</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">      </span><span class="nt">snmpServer</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">configureDnacIP</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">        </span><span class="nt">ipAddresses</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">      </span><span class="nt">syslogServer</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">configureDnacIP</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">        </span><span class="nt">ipAddresses</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">      </span><span class="nt">timezone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">    </span><span class="nt">siteId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">dnac_log</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">merged</span>
+<span class="w">    </span><span class="nt">config</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">GlobalPoolDetails</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">settings</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">ippool</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">ipPoolName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">            </span><span class="nt">gateway</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">            </span><span class="nt">IpAddressSpace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">            </span><span class="nt">ipPoolCidr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">            </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Generic</span>
+<span class="w">            </span><span class="nt">dhcpServerIps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">list</span>
+<span class="w">            </span><span class="nt">dnsServerIps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">list</span>
+<span class="w">      </span><span class="nt">ReservePoolDetails</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">ipv6AddressSpace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">        </span><span class="nt">ipv4GlobalPool</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">ipv4Prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">        </span><span class="nt">ipv4PrefixLength</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9</span>
+<span class="w">        </span><span class="nt">ipv4Subnet</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">ipv6Prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">        </span><span class="nt">ipv6PrefixLength</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">64</span>
+<span class="w">        </span><span class="nt">ipv6GlobalPool</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">ipv6Subnet</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">siteName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">slaacSupport</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LAN</span>
+<span class="w">      </span><span class="nt">NetworkManagementDetails</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">settings</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">dhcpServer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">list</span>
+<span class="w">          </span><span class="nt">dnsServer</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">domainName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">            </span><span class="nt">primaryIpAddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">            </span><span class="nt">secondaryIpAddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">          </span><span class="nt">clientAndEndpoint_aaa</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">network</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">            </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">            </span><span class="nt">servers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">          </span><span class="nt">messageOfTheday</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">bannerMessage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">            </span><span class="nt">retainExistingBanner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">          </span><span class="nt">netflowcollector</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">ipAddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">            </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">443</span>
+<span class="w">          </span><span class="nt">network_aaa</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">network</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">            </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">            </span><span class="nt">servers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">          </span><span class="nt">ntpServer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">list</span>
+<span class="w">          </span><span class="nt">snmpServer</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">configureDnacIP</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">            </span><span class="nt">ipAddresses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">list</span>
+<span class="w">          </span><span class="nt">syslogServer</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">configureDnacIP</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">            </span><span class="nt">ipAddresses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">list</span>
+<span class="w">        </span><span class="nt">siteName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 </pre></div>
 </div>
 </section>
 <section id="return-values">
-<h2><a class="toc-backref" href="#id35" role="doc-backlink">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id62" role="doc-backlink">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this heading"></a></h2>
 <p>Common return values are documented <a class="reference external" href="https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common-return-values" title="(in Ansible v8)"><span class="xref std std-ref">here</span></a>, the following are the fields unique to this module:</p>
 <table class="ansible-option-table docutils align-default" style="width: 100%">
 <thead>
@@ -934,12 +1222,30 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-network-
 </thead>
 <tbody>
 <tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="return-dnac_response"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-create-module-return-dnac-response"><strong>dnac_response</strong></p>
-<a class="ansibleOptionLink" href="#return-dnac_response" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+<div class="ansibleOptionAnchor" id="return-response_1"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-return-response-1"><strong>response_1</strong></p>
+<a class="ansibleOptionLink" href="#return-response_1" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco DNAC Python SDK</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id27"><span class="problematic" id="id28">:ansible-rv-sample-value:`{&quot;executionId&quot;: &quot;string&quot;, &quot;executionStatusUrl&quot;: &quot;string&quot;, &quot;message&quot;: &quot;string&quot;}`</span></a></p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id51"><span class="problematic" id="id52">:ansible-rv-sample-value:`{&quot;executionId&quot;: &quot;string&quot;, &quot;executionStatusUrl&quot;: &quot;string&quot;, &quot;message&quot;: &quot;string&quot;}`</span></a></p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-response_2"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-return-response-2"><strong>response_2</strong></p>
+<a class="ansibleOptionLink" href="#return-response_2" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco DNAC Python SDK</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id53"><span class="problematic" id="id54">:ansible-rv-sample-value:`{&quot;executionId&quot;: &quot;string&quot;, &quot;executionStatusUrl&quot;: &quot;string&quot;, &quot;message&quot;: &quot;string&quot;}`</span></a></p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-response_3"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-return-response-3"><strong>response_3</strong></p>
+<a class="ansibleOptionLink" href="#return-response_3" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco DNAC Python SDK</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id55"><span class="problematic" id="id56">:ansible-rv-sample-value:`{&quot;executionId&quot;: &quot;string&quot;, &quot;executionStatusUrl&quot;: &quot;string&quot;, &quot;message&quot;: &quot;string&quot;}`</span></a></p>
 </div></td>
 </tr>
 </tbody>
@@ -947,7 +1253,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-network-
 <section id="authors">
 <h3>Authors<a class="headerlink" href="#authors" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>Rafael Campos (&#64;racampos)</p></li>
+<li><p>Muthu Rakesh (&#64;MUTHU-RAKESH-27) Madhan Sankaranarayanan (&#64;madhansansel)</p></li>
 </ul>
 </section>
 <section id="collection-links">
@@ -963,8 +1269,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-network-
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="netconf_credential_module.html" class="btn btn-neutral float-left" title="cisco.dnac.netconf_credential module – Resource module for Netconf Credential" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="network_device_module.html" class="btn btn-neutral float-right" title="cisco.dnac.network_device module – Resource module for Network Device" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="network_info_module.html" class="btn btn-neutral float-left" title="cisco.dnac.network_info module – Information module for Network" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="network_update_module.html" class="btn btn-neutral float-right" title="cisco.dnac.network_update module – Resource module for Network Update" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
