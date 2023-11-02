@@ -1696,6 +1696,7 @@ Examples
             - existMgmtIpAddress: string
               newMgmtIpAddress: string
             userName: string
+            deviceResync: false
 
     - name: Add new Compute device in Inventory with full credentials.Inputs needed for Compute Device
       cisco.dnac.inventory_intent:
@@ -1722,7 +1723,7 @@ Examples
             snmpTimeout: 5
             snmpUserName: string
             userName: string
-            resync: false
+            deviceResync: false
             type: "COMPUTE_DEVICE"
 
     - name: Add new Meraki device in Inventory with full credentials.Inputs needed for Meraki Device.
@@ -1738,7 +1739,7 @@ Examples
         state: merged
         config:
           - httpPassword: string
-            resync: false
+            deviceResync: false
             type: "MERAKI_DASHBOARD"
 
     - name: Add new Firepower Management device in Inventory with full credentials.Input needed to add Device.
@@ -1757,7 +1758,7 @@ Examples
             httpUserName: string
             httpPassword: string
             httpPort: string
-            resync: false
+            deviceResync: false
             type: "FIREPOWER_MANAGEMENT_SYSTEM"
 
     - name: Add new Third Party device in Inventory with full credentials.Input needed to add Device.
@@ -1781,8 +1782,24 @@ Examples
             snmpRetry:  3
             snmpTimeout: 5
             snmpUserName: string
-            resync: false
+            deviceResync: false
             type: "THIRD_PARTY_DEVICE"
+
+    - name: Resync Device with IP Addresses
+      cisco.dnac.inventory_intent:
+        dnac_host: "{{dnac_host}}"
+        dnac_username: "{{dnac_username}}"
+        dnac_password: "{{dnac_password}}"
+        dnac_verify: "{{dnac_verify}}"
+        dnac_port: "{{dnac_port}}"
+        dnac_version: "{{dnac_version}}"
+        dnac_debug: "{{dnac_debug}}"
+        dnac_log: False
+        state: merged
+        config:
+          - ipAddress: string
+            deviceResync: True
+            forceSync: False
 
     - name: Delete Device by id
       cisco.dnac.inventory_intent:
