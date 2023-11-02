@@ -531,7 +531,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <div class="ansibleOptionAnchor" id="parameter-config/cliTransport"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-intent-module-parameter-config-clitransport"><strong>cliTransport</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/cliTransport" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s cliTransport.Required for Adding Network Device.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s cliTransport.Required for Adding Network Devices.</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -550,7 +550,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <div class="ansibleOptionAnchor" id="parameter-config/enablePassword"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-intent-module-parameter-config-enablepassword"><strong>enablePassword</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/enablePassword" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s enablePassword.Required for Adding Network Device.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s enablePassword.</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -564,14 +564,14 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <div class="ansibleOptionAnchor" id="parameter-config/httpPassword"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-intent-module-parameter-config-httppassword"><strong>httpPassword</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/httpPassword" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s httpPassword.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s httpPassword.Required for Adding Compute, Meraki, Firepower Management Devices.</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/httpPort"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-intent-module-parameter-config-httpport"><strong>httpPort</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/httpPort" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s httpPort.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s httpPort.Required for Adding Compute, Firepower Management Devices.</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -590,7 +590,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <div class="ansibleOptionAnchor" id="parameter-config/httpUserName"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-intent-module-parameter-config-httpusername"><strong>httpUserName</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/httpUserName" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s httpUserName.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s httpUserName.Required for Adding Compute,Firepower Management Devices.</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -604,7 +604,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <div class="ansibleOptionAnchor" id="parameter-config/ipAddress"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-intent-module-parameter-config-ipaddress"><strong>ipAddress</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/ipAddress" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s ipAddress.Required for Adding/Deleting Device.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s ipAddress.Required for Adding/Deleting Device except Meraki Devices.</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -639,14 +639,14 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <div class="ansibleOptionAnchor" id="parameter-config/snmpAuthPassphrase"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-intent-module-parameter-config-snmpauthpassphrase"><strong>snmpAuthPassphrase</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/snmpAuthPassphrase" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s snmpAuthPassphrase.Required for Adding Network Device.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s snmpAuthPassphrase.Required for Adding Network, Compute, Third Party Devices.</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/snmpAuthProtocol"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-intent-module-parameter-config-snmpauthprotocol"><strong>snmpAuthProtocol</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/snmpAuthProtocol" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s snmpAuthProtocol.Required for Adding Network Device.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s snmpAuthProtocol.</p>
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id9"><span class="problematic" id="id10">:ansible-option-default:`&quot;SHA&quot;`</span></a></p>
 </div></td>
 </tr>
@@ -654,7 +654,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <div class="ansibleOptionAnchor" id="parameter-config/snmpMode"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-intent-module-parameter-config-snmpmode"><strong>snmpMode</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/snmpMode" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s snmpMode.Required for Adding Network Device.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s snmpMode.</p>
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id11"><span class="problematic" id="id12">:ansible-option-default:`&quot;AUTHPRIV&quot;`</span></a></p>
 </div></td>
 </tr>
@@ -662,14 +662,14 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <div class="ansibleOptionAnchor" id="parameter-config/snmpPrivPassphrase"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-intent-module-parameter-config-snmpprivpassphrase"><strong>snmpPrivPassphrase</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/snmpPrivPassphrase" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s snmpPrivPassphrase.Required for Adding Network Device.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s snmpPrivPassphrase.Required for Adding Network, Compute, Third Party Devices.</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/snmpPrivProtocol"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-intent-module-parameter-config-snmpprivprotocol"><strong>snmpPrivProtocol</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/snmpPrivProtocol" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s snmpPrivProtocol.Required for Adding Network Device.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s snmpPrivProtocol.Required for Adding Network, Compute, Third Party Devices.</p>
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id13"><span class="problematic" id="id14">:ansible-option-default:`&quot;AES128&quot;`</span></a></p>
 </div></td>
 </tr>
@@ -677,7 +677,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <div class="ansibleOptionAnchor" id="parameter-config/snmpRetry"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-intent-module-parameter-config-snmpretry"><strong>snmpRetry</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/snmpRetry" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s snmpRetry.Required for Adding Network Device.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s snmpRetry.</p>
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id15"><span class="problematic" id="id16">:ansible-option-default:`3`</span></a></p>
 </div></td>
 </tr>
@@ -685,7 +685,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <div class="ansibleOptionAnchor" id="parameter-config/snmpROCommunity"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-intent-module-parameter-config-snmprocommunity"><strong>snmpROCommunity</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/snmpROCommunity" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s snmpROCommunity.Required for Adding V2C Network Device.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s snmpROCommunity.Required for Adding V2C Devices.</p>
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id17"><span class="problematic" id="id18">:ansible-option-default:`&quot;public&quot;`</span></a></p>
 </div></td>
 </tr>
@@ -693,7 +693,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <div class="ansibleOptionAnchor" id="parameter-config/snmpRWCommunity"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-intent-module-parameter-config-snmprwcommunity"><strong>snmpRWCommunity</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/snmpRWCommunity" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s snmpRWCommunity.Required for Adding V2C Network Device.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s snmpRWCommunity.Required for Adding V2C Devices.</p>
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id19"><span class="problematic" id="id20">:ansible-option-default:`&quot;private&quot;`</span></a></p>
 </div></td>
 </tr>
@@ -701,7 +701,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <div class="ansibleOptionAnchor" id="parameter-config/snmpTimeout"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-intent-module-parameter-config-snmptimeout"><strong>snmpTimeout</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/snmpTimeout" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s snmpTimeout.Required for Adding Network Device.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s snmpTimeout.</p>
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id21"><span class="problematic" id="id22">:ansible-option-default:`5`</span></a></p>
 </div></td>
 </tr>
@@ -709,7 +709,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <div class="ansibleOptionAnchor" id="parameter-config/snmpUserName"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-intent-module-parameter-config-snmpusername"><strong>snmpUserName</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/snmpUserName" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s snmpUserName.Required for Adding Network Device.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network Device’s snmpUserName.Required for Adding Network, Compute, Third Party Devices.</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -932,6 +932,93 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">existMgmtIpAddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">          </span><span class="nt">newMgmtIpAddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">        </span><span class="nt">userName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add new Compute device in Inventory with full credentials.Inputs needed for Compute Device</span>
+<span class="w">  </span><span class="nt">cisco.dnac.inventory_intent</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">dnac_host</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_host</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_username</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_password</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_verify</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_verify</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_port</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_port</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_version</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_debug</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_debug</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_log</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">merged</span>
+<span class="w">    </span><span class="nt">config</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">ipAddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">httpUserName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">httpPassword</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">httpPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">snmpAuthPassphrase</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">snmpAuthProtocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">snmpMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">snmpPrivPassphrase</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">snmpPrivProtocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">snmpRetry</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">        </span><span class="nt">snmpTimeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">        </span><span class="nt">snmpUserName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">userName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">resync</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;COMPUTE_DEVICE&quot;</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add new Meraki device in Inventory with full credentials.Inputs needed for Meraki Device.</span>
+<span class="w">  </span><span class="nt">cisco.dnac.inventory_intent</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">dnac_host</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_host</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_username</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_password</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_verify</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_verify</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_port</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_port</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_version</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_debug</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_debug</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_log</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">merged</span>
+<span class="w">    </span><span class="nt">config</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">httpPassword</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">resync</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;MERAKI_DASHBOARD&quot;</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add new Firepower Management device in Inventory with full credentials.Input needed to add Device.</span>
+<span class="w">  </span><span class="nt">cisco.dnac.inventory_intent</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">dnac_host</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_host</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_username</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_password</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_verify</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_verify</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_port</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_port</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_version</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_debug</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_debug</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_log</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">merged</span>
+<span class="w">    </span><span class="nt">config</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">ipAddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">httpUserName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">httpPassword</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">httpPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">resync</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;FIREPOWER_MANAGEMENT_SYSTEM&quot;</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add new Third Party device in Inventory with full credentials.Input needed to add Device.</span>
+<span class="w">  </span><span class="nt">cisco.dnac.inventory_intent</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">dnac_host</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_host</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_username</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_password</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_verify</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_verify</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_port</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_port</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_version</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_debug</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_debug</span><span class="cp">}}</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="nt">dnac_log</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">merged</span>
+<span class="w">    </span><span class="nt">config</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">ipAddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">snmpAuthPassphrase</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">snmpAuthProtocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">snmpMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">snmpPrivPassphrase</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">snmpPrivProtocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">snmpRetry</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">        </span><span class="nt">snmpTimeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">        </span><span class="nt">snmpUserName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">resync</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;THIRD_PARTY_DEVICE&quot;</span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Delete Device by id</span>
 <span class="w">  </span><span class="nt">cisco.dnac.inventory_intent</span><span class="p">:</span>
