@@ -491,7 +491,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Network Device's ipAddress.Required for Adding/Deleting Device except Meraki Devices.
+      Network Device's ipAddress.Required for Adding/Deleting/Resyncing Device except Meraki Devices.
 
 
       .. raw:: html
