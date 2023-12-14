@@ -793,6 +793,74 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/operation_enum"></div>
+
+      .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/operation_enum:
+
+      .. rst-class:: ansible-option-title
+
+      **operation_enum**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/operation_enum" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      enum(CREDENTIALDETAILS, DEVICEDETAILS) 0 to export Device Credential Details Or 1 to export Device Details.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/parameters"></div>
+
+      .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/parameters:
+
+      .. rst-class:: ansible-option-title
+
+      **parameters**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/parameters" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      List of device parameters that needs to be exported to file.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-config/password"></div>
 
       .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/password:
@@ -817,7 +885,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Device's password. Required for Adding Network Device.
+      Device's password. Required for Adding Network Device. Also needed for file encryption while exporting device in a csv file.
 
 
       .. raw:: html
@@ -928,6 +996,40 @@ Parameters
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
       Device's serial number.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/site_name"></div>
+
+      .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/site_name:
+
+      .. rst-class:: ansible-option-title
+
+      **site_name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/site_name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Required for Provisioning of Wired and Wireless Devices.
 
 
       .. raw:: html
@@ -2094,11 +2196,11 @@ Examples
             snmp_username: string
             snmp_version: string
             type: string
+            device_added: true
             update_mgmt_ipaddresslist:
             - exist_mgmt_ipaddress: string
               new_mgmt_ipaddress: string
             username: string
-            device_resync: false
 
     - name: Add new Compute device in Inventory with full credentials.Inputs needed for Compute Device
       cisco.dnac.inventory_intent:
@@ -2125,7 +2227,7 @@ Examples
             snmp_timeout: 5
             snmp_username: string
             username: string
-            device_resync: false
+            device_added: true
             type: "COMPUTE_DEVICE"
 
     - name: Add new Meraki device in Inventory with full credentials.Inputs needed for Meraki Device.
@@ -2141,7 +2243,7 @@ Examples
         state: merged
         config:
           - http_password: string
-            device_resync: false
+            device_added: true
             type: "MERAKI_DASHBOARD"
 
     - name: Add new Firepower Management device in Inventory with full credentials.Input needed to add Device.
@@ -2160,7 +2262,7 @@ Examples
             http_username: string
             http_password: string
             http_port: string
-            device_resync: false
+            device_added: true
             type: "FIREPOWER_MANAGEMENT_SYSTEM"
 
     - name: Add new Third Party device in Inventory with full credentials.Input needed to add Device.
@@ -2184,8 +2286,24 @@ Examples
             snmp_retry:  3
             snmp_timeout: 5
             snmp_username: string
-            device_resync: false
+            device_added: true
             type: "THIRD_PARTY_DEVICE"
+
+    - name: Associate Wired Devices to site and Provisioned it in Inventory
+      cisco.dnac.inventory_intent:
+        dnac_host: "{{dnac_host}}"
+        dnac_username: "{{dnac_username}}"
+        dnac_password: "{{dnac_password}}"
+        dnac_verify: "{{dnac_verify}}"
+        dnac_port: "{{dnac_port}}"
+        dnac_version: "{{dnac_version}}"
+        dnac_debug: "{{dnac_debug}}"
+        dnac_log: False
+        state: merged
+        config:
+          - ip_address: string
+            provision_wired_device:
+              site_name: string
 
     - name: Update Device Role with IP Address
       cisco.dnac.inventory_intent:
@@ -2220,13 +2338,28 @@ Examples
           - ip_address: string
             device_updated: true
             update_interface_details:
-              - ip_address: "{{item.ip_address}}"
-                device_updated: "{{item.device_updated}}"
-                update_interface_details:
-                  description: str
-                  admin_status: str
-                  vlan_id: int
-                  voice_vlan_id: int
+              description: str
+              admin_status: str
+              vlan_id: int
+              voice_vlan_id: int
+
+    - name: Export Device Details in a CSV file Interface details with IP Address
+      cisco.dnac.inventory_intent:
+        dnac_host: "{{dnac_host}}"
+        dnac_username: "{{dnac_username}}"
+        dnac_password: "{{dnac_password}}"
+        dnac_verify: "{{dnac_verify}}"
+        dnac_port: "{{dnac_port}}"
+        dnac_version: "{{dnac_version}}"
+        dnac_debug: "{{dnac_debug}}"
+        dnac_log: False
+        state: merged
+        config:
+          - ip_address: string
+            export_device_list:
+              password: str
+              operation_enum: str
+              parameters: str
 
     - name: Create Global User Defined with IP Address
       cisco.dnac.inventory_intent:
@@ -2259,10 +2392,25 @@ Examples
         state: merged
         config:
           - ip_address: string
-            device_resync: True
-            force_sync: False
+            device_resync: true
+            force_sync: false
 
-    - name: Delete Device by id
+    - name: Reboot AP Devices with IP Addresses
+      cisco.dnac.inventory_intent:
+        dnac_host: "{{dnac_host}}"
+        dnac_username: "{{dnac_username}}"
+        dnac_password: "{{dnac_password}}"
+        dnac_verify: "{{dnac_verify}}"
+        dnac_port: "{{dnac_port}}"
+        dnac_version: "{{dnac_version}}"
+        dnac_debug: "{{dnac_debug}}"
+        dnac_log: False
+        state: merged
+        config:
+          - ip_address: string
+            reboot_device: true
+
+    - name: Delete Provision/Unprovisioned Devices by IP Address
       cisco.dnac.inventory_intent:
         dnac_host: "{{dnac_host}}"
         dnac_username: "{{dnac_username}}"
@@ -2274,8 +2422,8 @@ Examples
         dnac_log: False
         state: deleted
         config:
-          - clean_config: false
-            id: string
+          - ip_address: string
+            clean_config: false
 
     - name: Delete Global User Defined Field with name
       cisco.dnac.inventory_intent:
