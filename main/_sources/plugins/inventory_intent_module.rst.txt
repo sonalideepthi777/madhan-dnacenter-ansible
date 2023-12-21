@@ -369,6 +369,245 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/dynamic_interfaces"></div>
+
+      .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/dynamic_interfaces:
+
+      .. rst-class:: ansible-option-title
+
+      **dynamic_interfaces**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/dynamic_interfaces" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Interface details of the wireless device
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/dynamic_interfaces/interface_gateway"></div>
+
+      .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/dynamic_interfaces/interface_gateway:
+
+      .. rst-class:: ansible-option-title
+
+      **interface_gateway**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/dynamic_interfaces/interface_gateway" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Ip Address allocated to the interface
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/dynamic_interfaces/interface_ip_address"></div>
+
+      .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/dynamic_interfaces/interface_ip_address:
+
+      .. rst-class:: ansible-option-title
+
+      **interface_ip_address**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/dynamic_interfaces/interface_ip_address" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Ip Address allocated to the interface
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/dynamic_interfaces/interface_name"></div>
+
+      .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/dynamic_interfaces/interface_name:
+
+      .. rst-class:: ansible-option-title
+
+      **interface_name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/dynamic_interfaces/interface_name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Ip Address allocated to the interface
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/dynamic_interfaces/interface_netmask_in_cidr"></div>
+
+      .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/dynamic_interfaces/interface_netmask_in_cidr:
+
+      .. rst-class:: ansible-option-title
+
+      **interface_netmask_in_cidr**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/dynamic_interfaces/interface_netmask_in_cidr" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Ip Address allocated to the interface
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/dynamic_interfaces/lag_or_port_number"></div>
+
+      .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/dynamic_interfaces/lag_or_port_number:
+
+      .. rst-class:: ansible-option-title
+
+      **lag_or_port_number**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/dynamic_interfaces/lag_or_port_number" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Ip Address allocated to the interface
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/dynamic_interfaces/vlan_id"></div>
+
+      .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/dynamic_interfaces/vlan_id:
+
+      .. rst-class:: ansible-option-title
+
+      **vlan_id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/dynamic_interfaces/vlan_id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Ip Address allocated to the interface
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-config/enable_password"></div>
 
       .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/enable_password:
@@ -647,7 +886,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Id path parameter that is Device ID. Required for Deleting/Updating Device Roles.
+      Id path parameter that is Device ID.
 
 
       .. raw:: html
@@ -682,6 +921,40 @@ Parameters
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
       Device's ipAddress. Required for Adding/Updating/Deleting/Resyncing Device except Meraki Devices.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/managed_ap_locations"></div>
+
+      .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/managed_ap_locations:
+
+      .. rst-class:: ansible-option-title
+
+      **managed_ap_locations**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/managed_ap_locations" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Location of the sites allocated for the APs
 
 
       .. raw:: html
@@ -2214,7 +2487,8 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - ip_address: string
+          - ip_address:
+            - string
             http_username: string
             http_password: string
             http_port: string
@@ -2258,7 +2532,8 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - ip_address: string
+          - ip_address:
+            - string
             http_username: string
             http_password: string
             http_port: string
@@ -2277,7 +2552,8 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - ip_address: string
+          - ip_address:
+            - string
             snmp_auth_passphrase: string
             snmp_auth_protocol: string
             snmp_mode: string
@@ -2301,9 +2577,36 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - ip_address: string
+          - ip_address:
+            - string
             provision_wired_device:
               site_name: string
+
+    - name: Associate Wireless Devices to site and Provisioned it in Inventory
+      cisco.dnac.inventory_intent:
+        dnac_host: "{{dnac_host}}"
+        dnac_username: "{{dnac_username}}"
+        dnac_password: "{{dnac_password}}"
+        dnac_verify: "{{dnac_verify}}"
+        dnac_port: "{{dnac_port}}"
+        dnac_version: "{{dnac_version}}"
+        dnac_debug: "{{dnac_debug}}"
+        dnac_log: False
+        state: merged
+        config:
+          - ip_address:
+            - string
+            provision_wireless_device:
+            - site_name: string
+            managed_ap_locations:
+            - string
+            dynamic_interfaces:
+            - interface_ip_address: string
+              interface_netmask_in_cidr: int
+              interface_gateway: string
+              lag_or_port_number: int
+              vlan_id: int
+              interface_name: string
 
     - name: Update Device Role with IP Address
       cisco.dnac.inventory_intent:
@@ -2317,7 +2620,8 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - ip_address: string
+          - ip_address:
+            - string
             device_updated: true
             update_device_role:
               role: string
@@ -2335,7 +2639,8 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - ip_address: string
+          - ip_address:
+            - string
             device_updated: true
             update_interface_details:
               description: str
@@ -2355,7 +2660,8 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - ip_address: string
+          - ip_address:
+            - string
             export_device_list:
               password: str
               operation_enum: str
@@ -2373,7 +2679,8 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - ip_address: string
+          - ip_address:
+            - string
             add_user_defined_field:
               name: string
               description: string
@@ -2391,7 +2698,8 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - ip_address: string
+          - ip_address:
+            - string
             device_resync: true
             force_sync: false
 
@@ -2407,10 +2715,11 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - ip_address: string
+          - ip_address:
+            - string
             reboot_device: true
 
-    - name: Delete Provision/Unprovisioned Devices by IP Address
+    - name: Delete Provision/Unprovision Devices by IP Address
       cisco.dnac.inventory_intent:
         dnac_host: "{{dnac_host}}"
         dnac_username: "{{dnac_username}}"
@@ -2422,7 +2731,8 @@ Examples
         dnac_log: False
         state: deleted
         config:
-          - ip_address: string
+          - ip_address:
+            - string
             clean_config: false
 
     - name: Delete Global User Defined Field with name
@@ -2437,7 +2747,8 @@ Examples
         dnac_log: False
         state: deleted
         config:
-        - ip_address: string
+        - ip_address:
+            - string
           add_user_defined_field:
             name: string
 
