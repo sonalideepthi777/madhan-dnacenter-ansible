@@ -504,6 +504,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-pnp-inte
 <li><p>Manage operations add device, claim device and unclaim device of Onboarding Configuration(PnP) resource</p></li>
 <li><p>API to add device to pnp inventory and claim it to a site.</p></li>
 <li><p>API to delete device from the pnp inventory.</p></li>
+<li><p>API to reset the device from errored state.</p></li>
 </ul>
 </section>
 <section id="requirements">
@@ -541,7 +542,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-pnp-inte
 <div class="ansibleOptionAnchor" id="parameter-config/device_info/hostname"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-pnp-intent-module-parameter-config-device-info-hostname"><strong>hostname</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/device_info/hostname" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Pnp Device’s hostname.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Pnp Device’s hostname that we want to keep post claiming. Hostname can only be changed during claiming not bulk adding/ single adding</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -783,8 +784,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-pnp-inte
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p>SDK Method used are device_onboarding_pnp.DeviceOnboardingPnp.add_device, device_onboarding_pnp.DeviceOnboardingPnp.get_device_list, device_onboarding_pnp.DeviceOnboardingPnp.claim_a_device_to_a_site, device_onboarding_pnp.DeviceOnboardingPnp.delete_device_by_id_from_pnp, device_onboarding_pnp.DeviceOnboardingPnp.get_device_count, device_onboarding_pnp.DeviceOnboardingPnp.get_device_by_id, sites.Sites.get_site, software_image_management_swim.SoftwareImageManagementSwim.get_software_image_details, configuration_templates.ConfigurationTemplates.gets_the_templates_available</p></li>
-<li><p>Paths used are post /dna/intent/api/v1/onboarding/pnp-device post /dna/intent/api/v1/onboarding/pnp-device/site-claim post /dna/intent/api/v1/onboarding/pnp-device/{id} get /dna/intent/api/v1/onboarding/pnp-device/count get /dna/intent/api/v1/onboarding/pnp-device get /dna/intent/api/v1/site get /dna/intent/api/v1/image/importation get /dna/intent/api/v1/template-programmer/template</p></li>
+<li><p>SDK Method used are device_onboarding_pnp.DeviceOnboardingPnp.add_device, device_onboarding_pnp.DeviceOnboardingPnp.get_device_list, device_onboarding_pnp.DeviceOnboardingPnp.claim_a_device_to_a_site, device_onboarding_pnp.DeviceOnboardingPnp.delete_device_by_id_from_pnp, device_onboarding_pnp.DeviceOnboardingPnp.get_device_count, device_onboarding_pnp.DeviceOnboardingPnp.get_device_by_id, device_onboarding_pnp.DeviceOnboardingPnp.update_device, sites.Sites.get_site, software_image_management_swim.SoftwareImageManagementSwim.get_software_image_details, configuration_templates.ConfigurationTemplates.gets_the_templates_available</p></li>
+<li><p>Paths used are post /dna/intent/api/v1/onboarding/pnp-device post /dna/intent/api/v1/onboarding/pnp-device/site-claim post /dna/intent/api/v1/onboarding/pnp-device/{id} get /dna/intent/api/v1/onboarding/pnp-device/count get /dna/intent/api/v1/onboarding/pnp-device put /onboarding/pnp-device/${id} get /dna/intent/api/v1/site get /dna/intent/api/v1/image/importation get /dna/intent/api/v1/template-programmer/template</p></li>
 <li><p>Does not support <code class="docutils literal notranslate"><span class="pre">check_mode</span></code></p></li>
 <li><p>The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK</p></li>
 <li><p>The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection</p></li>
