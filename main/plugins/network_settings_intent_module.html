@@ -810,15 +810,15 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-network-
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/network_management_details/settings/syslogServer"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-network-management-details-settings-syslogserver"><strong>syslogServer</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/network_management_details/settings/syslogServer" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+<div class="ansibleOptionAnchor" id="parameter-config/network_management_details/settings/syslog_server"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-network-management-details-settings-syslog-server"><strong>syslog_server</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/network_management_details/settings/syslog_server" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Network V2’s syslogServer.</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/network_management_details/settings/syslogServer/configure_dnac_ip"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-network-management-details-settings-syslogserver-configure-dnac-ip"><strong>configure_dnac_ip</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/network_management_details/settings/syslogServer/configure_dnac_ip" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+<div class="ansibleOptionAnchor" id="parameter-config/network_management_details/settings/syslog_server/configure_dnac_ip"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-network-management-details-settings-syslog-server-configure-dnac-ip"><strong>configure_dnac_ip</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/network_management_details/settings/syslog_server/configure_dnac_ip" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Configuration Cisco DNA Center IP for syslog server (eg true).</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
@@ -829,8 +829,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-network-
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/network_management_details/settings/syslogServer/ip_addresses"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-network-management-details-settings-syslogserver-ip-addresses"><strong>ip_addresses</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/network_management_details/settings/syslogServer/ip_addresses" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
+<div class="ansibleOptionAnchor" id="parameter-config/network_management_details/settings/syslog_server/ip_addresses"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-intent-module-parameter-config-network-management-details-settings-syslog-server-ip-addresses"><strong>ip_addresses</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/network_management_details/settings/syslog_server/ip_addresses" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IP Address for syslog server (eg 4.4.4.4).</p>
 </div></td>
@@ -1222,7 +1222,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-network-
 <span class="w">          </span><span class="nt">snmp_server</span><span class="p">:</span>
 <span class="w">            </span><span class="nt">configure_dnac_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">            </span><span class="nt">ip_addresses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">list</span>
-<span class="w">          </span><span class="nt">syslogServer</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">syslog_server</span><span class="p">:</span>
 <span class="w">            </span><span class="nt">configure_dnac_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">            </span><span class="nt">ip_addresses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">list</span>
 <span class="w">        </span><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
