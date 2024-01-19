@@ -691,7 +691,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Number of records to returnfor the header in fetching global v2 credentials
+      Number of records to return for the header in fetching global v2 credentials
 
 
       .. raw:: html
@@ -1133,7 +1133,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Start index for the header in fetching global v2 credentials
+      Start index for the header in fetching SNMP v2 credentials
 
 
       .. raw:: html
@@ -1695,7 +1695,7 @@ Examples
               cdp_level: string
               lldp_level: string
               start_index: integer
-              enable_pasword_list: list
+              enable_password_list: list
               records_to_return: integer
               http_read_credential: string
               http_write_credential: string
@@ -1708,7 +1708,7 @@ Examples
               snmp_auth_passphrase: string
               snmp_auth_protocol: string
               snmp_mode: string
-              snmp_priv_passphrse: string
+              snmp_priv_passphrase: string
               snmp_priv_protocol: string
               snmp_ro_community: string
               snmp_ro_community_desc: string
@@ -1718,6 +1718,24 @@ Examples
               snmp_version: string
               timeout: integer
               username_list: list
+    - name: Delete disovery by name
+      cisco.dnac.discovery_intent:
+        dnac_host: "{{dnac_host}}"
+        dnac_username: "{{dnac_username}}"
+        dnac_password: "{{dnac_password}}"
+        dnac_verify: "{{dnac_verify}}"
+        dnac_port: "{{dnac_port}}"
+        dnac_version: "{{dnac_version}}"
+        dnac_debug: "{{dnac_debug}}"
+        dnac_log: True
+        state: deleted
+        config:
+            - devices_list:
+                - name: string
+                  ip: string
+              start_index: integer
+              records_to_return: integer
+              discovery_name: string
 
 
 
