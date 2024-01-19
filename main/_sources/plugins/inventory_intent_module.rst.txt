@@ -2867,6 +2867,7 @@ Examples
               admin_status: str
               vlan_id: int
               voice_vlan_id: int
+              deployment_mode: str
 
     - name: Export Device Details in a CSV file Interface details with IP Address
       cisco.dnac.inventory_intent:
