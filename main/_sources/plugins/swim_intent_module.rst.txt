@@ -69,10 +69,10 @@ Synopsis
 .. Description
 
 - Manage operation related to image importation, distribution, activation and tagging image as golden
-- API to fetch a software image from remote file system using URL for HTTP/FTP and upload it to DNA Center. Supported image files extensions are bin, img, tar, smu, pie, aes, iso, ova, tar\_gz and qcow2.
-- API to fetch a software image from local file system and upload it to DNA Center Supported image files extensions are bin, img, tar, smu, pie, aes, iso, ova, tar\_gz and qcow2.
+- API to fetch a software image from remote file system using URL for HTTP/FTP and upload it to Catalyst Center. Supported image files extensions are bin, img, tar, smu, pie, aes, iso, ova, tar\_gz and qcow2.
+- API to fetch a software image from local file system and upload it to Catalyst Center Supported image files extensions are bin, img, tar, smu, pie, aes, iso, ova, tar\_gz and qcow2.
 - API to tag/untag image as golen for a given family of devices
-- API to distribute a software image on a given device. Software image must be imported successfully into DNA Center before it can be distributed.
+- API to distribute a software image on a given device. Software image must be imported successfully into Catalyst Center before it can be distributed.
 - API to activate a software image on a given device. Software image must be present in the device flash.
 
 
@@ -2177,7 +2177,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The state of DNAC after module completion.
+      The state of Catalyst Center after module completion.
 
 
       .. rst-class:: ansible-option-line
@@ -2437,7 +2437,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <div class="ansible-option-cell">
 
-      A dictionary with activation details as returned by the DNAC Python SDK
+      A dictionary with activation details as returned by the Catalyst Center Python SDK
 
 
       .. rst-class:: ansible-option-line

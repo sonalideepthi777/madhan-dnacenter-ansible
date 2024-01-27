@@ -820,7 +820,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Set to True to verify the Cisco DNA Center config after applying the playbook config.
+      Set to True to verify the Cisco Catalyst Center config after applying the playbook config.
 
 
       .. rst-class:: ansible-option-line
@@ -1214,7 +1214,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The state of DNAC after module completion.
+      The state of Catalyst Center after module completion.
 
 
       .. rst-class:: ansible-option-line
@@ -1453,7 +1453,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <div class="ansible-option-cell">
 
-      A dictionary with API execution details as returned by the Cisco DNAC Python SDK
+      A dictionary with API execution details as returned by the Cisco Catalyst Center Python SDK
 
 
       .. rst-class:: ansible-option-line
@@ -1543,7 +1543,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <div class="ansible-option-cell">
 
-      A dictionary with API execution details as returned by the Cisco DNAC Python SDK
+      A dictionary with API execution details as returned by the Cisco Catalyst Center Python SDK
 
 
       .. rst-class:: ansible-option-line
@@ -1588,7 +1588,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <div class="ansible-option-cell">
 
-      A list with the response returned by the Cisco DNAC Python
+      A list with the response returned by the Cisco Catalyst Center Python
 
 
       .. rst-class:: ansible-option-line

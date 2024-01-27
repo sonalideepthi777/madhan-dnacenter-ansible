@@ -595,7 +595,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Ip Address allocated to the interface
+      name of the gateway for the interface
 
 
       .. raw:: html
@@ -663,7 +663,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Ip Address allocated to the interface
+      Name of the interface.
 
 
       .. raw:: html
@@ -697,7 +697,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Ip Address allocated to the interface
+      Interface mask in cidr.
 
 
       .. raw:: html
@@ -731,7 +731,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Ip Address allocated to the interface
+      Lag or port number of interface
 
 
       .. raw:: html
@@ -765,7 +765,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Ip Address allocated to the interface
+      Vlan Ifd of interface
 
 
       .. raw:: html
@@ -1021,6 +1021,40 @@ Parameters
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
       Device's http username. Required for Adding Compute,Firepower Management Devices.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/interface_name"></div>
+
+      .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/interface_name:
+
+      .. rst-class:: ansible-option-title
+
+      **interface_name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/interface_name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Specify the interface name to update the details of the device interface. (For example, GigabitEthernet1/0/11, FortyGigabitEthernet1/1/2)
 
 
       .. raw:: html
@@ -2162,7 +2196,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Set to True to verify the Cisco DNA Center config after applying the playbook config.
+      Set to True to verify the Cisco Catalyst Center config after applying the playbook config.
 
 
       .. rst-class:: ansible-option-line
@@ -2556,7 +2590,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The state of Cisco DNA Center after module completion.
+      The state of Cisco Catalyst Center after module completion.
 
 
       .. rst-class:: ansible-option-line
@@ -2637,11 +2671,11 @@ See Also
 
 .. seealso::
 
-   `Cisco DNA Center documentation for Devices AddDevice2 <https://developer.cisco.com/docs/dna-center/#!add-device>`_
+   `Cisco Catalyst Center documentation for Devices AddDevice2 <https://developer.cisco.com/docs/dna-center/#!add-device>`_
        Complete reference of the AddDevice2 API.
-   `Cisco DNA Center documentation for Devices DeleteDeviceById <https://developer.cisco.com/docs/dna-center/#!delete-device-by-id>`_
+   `Cisco Catalyst Center documentation for Devices DeleteDeviceById <https://developer.cisco.com/docs/dna-center/#!delete-device-by-id>`_
        Complete reference of the DeleteDeviceById API.
-   `Cisco DNA Center documentation for Devices SyncDevices2 <https://developer.cisco.com/docs/dna-center/#!sync-devices>`_
+   `Cisco Catalyst Center documentation for Devices SyncDevices2 <https://developer.cisco.com/docs/dna-center/#!sync-devices>`_
        Complete reference of the SyncDevices2 API.
 
 .. Examples
@@ -2916,6 +2950,7 @@ Examples
               vlan_id: int
               voice_vlan_id: int
               deployment_mode: str
+              interface_name: str
 
     - name: Export Device Details in a CSV file Interface details with IP Address
       cisco.dnac.inventory_intent:
@@ -3077,7 +3112,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <div class="ansible-option-cell">
 
-      A dictionary or list with the response returned by the Cisco DNA Center Python SDK
+      A dictionary or list with the response returned by the Cisco Catalyst Center Python SDK
 
 
       .. rst-class:: ansible-option-line
