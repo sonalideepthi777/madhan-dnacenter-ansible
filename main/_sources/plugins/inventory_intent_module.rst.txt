@@ -595,7 +595,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      name of the gateway for the interface
+      The name identifier for the gateway associated with the interface.
 
 
       .. raw:: html
@@ -697,7 +697,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Interface mask in cidr.
+      The netmask of the interface, given in CIDR notation. This is an integer that represents the number of bits set in the netmask
 
 
       .. raw:: html
@@ -731,7 +731,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Lag or port number of interface
+      The Link Aggregation Group (LAG) number or port number assigned to the interface.
 
 
       .. raw:: html
@@ -765,7 +765,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Vlan Ifd of interface
+      The VLAN (Virtual Local Area Network) ID associated with the network interface.
 
 
       .. raw:: html

@@ -792,15 +792,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-swim-int
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/import_image_details/url_details/payload/source_url"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-intent-module-parameter-config-import-image-details-url-details-payload-source-url"><strong>source_url</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/import_image_details/url_details/payload/source_url" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Swim Import Image Via Url.</p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/import_image_details/url_details/payload/third_party"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-intent-module-parameter-config-import-image-details-url-details-payload-third-party"><strong>third_party</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/import_image_details/url_details/payload/third_party" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+<div class="ansibleOptionAnchor" id="parameter-config/import_image_details/url_details/payload/is_third_party"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-intent-module-parameter-config-import-image-details-url-details-payload-is-third-party"><strong>is_third_party</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/import_image_details/url_details/payload/is_third_party" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>ThirdParty flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
@@ -808,6 +801,13 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-swim-int
 <li><p><a href="#id17"><span class="problematic" id="id18">:ansible-option-choices-entry:`false`</span></a></p></li>
 <li><p><a href="#id19"><span class="problematic" id="id20">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/import_image_details/url_details/payload/source_url"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-intent-module-parameter-config-import-image-details-url-details-payload-source-url"><strong>source_url</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/import_image_details/url_details/payload/source_url" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Swim Import Image Via Url.</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -1034,7 +1034,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-swim-int
 <span class="w">        </span><span class="nt">url_details</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">payload</span><span class="p">:</span>
 <span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">source_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">            </span><span class="nt">third_party</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bool</span>
+<span class="w">            </span><span class="nt">is_third_party</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bool</span>
 <span class="w">            </span><span class="nt">image_family</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">            </span><span class="nt">vendor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">            </span><span class="nt">application_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>

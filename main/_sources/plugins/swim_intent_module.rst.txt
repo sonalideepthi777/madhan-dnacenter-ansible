@@ -1338,6 +1338,48 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/import_image_details/url_details/payload/is_third_party"></div>
+
+      .. _ansible_collections.cisco.dnac.swim_intent_module__parameter-config/import_image_details/url_details/payload/is_third_party:
+
+      .. rst-class:: ansible-option-title
+
+      **is_third_party**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/import_image_details/url_details/payload/is_third_party" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      ThirdParty flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-config/import_image_details/url_details/payload/source_url"></div>
 
       .. _ansible_collections.cisco.dnac.swim_intent_module__parameter-config/import_image_details/url_details/payload/source_url:
@@ -1363,48 +1405,6 @@ Parameters
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
       Swim Import Image Via Url.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-config/import_image_details/url_details/payload/third_party"></div>
-
-      .. _ansible_collections.cisco.dnac.swim_intent_module__parameter-config/import_image_details/url_details/payload/third_party:
-
-      .. rst-class:: ansible-option-title
-
-      **third_party**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-config/import_image_details/url_details/payload/third_party" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`boolean`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      ThirdParty flag.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-choices-entry:`false`
-      - :ansible-option-choices-entry:`true`
 
 
       .. raw:: html
@@ -2277,7 +2277,7 @@ Examples
             url_details:
               payload:
               - source_url: string
-                third_party: bool
+                is_third_party: bool
                 image_family: string
                 vendor: string
                 application_type: string
