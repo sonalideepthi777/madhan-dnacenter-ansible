@@ -1948,7 +1948,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"INFO"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"WARNING"`
 
       .. raw:: html
 
@@ -2343,7 +2343,6 @@ Examples
         - tagging_details:
             image_name: string
             device_role: string
-            device_family_name: string
             device_type: string
             site_name: string
             tagging: bool
