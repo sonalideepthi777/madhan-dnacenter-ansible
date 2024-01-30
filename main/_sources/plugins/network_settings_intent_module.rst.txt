@@ -2680,7 +2680,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"INFO"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"WARNING"`
 
       .. raw:: html
 
