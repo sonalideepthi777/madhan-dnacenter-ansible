@@ -1372,6 +1372,44 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dnac_log_level"></div>
+
+      .. _ansible_collections.cisco.dnac.discovery_intent_module__parameter-dnac_log_level:
+
+      .. rst-class:: ansible-option-title
+
+      **dnac_log_level**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dnac_log_level" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Specifies the log level for Cisco Catalyst Center logging, categorizing logs by severity. Options- [CRITICAL, ERROR, WARNING, INFO, DEBUG]
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"WARNING"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-dnac_password"></div>
 
       .. _ansible_collections.cisco.dnac.discovery_intent_module__parameter-dnac_password:
@@ -1686,6 +1724,7 @@ Examples
         dnac_version: "{{dnac_version}}"
         dnac_debug: "{{dnac_debug}}"
         dnac_log: True
+        dnac_log_level: "{{dnac_log_level}}"
         state: merged
         config:
             - devices_list:
@@ -1697,8 +1736,8 @@ Examples
               start_index: integer
               enable_password_list: list
               records_to_return: integer
-              http_read_credential: string
-              http_write_credential: string
+              http_read_credential: dict
+              http_write_credential: dict
               ip_filter_list: list
               discovery_name: string
               password_list: list

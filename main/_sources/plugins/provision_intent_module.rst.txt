@@ -486,6 +486,48 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config_verify"></div>
+
+      .. _ansible_collections.cisco.dnac.provision_intent_module__parameter-config_verify:
+
+      .. rst-class:: ansible-option-title
+
+      **config_verify**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config_verify" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Set to True to verify the Cisco Catalyst Center config after applying the playbook config.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-dnac_debug"></div>
 
       .. _ansible_collections.cisco.dnac.provision_intent_module__parameter-dnac_debug:
@@ -596,6 +638,44 @@ Parameters
       - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
       - :ansible-option-choices-entry:`true`
 
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dnac_log_level"></div>
+
+      .. _ansible_collections.cisco.dnac.provision_intent_module__parameter-dnac_log_level:
+
+      .. rst-class:: ansible-option-title
+
+      **dnac_log_level**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dnac_log_level" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Specifies the desired log level for Cisco Catalyst Center logging. Options - [CRITICAL, ERROR, WARNING, INFO, DEBUG]
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"WARNING"`
 
       .. raw:: html
 
