@@ -886,6 +886,40 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/hostname_list"></div>
+
+      .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/hostname_list:
+
+      .. rst-class:: ansible-option-title
+
+      **hostname_list**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/hostname_list" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A list of hostnames representing devices. Operations such as updating, deleting, resyncing, or rebooting can be performed as alternatives to using IP addresses.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-config/http_password"></div>
 
       .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/http_password:
@@ -1089,6 +1123,40 @@ Parameters
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
       Device's ipAddress. Required for Adding/Updating/Deleting/Resyncing Device except Meraki Devices.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/mac_address_list"></div>
+
+      .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/mac_address_list:
+
+      .. rst-class:: ansible-option-title
+
+      **mac_address_list**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/mac_address_list" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A list of MAC addresses representing devices. Operations such as updating, deleting, resyncing, or rebooting can be performed as alternatives to using IP addresses.
 
 
       .. raw:: html
@@ -1454,6 +1522,40 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/serial_number_list"></div>
+
+      .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/serial_number_list:
+
+      .. rst-class:: ansible-option-title
+
+      **serial_number_list**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/serial_number_list" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A list of serial numbers representing devices. Operations such as updating, deleting, resyncing, or rebooting can be performed as alternatives to using IP addresses.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-config/site_name"></div>
 
       .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/site_name:
@@ -1658,10 +1760,6 @@ Parameters
 
       Device's snmp Private Protocol. Required for Adding Network, Compute, Third Party Devices. Must be given in playbook if you are updating the device credentails.
 
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"AES128"`
 
       .. raw:: html
 
@@ -2356,12 +2454,12 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Specifies the log level for Cisco Catalyst Center logging, categorizing logs by severity. Options- [CRITICAL, ERROR, WARNING, INFO, DEBUG]
+      Specifies the desired log level for Cisco Catalyst Center logging. Options - [CRITICAL, ERROR, WARNING, INFO, DEBUG]
 
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"INFO"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"WARNING"`
 
       .. raw:: html
 
