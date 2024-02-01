@@ -1001,7 +1001,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Specifies the log level for Cisco Catalyst Center logging, categorizing logs by severity. Options- [CRITICAL, ERROR, WARNING, INFO, DEBUG]
+      Specifies the desired log level for Cisco Catalyst Center logging. Options - [CRITICAL, ERROR, WARNING, INFO, DEBUG]
 
 
       .. rst-class:: ansible-option-line

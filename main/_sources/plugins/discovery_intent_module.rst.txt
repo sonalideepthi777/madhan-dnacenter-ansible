@@ -182,21 +182,21 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-config/devices_list"></div>
+        <div class="ansibleOptionAnchor" id="parameter-config/cli_cred_len"></div>
 
-      .. _ansible_collections.cisco.dnac.discovery_intent_module__parameter-config/devices_list:
+      .. _ansible_collections.cisco.dnac.discovery_intent_module__parameter-config/cli_cred_len:
 
       .. rst-class:: ansible-option-title
 
-      **devices_list**
+      **cli_cred_len**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-config/devices_list" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-config/cli_cred_len" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary` / :ansible-option-required:`required`
+      :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -206,81 +206,16 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      List of devices with details necessary for discovering the devices.
+      Specifies the total number of CLI credentials to be used, ranging from 1 to 5.
 
 
-      .. raw:: html
+      .. rst-class:: ansible-option-line
 
-        </div>
-    
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-config/devices_list/ip"></div>
-
-      .. _ansible_collections.cisco.dnac.discovery_intent_module__parameter-config/devices_list/ip:
-
-      .. rst-class:: ansible-option-title
-
-      **ip**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-config/devices_list/ip" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string` / :ansible-option-required:`required`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`1`
 
       .. raw:: html
 
         </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Management IP address of the device
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-config/devices_list/name"></div>
-
-      .. _ansible_collections.cisco.dnac.discovery_intent_module__parameter-config/devices_list/name:
-
-      .. rst-class:: ansible-option-title
-
-      **name**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-config/devices_list/name" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Hostname of the device
-
-
-      .. raw:: html
-
-        </div>
-
 
   * - .. raw:: html
 
@@ -446,6 +381,40 @@ Parameters
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
       HTTP write credentials for hosting a device
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/ip_address_list"></div>
+
+      .. _ansible_collections.cisco.dnac.discovery_intent_module__parameter-config/ip_address_list:
+
+      .. rst-class:: ansible-option-title
+
+      **ip_address_list**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/ip_address_list" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      List of IP addresses to be discoverred.
 
 
       .. raw:: html
@@ -1089,7 +1058,7 @@ Parameters
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`string` / :ansible-option-required:`required`
+      :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1396,7 +1365,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Specifies the log level for Cisco Catalyst Center logging, categorizing logs by severity. Options- [CRITICAL, ERROR, WARNING, INFO, DEBUG]
+      Specifies the desired log level for Cisco Catalyst Center logging. Options - [CRITICAL, ERROR, WARNING, INFO, DEBUG]
 
 
       .. rst-class:: ansible-option-line
@@ -1726,10 +1695,9 @@ Examples
         dnac_log: True
         dnac_log_level: "{{dnac_log_level}}"
         state: merged
+        config_verify: True
         config:
-            - devices_list:
-                - name: string
-                  ip: string
+            - ip_address_list: list
               discovery_type: string
               cdp_level: string
               lldp_level: string
@@ -1757,6 +1725,7 @@ Examples
               snmp_version: string
               timeout: integer
               username_list: list
+              cli_cred_length: integer
     - name: Delete disovery by name
       cisco.dnac.discovery_intent:
         dnac_host: "{{dnac_host}}"
@@ -1767,11 +1736,11 @@ Examples
         dnac_version: "{{dnac_version}}"
         dnac_debug: "{{dnac_debug}}"
         dnac_log: True
+        dnac_log_level: "{{dnac_log_level}}"
         state: deleted
+        config_verify: True
         config:
-            - devices_list:
-                - name: string
-                  ip: string
+            - ip_address_list: list
               start_index: integer
               records_to_return: integer
               discovery_name: string
