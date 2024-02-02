@@ -245,7 +245,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Device's cli transport protocol. Required for Adding Network Devices.
+      Device's cli transport protocol(ssh/telnet). Required for Adding Network Devices.
 
 
       .. raw:: html
