@@ -245,7 +245,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Device's cli transport protocol(ssh/telnet). Required for Adding Network Devices.
+      The essential prerequisite for adding Network devices is the specification of the transport protocol (either SSH or Telnet) used by the device.
 
 
       .. raw:: html
