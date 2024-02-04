@@ -2471,7 +2471,26 @@ Examples
             device_role: string
             device_type: string
             site_name: string
-            tagging: bool
+            tagging: true
+
+    - name: Un-tagged the given image as golden and load it on device
+      cisco.dnac.swim_intent:
+        dnac_host: "{{dnac_host}}"
+        dnac_username: "{{dnac_username}}"
+        dnac_password: "{{dnac_password}}"
+        dnac_verify: "{{dnac_verify}}"
+        dnac_port: "{{dnac_port}}"
+        dnac_version: "{{dnac_version}}"
+        dnac_debug: "{{dnac_debug}}"
+        dnac_log_level: "{{dnac_log_level}}"
+        dnac_log: True
+        config:
+        - tagging_details:
+            image_name: string
+            device_role: string
+            device_type: string
+            site_name: string
+            tagging: false
 
     - name: Distribute the given image on devices associated to that site with specified role.
       cisco.dnac.swim_intent:

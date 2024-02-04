@@ -3045,6 +3045,27 @@ Examples
               new_mgmt_ipaddress: string
             username: string
 
+    - name: Update new management IP address of device in inventory
+      cisco.dnac.inventory_intent:
+        dnac_host: "{{dnac_host}}"
+        dnac_username: "{{dnac_username}}"
+        dnac_password: "{{dnac_password}}"
+        dnac_verify: "{{dnac_verify}}"
+        dnac_port: "{{dnac_port}}"
+        dnac_version: "{{dnac_version}}"
+        dnac_debug: "{{dnac_debug}}"
+        dnac_log_level: "{{dnac_log_level}}"
+        dnac_log: False
+        state: merged
+        config:
+          - device_updated: true
+            ip_address:
+            - string
+            credential_update: true
+            update_mgmt_ipaddresslist:
+            - exist_mgmt_ipaddress: string
+              new_mgmt_ipaddress: string
+
     - name: Associate Wired Devices to site and Provisioned it in Inventory
       cisco.dnac.inventory_intent:
         dnac_host: "{{dnac_host}}"
