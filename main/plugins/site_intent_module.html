@@ -733,7 +733,12 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-site-int
 <div class="ansibleOptionAnchor" id="parameter-dnac_log_level"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-dnac-log-level"><strong>dnac_log_level</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_log_level" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-cell"><p>Specifies the desired log level for Cisco Catalyst Center logging. Options - [CRITICAL, ERROR, WARNING, INFO, DEBUG]</p>
+<td><div class="ansible-option-cell"><p>Sets the threshold for log level. Messages with a level equal to or higher than this will be logged. Levels are listed in order of severity [CRITICAL, ERROR, WARNING, INFO, DEBUG].</p>
+<p>CRITICAL indicates serious errors halting the program. Displays only CRITICAL messages.</p>
+<p>ERROR indicates problems preventing a function. Displays ERROR and CRITICAL messages.</p>
+<p>WARNING indicates potential future issues. Displays WARNING, ERROR, CRITICAL messages.</p>
+<p>INFO tracks normal operation. Displays INFO, WARNING, ERROR, CRITICAL messages.</p>
+<p>DEBUG provides detailed diagnostic info. Displays all log messages.</p>
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id19"><span class="problematic" id="id20">:ansible-option-default:`&quot;WARNING&quot;`</span></a></p>
 </div></td>
 </tr>
