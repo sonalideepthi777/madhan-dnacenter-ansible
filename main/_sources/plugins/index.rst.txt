@@ -118,6 +118,7 @@ Modules
 * :ref:`device_credential_info module <ansible_collections.cisco.dnac.device_credential_info_module>` -- Information module for Device Credential
 * :ref:`device_credential_intent module <ansible_collections.cisco.dnac.device_credential_intent_module>` -- Resource module for Global Device Credentials and Assigning Credentials to sites.
 * :ref:`device_credential_update module <ansible_collections.cisco.dnac.device_credential_update_module>` -- Resource module for Device Credential Update
+* :ref:`device_credential_workflow_manager module <ansible_collections.cisco.dnac.device_credential_workflow_manager_module>` -- Resource module for Global Device Credentials and Assigning Credentials to sites.
 * :ref:`device_details_info module <ansible_collections.cisco.dnac.device_details_info_module>` -- Information module for Device Details
 * :ref:`device_enrichment_details_info module <ansible_collections.cisco.dnac.device_enrichment_details_info_module>` -- Information module for Device Enrichment Details
 * :ref:`device_family_identifiers_details_info module <ansible_collections.cisco.dnac.device_family_identifiers_details_info_module>` -- Information module for Device Family Identifiers Details
@@ -273,6 +274,7 @@ Modules
 * :ref:`network_device_with_snmp_v3_des_info module <ansible_collections.cisco.dnac.network_device_with_snmp_v3_des_info_module>` -- Information module for Network Device With Snmp V3 Des
 * :ref:`network_info module <ansible_collections.cisco.dnac.network_info_module>` -- Information module for Network
 * :ref:`network_settings_intent module <ansible_collections.cisco.dnac.network_settings_intent_module>` -- Resource module for IP Address pools and network functions
+* :ref:`network_settings_workflow_manager module <ansible_collections.cisco.dnac.network_settings_workflow_manager_module>` -- Resource module for IP Address pools and network functions
 * :ref:`network_update module <ansible_collections.cisco.dnac.network_update_module>` -- Resource module for Network Update
 * :ref:`network_v2 module <ansible_collections.cisco.dnac.network_v2_module>` -- Resource module for Network V2
 * :ref:`network_v2_info module <ansible_collections.cisco.dnac.network_v2_info_module>` -- Information module for Network V2
@@ -418,6 +420,7 @@ Modules
 * :ref:`task_tree_info module <ansible_collections.cisco.dnac.task_tree_info_module>` -- Information module for Task Tree
 * :ref:`template_intent module <ansible_collections.cisco.dnac.template_intent_module>` -- Resource module for Template functions
 * :ref:`template_preview module <ansible_collections.cisco.dnac.template_preview_module>` -- Resource module for Template Preview
+* :ref:`template_workflow_manager module <ansible_collections.cisco.dnac.template_workflow_manager_module>` -- Resource module for Template functions
 * :ref:`templates_details_info module <ansible_collections.cisco.dnac.templates_details_info_module>` -- Information module for Templates Details
 * :ref:`threat_detail module <ansible_collections.cisco.dnac.threat_detail_module>` -- Resource module for Threat Detail
 * :ref:`threat_detail_count module <ansible_collections.cisco.dnac.threat_detail_count_module>` -- Resource module for Threat Detail Count
@@ -515,6 +518,7 @@ Modules
     device_credential_info_module
     device_credential_intent_module
     device_credential_update_module
+    device_credential_workflow_manager_module
     device_details_info_module
     device_enrichment_details_info_module
     device_family_identifiers_details_info_module
@@ -670,6 +674,7 @@ Modules
     network_device_with_snmp_v3_des_info_module
     network_info_module
     network_settings_intent_module
+    network_settings_workflow_manager_module
     network_update_module
     network_v2_module
     network_v2_info_module
@@ -815,6 +820,7 @@ Modules
     task_tree_info_module
     template_intent_module
     template_preview_module
+    template_workflow_manager_module
     templates_details_info_module
     threat_detail_module
     threat_detail_count_module
