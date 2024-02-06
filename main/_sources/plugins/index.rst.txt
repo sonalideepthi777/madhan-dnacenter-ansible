@@ -213,6 +213,7 @@ Modules
 * :ref:`interface_operation_create module <ansible_collections.cisco.dnac.interface_operation_create_module>` -- Resource module for Interface Operation Create
 * :ref:`interface_update module <ansible_collections.cisco.dnac.interface_update_module>` -- Resource module for Interface Update
 * :ref:`inventory_intent module <ansible_collections.cisco.dnac.inventory_intent_module>` -- Resource module for Network Device
+* :ref:`inventory_workflow_manager module <ansible_collections.cisco.dnac.inventory_workflow_manager_module>` -- Resource module for Network Device
 * :ref:`issues_enrichment_details_info module <ansible_collections.cisco.dnac.issues_enrichment_details_info_module>` -- Information module for Issues Enrichment Details
 * :ref:`issues_info module <ansible_collections.cisco.dnac.issues_info_module>` -- Information module for Issues
 * :ref:`itsm_cmdb_sync_status_info module <ansible_collections.cisco.dnac.itsm_cmdb_sync_status_info_module>` -- Information module for Itsm Cmdb Sync Status
@@ -388,6 +389,7 @@ Modules
 * :ref:`site_intent module <ansible_collections.cisco.dnac.site_intent_module>` -- Resource module for Site operations
 * :ref:`site_membership_info module <ansible_collections.cisco.dnac.site_membership_info_module>` -- Information module for Site Membership
 * :ref:`site_update module <ansible_collections.cisco.dnac.site_update_module>` -- Resource module for Site Update
+* :ref:`site_workflow_manager module <ansible_collections.cisco.dnac.site_workflow_manager_module>` -- Resource module for Site operations
 * :ref:`snmp_properties module <ansible_collections.cisco.dnac.snmp_properties_module>` -- Resource module for Snmp Properties
 * :ref:`snmp_properties_info module <ansible_collections.cisco.dnac.snmp_properties_info_module>` -- Information module for Snmp Properties
 * :ref:`snmpv2_read_community_credential module <ansible_collections.cisco.dnac.snmpv2_read_community_credential_module>` -- Resource module for Snmpv2 Read Community Credential
@@ -400,6 +402,7 @@ Modules
 * :ref:`swim_intent module <ansible_collections.cisco.dnac.swim_intent_module>` -- Intent module for SWIM related functions
 * :ref:`swim_trigger_activation module <ansible_collections.cisco.dnac.swim_trigger_activation_module>` -- Resource module for Swim Trigger Activation
 * :ref:`swim_trigger_distribution module <ansible_collections.cisco.dnac.swim_trigger_distribution_module>` -- Resource module for Swim Trigger Distribution
+* :ref:`swim_workflow_manager module <ansible_collections.cisco.dnac.swim_workflow_manager_module>` -- Intent module for SWIM related functions
 * :ref:`syslog_config_create module <ansible_collections.cisco.dnac.syslog_config_create_module>` -- Resource module for Syslog Config Create
 * :ref:`syslog_config_update module <ansible_collections.cisco.dnac.syslog_config_update_module>` -- Resource module for Syslog Config Update
 * :ref:`system_health_count_info module <ansible_collections.cisco.dnac.system_health_count_info_module>` -- Information module for System Health Count
@@ -613,6 +616,7 @@ Modules
     interface_operation_create_module
     interface_update_module
     inventory_intent_module
+    inventory_workflow_manager_module
     issues_enrichment_details_info_module
     issues_info_module
     itsm_cmdb_sync_status_info_module
@@ -788,6 +792,7 @@ Modules
     site_intent_module
     site_membership_info_module
     site_update_module
+    site_workflow_manager_module
     snmp_properties_module
     snmp_properties_info_module
     snmpv2_read_community_credential_module
@@ -800,6 +805,7 @@ Modules
     swim_intent_module
     swim_trigger_activation_module
     swim_trigger_distribution_module
+    swim_workflow_manager_module
     syslog_config_create_module
     syslog_config_update_module
     system_health_count_info_module
