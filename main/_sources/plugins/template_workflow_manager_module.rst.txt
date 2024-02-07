@@ -11411,7 +11411,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Flag for Cisco DNA Center SDK to enable debugging.
+      Indicates whether debugging is enabled in the Cisco Catalyst Center SDK.
 
 
       .. rst-class:: ansible-option-line
@@ -11453,7 +11453,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The Cisco DNA Center hostname.
+      The hostname of the Cisco Catalyst Center.
 
 
       .. raw:: html
@@ -11671,7 +11671,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The Cisco DNA Center password to authenticate.
+      The password for authentication at the Cisco Catalyst Center.
 
 
       .. raw:: html
@@ -11705,7 +11705,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The Cisco DNA Center port.
+      Specifies the port number associated with the Cisco Catalyst Center.
 
 
       .. rst-class:: ansible-option-line
@@ -11749,7 +11749,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The Cisco DNA Center username to authenticate.
+      The username for authentication at the Cisco Catalyst Center.
 
 
       .. rst-class:: ansible-option-line
@@ -11829,7 +11829,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Informs the SDK which version of Cisco DNA Center to use.
+      Specifies the version of the Cisco Catalyst Center that the SDK should use.
 
 
       .. rst-class:: ansible-option-line
@@ -11909,7 +11909,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Flag for Cisco DNA Center SDK to enable the validation of request bodies against a JSON schema.
+      Flag for Cisco Catalyst Center SDK to enable the validation of request bodies against a JSON schema.
 
 
       .. rst-class:: ansible-option-line
@@ -11937,8 +11937,8 @@ Notes
    - SDK Method used are configuration\_templates.ConfigurationTemplates.create\_template, configuration\_templates.ConfigurationTemplates.deletes\_the\_template, configuration\_templates.ConfigurationTemplates.update\_template, configuration\_templates.ConfigurationTemplates.export\_projects, configuration\_templates.ConfigurationTemplates.export\_templates, configuration\_templates.ConfigurationTemplates.imports\_the\_projects\_provided, configuration\_templates.ConfigurationTemplates.imports\_the\_templates\_provided,
    - Paths used are post /dna/intent/api/v1/template-programmer/project/{projectId}/template, delete /dna/intent/api/v1/template-programmer/template/{templateId}, put /dna/intent/api/v1/template-programmer/template, post /dna/intent/api/v1/template-programmer/project/name/exportprojects, post /dna/intent/api/v1/template-programmer/template/exporttemplates, post /dna/intent/api/v1/template-programmer/project/importprojects, post /dna/intent/api/v1/template-programmer/project/name/{projectName}/template/importtemplates,
    - Does not support \ :literal:`check\_mode`\ 
-   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The plugin runs on the control node and does not use any ansible connection plugins instead embedded connection manager from Cisco Catalyst Center SDK
+   - The parameters starting with dnac\_ are used by the Cisco Catalyst Center Python SDK to establish the connection
 
 .. Seealso
 
