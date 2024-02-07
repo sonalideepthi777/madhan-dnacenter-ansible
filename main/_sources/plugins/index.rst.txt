@@ -148,6 +148,7 @@ Modules
 * :ref:`discovery_range_delete module <ansible_collections.cisco.dnac.discovery_range_delete_module>` -- Resource module for Discovery Range Delete
 * :ref:`discovery_range_info module <ansible_collections.cisco.dnac.discovery_range_info_module>` -- Information module for Discovery Range
 * :ref:`discovery_summary_info module <ansible_collections.cisco.dnac.discovery_summary_info_module>` -- Information module for Discovery Summary
+* :ref:`discovery_workflow_manager module <ansible_collections.cisco.dnac.discovery_workflow_manager_module>` -- Resource module for discovery related functions
 * :ref:`dna_command_runner_keywords_info module <ansible_collections.cisco.dnac.dna_command_runner_keywords_info_module>` -- Information module for Dna Command Runner Keywords
 * :ref:`dnac_packages_info module <ansible_collections.cisco.dnac.dnac_packages_info_module>` -- Information module for Dnac Packages
 * :ref:`dnacaap_management_execution_status_info module <ansible_collections.cisco.dnac.dnacaap_management_execution_status_info_module>` -- Information module for Dnacaap Management Execution Status
@@ -313,6 +314,7 @@ Modules
 * :ref:`pnp_workflow module <ansible_collections.cisco.dnac.pnp_workflow_module>` -- Resource module for Pnp Workflow
 * :ref:`pnp_workflow_count_info module <ansible_collections.cisco.dnac.pnp_workflow_count_info_module>` -- Information module for Pnp Workflow Count
 * :ref:`pnp_workflow_info module <ansible_collections.cisco.dnac.pnp_workflow_info_module>` -- Information module for Pnp Workflow
+* :ref:`pnp_workflow_manager module <ansible_collections.cisco.dnac.pnp_workflow_manager_module>` -- Resource module for Site and PnP related functions
 * :ref:`profiling_rules_count_info module <ansible_collections.cisco.dnac.profiling_rules_count_info_module>` -- Information module for Profiling Rules Count
 * :ref:`profiling_rules_in_bulk_create module <ansible_collections.cisco.dnac.profiling_rules_in_bulk_create_module>` -- Resource module for Profiling Rules In Bulk Create
 * :ref:`projects_details_info module <ansible_collections.cisco.dnac.projects_details_info_module>` -- Information module for Projects Details
@@ -551,6 +553,7 @@ Modules
     discovery_range_delete_module
     discovery_range_info_module
     discovery_summary_info_module
+    discovery_workflow_manager_module
     dna_command_runner_keywords_info_module
     dnac_packages_info_module
     dnacaap_management_execution_status_info_module
@@ -716,6 +719,7 @@ Modules
     pnp_workflow_module
     pnp_workflow_count_info_module
     pnp_workflow_info_module
+    pnp_workflow_manager_module
     profiling_rules_count_info_module
     profiling_rules_in_bulk_create_module
     projects_details_info_module
