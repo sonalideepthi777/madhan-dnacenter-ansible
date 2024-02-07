@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>cisco.dnac.swim_workflow_manager module – Intent module for SWIM related functions &mdash; DNACenterAnsibleActions  documentation</title>
+  <title>cisco.dnac.swim_workflow_manager module – workflow_manager module for SWIM related functions &mdash; DNACenterAnsibleActions  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="../_static/ansible-basic-sphinx-ext.css" />
@@ -395,7 +395,7 @@
 <li class="toctree-l4"><a class="reference internal" href="swim_intent_module.html">cisco.dnac.swim_intent module – Intent module for SWIM related functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="swim_trigger_activation_module.html">cisco.dnac.swim_trigger_activation module – Resource module for Swim Trigger Activation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="swim_trigger_distribution_module.html">cisco.dnac.swim_trigger_distribution module – Resource module for Swim Trigger Distribution</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">cisco.dnac.swim_workflow_manager module – Intent module for SWIM related functions</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">cisco.dnac.swim_workflow_manager module – workflow_manager module for SWIM related functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="syslog_config_create_module.html">cisco.dnac.syslog_config_create module – Resource module for Syslog Config Create</a></li>
 <li class="toctree-l4"><a class="reference internal" href="syslog_config_update_module.html">cisco.dnac.syslog_config_update module – Resource module for Syslog Config Update</a></li>
 <li class="toctree-l4"><a class="reference internal" href="system_health_count_info_module.html">cisco.dnac.system_health_count_info module – Information module for System Health Count</a></li>
@@ -473,7 +473,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Cisco.Dnac</a></li>
-      <li class="breadcrumb-item active">cisco.dnac.swim_workflow_manager module – Intent module for SWIM related functions</li>
+      <li class="breadcrumb-item active">cisco.dnac.swim_workflow_manager module – workflow_manager module for SWIM related functions</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/plugins/swim_workflow_manager_module.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -483,8 +483,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <span class="target" id="ansible-collections-cisco-dnac-swim-workflow-manager-module"></span><section id="cisco-dnac-swim-workflow-manager-module-intent-module-for-swim-related-functions">
-<h1>cisco.dnac.swim_workflow_manager module – Intent module for SWIM related functions<a class="headerlink" href="#cisco-dnac-swim-workflow-manager-module-intent-module-for-swim-related-functions" title="Permalink to this heading"></a></h1>
+  <span class="target" id="ansible-collections-cisco-dnac-swim-workflow-manager-module"></span><section id="cisco-dnac-swim-workflow-manager-module-workflow-manager-module-for-swim-related-functions">
+<h1>cisco.dnac.swim_workflow_manager module – workflow_manager module for SWIM related functions<a class="headerlink" href="#cisco-dnac-swim-workflow-manager-module-workflow-manager-module-for-swim-related-functions" title="Permalink to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/dnac">cisco.dnac collection</a> (version 6.10.4).</p>
@@ -914,7 +914,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-swim-wor
 <div class="ansibleOptionAnchor" id="parameter-dnac_debug"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-workflow-manager-module-parameter-dnac-debug"><strong>dnac_debug</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_debug" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
-<td><div class="ansible-option-cell"><p>Flag for Cisco DNA Center SDK to enable debugging.</p>
+<td><div class="ansible-option-cell"><p>Indicates whether debugging is enabled in the Cisco Catalyst Center SDK.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
 <li><p><a href="#id29"><span class="problematic" id="id30">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
@@ -926,7 +926,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-swim-wor
 <div class="ansibleOptionAnchor" id="parameter-dnac_host"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-workflow-manager-module-parameter-dnac-host"><strong>dnac_host</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_host" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span> / <span class="ansible-option-required">required</span></p>
 </div></td>
-<td><div class="ansible-option-cell"><p>The Cisco DNA Center hostname.</p>
+<td><div class="ansible-option-cell"><p>The hostname of the Cisco Catalyst Center.</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
@@ -985,14 +985,14 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-swim-wor
 <div class="ansibleOptionAnchor" id="parameter-dnac_password"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-workflow-manager-module-parameter-dnac-password"><strong>dnac_password</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_password" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-cell"><p>The Cisco DNA Center password to authenticate.</p>
+<td><div class="ansible-option-cell"><p>The password for authentication at the Cisco Catalyst Center.</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-dnac_port"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-workflow-manager-module-parameter-dnac-port"><strong>dnac_port</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_port" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-cell"><p>The Cisco DNA Center port.</p>
+<td><div class="ansible-option-cell"><p>Specifies the port number associated with the Cisco Catalyst Center.</p>
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id45"><span class="problematic" id="id46">:ansible-option-default:`&quot;443&quot;`</span></a></p>
 </div></td>
 </tr>
@@ -1002,7 +1002,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-swim-wor
 <a class="ansibleOptionLink" href="#parameter-dnac_username" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-aliases">aliases: user</span></p>
 <p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-cell"><p>The Cisco DNA Center username to authenticate.</p>
+<td><div class="ansible-option-cell"><p>The username for authentication at the Cisco Catalyst Center.</p>
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id47"><span class="problematic" id="id48">:ansible-option-default:`&quot;admin&quot;`</span></a></p>
 </div></td>
 </tr>
@@ -1022,7 +1022,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-swim-wor
 <div class="ansibleOptionAnchor" id="parameter-dnac_version"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-workflow-manager-module-parameter-dnac-version"><strong>dnac_version</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_version" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-cell"><p>Informs the SDK which version of Cisco DNA Center to use.</p>
+<td><div class="ansible-option-cell"><p>Specifies the version of the Cisco Catalyst Center that the SDK should use.</p>
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id53"><span class="problematic" id="id54">:ansible-option-default:`&quot;2.2.3.3&quot;`</span></a></p>
 </div></td>
 </tr>
@@ -1041,7 +1041,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-swim-wor
 <div class="ansibleOptionAnchor" id="parameter-validate_response_schema"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-workflow-manager-module-parameter-validate-response-schema"><strong>validate_response_schema</strong></p>
 <a class="ansibleOptionLink" href="#parameter-validate_response_schema" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
-<td><div class="ansible-option-cell"><p>Flag for Cisco DNA Center SDK to enable the validation of request bodies against a JSON schema.</p>
+<td><div class="ansible-option-cell"><p>Flag for Cisco Catalyst Center SDK to enable the validation of request bodies against a JSON schema.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
 <li><p><a href="#id57"><span class="problematic" id="id58">:ansible-option-choices-entry:`false`</span></a></p></li>
@@ -1060,8 +1060,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-swim-wor
 <li><p>SDK Method used are software_image_management_swim.SoftwareImageManagementSwim.import_software_image_via_url, software_image_management_swim.SoftwareImageManagementSwim.tag_as_golden_image, software_image_management_swim.SoftwareImageManagementSwim.trigger_software_image_distribution, software_image_management_swim.SoftwareImageManagementSwim.trigger_software_image_activation,</p></li>
 <li><p>Paths used are post /dna/intent/api/v1/image/importation/source/url, post /dna/intent/api/v1/image/importation/golden, post /dna/intent/api/v1/image/distribution, post /dna/intent/api/v1/image/activation/device,</p></li>
 <li><p>Does not support <code class="docutils literal notranslate"><span class="pre">check_mode</span></code></p></li>
-<li><p>The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK</p></li>
-<li><p>The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection</p></li>
+<li><p>The plugin runs on the control node and does not use any ansible connection plugins instead embedded connection manager from Cisco Catalyst Center SDK</p></li>
+<li><p>The parameters starting with dnac_ are used by the Cisco Catalyst Center Python SDK to establish the connection</p></li>
 </ul>
 </div>
 </section>

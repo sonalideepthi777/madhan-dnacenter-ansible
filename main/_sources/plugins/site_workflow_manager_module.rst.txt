@@ -862,7 +862,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Flag for Cisco DNA Center SDK to enable debugging.
+      Indicates whether debugging is enabled in the Cisco Catalyst Center SDK.
 
 
       .. rst-class:: ansible-option-line
@@ -904,7 +904,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The Cisco DNA Center hostname.
+      The hostname of the Cisco Catalyst Center.
 
 
       .. raw:: html
@@ -1122,7 +1122,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The Cisco DNA Center password to authenticate.
+      The password for authentication at the Cisco Catalyst Center.
 
 
       .. raw:: html
@@ -1156,7 +1156,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The Cisco DNA Center port.
+      Specifies the port number associated with the Cisco Catalyst Center.
 
 
       .. rst-class:: ansible-option-line
@@ -1200,7 +1200,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The Cisco DNA Center username to authenticate.
+      The username for authentication at the Cisco Catalyst Center.
 
 
       .. rst-class:: ansible-option-line
@@ -1280,7 +1280,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Informs the SDK which version of Cisco DNA Center to use.
+      Specifies the version of the Cisco Catalyst Center that the SDK should use.
 
 
       .. rst-class:: ansible-option-line
@@ -1360,7 +1360,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Flag for Cisco DNA Center SDK to enable the validation of request bodies against a JSON schema.
+      Flag for Cisco Catalyst Center SDK to enable the validation of request bodies against a JSON schema.
 
 
       .. rst-class:: ansible-option-line
@@ -1388,8 +1388,8 @@ Notes
    - SDK Method used are sites.Sites.create\_site, sites.Sites.update\_site, sites.Sites.delete\_site
    - Paths used are post /dna/intent/api/v1/site, put dna/intent/api/v1/site/{siteId}, delete dna/intent/api/v1/site/{siteId}
    - Does not support \ :literal:`check\_mode`\ 
-   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
-   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The plugin runs on the control node and does not use any ansible connection plugins instead embedded connection manager from Cisco Catalyst Center SDK
+   - The parameters starting with dnac\_ are used by the Cisco Catalyst Center Python SDK to establish the connection
 
 .. Seealso
 
