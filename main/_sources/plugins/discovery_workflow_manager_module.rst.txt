@@ -2170,6 +2170,7 @@ Examples
               timeout: integer
               username_list: list
               cli_cred_len: integer
+
     - name: Delete disovery by name
       cisco.dnac.discovery_workflow_manager:
         dnac_host: "{{dnac_host}}"
@@ -2352,7 +2353,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- Abinash Mishra (@abimishr) Phan Nguyen (@phannguy) Madhan Sankaranarayanan (@madsanka)
+- Abinash Mishra (@abimishr) Phan Nguyen (@phannguy) Madhan Sankaranarayanan (@madhansansel)
 
 
 

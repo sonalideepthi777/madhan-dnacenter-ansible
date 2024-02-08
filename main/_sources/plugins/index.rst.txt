@@ -319,6 +319,7 @@ Modules
 * :ref:`profiling_rules_in_bulk_create module <ansible_collections.cisco.dnac.profiling_rules_in_bulk_create_module>` -- Resource module for Profiling Rules In Bulk Create
 * :ref:`projects_details_info module <ansible_collections.cisco.dnac.projects_details_info_module>` -- Information module for Projects Details
 * :ref:`provision_intent module <ansible_collections.cisco.dnac.provision_intent_module>` -- Resource module for provision functions
+* :ref:`provision_workflow_manager module <ansible_collections.cisco.dnac.provision_workflow_manager_module>` -- Resource module for provision related functions
 * :ref:`qos_device_interface module <ansible_collections.cisco.dnac.qos_device_interface_module>` -- Resource module for Qos Device Interface
 * :ref:`qos_device_interface_info module <ansible_collections.cisco.dnac.qos_device_interface_info_module>` -- Information module for Qos Device Interface
 * :ref:`qos_device_interface_info_count_info module <ansible_collections.cisco.dnac.qos_device_interface_info_count_info_module>` -- Information module for Qos Device Interface Info Count
@@ -724,6 +725,7 @@ Modules
     profiling_rules_in_bulk_create_module
     projects_details_info_module
     provision_intent_module
+    provision_workflow_manager_module
     qos_device_interface_module
     qos_device_interface_info_module
     qos_device_interface_info_count_info_module
