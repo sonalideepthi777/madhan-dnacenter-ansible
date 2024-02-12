@@ -672,7 +672,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-discover
 <div class="ansibleOptionAnchor" id="parameter-config/ip_address_list"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-discovery-intent-module-parameter-config-ip-address-list"><strong>ip_address_list</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/ip_address_list" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span> / <span class="ansible-option-required">required</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>List of IP addresses to be discoverred.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>List of IP addresses to be discovered. For CDP/LLDP/SINGLE based discovery, we should pass a list with single element like - 10.197.156.22. For CIDR based discovery, we should pass a list with single element like - 10.197.156.22/22. For RANGE based discovery, we should pass a list with single element and range like - 10.197.156.1-10.197.156.100. For MULTI RANGE based discovery, we should pass a list with multiple elementd like - 10.197.156.1-10.197.156.100 and in next line - 10.197.157.1-10.197.157.100.</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -837,7 +837,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-discover
 <div class="ansibleOptionAnchor" id="parameter-config_verify"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-discovery-intent-module-parameter-config-verify"><strong>config_verify</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config_verify" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
-<td><div class="ansible-option-cell"><p>Set to True to verify the Cisco DNA Center config after applying the playbook config.</p>
+<td><div class="ansible-option-cell"><p>Set to True to verify the Cisco Catalyst Center config after applying the playbook config.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
 <li><p><a href="#id25"><span class="problematic" id="id26">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
@@ -965,7 +965,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-discover
 <div class="ansibleOptionAnchor" id="parameter-state"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-discovery-intent-module-parameter-state"><strong>state</strong></p>
 <a class="ansibleOptionLink" href="#parameter-state" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-cell"><p>The state of DNAC after module completion.</p>
+<td><div class="ansible-option-cell"><p>The state of Cisco Catalyst Center after module completion.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
 <li><p><a href="#id55"><span class="problematic" id="id56">:ansible-option-choices-entry-default:`&quot;merged&quot;`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
@@ -1046,6 +1046,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-discover
 <span class="w">          </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
 <span class="w">          </span><span class="nt">username_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">list</span>
 <span class="w">          </span><span class="nt">cli_cred_len</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
+
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Delete disovery by name</span>
 <span class="w">  </span><span class="nt">cisco.dnac.discovery_intent</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">dnac_host</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_host</span><span class="cp">}}</span><span class="s">&quot;</span>
@@ -1078,7 +1079,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-discover
 <div class="ansibleOptionAnchor" id="return-response_1"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-discovery-intent-module-return-response-1"><strong>response_1</strong></p>
 <a class="ansibleOptionLink" href="#return-response_1" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
-<td><div class="ansible-option-cell"><p>A dictionary with the response returned by the Cisco DNAC Python SDK</p>
+<td><div class="ansible-option-cell"><p>A dictionary with the response returned by the Cisco Catalyst Center Python SDK</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id63"><span class="problematic" id="id64">:ansible-rv-sample-value:`&quot;{\\n  \\&quot;response\\&quot;:\\n    {\\n      \\&quot;response\\&quot;: String,\\n      \\&quot;version\\&quot;: String\\n    },\\n  \\&quot;msg\\&quot;: String\\n}\\n&quot;`</span></a></p>
 </div></td>
@@ -1087,7 +1088,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-discover
 <div class="ansibleOptionAnchor" id="return-response_2"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-discovery-intent-module-return-response-2"><strong>response_2</strong></p>
 <a class="ansibleOptionLink" href="#return-response_2" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
 </div></td>
-<td><div class="ansible-option-cell"><p>A list with the response returned by the Cisco DNAC Python SDK</p>
+<td><div class="ansible-option-cell"><p>A list with the response returned by the Cisco Catalyst Center Python SDK</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id65"><span class="problematic" id="id66">:ansible-rv-sample-value:`[&quot;{\\n  \\&quot;response\\&quot;: []&quot;, &quot;\\n  \\&quot;msg\\&quot;: String\\n}\\n&quot;]`</span></a></p>
 </div></td>
@@ -1096,7 +1097,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-discover
 <div class="ansibleOptionAnchor" id="return-response_3"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-discovery-intent-module-return-response-3"><strong>response_3</strong></p>
 <a class="ansibleOptionLink" href="#return-response_3" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
-<td><div class="ansible-option-cell"><p>A string with the response returned by the Cisco DNAC Python SDK</p>
+<td><div class="ansible-option-cell"><p>A string with the response returned by the Cisco Catalyst Center Python SDK</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id67"><span class="problematic" id="id68">:ansible-rv-sample-value:`&quot;{\\n  \\&quot;response\\&quot;: String,\\n  \\&quot;msg\\&quot;: String\\n}\\n&quot;`</span></a></p>
 </div></td>
@@ -1106,7 +1107,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-discover
 <section id="authors">
 <h3>Authors<a class="headerlink" href="#authors" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>Abinash Mishra (&#64;abimishr) Phan Nguyen (phannguy)</p></li>
+<li><p>Abinash Mishra (&#64;abimishr) Phan Nguyen (&#64;phannguy) Madhan Sankaranarayanan (&#64;madhansansel)</p></li>
 </ul>
 </section>
 <section id="collection-links">

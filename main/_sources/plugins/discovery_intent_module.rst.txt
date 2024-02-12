@@ -746,7 +746,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      List of IP addresses to be discoverred.
+      List of IP addresses to be discovered. For CDP/LLDP/SINGLE based discovery, we should pass a list with single element like - 10.197.156.22. For CIDR based discovery, we should pass a list with single element like - 10.197.156.22/22. For RANGE based discovery, we should pass a list with single element and range like - 10.197.156.1-10.197.156.100. For MULTI RANGE based discovery, we should pass a list with multiple elementd like - 10.197.156.1-10.197.156.100 and in next line - 10.197.157.1-10.197.157.100.
 
 
       .. raw:: html
@@ -1545,7 +1545,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Set to True to verify the Cisco DNA Center config after applying the playbook config.
+      Set to True to verify the Cisco Catalyst Center config after applying the playbook config.
 
 
       .. rst-class:: ansible-option-line
@@ -2043,7 +2043,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The state of DNAC after module completion.
+      The state of Cisco Catalyst Center after module completion.
 
 
       .. rst-class:: ansible-option-line
@@ -2170,6 +2170,7 @@ Examples
               timeout: integer
               username_list: list
               cli_cred_len: integer
+
     - name: Delete disovery by name
       cisco.dnac.discovery_intent:
         dnac_host: "{{dnac_host}}"
@@ -2235,7 +2236,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <div class="ansible-option-cell">
 
-      A dictionary with the response returned by the Cisco DNAC Python SDK
+      A dictionary with the response returned by the Cisco Catalyst Center Python SDK
 
 
       .. rst-class:: ansible-option-line
@@ -2280,7 +2281,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <div class="ansible-option-cell">
 
-      A list with the response returned by the Cisco DNAC Python SDK
+      A list with the response returned by the Cisco Catalyst Center Python SDK
 
 
       .. rst-class:: ansible-option-line
@@ -2325,7 +2326,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <div class="ansible-option-cell">
 
-      A string with the response returned by the Cisco DNAC Python SDK
+      A string with the response returned by the Cisco Catalyst Center Python SDK
 
 
       .. rst-class:: ansible-option-line
@@ -2352,7 +2353,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- Abinash Mishra (@abimishr) Phan Nguyen (phannguy)
+- Abinash Mishra (@abimishr) Phan Nguyen (@phannguy) Madhan Sankaranarayanan (@madhansansel)
 
 
 
