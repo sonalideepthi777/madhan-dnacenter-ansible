@@ -1689,10 +1689,6 @@ Parameters
       Device's snmp Mode.
 
 
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"AUTHPRIV"`
-
       .. raw:: html
 
         </div>
