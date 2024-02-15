@@ -247,7 +247,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Device family name
+      Specify the name of the device family such as Switches and Hubs, etc.
 
 
       .. raw:: html
@@ -383,7 +383,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Device Role. Permissible Values ALL, UNKNOWN, ACCESS, BORDER ROUTER, DISTRIBUTION and CORE.
+      Defines the device role, with permissible values including ALL, UNKNOWN, ACCESS, BORDER ROUTER, DISTRIBUTION, and CORE. ALL - This role typically represents all devices within the network, regardless of their specific roles or functions. UNKNOWN - This role is assigned to devices whose roles or functions have not been identified or classified within Cisco Catalsyt Center. This could happen if the platform is unable to determine the device's role based on available information. ACCESS - This role typically represents switches or access points that serve as access points for end-user devices to connect to the network. These devices are often located at the edge of the network and provide connectivity to end-user devices. BORDER ROUTER - These are devices that connect different network domains or segments together. They often serve as gateways between different networks, such as connecting an enterprise network to the internet or connecting multiple branch offices. DISTRIBUTION - This role represents function as distribution switches or routers in hierarchical network designs. They aggregate traffic from access switches and route it toward the core of the network or toward other distribution switches. CORE - This role typically represents high-capacity switches or routers that form the backbone of the network. They handle large volumes of traffic and provide connectivity between different parts of network, such as connecting distribution switches or providing interconnection between different network segments.
 
 
       .. raw:: html
@@ -451,7 +451,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Swim Trigger Activation's deviceUpgradeMode.
+      It specifies the mode of upgrade to be applied to the devices having the following values - 'install', 'bundle', and 'currentlyExists'. install - This mode instructs Cisco Catalyst Center to perform a clean installation of the new image on the target devices. When this mode is selected, the existing image on the device is completely replaced with the new image during the upgrade process. This ensures that the device runs only the new image version after the upgrade is completed. bundle - This mode instructs Cisco Catalyst Center bundles the new image with the existing image on the device before initiating the upgrade process. This mode allows for a more efficient upgrade process by preserving the existing image on the device while adding the new image as an additional bundle. After the upgrade, the device can run either the existing image or the new bundled image, depending on the configuration. currentlyExists - This mode instructs Cisco Catalyst Center to checks if the target devices already have the desired image version installed. If image already present on devices, no action is taken and upgrade process is skipped for those devices. This mode is useful for avoiding unnecessary upgrades on devices that already have the correct image version installed, thereby saving time.
 
 
       .. raw:: html
@@ -461,17 +461,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-config/image_activation_details/distributeIfNeeded"></div>
+        <div class="ansibleOptionAnchor" id="parameter-config/image_activation_details/distribute_if_needed"></div>
 
-      .. _ansible_collections.cisco.dnac.swim_intent_module__parameter-config/image_activation_details/distributeifneeded:
+      .. _ansible_collections.cisco.dnac.swim_intent_module__parameter-config/image_activation_details/distribute_if_needed:
 
       .. rst-class:: ansible-option-title
 
-      **distributeIfNeeded**
+      **distribute_if_needed**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-config/image_activation_details/distributeIfNeeded" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-config/image_activation_details/distribute_if_needed" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -485,7 +485,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      DistributeIfNeeded flag.
+      Enable the distribute\_if\_needed option when activating the SWIM image.
 
 
       .. rst-class:: ansible-option-line
@@ -672,7 +672,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Device family name
+      Specify the name of the device family such as Switches and Hubs, etc.
 
 
       .. raw:: html
@@ -808,7 +808,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Device Role. Permissible Values ALL, UNKNOWN, ACCESS, BORDER ROUTER, DISTRIBUTION and CORE.
+      Defines the device role, with permissible values including ALL, UNKNOWN, ACCESS, BORDER ROUTER, DISTRIBUTION, and CORE. ALL - This role typically represents all devices within the network, regardless of their specific roles or functions. UNKNOWN - This role is assigned to devices whose roles or functions have not been identified or classified within Cisco Catalsyt Center. This could happen if the platform is unable to determine the device's role based on available information. ACCESS - This role typically represents switches or access points that serve as access points for end-user devices to connect to the network. These devices are often located at the edge of the network and provide connectivity to end-user devices. BORDER ROUTER - These are devices that connect different network domains or segments together. They often serve as gateways between different networks, such as connecting an enterprise network to the internet or connecting multiple branch offices. DISTRIBUTION - This role represents function as distribution switches or routers in hierarchical network designs. They aggregate traffic from access switches and route it toward the core of the network or toward other distribution switches. CORE - This role typically represents high-capacity switches or routers that form the backbone of the network. They handle large volumes of traffic and provide connectivity between different parts of network, such as connecting distribution switches or providing interconnection between different network segments.
 
 
       .. raw:: html
@@ -1013,7 +1013,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      File absolute path.
+      Provide the absolute file path needed to import an image from your local system (Eg "/path/to/your/file").
 
 
       .. raw:: html
@@ -1047,7 +1047,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      IsThirdParty query parameter. Third party Image check.
+      Query parameter to determine if the image is from a third party (optional).
 
 
       .. rst-class:: ansible-option-line
@@ -1089,7 +1089,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      ThirdPartyApplicationType query parameter. Third Party Application Type.
+      Specify the ThirdPartyApplicationType query parameter to indicate the type of third-party application.(optional)
 
 
       .. raw:: html
@@ -1123,7 +1123,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      ThirdPartyImageFamily query parameter. Third Party image family.
+      Provide the ThirdPartyImageFamily query parameter to identify the family of the third-party image. (optional)
 
 
       .. raw:: html
@@ -1157,7 +1157,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      ThirdPartyVendor query parameter. Third Party Vendor.
+      Include the ThirdPartyVendor query parameter to specify the vendor of the third party.
 
 
       .. raw:: html
@@ -1192,7 +1192,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      The source of import, supports url import or local import.
+      Specifies the import source, supporting local file import (local) or remote url import (remote).
 
 
       .. raw:: html
@@ -1294,7 +1294,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Swim Import Via Url's applicationType.
+      An optional parameter that specifies the type of application. Allowed values include WLC, LINUX, FIREWALL, WINDOWS, LOADBALANCER, THIRDPARTY, etc. This is only applicable for third-party image types.
 
 
       .. raw:: html
@@ -1328,7 +1328,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Swim Import Via Url's imageFamily.
+      Represents the name of the image family and is applicable only when uploading third-party images (Optional).
 
 
       .. raw:: html
@@ -1362,7 +1362,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      ThirdParty flag.
+      Flag indicates whether the image is uploaded from a third party (optional).
 
 
       .. rst-class:: ansible-option-line
@@ -1404,7 +1404,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Swim Import Image Via Url.
+      A mandatory parameter for importing a SWIM image via a remote URL. This parameter is required when using a URL to import an image.
 
 
       .. raw:: html
@@ -1438,7 +1438,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Swim Import Via Url's vendor.
+      The name of the vendor, that applies only to third-party image types when importing via URL (Optional).
 
 
       .. raw:: html
@@ -1587,17 +1587,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-config/tagging_details/device_family_name"></div>
+        <div class="ansibleOptionAnchor" id="parameter-config/tagging_details/device_image_family_name"></div>
 
-      .. _ansible_collections.cisco.dnac.swim_intent_module__parameter-config/tagging_details/device_family_name:
+      .. _ansible_collections.cisco.dnac.swim_intent_module__parameter-config/tagging_details/device_image_family_name:
 
       .. rst-class:: ansible-option-title
 
-      **device_family_name**
+      **device_image_family_name**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-config/tagging_details/device_family_name" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-config/tagging_details/device_image_family_name" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -1611,7 +1611,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Device family name(Eg Switches and Hubs)
+      Device Image family name(Eg Cisco Catalyst 9300 Switch)
 
 
       .. raw:: html
@@ -1645,41 +1645,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Device Role. Permissible Values ALL, UNKNOWN, ACCESS, BORDER ROUTER, DISTRIBUTION and CORE.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-config/tagging_details/device_type"></div>
-
-      .. _ansible_collections.cisco.dnac.swim_intent_module__parameter-config/tagging_details/device_type:
-
-      .. rst-class:: ansible-option-title
-
-      **device_type**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-config/tagging_details/device_type" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Type of the device (Eg Cisco Catalyst 9300 Switch)
+      Defines the device role, with permissible values including ALL, UNKNOWN, ACCESS, BORDER ROUTER, DISTRIBUTION, and CORE. ALL - This role typically represents all devices within the network, regardless of their specific roles or functions. UNKNOWN - This role is assigned to devices whose roles or functions have not been identified or classified within Cisco Catalsyt Center. This could happen if the platform is unable to determine the device's role based on available information. ACCESS - This role typically represents switches or access points that serve as access points for end-user devices to connect to the network. These devices are often located at the edge of the network and provide connectivity to end-user devices. BORDER ROUTER - These are devices that connect different network domains or segments together. They often serve as gateways between different networks, such as connecting an enterprise network to the internet or connecting multiple branch offices. DISTRIBUTION - This role represents function as distribution switches or routers in hierarchical network designs. They aggregate traffic from access switches and route it toward the core of the network or toward other distribution switches. CORE - This role typically represents high-capacity switches or routers that form the backbone of the network. They handle large volumes of traffic and provide connectivity between different parts of network, such as connecting distribution switches or providing interconnection between different network segments.
 
 
       .. raw:: html
@@ -2433,7 +2399,7 @@ Examples
           tagging_details:
             image_name: string
             device_role: string
-            device_family_name: string
+            device_image_family_name: string
             site_name: string
             tagging: bool
           image_distribution_details:
@@ -2469,8 +2435,7 @@ Examples
           tagging_details:
             image_name: string
             device_role: string
-            device_family_name: string
-            device_type: string
+            device_image_family_name: string
             site_name: string
             tagging: bool
 
@@ -2489,9 +2454,9 @@ Examples
         - tagging_details:
             image_name: string
             device_role: string
-            device_type: string
+            device_image_family_name: string
             site_name: string
-            tagging: true
+            tagging: True
 
     - name: Un-tagged the given image as golden and load it on device
       cisco.dnac.swim_intent:
@@ -2508,9 +2473,9 @@ Examples
         - tagging_details:
             image_name: string
             device_role: string
-            device_type: string
+            device_image_family_name: string
             site_name: string
-            tagging: false
+            tagging: False
 
     - name: Distribute the given image on devices associated to that site with specified role.
       cisco.dnac.swim_intent:
