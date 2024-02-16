@@ -537,138 +537,138 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-site-int
 <div class="ansibleOptionAnchor" id="parameter-config"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config"><strong>config</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span> / <span class="ansible-option-required">required</span></p>
 </div></td>
-<td><div class="ansible-option-cell"><p>List of details of site being managed.</p>
+<td><div class="ansible-option-cell"><p>It represents a list of details for creating/managing/deleting sites, including areas, buildings, and floors.</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/site"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-site"><strong>site</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/site" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Site Details.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Contains details about the site being managed including areas, buildings and floors.</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/site/area"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-site-area"><strong>area</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/site/area" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Site Create’s area.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Configuration details for creating or managing an area within a site.</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/site/area/name"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-site-area-name"><strong>name</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/site/area/name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Name of the area (eg Area1).</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Name of the area to be created or managed (e.g., “Area1”).</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/site/area/parentName"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-site-area-parentname"><strong>parentName</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/site/area/parentName" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+<div class="ansibleOptionAnchor" id="parameter-config/site/area/parent_name"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-site-area-parent-name"><strong>parent_name</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/site/area/parent_name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Complete Parent name of the Area to be created/deleted(eg Global/).</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The full name of the parent under which the area will be created/managed/deleted (e.g., “Global/USA”).</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/site/building"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-site-building"><strong>building</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/site/building" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Building Details.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Configuration details required for creating or managing a building within a site.</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/site/building/address"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-site-building-address"><strong>address</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/site/building/address" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Address of the building to be created.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Physical address of the building that is to be created or managed.</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/site/building/latitude"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-site-building-latitude"><strong>latitude</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/site/building/latitude" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+<a class="ansibleOptionLink" href="#parameter-config/site/building/latitude" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">float</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Latitude coordinate of the building (eg 37.338).Values between -90 to +90.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Geographical latitude coordinate of the building. For example, use 37.338 for a location in San Jose, California. Valid values range from -90.0 to +90.0 degrees.</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/site/building/longitude"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-site-building-longitude"><strong>longitude</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/site/building/longitude" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+<a class="ansibleOptionLink" href="#parameter-config/site/building/longitude" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">float</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Longitude coordinate of the building (eg -121.832).Values between -180 to +180.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Geographical longitude coordinate of the building. For example, use -121.832 for a location in San Jose, California. Valid values range from -180.0 to +180.0 degrees.</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/site/building/name"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-site-building-name"><strong>name</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/site/building/name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Name of the building (eg building1).</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Name of the building (e.g., “Building1”).</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/site/building/parent_name"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-site-building-parent-name"><strong>parent_name</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/site/building/parent_name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Complete Parent name of the Building to be created/deleted(eg Global/USA/San Francisco).</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Hierarchical parent path of the building, indicating its location within the site (e.g., “Global/USA/San Francisco”).</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/site/floor"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-site-floor"><strong>floor</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/site/floor" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Site Create’s floor.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Configuration details required for creating or managing a floor within a site.</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/site/floor/floor_number"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-site-floor-floor-number"><strong>floor_number</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/site/floor/floor_number" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Floor number in the building/site (eg 5).once created, it can’t be modified.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Floor number within the building site (e.g., 5). This value can only be specified during the creation of the floor and cannot be modified afterward.</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/site/floor/height"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-site-floor-height"><strong>height</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/site/floor/height" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+<a class="ansibleOptionLink" href="#parameter-config/site/floor/height" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">float</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Height of the floor units is ft. (eg 15).</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Height of the floor in feet (e.g., 15.23).</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/site/floor/length"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-site-floor-length"><strong>length</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/site/floor/length" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+<a class="ansibleOptionLink" href="#parameter-config/site/floor/length" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">float</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Length of the floor units is ft. (eg 100).</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Length of the floor in feet (e.g., 100.11).</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/site/floor/name"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-site-floor-name"><strong>name</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/site/floor/name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Name of the floor (eg floor-1).</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Name of the floor (e.g., “Floor-1”).</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/site/floor/parentName"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-site-floor-parentname"><strong>parentName</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/site/floor/parentName" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+<div class="ansibleOptionAnchor" id="parameter-config/site/floor/parent_name"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-site-floor-parent-name"><strong>parent_name</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/site/floor/parent_name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Complete Parent name of the floor to be created(eg Global/USA/San Francisco/BGL_18).</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Hierarchical parent path of the floor, indicating its location within the site (e.g., “Global/USA/San Francisco/BGL_18”).</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/site/floor/rf_model"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-site-floor-rf-model"><strong>rf_model</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/site/floor/rf_model" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Type of floor. Allowed values are ‘Cubes And Walled Offices’, ‘Drywall Office Only’, ‘Indoor High Ceiling’, ‘Outdoor Open Space’.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The RF (Radio Frequency) model type for the floor, which is essential for simulating and optimizing wireless network coverage. Select from the following allowed values, which describe different environmental signal propagation characteristics. Type of floor (allowed values are ‘Cubes And Walled Offices’, ‘Drywall Office Only’, ‘Indoor High Ceiling’, ‘Outdoor Open Space’). Cubes And Walled Offices - This RF model typically represents indoor areas with cubicles or walled offices, where radio signals may experience attenuation due to walls and obstacles. Drywall Office Only - This RF model indicates an environment with drywall partitions, commonly found in office spaces, which may have moderate signal attenuation. Indoor High Ceiling - This RF model is suitable for indoor spaces with high ceilings, such as auditoriums or atriums, where signal propagation may differ due to the height of the ceiling. Outdoor Open Space - This RF model is used for outdoor areas with open spaces, where signal propagation is less obstructed and may follow different patterns compared to indoor environments.</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/site/floor/width"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-site-floor-width"><strong>width</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/site/floor/width" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+<a class="ansibleOptionLink" href="#parameter-config/site/floor/width" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">float</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Width of the floor units is ft. (eg 100).</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Width of the floor in feet (e.g., 100.22).</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/type"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-type"><strong>type</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/type" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+<div class="ansibleOptionAnchor" id="parameter-config/site_type"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-site-intent-module-parameter-config-site-type"><strong>site_type</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/site_type" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Type of site to create/update/delete (eg area, building, floor).</p>
 </div></td>
@@ -859,8 +859,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-site-int
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">site</span><span class="p">:</span>
 <span class="w">        </span><span class="nt">area</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">          </span><span class="nt">parentName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">          </span><span class="nt">parent_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">      </span><span class="nt">site_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create a new building site</span>
 <span class="w">  </span><span class="nt">cisco.dnac.site_intent</span><span class="p">:</span>
@@ -878,11 +878,11 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-site-int
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">site</span><span class="p">:</span>
 <span class="w">        </span><span class="nt">building</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">          </span><span class="nt">latitude</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
-<span class="w">          </span><span class="nt">longitude</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">          </span><span class="nt">latitude</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float</span>
+<span class="w">          </span><span class="nt">longitude</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float</span>
 <span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">          </span><span class="nt">parentName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">          </span><span class="nt">parent_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">      </span><span class="nt">site_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create a Floor site under the building</span>
 <span class="w">  </span><span class="nt">cisco.dnac.site_intent</span><span class="p">:</span>
@@ -901,12 +901,12 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-site-int
 <span class="w">        </span><span class="nt">floor</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">          </span><span class="nt">parent_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">          </span><span class="nt">length</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">int</span>
-<span class="w">          </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">int</span>
-<span class="w">          </span><span class="nt">height</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">int</span>
+<span class="w">          </span><span class="nt">length</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float</span>
+<span class="w">          </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float</span>
+<span class="w">          </span><span class="nt">height</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float</span>
 <span class="w">          </span><span class="nt">rf_model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">          </span><span class="nt">floor_number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">int</span>
-<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">      </span><span class="nt">site_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Updating the Floor details under the building</span>
 <span class="w">  </span><span class="nt">cisco.dnac.site_intent</span><span class="p">:</span>
@@ -925,12 +925,12 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-site-int
 <span class="w">        </span><span class="nt">floor</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">          </span><span class="nt">parent_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">          </span><span class="nt">length</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">int</span>
-<span class="w">          </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">int</span>
-<span class="w">          </span><span class="nt">height</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">int</span>
-<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">          </span><span class="nt">length</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float</span>
+<span class="w">          </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float</span>
+<span class="w">          </span><span class="nt">height</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float</span>
+<span class="w">      </span><span class="nt">site_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deleting any site you need site name and parentName</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deleting any site you need site name and parent name</span>
 <span class="w">  </span><span class="nt">cisco.dnac.site_intent</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">dnac_host</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_host</span><span class="cp">}}</span><span class="s">&quot;</span>
 <span class="w">    </span><span class="nt">dnac_username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_username</span><span class="cp">}}</span><span class="s">&quot;</span>
@@ -947,7 +947,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-site-int
 <span class="w">        </span><span class="nt">floor</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">          </span><span class="nt">parent_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">      </span><span class="nt">site_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 </pre></div>
 </div>
 </section>
