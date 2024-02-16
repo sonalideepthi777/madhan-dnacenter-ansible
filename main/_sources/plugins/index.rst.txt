@@ -143,12 +143,12 @@ Modules
 * :ref:`discovery_device_info module <ansible_collections.cisco.dnac.discovery_device_info_module>` -- Information module for Discovery Device
 * :ref:`discovery_device_range_info module <ansible_collections.cisco.dnac.discovery_device_range_info_module>` -- Information module for Discovery Device Range
 * :ref:`discovery_info module <ansible_collections.cisco.dnac.discovery_info_module>` -- Information module for Discovery
-* :ref:`discovery_intent module <ansible_collections.cisco.dnac.discovery_intent_module>` -- Resource module for discovery related functions
+* :ref:`discovery_intent module <ansible_collections.cisco.dnac.discovery_intent_module>` -- A resource module for handling device discovery tasks.
 * :ref:`discovery_job_info module <ansible_collections.cisco.dnac.discovery_job_info_module>` -- Information module for Discovery Job
 * :ref:`discovery_range_delete module <ansible_collections.cisco.dnac.discovery_range_delete_module>` -- Resource module for Discovery Range Delete
 * :ref:`discovery_range_info module <ansible_collections.cisco.dnac.discovery_range_info_module>` -- Information module for Discovery Range
 * :ref:`discovery_summary_info module <ansible_collections.cisco.dnac.discovery_summary_info_module>` -- Information module for Discovery Summary
-* :ref:`discovery_workflow_manager module <ansible_collections.cisco.dnac.discovery_workflow_manager_module>` -- Resource module for discovery related functions
+* :ref:`discovery_workflow_manager module <ansible_collections.cisco.dnac.discovery_workflow_manager_module>` -- A resource module for handling device discovery tasks.
 * :ref:`dna_command_runner_keywords_info module <ansible_collections.cisco.dnac.dna_command_runner_keywords_info_module>` -- Information module for Dna Command Runner Keywords
 * :ref:`dnac_packages_info module <ansible_collections.cisco.dnac.dnac_packages_info_module>` -- Information module for Dnac Packages
 * :ref:`dnacaap_management_execution_status_info module <ansible_collections.cisco.dnac.dnacaap_management_execution_status_info_module>` -- Information module for Dnacaap Management Execution Status
