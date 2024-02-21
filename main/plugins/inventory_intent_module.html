@@ -759,9 +759,9 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/interface_name"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-intent-module-parameter-config-interface-name"><strong>interface_name</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/interface_name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+<a class="ansibleOptionLink" href="#parameter-config/interface_name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Specify the interface name to update the details of the device interface. (For example, GigabitEthernet1/0/11, FortyGigabitEthernet1/1/2)</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Specify the list of interface names to update the details of the device interface. (For example, GigabitEthernet1/0/11, FortyGigabitEthernet1/1/2)</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -796,7 +796,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <div class="ansibleOptionAnchor" id="parameter-config/netconf_port"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-intent-module-parameter-config-netconf-port"><strong>netconf_port</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/netconf_port" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Netconf port number.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Specifies the port number for connecting to devices using the Netconf protocol. Netconf (Network Configuration Protocol) is used for managing network devices. Ensure that the provided port number corresponds to the Netconf service port configured on your network devices.</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -999,14 +999,14 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <div class="ansibleOptionAnchor" id="parameter-config/vlan_id"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-intent-module-parameter-config-vlan-id"><strong>vlan_id</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/vlan_id" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Unique Id number assigned to a VLAN within a network.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Unique Id number assigned to a VLAN within a network used only while updating interface details.</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/voice_vlan_id"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-intent-module-parameter-config-voice-vlan-id"><strong>voice_vlan_id</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/voice_vlan_id" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Identifier used to distinguish a specific VLAN that is dedicated to voice traffic.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Identifier used to distinguish a specific VLAN that is dedicated to voice traffic used only while updating interface details.</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-cell">
@@ -1448,7 +1448,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <span class="w">          </span><span class="nt">vlan_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">23</span>
 <span class="w">          </span><span class="nt">voice_vlan_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">45</span>
 <span class="w">          </span><span class="nt">deployment_mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Deploy&quot;</span>
-<span class="w">          </span><span class="nt">interface_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GigabitEthernet1/0/11</span>
+<span class="w">          </span><span class="nt">interface_name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;GigabitEthernet1/0/11&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">FortyGigabitEthernet1/1/1</span><span class="p p-Indicator">]</span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Export Device Details in a CSV file Interface details with IP Address</span>
 <span class="w">  </span><span class="nt">cisco.dnac.inventory_intent</span><span class="p">:</span>

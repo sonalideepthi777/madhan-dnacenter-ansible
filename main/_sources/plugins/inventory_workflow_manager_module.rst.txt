@@ -1078,7 +1078,7 @@ Parameters
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`string`
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
@@ -1088,7 +1088,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Specify the interface name to update the details of the device interface. (For example, GigabitEthernet1/0/11, FortyGigabitEthernet1/1/2)
+      Specify the list of interface names to update the details of the device interface. (For example, GigabitEthernet1/0/11, FortyGigabitEthernet1/1/2)
 
 
       .. raw:: html
@@ -1258,7 +1258,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Netconf port number.
+      Specifies the port number for connecting to devices using the Netconf protocol. Netconf (Network Configuration Protocol) is used for managing network devices. Ensure that the provided port number corresponds to the Netconf service port configured on your network devices.
 
 
       .. raw:: html
@@ -2221,7 +2221,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Unique Id number assigned to a VLAN within a network.
+      Unique Id number assigned to a VLAN within a network used only while updating interface details.
 
 
       .. raw:: html
@@ -2255,7 +2255,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Identifier used to distinguish a specific VLAN that is dedicated to voice traffic.
+      Identifier used to distinguish a specific VLAN that is dedicated to voice traffic used only while updating interface details.
 
 
       .. raw:: html
@@ -3138,7 +3138,7 @@ Examples
               vlan_id: 23
               voice_vlan_id: 45
               deployment_mode: "Deploy"
-              interface_name: GigabitEthernet1/0/11
+              interface_name: ["GigabitEthernet1/0/11", FortyGigabitEthernet1/1/1]
 
     - name: Export Device Details in a CSV file Interface details with IP Address
       cisco.dnac.inventory_workflow_manager:
