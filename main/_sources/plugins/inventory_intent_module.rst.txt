@@ -221,6 +221,48 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/clear_mac_address_table"></div>
+
+      .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/clear_mac_address_table:
+
+      .. rst-class:: ansible-option-title
+
+      **clear_mac_address_table**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/clear_mac_address_table" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Set this to true if you need to clear the MAC address table for a specific device's interface. It's a boolean type, with a default value of False.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-config/cli_transport"></div>
 
       .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/cli_transport:
@@ -1098,17 +1140,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-config/ip_address"></div>
+        <div class="ansibleOptionAnchor" id="parameter-config/ip_address_list"></div>
 
-      .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/ip_address:
+      .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/ip_address_list:
 
       .. rst-class:: ansible-option-title
 
-      **ip_address**
+      **ip_address_list**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-config/ip_address" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-config/ip_address_list" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -1122,7 +1164,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      IP address of the device. Required for Adding/Updating/Deleting/Resyncing Device except Meraki Devices.
+      A list of the IP addresses for the devices. It is required for tasks such as adding, updating, deleting, or resyncing devices, with Meraki devices being the exception.
 
 
       .. raw:: html
@@ -1436,84 +1478,12 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Role of device which can be ACCESS, CORE, DISTRIBUTION, BORDER ROUTER, UNKNOWN. ALL - This role typically represents all devices within the network, regardless of their specific roles or functions. UNKNOWN - This role is assigned to devices whose roles or functions have not been identified or classified within Cisco Catalsyt Center. This could happen if the platform is unable to determine the device's role based on available information. ACCESS - This role typically represents switches or access points that serve as access points for end-user devices to connect to the network. These devices are often located at the edge of the network and provide connectivity to end-user devices. BORDER ROUTER - These are devices that connect different network domains or segments together. They often serve as gateways between different networks, such as connecting an enterprise network to the internet or connecting multiple branch offices. DISTRIBUTION - This role represents function as distribution switches or routers in hierarchical network designs. They aggregate traffic from access switches and route it toward the core of the network or toward other distribution switches. CORE - This role typically represents high-capacity switches or routers that form the backbone of the network. They handle large volumes of traffic and provide connectivity between different parts of network, such as connecting distribution switches or providing interconnection between different network segments.
+      Role of device which can be ACCESS, CORE, DISTRIBUTION, BORDER ROUTER, UNKNOWN. UNKNOWN - This role is assigned to devices whose roles or functions have not been identified or classified within Cisco Catalsyt Center. This could happen if the platform is unable to determine the device's role based on available information. ACCESS - This role typically represents switches or access points that serve as access points for end-user devices to connect to the network. These devices are often located at the edge of the network and provide connectivity to end-user devices. BORDER ROUTER - These are devices that connect different network domains or segments together. They often serve as gateways between different networks, such as connecting an enterprise network to the internet or connecting multiple branch offices. DISTRIBUTION - This role represents function as distribution switches or routers in hierarchical network designs. They aggregate traffic from access switches and route it toward the core of the network or toward other distribution switches. CORE - This role typically represents high-capacity switches or routers that form the backbone of the network. They handle large volumes of traffic and provide connectivity between different parts of network, such as connecting distribution switches or providing interconnection between different network segments.
 
 
       .. rst-class:: ansible-option-line
 
       :ansible-option-default-bold:`Default:` :ansible-option-default:`"ACCESS"`
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-config/role_source"></div>
-
-      .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/role_source:
-
-      .. rst-class:: ansible-option-title
-
-      **role_source**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-config/role_source" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Role source for the device.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"AUTO"`
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-config/serial_number"></div>
-
-      .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/serial_number:
-
-      .. rst-class:: ansible-option-title
-
-      **serial_number**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-config/serial_number" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Serial number of the device.
-
 
       .. raw:: html
 
@@ -1648,7 +1618,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      SNMP authentication protocol. SHA (Secure Hash Algorithm) - cryptographic hash function commonly used for data integrity verification and authentication purposes. MD5 (Message Digest Algorithm 5) - cryptographic hash function commonly used for data integrity verification and authentication purposes.
+      SNMP authentication protocol. SHA (Secure Hash Algorithm) - cryptographic hash function commonly used for data integrity verification and authentication purposes.
 
 
       .. rst-class:: ansible-option-line
@@ -2906,9 +2876,8 @@ Examples
             http_password: "test"
             http_port: "443"
             http_secure: False
-            ip_address: ["1.1.1.1", "2.2.2.2"]
+            ip_address_list: ["1.1.1.1", "2.2.2.2"]
             netconf_port: 830
-            serial_number: FJC2327U0S2
             snmp_auth_passphrase: "Lablab@12"
             snmp_auth_protocol: SHA
             snmp_mode: AUTHPRIV
@@ -2935,7 +2904,7 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - ip_address: ["1.1.1.1", "2.2.2.2"]
+          - ip_address_list: ["1.1.1.1", "2.2.2.2"]
             http_username: "testuser"
             http_password: "test"
             http_port: "443"
@@ -2982,7 +2951,7 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - ip_address: ["1.1.1.1", "2.2.2.2"]
+          - ip_address_list: ["1.1.1.1", "2.2.2.2"]
             http_username: "testuser"
             http_password: "test"
             http_port: "443"
@@ -3002,7 +2971,7 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - ip_address: ["1.1.1.1", "2.2.2.2"]
+          - ip_address_list: ["1.1.1.1", "2.2.2.2"]
             snmp_auth_passphrase: "Lablab@12"
             snmp_auth_protocol: SHA
             snmp_mode: AUTHPRIV
@@ -3031,7 +3000,7 @@ Examples
             compute_device: False
             password: newtest123
             enable_password: newtest1233
-            ip_address: ["1.1.1.1", "2.2.2.2"]
+            ip_address_list: ["1.1.1.1", "2.2.2.2"]
             type: NETWORK_DEVICE
             device_updated: True
             credential_update: True
@@ -3050,7 +3019,7 @@ Examples
         state: merged
         config:
           - device_updated: True
-            ip_address: ["1.1.1.1"]
+            ip_address_list: ["1.1.1.1"]
             credential_update: True
             update_mgmt_ipaddresslist:
             - exist_mgmt_ipaddress: "1.1.1.1"
@@ -3069,7 +3038,7 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - ip_address: ["1.1.1.1", "2.2.2.2"]
+          - ip_address_list: ["1.1.1.1", "2.2.2.2"]
             provision_wired_device:
               site_name: "Global/USA/San Francisco/BGL_18/floor_pnp"
 
@@ -3086,7 +3055,7 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - ip_address: ["1.1.1.1", "2.2.2.2"]
+          - ip_address_list: ["1.1.1.1", "2.2.2.2"]
             provision_wireless_device:
               site_name: ["Global/USA/BGL_18/floor_pnp", "Global/USA/BGL_18/floor_test"]
             managed_ap_locations: ["Global/USA/BGL_18/floor_pnp", "Global/USA/BGL_18/floor_test"]
@@ -3111,11 +3080,10 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - ip_address: ["1.1.1.1", "2.2.2.2"]
+          - ip_address_list: ["1.1.1.1", "2.2.2.2"]
             device_updated: True
             update_device_role:
               role: ACCESS
-              role_source: AUTO
 
     - name: Update Interface details with IP Address
       cisco.dnac.inventory_intent:
@@ -3130,7 +3098,7 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - ip_address: ["1.1.1.1", "2.2.2.2"]
+          - ip_address_list: ["1.1.1.1", "2.2.2.2"]
             device_updated: True
             update_interface_details:
               description: "Testing for updating interface details"
@@ -3139,6 +3107,7 @@ Examples
               voice_vlan_id: 45
               deployment_mode: "Deploy"
               interface_name: ["GigabitEthernet1/0/11", FortyGigabitEthernet1/1/1]
+              clear_mac_address_table: True
 
     - name: Export Device Details in a CSV file Interface details with IP Address
       cisco.dnac.inventory_intent:
@@ -3153,7 +3122,7 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - ip_address: ["1.1.1.1", "2.2.2.2"]
+          - ip_address_list: ["1.1.1.1", "2.2.2.2"]
             export_device_list:
               password: "File_password"
               operation_enum: 0
@@ -3172,7 +3141,7 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - ip_address: ["1.1.1.1", "2.2.2.2"]
+          - ip_address_list: ["1.1.1.1", "2.2.2.2"]
             add_user_defined_field:
             - name: Test123
               description: "Added first udf for testing"
@@ -3194,7 +3163,7 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - ip_address: ["1.1.1.1", "2.2.2.2"]
+          - ip_address_list: ["1.1.1.1", "2.2.2.2"]
             device_resync: True
             force_sync: False
 
@@ -3211,7 +3180,7 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - ip_address: ["1.1.1.1", "2.2.2.2"]
+          - ip_address_list: ["1.1.1.1", "2.2.2.2"]
             reboot_device: True
 
     - name: Delete Provision/Unprovision Devices by IP Address
@@ -3227,7 +3196,7 @@ Examples
         dnac_log_level: "{{dnac_log_level}}"
         state: deleted
         config:
-          - ip_address: ["1.1.1.1", "2.2.2.2"]
+          - ip_address_list: ["1.1.1.1", "2.2.2.2"]
             clean_config: False
 
     - name: Delete Global User Defined Field with name
@@ -3243,7 +3212,7 @@ Examples
         dnac_log: False
         state: deleted
         config:
-        - ip_address: ["1.1.1.1", "2.2.2.2"]
+        - ip_address_list: ["1.1.1.1", "2.2.2.2"]
           add_user_defined_field:
             - name: Test123
             - name: Test321
