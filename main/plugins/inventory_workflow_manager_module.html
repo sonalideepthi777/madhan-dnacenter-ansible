@@ -619,10 +619,10 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/device_added"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-device-added"><strong>device_added</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/device_added" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+<div class="ansibleOptionAnchor" id="parameter-config/device_resync"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-device-resync"><strong>device_resync</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/device_resync" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Make this as true needed for the addition of device in inventory.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Make this as true needed for the resyncing of device.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
 <li><p><a href="#id19"><span class="problematic" id="id20">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
@@ -631,10 +631,10 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/device_resync"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-device-resync"><strong>device_resync</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/device_resync" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+<div class="ansibleOptionAnchor" id="parameter-config/device_updated"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-device-updated"><strong>device_updated</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/device_updated" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Make this as true needed for the resyncing of device.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Make this as true needed for the updation of device role, interface details, device credentails or details.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
 <li><p><a href="#id23"><span class="problematic" id="id24">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
@@ -643,10 +643,73 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/device_updated"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-device-updated"><strong>device_updated</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/device_updated" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+<div class="ansibleOptionAnchor" id="parameter-config/dynamic_interfaces"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-dynamic-interfaces"><strong>dynamic_interfaces</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/dynamic_interfaces" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Make this as true needed for the updation of device role, interface details, device credentails or details.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Interface details of the wireless device</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/dynamic_interfaces/interface_gateway"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-dynamic-interfaces-interface-gateway"><strong>interface_gateway</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/dynamic_interfaces/interface_gateway" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The name identifier for the gateway associated with the interface.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/dynamic_interfaces/interface_ip_address"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-dynamic-interfaces-interface-ip-address"><strong>interface_ip_address</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/dynamic_interfaces/interface_ip_address" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Ip Address allocated to the interface</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/dynamic_interfaces/interface_name"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-dynamic-interfaces-interface-name"><strong>interface_name</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/dynamic_interfaces/interface_name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Name of the interface.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/dynamic_interfaces/interface_netmask_in_cidr"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-dynamic-interfaces-interface-netmask-in-cidr"><strong>interface_netmask_in_cidr</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/dynamic_interfaces/interface_netmask_in_cidr" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The netmask of the interface, given in CIDR notation. This is an integer that represents the number of bits set in the netmask</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/dynamic_interfaces/lag_or_port_number"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-dynamic-interfaces-lag-or-port-number"><strong>lag_or_port_number</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/dynamic_interfaces/lag_or_port_number" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The Link Aggregation Group (LAG) number or port number assigned to the interface.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/dynamic_interfaces/vlan_id"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-dynamic-interfaces-vlan-id"><strong>vlan_id</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/dynamic_interfaces/vlan_id" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The VLAN (Virtual Local Area Network) ID associated with the network interface.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/enable_password"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-enable-password"><strong>enable_password</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/enable_password" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Password required for enabling configurations on the device.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/extended_discovery_info"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-extended-discovery-info"><strong>extended_discovery_info</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/extended_discovery_info" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Additional discovery information for the device.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/force_sync"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-force-sync"><strong>force_sync</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/force_sync" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>If forcesync is true then device sync would run in high priority thread if available, else the sync will fail.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
 <li><p><a href="#id27"><span class="problematic" id="id28">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
@@ -654,182 +717,144 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/dynamic_interfaces"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-dynamic-interfaces"><strong>dynamic_interfaces</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/dynamic_interfaces" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Interface details of the wireless device</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/dynamic_interfaces/interface_gateway"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-dynamic-interfaces-interface-gateway"><strong>interface_gateway</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/dynamic_interfaces/interface_gateway" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The name identifier for the gateway associated with the interface.</p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/dynamic_interfaces/interface_ip_address"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-dynamic-interfaces-interface-ip-address"><strong>interface_ip_address</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/dynamic_interfaces/interface_ip_address" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Ip Address allocated to the interface</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/dynamic_interfaces/interface_name"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-dynamic-interfaces-interface-name"><strong>interface_name</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/dynamic_interfaces/interface_name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Name of the interface.</p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/dynamic_interfaces/interface_netmask_in_cidr"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-dynamic-interfaces-interface-netmask-in-cidr"><strong>interface_netmask_in_cidr</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/dynamic_interfaces/interface_netmask_in_cidr" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The netmask of the interface, given in CIDR notation. This is an integer that represents the number of bits set in the netmask</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/dynamic_interfaces/lag_or_port_number"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-dynamic-interfaces-lag-or-port-number"><strong>lag_or_port_number</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/dynamic_interfaces/lag_or_port_number" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The Link Aggregation Group (LAG) number or port number assigned to the interface.</p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/dynamic_interfaces/vlan_id"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-dynamic-interfaces-vlan-id"><strong>vlan_id</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/dynamic_interfaces/vlan_id" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The VLAN (Virtual Local Area Network) ID associated with the network interface.</p>
-</div></td>
-</tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/enable_password"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-enable-password"><strong>enable_password</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/enable_password" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Password required for enabling configurations on the device.</p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/extended_discovery_info"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-extended-discovery-info"><strong>extended_discovery_info</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/extended_discovery_info" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Additional discovery information for the device.</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/force_sync"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-force-sync"><strong>force_sync</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/force_sync" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>If forcesync is true then device sync would run in high priority thread if available, else the sync will fail.</p>
-<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
-<ul class="simple">
-<li><p><a href="#id31"><span class="problematic" id="id32">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id33"><span class="problematic" id="id34">:ansible-option-choices-entry:`true`</span></a></p></li>
-</ul>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/hostname_list"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-hostname-list"><strong>hostname_list</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/hostname_list" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>A list of hostnames representing devices. Operations such as updating, deleting, resyncing, or rebooting can be performed as alternatives to using IP addresses.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/http_password"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-http-password"><strong>http_password</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/http_password" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>HTTP password required for adding compute, Meraki, and Firepower Management Devices.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/http_port"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-http-port"><strong>http_port</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/http_port" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>HTTP port number required for adding compute and Firepower Management Devices.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/http_secure"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-http-secure"><strong>http_secure</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/http_secure" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Flag indicating HTTP security.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id35"><span class="problematic" id="id36">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id37"><span class="problematic" id="id38">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><a href="#id31"><span class="problematic" id="id32">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id33"><span class="problematic" id="id34">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/http_username"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-http-username"><strong>http_username</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/http_username" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>HTTP username required for adding compute and Firepower Management Devices.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/interface_name"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-interface-name"><strong>interface_name</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/interface_name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Specify the list of interface names to update the details of the device interface. (For example, GigabitEthernet1/0/11, FortyGigabitEthernet1/1/2)</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/ip_address_list"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-ip-address-list"><strong>ip_address_list</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/ip_address_list" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>A list of the IP addresses for the devices. It is required for tasks such as adding, updating, deleting, or resyncing devices, with Meraki devices being the exception.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/mac_address_list"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-mac-address-list"><strong>mac_address_list</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/mac_address_list" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>A list of MAC addresses representing devices. Operations such as updating, deleting, resyncing, or rebooting can be performed as alternatives to using IP addresses.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/managed_ap_locations"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-managed-ap-locations"><strong>managed_ap_locations</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/managed_ap_locations" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Location of the sites allocated for the APs</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/name"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-name"><strong>name</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Name of Global User Defined Field. Required for creating/deleting UDF and then assigning it to device.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/netconf_port"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-netconf-port"><strong>netconf_port</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/netconf_port" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Specifies the port number for connecting to devices using the Netconf protocol. Netconf (Network Configuration Protocol) is used for managing network devices. Ensure that the provided port number corresponds to the Netconf service port configured on your network devices.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/operation_enum"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-operation-enum"><strong>operation_enum</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/operation_enum" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>enum(CREDENTIALDETAILS, DEVICEDETAILS) 0 to export Device Credential Details Or 1 to export Device Details. CREDENTIALDETAILS - Used for exporting device credentials details like snpm credntials, device crdentails etc. DEVICEDETAILS - Used for exporting device specific details like device hostname, serial number, type, family etc.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/parameters"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-parameters"><strong>parameters</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/parameters" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>List of device parameters that needs to be exported to file.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/password"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-password"><strong>password</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/password" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Password for accessing the device and for file encryption during device export. Required for adding Network Device. Also needed for file encryption while exporting device in a csv file.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/provision_wired_device"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-provision-wired-device"><strong>provision_wired_device</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/provision_wired_device" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>This parameter takes a list of dictionaries. Each dictionary provides the IP address of a wired device and the name of the site where the device will be provisioned.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/provision_wired_device/device_ip"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-provision-wired-device-device-ip"><strong>device_ip</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/provision_wired_device/device_ip" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Specifies the IP address of the wired device. This is a string value that should be in the format of standard IPv4 or IPv6 addresses.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/provision_wired_device/resync_retry_count"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-provision-wired-device-resync-retry-count"><strong>resync_retry_count</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/provision_wired_device/resync_retry_count" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Determines the total number of retry attempts for checking if the device has reached a managed state during the provisioning process. If unspecified, the default value is set to 200 retries.</p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id35"><span class="problematic" id="id36">:ansible-option-default:`200`</span></a></p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/provision_wired_device/resync_retry_interval"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-provision-wired-device-resync-retry-interval"><strong>resync_retry_interval</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/provision_wired_device/resync_retry_interval" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Sets the interval, in seconds, at which the system will recheck the device status throughout the provisioning process. If unspecified, the system will check the device status every 2 seconds by default.</p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id37"><span class="problematic" id="id38">:ansible-option-default:`2`</span></a></p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/provision_wired_device/site_name"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-provision-wired-device-site-name"><strong>site_name</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/provision_wired_device/site_name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Indicates the exact location where the wired device will be provisioned. This is a string value that should represent the complete hierarchical path of the site (For example, &quot;Global/USA/San Francisco/BGL_18/floor_pnp&quot;).</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -860,20 +885,13 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-config/site_name"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-site-name"><strong>site_name</strong></p>
-<a class="ansibleOptionLink" href="#parameter-config/site_name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Required for Provisioning of Wired and Wireless Devices.</p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/snmp_auth_passphrase"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-snmp-auth-passphrase"><strong>snmp_auth_passphrase</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/snmp_auth_passphrase" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>SNMP authentication passphrase required for adding network, compute, and third-party devices.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/snmp_auth_protocol"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-snmp-auth-protocol"><strong>snmp_auth_protocol</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/snmp_auth_protocol" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -881,28 +899,28 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id45"><span class="problematic" id="id46">:ansible-option-default:`&quot;SHA&quot;`</span></a></p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/snmp_mode"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-snmp-mode"><strong>snmp_mode</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/snmp_mode" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Device's snmp Mode refer to different SNMP (Simple Network Management Protocol) versions and their corresponding security levels. NOAUTHNOPRIV - This mode provides no authentication or encryption for SNMP messages. It means that devices communicating using SNMPv1 do not require any authentication (username/password) or encryption (data confidentiality). This makes it the least secure option. AUTHNOPRIV - This mode provides authentication but no encryption for SNMP messages. Authentication involves validating the source of the SNMP messages using a community string (similar to a password). However, the data transmitted between devices is not encrypted, so it's susceptible to eavesdropping. AUTHPRIV - This mode provides both authentication and encryption for SNMP messages. It offers the highest level of security among the three options. Authentication ensures that the source of the messages is genuine, and encryption ensures that the data exchanged between devices is confidential and cannot be intercepted by unauthorized parties.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/snmp_priv_passphrase"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-snmp-priv-passphrase"><strong>snmp_priv_passphrase</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/snmp_priv_passphrase" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>SNMP private passphrase required for adding network, compute, and third-party devices.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/snmp_priv_protocol"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-snmp-priv-protocol"><strong>snmp_priv_protocol</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/snmp_priv_protocol" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>SNMP private protocol required for adding network, compute, and third-party devices.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/snmp_retry"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-snmp-retry"><strong>snmp_retry</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/snmp_retry" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
 </div></td>
@@ -910,7 +928,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id47"><span class="problematic" id="id48">:ansible-option-default:`3`</span></a></p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/snmp_ro_community"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-snmp-ro-community"><strong>snmp_ro_community</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/snmp_ro_community" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -918,7 +936,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id49"><span class="problematic" id="id50">:ansible-option-default:`&quot;public&quot;`</span></a></p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/snmp_rw_community"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-snmp-rw-community"><strong>snmp_rw_community</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/snmp_rw_community" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -926,7 +944,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id51"><span class="problematic" id="id52">:ansible-option-default:`&quot;private&quot;`</span></a></p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/snmp_timeout"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-snmp-timeout"><strong>snmp_timeout</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/snmp_timeout" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
 </div></td>
@@ -934,14 +952,14 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id53"><span class="problematic" id="id54">:ansible-option-default:`5`</span></a></p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/snmp_username"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-snmp-username"><strong>snmp_username</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/snmp_username" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>SNMP username required for adding network, compute, and third-party devices.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/snmp_version"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-snmp-version"><strong>snmp_version</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/snmp_version" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -949,64 +967,64 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id55"><span class="problematic" id="id56">:ansible-option-default:`&quot;v3&quot;`</span></a></p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/type"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-type"><strong>type</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/type" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Select Device's type from NETWORK_DEVICE, COMPUTE_DEVICE, MERAKI_DASHBOARD, THIRD_PARTY_DEVICE, FIREPOWER_MANAGEMENT_SYSTEM. NETWORK_DEVICE - This refers to traditional networking equipment such as routers, switches, access points, and firewalls. These devices are responsible for routing, switching, and providing connectivity within the network. COMPUTE_DEVICE - These are computing resources such as servers, virtual machines, or containers that are part of the network infrastructure. Cisco DNA Center can integrate with compute devices to provide visibility and management capabilities, ensuring that the network and compute resources work together seamlessly to support applications and services. MERAKI_DASHBOARD - It is cloud-based platform used to manage Meraki networking devices, including wireless access points, switches, security appliances, and cameras. THIRD_PARTY_DEVICE - This category encompasses devices from vendors other than Cisco or Meraki. Cisco DNA Center is designed to support integration with third-party devices through open standards and APIs. This allows organizations to manage heterogeneous network environments efficiently using Cisco DNA Center's centralized management and automation capabilities. FIREPOWER_MANAGEMENT_SYSTEM - It is a centralized management console used to manage Cisco's Firepower Next-Generation Firewall (NGFW) devices. It provides features such as policy management, threat detection, and advanced security analytics.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Select Device's type from NETWORK_DEVICE, COMPUTE_DEVICE, MERAKI_DASHBOARD, THIRD_PARTY_DEVICE, FIREPOWER_MANAGEMENT_SYSTEM. NETWORK_DEVICE - This refers to traditional networking equipment such as routers, switches, access points, and firewalls. These devices are responsible for routing, switching, and providing connectivity within the network. COMPUTE_DEVICE - These are computing resources such as servers, virtual machines, or containers that are part of the network infrastructure. Cisco Catalyst Center can integrate with compute devices to provide visibility and management capabilities, ensuring that the network and compute resources work together seamlessly to support applications and services. MERAKI_DASHBOARD - It is cloud-based platform used to manage Meraki networking devices, including wireless access points, switches, security appliances, and cameras. THIRD_PARTY_DEVICE - This category encompasses devices from vendors other than Cisco or Meraki. Cisco Catalyst Center is designed to support integration with third-party devices through open standards and APIs. This allows organizations to manage heterogeneous network environments efficiently using Cisco Catalyst Center's centralized management and automation capabilities. FIREPOWER_MANAGEMENT_SYSTEM - It is a centralized management console used to manage Cisco's Firepower Next-Generation Firewall (NGFW) devices. It provides features such as policy management, threat detection, and advanced security analytics.</p>
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id57"><span class="problematic" id="id58">:ansible-option-default:`&quot;NETWORK\_DEVICE&quot;`</span></a></p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/update_mgmt_ipaddresslist"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-update-mgmt-ipaddresslist"><strong>update_mgmt_ipaddresslist</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/update_mgmt_ipaddresslist" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>List of updated management IP addresses for network devices.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/update_mgmt_ipaddresslist/exist_mgmt_ipaddress"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-update-mgmt-ipaddresslist-exist-mgmt-ipaddress"><strong>exist_mgmt_ipaddress</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/update_mgmt_ipaddresslist/exist_mgmt_ipaddress" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Device's existing Mgmt IpAddress.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/update_mgmt_ipaddresslist/new_mgmt_ipaddress"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-update-mgmt-ipaddresslist-new-mgmt-ipaddress"><strong>new_mgmt_ipaddress</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/update_mgmt_ipaddresslist/new_mgmt_ipaddress" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Device's new Mgmt IpAddress.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/username"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-username"><strong>username</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/username" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Username for accessing the device. Required for Adding Network Device.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/value"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-value"><strong>value</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/value" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Value to assign to tag with or without the same user defined field name.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/vlan_id"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-vlan-id"><strong>vlan_id</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/vlan_id" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Unique Id number assigned to a VLAN within a network used only while updating interface details.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/voice_vlan_id"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-voice-vlan-id"><strong>voice_vlan_id</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/voice_vlan_id" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Identifier used to distinguish a specific VLAN that is dedicated to voice traffic used only while updating interface details.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config_verify"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-config-verify"><strong>config_verify</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config_verify" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -1018,7 +1036,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-dnac_debug"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-dnac-debug"><strong>dnac_debug</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_debug" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -1030,14 +1048,14 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-dnac_host"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-dnac-host"><strong>dnac_host</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_host" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span> / <span class="ansible-option-required">required</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>The hostname of the Cisco Catalyst Center.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-dnac_log"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-dnac-log"><strong>dnac_log</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_log" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -1054,7 +1072,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-dnac_log_append"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-dnac-log-append"><strong>dnac_log_append</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_log_append" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -1066,7 +1084,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-dnac_log_file_path"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-dnac-log-file-path"><strong>dnac_log_file_path</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_log_file_path" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -1076,7 +1094,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id75"><span class="problematic" id="id76">:ansible-option-default:`&quot;dnac.log&quot;`</span></a></p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-dnac_log_level"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-dnac-log-level"><strong>dnac_log_level</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_log_level" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -1089,14 +1107,14 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id77"><span class="problematic" id="id78">:ansible-option-default:`&quot;WARNING&quot;`</span></a></p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-dnac_password"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-dnac-password"><strong>dnac_password</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_password" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>The password for authentication at the Cisco Catalyst Center.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-dnac_port"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-dnac-port"><strong>dnac_port</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_port" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -1104,7 +1122,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id79"><span class="problematic" id="id80">:ansible-option-default:`&quot;443&quot;`</span></a></p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-dnac_username"></div>
 <div class="ansibleOptionAnchor" id="parameter-user"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-user"><span id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-dnac-username"></span><strong>dnac_username</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_username" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-aliases">aliases: user</span></p>
@@ -1114,7 +1132,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id81"><span class="problematic" id="id82">:ansible-option-default:`&quot;admin&quot;`</span></a></p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-dnac_verify"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-dnac-verify"><strong>dnac_verify</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_verify" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -1126,7 +1144,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-dnac_version"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-dnac-version"><strong>dnac_version</strong></p>
 <a class="ansibleOptionLink" href="#parameter-dnac_version" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -1134,7 +1152,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id87"><span class="problematic" id="id88">:ansible-option-default:`&quot;2.2.3.3&quot;`</span></a></p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-state"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-state"><strong>state</strong></p>
 <a class="ansibleOptionLink" href="#parameter-state" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -1146,7 +1164,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-validate_response_schema"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-parameter-validate-response-schema"><strong>validate_response_schema</strong></p>
 <a class="ansibleOptionLink" href="#parameter-validate_response_schema" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -1225,7 +1243,6 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <span class="w">        </span><span class="nt">snmp_username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v3Public</span>
 <span class="w">        </span><span class="nt">snmp_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v3</span>
 <span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NETWORK_DEVICE</span>
-<span class="w">        </span><span class="nt">device_added</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">        </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cisco</span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add new Compute device in Inventory with full credentials.Inputs needed for Compute Device</span>
@@ -1255,7 +1272,6 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <span class="w">        </span><span class="nt">snmp_username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v3Public</span>
 <span class="w">        </span><span class="nt">compute_device</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">        </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cisco</span>
-<span class="w">        </span><span class="nt">device_added</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;COMPUTE_DEVICE&quot;</span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add new Meraki device in Inventory with full credentials.Inputs needed for Meraki Device.</span>
@@ -1272,7 +1288,6 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">merged</span>
 <span class="w">    </span><span class="nt">config</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">http_password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;test&quot;</span>
-<span class="w">        </span><span class="nt">device_added</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;MERAKI_DASHBOARD&quot;</span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add new Firepower Management device in Inventory with full credentials.Input needed to add Device.</span>
@@ -1292,7 +1307,6 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <span class="w">        </span><span class="nt">http_username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;testuser&quot;</span>
 <span class="w">        </span><span class="nt">http_password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;test&quot;</span>
 <span class="w">        </span><span class="nt">http_port</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;443&quot;</span>
-<span class="w">        </span><span class="nt">device_added</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;FIREPOWER_MANAGEMENT_SYSTEM&quot;</span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add new Third Party device in Inventory with full credentials.Input needed to add Device.</span>
@@ -1317,7 +1331,6 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <span class="w">        </span><span class="nt">snmp_retry</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">3</span>
 <span class="w">        </span><span class="nt">snmp_timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
 <span class="w">        </span><span class="nt">snmp_username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v3Public</span>
-<span class="w">        </span><span class="nt">device_added</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;THIRD_PARTY_DEVICE&quot;</span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Update device details or credentails in Inventory</span>
@@ -1375,9 +1388,15 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <span class="w">    </span><span class="nt">dnac_log</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">merged</span>
 <span class="w">    </span><span class="nt">config</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">ip_address_list</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;1.1.1.1&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;2.2.2.2&quot;</span><span class="p p-Indicator">]</span>
-<span class="w">        </span><span class="nt">provision_wired_device</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">provision_wired_device</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">device_ip</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.1.1.1&quot;</span>
 <span class="w">          </span><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Global/USA/San</span><span class="nv"> </span><span class="s">Francisco/BGL_18/floor_pnp&quot;</span>
+<span class="w">          </span><span class="nt">resync_retry_count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">200</span>
+<span class="w">          </span><span class="nt">resync_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">device_ip</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2.2.2.2&quot;</span>
+<span class="w">          </span><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Global/USA/San</span><span class="nv"> </span><span class="s">Francisco/BGL_18/floor_test&quot;</span>
+<span class="w">          </span><span class="nt">resync_retry_count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">200</span>
+<span class="w">          </span><span class="nt">resync_retry_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Associate Wireless Devices to site and Provisioned it in Inventory</span>
 <span class="w">  </span><span class="nt">cisco.dnac.inventory_workflow_manager</span><span class="p">:</span>
