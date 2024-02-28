@@ -499,17 +499,17 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <p class="ansible-version-added">New in cisco.dnac 6.8.0</p>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#synopsis" id="id101">Synopsis</a></p></li>
-<li><p><a class="reference internal" href="#requirements" id="id102">Requirements</a></p></li>
-<li><p><a class="reference internal" href="#parameters" id="id103">Parameters</a></p></li>
-<li><p><a class="reference internal" href="#notes" id="id104">Notes</a></p></li>
-<li><p><a class="reference internal" href="#see-also" id="id105">See Also</a></p></li>
-<li><p><a class="reference internal" href="#examples" id="id106">Examples</a></p></li>
-<li><p><a class="reference internal" href="#return-values" id="id107">Return Values</a></p></li>
+<li><p><a class="reference internal" href="#synopsis" id="id97">Synopsis</a></p></li>
+<li><p><a class="reference internal" href="#requirements" id="id98">Requirements</a></p></li>
+<li><p><a class="reference internal" href="#parameters" id="id99">Parameters</a></p></li>
+<li><p><a class="reference internal" href="#notes" id="id100">Notes</a></p></li>
+<li><p><a class="reference internal" href="#see-also" id="id101">See Also</a></p></li>
+<li><p><a class="reference internal" href="#examples" id="id102">Examples</a></p></li>
+<li><p><a class="reference internal" href="#return-values" id="id103">Return Values</a></p></li>
 </ul>
 </nav>
 <section id="synopsis">
-<h2><a class="toc-backref" href="#id101" role="doc-backlink">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id97" role="doc-backlink">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Manage operations create, update and delete of the resource Network Device.</p></li>
 <li><p>Adds the device with given credential.</p></li>
@@ -518,7 +518,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 </ul>
 </section>
 <section id="requirements">
-<span id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-requirements"></span><h2><a class="toc-backref" href="#id102" role="doc-backlink">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
+<span id="ansible-collections-cisco-dnac-inventory-workflow-manager-module-requirements"></span><h2><a class="toc-backref" href="#id98" role="doc-backlink">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
 <p>The below requirements are needed on the host that executes this module.</p>
 <ul class="simple">
 <li><p>dnacentersdk &gt;= 2.5.5</p></li>
@@ -526,7 +526,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 </ul>
 </section>
 <section id="parameters">
-<h2><a class="toc-backref" href="#id103" role="doc-backlink">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id99" role="doc-backlink">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
 <table class="ansible-option-table docutils align-default" style="width: 100%">
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
@@ -991,7 +991,6 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <a class="ansibleOptionLink" href="#parameter-config/snmp_ro_community" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>SNMP Read-Only community required for adding V2C devices.</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id53"><span class="problematic" id="id54">:ansible-option-default:`&quot;public&quot;`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -999,7 +998,6 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <a class="ansibleOptionLink" href="#parameter-config/snmp_rw_community" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>SNMP Read-Write community required for adding V2C devices.</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id55"><span class="problematic" id="id56">:ansible-option-default:`&quot;private&quot;`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -1007,7 +1005,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <a class="ansibleOptionLink" href="#parameter-config/snmp_timeout" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>SNMP timeout duration.</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id57"><span class="problematic" id="id58">:ansible-option-default:`5`</span></a></p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id53"><span class="problematic" id="id54">:ansible-option-default:`5`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -1029,7 +1027,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <a class="ansibleOptionLink" href="#parameter-config/type" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Select Device's type from NETWORK_DEVICE, COMPUTE_DEVICE, MERAKI_DASHBOARD, THIRD_PARTY_DEVICE, FIREPOWER_MANAGEMENT_SYSTEM. NETWORK_DEVICE - This refers to traditional networking equipment such as routers, switches, access points, and firewalls. These devices are responsible for routing, switching, and providing connectivity within the network. COMPUTE_DEVICE - These are computing resources such as servers, virtual machines, or containers that are part of the network infrastructure. Cisco Catalyst Center can integrate with compute devices to provide visibility and management capabilities, ensuring that the network and compute resources work together seamlessly to support applications and services. MERAKI_DASHBOARD - It is cloud-based platform used to manage Meraki networking devices, including wireless access points, switches, security appliances, and cameras. THIRD_PARTY_DEVICE - This category encompasses devices from vendors other than Cisco or Meraki. Cisco Catalyst Center is designed to support integration with third-party devices through open standards and APIs. This allows organizations to manage heterogeneous network environments efficiently using Cisco Catalyst Center's centralized management and automation capabilities. FIREPOWER_MANAGEMENT_SYSTEM - It is a centralized management console used to manage Cisco's Firepower Next-Generation Firewall (NGFW) devices. It provides features such as policy management, threat detection, and advanced security analytics.</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id59"><span class="problematic" id="id60">:ansible-option-default:`&quot;NETWORK\_DEVICE&quot;`</span></a></p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id55"><span class="problematic" id="id56">:ansible-option-default:`&quot;NETWORK\_DEVICE&quot;`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -1088,8 +1086,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <td><div class="ansible-option-cell"><p>Set to True to verify the Cisco Catalyst Center config after applying the playbook config.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id61"><span class="problematic" id="id62">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id63"><span class="problematic" id="id64">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><a href="#id57"><span class="problematic" id="id58">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id59"><span class="problematic" id="id60">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1100,8 +1098,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <td><div class="ansible-option-cell"><p>Indicates whether debugging is enabled in the Cisco Catalyst Center SDK.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id65"><span class="problematic" id="id66">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id67"><span class="problematic" id="id68">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><a href="#id61"><span class="problematic" id="id62">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id63"><span class="problematic" id="id64">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1124,8 +1122,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <p>If the log file exists, - It is overwritten or appended based on the &quot;dnac_log_append&quot; flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id69"><span class="problematic" id="id70">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id71"><span class="problematic" id="id72">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><a href="#id65"><span class="problematic" id="id66">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id67"><span class="problematic" id="id68">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1136,8 +1134,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <td><div class="ansible-option-cell"><p>Determines the mode of the file. Set to True for 'append' mode. Set to False for 'write' mode.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id73"><span class="problematic" id="id74">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id75"><span class="problematic" id="id76">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id69"><span class="problematic" id="id70">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id71"><span class="problematic" id="id72">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1148,7 +1146,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <td><div class="ansible-option-cell"><p>Governs logging. Logs are recorded if dnac_log is True.</p>
 <p>If path is not specified, - When 'dnac_log_append' is True, 'dnac.log' is generated in the current Ansible directory; logs are appended. - When 'dnac_log_append' is False, 'dnac.log' is generated; logs are overwritten.</p>
 <p>If path is specified, - When 'dnac_log_append' is True, the file opens in append mode. - When 'dnac_log_append' is False, the file opens in write (w) mode. - In shared file scenarios, without append mode, content is overwritten after each module execution. - For a shared log file, set append to False for the 1st module (to overwrite); for subsequent modules, set append to True.</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id77"><span class="problematic" id="id78">:ansible-option-default:`&quot;dnac.log&quot;`</span></a></p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id73"><span class="problematic" id="id74">:ansible-option-default:`&quot;dnac.log&quot;`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-cell">
@@ -1161,7 +1159,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <p>WARNING indicates potential future issues. Displays WARNING, ERROR, CRITICAL messages.</p>
 <p>INFO tracks normal operation. Displays INFO, WARNING, ERROR, CRITICAL messages.</p>
 <p>DEBUG provides detailed diagnostic info. Displays all log messages.</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id79"><span class="problematic" id="id80">:ansible-option-default:`&quot;WARNING&quot;`</span></a></p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id75"><span class="problematic" id="id76">:ansible-option-default:`&quot;WARNING&quot;`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
@@ -1176,7 +1174,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <a class="ansibleOptionLink" href="#parameter-dnac_port" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Specifies the port number associated with the Cisco Catalyst Center.</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id81"><span class="problematic" id="id82">:ansible-option-default:`&quot;443&quot;`</span></a></p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id77"><span class="problematic" id="id78">:ansible-option-default:`&quot;443&quot;`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
@@ -1186,7 +1184,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>The username for authentication at the Cisco Catalyst Center.</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id83"><span class="problematic" id="id84">:ansible-option-default:`&quot;admin&quot;`</span></a></p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id79"><span class="problematic" id="id80">:ansible-option-default:`&quot;admin&quot;`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-cell">
@@ -1196,8 +1194,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <td><div class="ansible-option-cell"><p>Flag to enable or disable SSL certificate verification.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id85"><span class="problematic" id="id86">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id87"><span class="problematic" id="id88">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id81"><span class="problematic" id="id82">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id83"><span class="problematic" id="id84">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1206,7 +1204,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <a class="ansibleOptionLink" href="#parameter-dnac_version" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Specifies the version of the Cisco Catalyst Center that the SDK should use.</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id89"><span class="problematic" id="id90">:ansible-option-default:`&quot;2.2.3.3&quot;`</span></a></p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id85"><span class="problematic" id="id86">:ansible-option-default:`&quot;2.2.3.3&quot;`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-cell">
@@ -1216,8 +1214,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <td><div class="ansible-option-cell"><p>The state of Cisco Catalyst Center after module completion.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id91"><span class="problematic" id="id92">:ansible-option-choices-entry-default:`&quot;merged&quot;`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id93"><span class="problematic" id="id94">:ansible-option-choices-entry:`&quot;deleted&quot;`</span></a></p></li>
+<li><p><a href="#id87"><span class="problematic" id="id88">:ansible-option-choices-entry-default:`&quot;merged&quot;`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id89"><span class="problematic" id="id90">:ansible-option-choices-entry:`&quot;deleted&quot;`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1228,8 +1226,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <td><div class="ansible-option-cell"><p>Flag for Cisco Catalyst Center SDK to enable the validation of request bodies against a JSON schema.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id95"><span class="problematic" id="id96">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id97"><span class="problematic" id="id98">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id91"><span class="problematic" id="id92">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id93"><span class="problematic" id="id94">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1237,7 +1235,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 </table>
 </section>
 <section id="notes">
-<h2><a class="toc-backref" href="#id104" role="doc-backlink">Notes</a><a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id100" role="doc-backlink">Notes</a><a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
@@ -1251,7 +1249,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 </div>
 </section>
 <section id="see-also">
-<h2><a class="toc-backref" href="#id105" role="doc-backlink">See Also</a><a class="headerlink" href="#see-also" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id101" role="doc-backlink">See Also</a><a class="headerlink" href="#see-also" title="Permalink to this heading"></a></h2>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
@@ -1265,7 +1263,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 </div>
 </section>
 <section id="examples">
-<h2><a class="toc-backref" href="#id106" role="doc-backlink">Examples</a><a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id102" role="doc-backlink">Examples</a><a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <div class="highlight-yaml+jinja notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add new device in Inventory with full credentials</span>
 <span class="w">  </span><span class="nt">cisco.dnac.inventory_workflow_manager</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">dnac_host</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">dnac_host</span><span class="cp">}}</span><span class="s">&quot;</span>
@@ -1571,7 +1569,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">ip_address_list</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;1.1.1.1&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;2.2.2.2&quot;</span><span class="p p-Indicator">]</span>
 <span class="w">        </span><span class="nt">export_device_list</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;File_password&quot;</span>
-<span class="w">          </span><span class="nt">operation_enum</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">          </span><span class="nt">operation_enum</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0&quot;</span>
 <span class="w">          </span><span class="nt">parameters</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;componentName&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;SerialNumber&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;Last</span><span class="nv"> </span><span class="s">Sync</span><span class="nv"> </span><span class="s">Status&quot;</span><span class="p p-Indicator">]</span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create Global User Defined with IP Address</span>
@@ -1665,7 +1663,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 </div>
 </section>
 <section id="return-values">
-<h2><a class="toc-backref" href="#id107" role="doc-backlink">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id103" role="doc-backlink">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this heading"></a></h2>
 <p>Common return values are documented <a class="reference external" href="https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common-return-values" title="(in Ansible v9)"><span class="xref std std-ref">here</span></a>, the following are the fields unique to this module:</p>
 <table class="ansible-option-table docutils align-default" style="width: 100%">
 <thead>
@@ -1680,7 +1678,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-inventor
 </div></td>
 <td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco Catalyst Center Python SDK</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id99"><span class="problematic" id="id100">:ansible-rv-sample-value:`{&quot;response&quot;: {&quot;taskId&quot;: &quot;string&quot;, &quot;url&quot;: &quot;string&quot;}, &quot;version&quot;: &quot;string&quot;}`</span></a></p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id95"><span class="problematic" id="id96">:ansible-rv-sample-value:`{&quot;response&quot;: {&quot;taskId&quot;: &quot;string&quot;, &quot;url&quot;: &quot;string&quot;}, &quot;version&quot;: &quot;string&quot;}`</span></a></p>
 </div></td>
 </tr>
 </tbody>

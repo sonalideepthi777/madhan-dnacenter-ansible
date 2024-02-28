@@ -2184,10 +2184,6 @@ Parameters
       SNMP Read-Only community required for adding V2C devices.
 
 
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"public"`
-
       .. raw:: html
 
         </div>
@@ -2221,10 +2217,6 @@ Parameters
 
       SNMP Read-Write community required for adding V2C devices.
 
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"private"`
 
       .. raw:: html
 
@@ -3540,7 +3532,7 @@ Examples
           - ip_address_list: ["1.1.1.1", "2.2.2.2"]
             export_device_list:
               password: "File_password"
-              operation_enum: 0
+              operation_enum: "0"
               parameters: ["componentName", "SerialNumber", "Last Sync Status"]
 
     - name: Create Global User Defined with IP Address
