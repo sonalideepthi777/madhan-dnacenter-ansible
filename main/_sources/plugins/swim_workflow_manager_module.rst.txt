@@ -1013,7 +1013,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Provide the absolute file path needed to import an image from your local system (Eg "/path/to/your/file").
+      Provide the absolute file path needed to import an image from your local system (Eg "/path/to/your/file"). Accepted files formats are - .gz,.bin,.img,.tar,.smu,.pie,.aes,.iso,.ova,.tar\_gz,.qcow2,.nfvispkg,.zip,.spa,.rpm.
 
 
       .. raw:: html
@@ -1404,7 +1404,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      A mandatory parameter for importing a SWIM image via a remote URL. This parameter is required when using a URL to import an image.
+      A mandatory parameter for importing a SWIM image via a remote URL. This parameter is required when using a URL to import an image..(For example, http://{host}/swim/cat9k\_isoxe.16.12.10s.SPA.bin, ftp://user:password@{host}/swim/cat9k\_isoxe.16.12.10s.SPA.iso)
 
 
       .. raw:: html
