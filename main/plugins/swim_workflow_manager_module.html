@@ -604,13 +604,20 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-swim-wor
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/image_activation_details/device_series_name"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-workflow-manager-module-parameter-config-image-activation-details-device-series-name"><strong>device_series_name</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/image_activation_details/device_series_name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>This parameter specifies the name of the device series. It is used to identify a specific series of devices, such as Cisco Catalyst 9300 Series Switches, within the Cisco Catalyst Center.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/image_activation_details/device_upgrade_mode"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-workflow-manager-module-parameter-config-image-activation-details-device-upgrade-mode"><strong>device_upgrade_mode</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/image_activation_details/device_upgrade_mode" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>It specifies the mode of upgrade to be applied to the devices having the following values - 'install', 'bundle', and 'currentlyExists'. install - This mode instructs Cisco Catalyst Center to perform a clean installation of the new image on the target devices. When this mode is selected, the existing image on the device is completely replaced with the new image during the upgrade process. This ensures that the device runs only the new image version after the upgrade is completed. bundle - This mode instructs Cisco Catalyst Center bundles the new image with the existing image on the device before initiating the upgrade process. This mode allows for a more efficient upgrade process by preserving the existing image on the device while adding the new image as an additional bundle. After the upgrade, the device can run either the existing image or the new bundled image, depending on the configuration. currentlyExists - This mode instructs Cisco Catalyst Center to checks if the target devices already have the desired image version installed. If image already present on devices, no action is taken and upgrade process is skipped for those devices. This mode is useful for avoiding unnecessary upgrades on devices that already have the correct image version installed, thereby saving time.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/image_activation_details/distribute_if_needed"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-workflow-manager-module-parameter-config-image-activation-details-distribute-if-needed"><strong>distribute_if_needed</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/image_activation_details/distribute_if_needed" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -622,14 +629,14 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-swim-wor
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/image_activation_details/image_name"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-workflow-manager-module-parameter-config-image-activation-details-image-name"><strong>image_name</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/image_activation_details/image_name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>SWIM image's name</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/image_activation_details/schedule_validate"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-workflow-manager-module-parameter-config-image-activation-details-schedule-validate"><strong>schedule_validate</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/image_activation_details/schedule_validate" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -641,60 +648,67 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-swim-wor
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/image_activation_details/site_name"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-workflow-manager-module-parameter-config-image-activation-details-site-name"><strong>site_name</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/image_activation_details/site_name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Used to get device details associated to this site.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/image_distribution_details"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-workflow-manager-module-parameter-config-image-distribution-details"><strong>image_distribution_details</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/image_distribution_details" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Details for SWIM image distribution. Device on which the image needs to distributed can be speciifed using any of the following parameters - deviceSerialNumber, deviceIPAddress, deviceHostname or deviceMacAddress.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/image_distribution_details/device_family_name"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-workflow-manager-module-parameter-config-image-distribution-details-device-family-name"><strong>device_family_name</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/image_distribution_details/device_family_name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Specify the name of the device family such as Switches and Hubs, etc.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/image_distribution_details/device_hostname"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-workflow-manager-module-parameter-config-image-distribution-details-device-hostname"><strong>device_hostname</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/image_distribution_details/device_hostname" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Device hostname where the image needs to be distributed</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/image_distribution_details/device_ip_address"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-workflow-manager-module-parameter-config-image-distribution-details-device-ip-address"><strong>device_ip_address</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/image_distribution_details/device_ip_address" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Device IP address where the image needs to be distributed</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/image_distribution_details/device_mac_address"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-workflow-manager-module-parameter-config-image-distribution-details-device-mac-address"><strong>device_mac_address</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/image_distribution_details/device_mac_address" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Device MAC address where the image needs to be distributed</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/image_distribution_details/device_role"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-workflow-manager-module-parameter-config-image-distribution-details-device-role"><strong>device_role</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/image_distribution_details/device_role" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Device Role and  permissible Values are ALL, UNKNOWN, ACCESS, BORDER ROUTER, DISTRIBUTION and CORE. ALL - This role typically represents all devices within the network, regardless of their specific roles or functions. UNKNOWN - This role is assigned to devices whose roles or functions have not been identified or classified within Cisco Catalsyt Center. This could happen if the platform is unable to determine the device's role based on available information. ACCESS - This role typically represents switches or access points that serve as access points for end-user devices to connect to the network. These devices are often located at the edge of the network and provide connectivity to end-user devices. BORDER ROUTER - These are devices that connect different network domains or segments together. They often serve as gateways between different networks, such as connecting an enterprise network to the internet or connecting multiple branch offices. DISTRIBUTION - This role represents function as distribution switches or routers in hierarchical network designs. They aggregate traffic from access switches and route it toward the core of the network or toward other distribution switches. CORE - This role typically represents high-capacity switches or routers that form the backbone of the network. They handle large volumes of traffic and provide connectivity between different parts of network, such as connecting distribution switches or providing interconnection between different network segments.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-config/image_distribution_details/device_serial_number"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-workflow-manager-module-parameter-config-image-distribution-details-device-serial-number"><strong>device_serial_number</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/image_distribution_details/device_serial_number" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Device serial number where the image needs to be distributed</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-config/image_distribution_details/device_series_name"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-workflow-manager-module-parameter-config-image-distribution-details-device-series-name"><strong>device_series_name</strong></p>
+<a class="ansibleOptionLink" href="#parameter-config/image_distribution_details/device_series_name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>This parameter specifies the name of the device series. It is used to identify a specific series of devices, such as Cisco Catalyst 9300 Series Switches, within the Cisco Catalyst Center.</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -1176,6 +1190,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-swim-wor
 <span class="w">        </span><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Global/USA/San Francisco/BGL_18</span>
 <span class="w">        </span><span class="nt">device_role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ALL</span>
 <span class="w">        </span><span class="nt">device_family_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Switches and Hubs</span>
+<span class="w">        </span><span class="nt">device_series_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cisco Catalyst 9300 Series Switches</span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Activate the given image on devices associated to that site with specified role.</span>
 <span class="w">  </span><span class="nt">cisco.dnac.swim_workflow_manager</span><span class="p">:</span>
@@ -1194,6 +1209,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-swim-wor
 <span class="w">        </span><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Global/USA/San Francisco/BGL_18</span>
 <span class="w">        </span><span class="nt">device_role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ALL</span>
 <span class="w">        </span><span class="nt">device_family_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Switches and Hubs</span>
+<span class="w">        </span><span class="nt">device_series_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cisco Catalyst 9300 Series Switches</span>
 <span class="w">        </span><span class="nt">scehdule_validate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="w">        </span><span class="nt">activate_lower_image_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">        </span><span class="nt">distribute_if_needed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
