@@ -1387,6 +1387,9 @@ Parameters
 
       :ansible-option-type:`dictionary`
 
+      :ansible-option-versionadded:`added in cisco.dnac 6.12.0`
+
+
       .. raw:: html
 
         </div>
@@ -3073,6 +3076,7 @@ Notes
 .. note::
    - SDK Method used are discovery.Discovery.get\_all\_global\_credentials\_v2, discovery.Discovery.start\_discovery, task.Task.get\_task\_by\_id, discovery.Discovery.get\_discoveries\_by\_range, discovery.Discovery.get\_discovered\_network\_devices\_by\_discovery\_id', discovery.Discovery.delete\_discovery\_by\_id discovery.Discovery.delete\_all\_discovery discovery.Discovery.get\_count\_of\_all\_discovery\_jobs
    - Paths used are get /dna/intent/api/v2/global-credential post /dna/intent/api/v1/discovery get /dna/intent/api/v1/task/{taskId} get /dna/intent/api/v1/discovery/{startIndex}/{recordsToReturn} get /dna/intent/api/v1/discovery/{id}/network-device delete /dna/intent/api/v1/discovery/{id} delete /dna/intent/api/v1/delete get /dna/intent/api/v1/discovery/count
+   - Removed 'global\_cli\_len' option in v6.12.0.
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins instead embedded connection manager from Cisco Catalyst Center SDK
    - The parameters starting with dnac\_ are used by the Cisco Catalyst Center Python SDK to establish the connection

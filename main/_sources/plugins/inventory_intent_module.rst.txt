@@ -237,6 +237,9 @@ Parameters
 
       :ansible-option-type:`boolean`
 
+      :ansible-option-versionadded:`added in cisco.dnac 6.12.0`
+
+
       .. raw:: html
 
         </div>
@@ -1147,6 +1150,9 @@ Parameters
 
       :ansible-option-type:`string`
 
+      :ansible-option-versionadded:`added in cisco.dnac 6.12.0`
+
+
       .. raw:: html
 
         </div>
@@ -1180,6 +1186,9 @@ Parameters
       .. rst-class:: ansible-option-type-line
 
       :ansible-option-type:`integer`
+
+      :ansible-option-versionadded:`added in cisco.dnac 6.12.0`
+
 
       .. raw:: html
 
@@ -1218,6 +1227,9 @@ Parameters
       .. rst-class:: ansible-option-type-line
 
       :ansible-option-type:`integer`
+
+      :ansible-option-versionadded:`added in cisco.dnac 6.12.0`
+
 
       .. raw:: html
 
@@ -1291,6 +1303,9 @@ Parameters
       .. rst-class:: ansible-option-type-line
 
       :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      :ansible-option-versionadded:`added in cisco.dnac 6.12.0`
+
 
       .. raw:: html
 
@@ -1785,6 +1800,9 @@ Parameters
       .. rst-class:: ansible-option-type-line
 
       :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      :ansible-option-versionadded:`added in cisco.dnac 6.12.0`
+
 
       .. raw:: html
 
@@ -3201,6 +3219,8 @@ Notes
    - SDK Method used are devices.Devices.add\_device, devices.Devices.delete\_device\_by\_id, devices.Devices.sync\_devices,
    - Paths used are post /dna/intent/api/v1/network-device, delete /dna/intent/api/v1/network-device/{id}, put /dna/intent/api/v1/network-device,
    - Removed 'managementIpAddress' options in v4.3.0.
+   - Renamed argument 'ip\_address' to 'ip\_address\_list' option in v6.12.0.
+   - Removed 'serial\_number', 'device\_added', 'role\_source', options in v6.12.0.
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
    - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection

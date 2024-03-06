@@ -443,6 +443,9 @@ Parameters
 
       :ansible-option-type:`string`
 
+      :ansible-option-versionadded:`added in cisco.dnac 6.12.0`
+
+
       .. raw:: html
 
         </div>
@@ -901,6 +904,9 @@ Parameters
       .. rst-class:: ansible-option-type-line
 
       :ansible-option-type:`string`
+
+      :ansible-option-versionadded:`added in cisco.dnac 6.12.0`
+
 
       .. raw:: html
 
