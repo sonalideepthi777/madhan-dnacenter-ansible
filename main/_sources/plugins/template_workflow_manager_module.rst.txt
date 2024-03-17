@@ -11951,7 +11951,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Create a new template, export and import the project and template.
+    - name: Create a new template.
       cisco.dnac.template_workflow_manager:
         dnac_host: "{{dnac_host}}"
         dnac_username: "{{dnac_username}}"
@@ -12001,51 +12001,67 @@ Examples
                 template_id: string
                 template_version: string
             version: string
+
+    - name: Export the projects.
+      cisco.dnac.template_workflow_manager:
+        dnac_host: "{{dnac_host}}"
+        dnac_username: "{{dnac_username}}"
+        dnac_password: "{{dnac_password}}"
+        dnac_verify: "{{dnac_verify}}"
+        dnac_port: "{{dnac_port}}"
+        dnac_version: "{{dnac_version}}"
+        dnac_debug: "{{dnac_debug}}"
+        dnac_log: True
+        dnac_log_level: "{{dnac_log_level}}"
+        state: merged
+        config_verify: True
+        config:
           export:
             project:
               - string
+              - string
+
+    - name: Export the templates.
+      cisco.dnac.template_workflow_manager:
+        dnac_host: "{{dnac_host}}"
+        dnac_username: "{{dnac_username}}"
+        dnac_password: "{{dnac_password}}"
+        dnac_verify: "{{dnac_verify}}"
+        dnac_port: "{{dnac_port}}"
+        dnac_version: "{{dnac_version}}"
+        dnac_debug: "{{dnac_debug}}"
+        dnac_log: True
+        dnac_log_level: "{{dnac_log_level}}"
+        state: merged
+        config_verify: True
+        config:
+          export:
             template:
               - project_name : string
                 template_name: string
+              - project_name: string
+                template_name: string
+
+    - name: Import the Projects.
+      cisco.dnac.template_workflow_manager:
+        dnac_host: "{{dnac_host}}"
+        dnac_username: "{{dnac_username}}"
+        dnac_password: "{{dnac_password}}"
+        dnac_verify: "{{dnac_verify}}"
+        dnac_port: "{{dnac_port}}"
+        dnac_version: "{{dnac_version}}"
+        dnac_debug: "{{dnac_debug}}"
+        dnac_log: True
+        dnac_log_level: "{{dnac_log_level}}"
+        state: merged
+        config_verify: True
+        config:
           import:
             project:
-              do_version: true
-            export:
-              do_version: true
+              do_version: false
               payload:
-              - author: string
-                composite: true
-                containing_templates:
-                - composite: true
-                  description: string
-                  device_types:
-                  - product_family: string
-                    product_series: string
-                    product_type: string
-                  id: string
-                  language: string
-                  name: string
-                  project_name: string
-                  rollback_template_params:
-                  - binding: string
-                    custom_order: 0
-                    data_type: string
-                    default_value: string
-                    description: string
-                    display_name: string
-                    group: string
-                    id: string
-                    instruction_text: string
-                    key: string
-                    not_param: true
-                    order: 0
-                    param_array: true
-                    parameter_name: string
-                    provider: string
-                    range:
-                    - id: string
-                project_name: string
-
+              - name: string
+              - name: string
 
 
 
