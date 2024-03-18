@@ -2936,9 +2936,9 @@ Notes
    - Removed 'managementIpAddress' options in v4.3.0.
    - Renamed argument 'ip\_address' to 'ip\_address\_list' option in v6.12.0.
    - Removed 'serial\_number', 'device\_added', 'role\_source', options in v6.12.0.
-   - Added 'add\_user\_defined\_field', 'update\_interface\_details', 'export\_device\_list' options in v6.13.2.
-   - Removed 'provision\_wireless\_device', 'reprovision\_wired\_device' options in v6.13.2.
-   - Added the parameter 'admin\_status' options in v6.13.2.
+   - Added 'add\_user\_defined\_field', 'update\_interface\_details', 'export\_device\_list' options in v6.13.1.
+   - Removed 'provision\_wireless\_device', 'reprovision\_wired\_device' options in v6.13.1.
+   - Added the parameter 'admin\_status' options in v6.13.1.
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins instead embedded connection manager from Cisco Catalyst Center SDK
    - The parameters starting with dnac\_ are used by the Cisco Catalyst Center Python SDK to establish the connection
