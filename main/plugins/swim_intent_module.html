@@ -923,8 +923,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-swim-int
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-danc_api_task_timeout"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-intent-module-parameter-danc-api-task-timeout"><strong>danc_api_task_timeout</strong></p>
-<a class="ansibleOptionLink" href="#parameter-danc_api_task_timeout" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+<div class="ansibleOptionAnchor" id="parameter-dnac_api_task_timeout"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-swim-intent-module-parameter-dnac-api-task-timeout"><strong>dnac_api_task_timeout</strong></p>
+<a class="ansibleOptionLink" href="#parameter-dnac_api_task_timeout" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Defines the timeout in seconds for API calls to retrieve task details. If the task details are not received within this period, the process will end, and a timeout notification will be logged.</p>
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id29"><span class="problematic" id="id30">:ansible-option-default:`1200`</span></a></p>
@@ -1087,7 +1087,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-dnac-swim-int
 <ul class="simple">
 <li><p>SDK Method used are software_image_management_swim.SoftwareImageManagementSwim.import_software_image_via_url, software_image_management_swim.SoftwareImageManagementSwim.tag_as_golden_image, software_image_management_swim.SoftwareImageManagementSwim.trigger_software_image_distribution, software_image_management_swim.SoftwareImageManagementSwim.trigger_software_image_activation,</p></li>
 <li><p>Paths used are post /dna/intent/api/v1/image/importation/source/url, post /dna/intent/api/v1/image/importation/golden, post /dna/intent/api/v1/image/distribution, post /dna/intent/api/v1/image/activation/device,</p></li>
-<li><p>Added the parameter 'danc_api_task_timeout', 'dnac_task_poll_interval' options in v6.13.2.</p></li>
+<li><p>Added the parameter 'dnac_api_task_timeout', 'dnac_task_poll_interval' options in v6.13.2.</p></li>
 <li><p>Does not support <code class="docutils literal notranslate"><span class="pre">check_mode</span></code></p></li>
 <li><p>The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK</p></li>
 <li><p>The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection</p></li>

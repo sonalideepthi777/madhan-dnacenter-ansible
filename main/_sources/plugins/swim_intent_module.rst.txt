@@ -1883,17 +1883,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-danc_api_task_timeout"></div>
+        <div class="ansibleOptionAnchor" id="parameter-dnac_api_task_timeout"></div>
 
-      .. _ansible_collections.cisco.dnac.swim_intent_module__parameter-danc_api_task_timeout:
+      .. _ansible_collections.cisco.dnac.swim_intent_module__parameter-dnac_api_task_timeout:
 
       .. rst-class:: ansible-option-title
 
-      **danc_api_task_timeout**
+      **dnac_api_task_timeout**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-danc_api_task_timeout" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-dnac_api_task_timeout" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -2507,7 +2507,7 @@ Notes
 .. note::
    - SDK Method used are software\_image\_management\_swim.SoftwareImageManagementSwim.import\_software\_image\_via\_url, software\_image\_management\_swim.SoftwareImageManagementSwim.tag\_as\_golden\_image, software\_image\_management\_swim.SoftwareImageManagementSwim.trigger\_software\_image\_distribution, software\_image\_management\_swim.SoftwareImageManagementSwim.trigger\_software\_image\_activation,
    - Paths used are post /dna/intent/api/v1/image/importation/source/url, post /dna/intent/api/v1/image/importation/golden, post /dna/intent/api/v1/image/distribution, post /dna/intent/api/v1/image/activation/device,
-   - Added the parameter 'danc\_api\_task\_timeout', 'dnac\_task\_poll\_interval' options in v6.13.2.
+   - Added the parameter 'dnac\_api\_task\_timeout', 'dnac\_task\_poll\_interval' options in v6.13.2.
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
    - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection

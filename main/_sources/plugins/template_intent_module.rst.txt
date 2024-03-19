@@ -11387,17 +11387,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-danc_api_task_timeout"></div>
+        <div class="ansibleOptionAnchor" id="parameter-dnac_api_task_timeout"></div>
 
-      .. _ansible_collections.cisco.dnac.template_intent_module__parameter-danc_api_task_timeout:
+      .. _ansible_collections.cisco.dnac.template_intent_module__parameter-dnac_api_task_timeout:
 
       .. rst-class:: ansible-option-title
 
-      **danc_api_task_timeout**
+      **dnac_api_task_timeout**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-danc_api_task_timeout" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-dnac_api_task_timeout" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
