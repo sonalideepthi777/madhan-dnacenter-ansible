@@ -484,48 +484,6 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-config/device_updated"></div>
-
-      .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/device_updated:
-
-      .. rst-class:: ansible-option-title
-
-      **device_updated**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-config/device_updated" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`boolean`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Make this as true needed for the updation of device role, interface details, device credentails or details.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
-      - :ansible-option-choices-entry:`true`
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-config/enable_password"></div>
 
       .. _ansible_collections.cisco.dnac.inventory_intent_module__parameter-config/enable_password:
@@ -2939,6 +2897,7 @@ Notes
    - Added 'add\_user\_defined\_field', 'update\_interface\_details', 'export\_device\_list' options in v6.13.1.
    - Removed 'provision\_wireless\_device', 'reprovision\_wired\_device' options in v6.13.1.
    - Added the parameter 'admin\_status' options in v6.13.1.
+   - Removed 'device\_updated' options in v6.13.1.
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
    - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
@@ -3108,7 +3067,6 @@ Examples
             enable_password: newtest1233
             ip_address_list: ["1.1.1.1", "2.2.2.2"]
             type: NETWORK_DEVICE
-            device_updated: True
             credential_update: True
 
     - name: Update new management IP address of device in inventory
@@ -3124,8 +3082,7 @@ Examples
         dnac_log: False
         state: merged
         config:
-          - device_updated: True
-            ip_address_list: ["1.1.1.1"]
+          - ip_address_list: ["1.1.1.1"]
             credential_update: True
             update_mgmt_ipaddresslist:
             - exist_mgmt_ipaddress: "1.1.1.1"
@@ -3184,7 +3141,6 @@ Examples
         state: merged
         config:
           - ip_address_list: ["1.1.1.1", "2.2.2.2"]
-            device_updated: True
             update_interface_details:
               description: "Testing for updating interface details"
               admin_status: "UP"
