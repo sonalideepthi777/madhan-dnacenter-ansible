@@ -173,7 +173,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Create/Update/Delete template.
+      Perform operations such as Create/Update/Delete on a template.
 
 
       .. raw:: html
@@ -207,7 +207,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Author of template.
+      Identifies the creator of the template.
 
 
       .. raw:: html
@@ -241,7 +241,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is it composite template.
+      Specifies if the template is composite.
 
 
       .. rst-class:: ansible-option-line
@@ -283,7 +283,11 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Create's containingTemplates.
+      Refer to a set of templates within the main template to define more complex or modular configurations.
+
+      This is particularly useful in systems that support hierarchical or nested templates.
+
+      Here parent templates may contain child templates to form a complete configuration.
 
 
       .. raw:: html
@@ -317,7 +321,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is it composite template.
+      Specifies if the template is composite.
 
 
       .. rst-class:: ansible-option-line
@@ -359,7 +363,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Description of template.
+      Provides a description of the template.
 
 
       .. raw:: html
@@ -393,7 +397,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      deviceTypes on which templates would be applied.
+      List of dictionaries details the types of devices that the templates can be applied to.
 
 
       .. raw:: html
@@ -427,7 +431,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Device family.
+      Denotes the family to which the device belongs.
 
 
       .. raw:: html
@@ -461,7 +465,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Device series.
+      Specifies the series classification of the device.
 
 
       .. raw:: html
@@ -495,7 +499,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Device type.
+      Describes the exact type of the device.
 
 
       .. raw:: html
@@ -530,7 +534,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of template.
+      Unique identifier for the template, represented as a UUID.
 
 
       .. raw:: html
@@ -564,7 +568,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Template language
+      Programming language used for templating. Options are 'JINJA' for Jinja templating or 'VELOCITY' for Apache Velocity.
 
 
       .. rst-class:: ansible-option-line
@@ -606,7 +610,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Name of template.
+      Designation of the template, serving as its unique name.
 
 
       .. raw:: html
@@ -640,7 +644,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Description of the project created.
+      Narrative that elaborates on the purpose and scope of the project.
 
 
       .. raw:: html
@@ -674,7 +678,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Name of the project under which templates are managed.
+      Title of the project within which the template is categorized and managed.
 
 
       .. raw:: html
@@ -708,7 +712,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Params required for template rollback.
+      A list of dictionaries defining parameters necessary for the rollback functionality of a template.
 
 
       .. raw:: html
@@ -742,7 +746,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Bind to source.
+      Associates the parameter with its source.
 
 
       .. raw:: html
@@ -776,7 +780,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      CustomOrder of template param.
+      Specifies a user-defined ordering for the parameter.
 
 
       .. raw:: html
@@ -810,7 +814,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Datatype of template param.
+      Identifies the data type of the parameter (e.g., string, integer, boolean).
 
 
       .. raw:: html
@@ -844,7 +848,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Default value of template param.
+      Establishes a default value for the parameter, used if no other value is provided.
 
 
       .. raw:: html
@@ -878,7 +882,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Description of template param.
+      Provides a descriptive explanation of the parameter's purpose.
 
 
       .. raw:: html
@@ -912,7 +916,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Display name of param.
+      The name of the parameter as displayed to users.
 
 
       .. raw:: html
@@ -946,7 +950,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Group.
+      Categorizes the parameter into a named group for organizational purposes.
 
 
       .. raw:: html
@@ -980,7 +984,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of template param.
+      A unique identifier for the parameter, formatted as a UUID.
 
 
       .. raw:: html
@@ -1014,7 +1018,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Instruction text for param.
+      Gives guidance or instructions regarding the parameter's use.
 
 
       .. raw:: html
@@ -1048,7 +1052,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Key.
+      A unique key that identifies the parameter within the template.
 
 
       .. raw:: html
@@ -1082,7 +1086,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is it not a variable.
+      Indicates whether the entry is not to be treated as a parameter.
 
 
       .. rst-class:: ansible-option-line
@@ -1124,7 +1128,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Order of template param.
+      Determines the sequence in which the parameter appears relative to others.
 
 
       .. raw:: html
@@ -1158,7 +1162,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is it an array.
+      Specifies if the parameter should be treated as an array.
 
 
       .. rst-class:: ansible-option-line
@@ -1200,7 +1204,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Name of template param.
+      The name of the parameter.
 
 
       .. raw:: html
@@ -1234,7 +1238,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Provider.
+      Denotes the provider associated with the parameter.
 
 
       .. raw:: html
@@ -1268,7 +1272,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Create's range.
+      Defines the permissible range for the parameter's value.
 
 
       .. raw:: html
@@ -1302,7 +1306,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of range.
+      Unique identifier for the range, represented as a UUID.
 
 
       .. raw:: html
@@ -1336,7 +1340,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Max value of range.
+      Specifies the maximum allowable value for the parameter.
 
 
       .. raw:: html
@@ -1370,7 +1374,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Min value of range.
+      Specifies the minimum allowable value for the parameter.
 
 
       .. raw:: html
@@ -1405,7 +1409,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is param required.
+      Dictates whether the parameter is mandatory for template operations.
 
 
       .. rst-class:: ansible-option-line
@@ -1447,7 +1451,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Create's selection.
+      Contains options for parameter selection when a choice is available.
 
 
       .. raw:: html
@@ -1481,7 +1485,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Default selection values.
+      Lists the default values that are preselected.
 
 
       .. raw:: html
@@ -1515,7 +1519,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of selection.
+      A unique identifier for the selection entity, represented as a UUID.
 
 
       .. raw:: html
@@ -1549,7 +1553,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Type of selection(SINGLE\_SELECT or MULTI\_SELECT).
+      Specifies the type of selection, such as 'SINGLE\_SELECT' or 'MULTI\_SELECT'.
 
 
       .. raw:: html
@@ -1583,7 +1587,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Selection values.
+      A dictionary of available values for selection.
 
 
       .. raw:: html
@@ -1619,7 +1623,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Create's tags.
+      A list of dictionaries representing tags associated with the Configuration Template during creation.
 
 
       .. raw:: html
@@ -1653,7 +1657,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of tag.
+      The unique identifier for each tag, presented as a UUID.
 
 
       .. raw:: html
@@ -1687,7 +1691,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Name of tag.
+      The descriptive label or name assigned to the tag.
 
 
       .. raw:: html
@@ -1722,7 +1726,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Template content.
+      The actual script or code constituting the body of the template.
 
 
       .. raw:: html
@@ -1756,7 +1760,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Create's templateParams.
+      The customization of the contents within the template.
 
 
       .. raw:: html
@@ -1790,7 +1794,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Bind to source.
+      Associates the parameter with its source.
 
 
       .. raw:: html
@@ -1824,7 +1828,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      CustomOrder of template param.
+      Specifies a user-defined ordering for the parameter.
 
 
       .. raw:: html
@@ -1858,7 +1862,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Datatype of template param.
+      Identifies the data type of the parameter (e.g., string, integer, boolean).
 
 
       .. raw:: html
@@ -1892,7 +1896,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Default value of template param.
+      Establishes a default value for the parameter, used if no other value is provided.
 
 
       .. raw:: html
@@ -1926,7 +1930,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Description of template param.
+      Provides a descriptive explanation of the parameter's purpose.
 
 
       .. raw:: html
@@ -1960,7 +1964,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Display name of param.
+      The name of the parameter as displayed to users.
 
 
       .. raw:: html
@@ -1994,7 +1998,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Group.
+      Categorizes the parameter into a named group for organizational purposes.
 
 
       .. raw:: html
@@ -2028,7 +2032,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of template param.
+      A unique identifier for the parameter, formatted as a UUID.
 
 
       .. raw:: html
@@ -2062,7 +2066,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Instruction text for param.
+      Gives guidance or instructions regarding the parameter's use.
 
 
       .. raw:: html
@@ -2096,7 +2100,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Key.
+      A unique key that identifies the parameter within the template.
 
 
       .. raw:: html
@@ -2130,7 +2134,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is it not a variable.
+      Indicates whether the entry is not to be treated as a parameter.
 
 
       .. rst-class:: ansible-option-line
@@ -2172,7 +2176,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Order of template param.
+      Determines the sequence in which the parameter appears relative to others.
 
 
       .. raw:: html
@@ -2206,7 +2210,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is it an array.
+      Specifies if the parameter should be treated as an array.
 
 
       .. rst-class:: ansible-option-line
@@ -2248,7 +2252,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Name of template param.
+      The name of the parameter.
 
 
       .. raw:: html
@@ -2282,7 +2286,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Provider.
+      Denotes the provider associated with the parameter.
 
 
       .. raw:: html
@@ -2316,7 +2320,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Create's range.
+      Defines the permissible range for the parameter's value.
 
 
       .. raw:: html
@@ -2350,7 +2354,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of range.
+      Unique identifier for the range, represented as a UUID.
 
 
       .. raw:: html
@@ -2384,7 +2388,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Max value of range.
+      Specifies the maximum allowable value for the parameter.
 
 
       .. raw:: html
@@ -2418,7 +2422,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Min value of range.
+      Specifies the minimum allowable value for the parameter.
 
 
       .. raw:: html
@@ -2453,7 +2457,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is param required.
+      Dictates whether the parameter is mandatory for template operations.
 
 
       .. rst-class:: ansible-option-line
@@ -2495,7 +2499,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Create's selection.
+      Contains options for parameter selection when a choice is available.
 
 
       .. raw:: html
@@ -2529,7 +2533,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Default selection values.
+      Lists the default values that are preselected.
 
 
       .. raw:: html
@@ -2563,7 +2567,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of selection.
+      A unique identifier for the selection entity, represented as a UUID.
 
 
       .. raw:: html
@@ -2597,7 +2601,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Type of selection(SINGLE\_SELECT or MULTI\_SELECT).
+      Specifies the type of selection, such as 'SINGLE\_SELECT' or 'MULTI\_SELECT'.
 
 
       .. raw:: html
@@ -2631,7 +2635,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Selection values.
+      A dictionary of available values for selection.
 
 
       .. raw:: html
@@ -2667,7 +2671,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Current version of template.
+      The current version of template.
 
 
       .. raw:: html
@@ -2702,7 +2706,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Create time of template.
+      The creation time of the template refers to the initial development.
 
 
       .. raw:: html
@@ -2736,7 +2740,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Custom Params Order.
+      Specifies the sequence in which custom parameters or variables should be arranged within the template.
 
 
       .. rst-class:: ansible-option-line
@@ -2778,7 +2782,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Create's deviceTypes. This field is mandatory to create a new template.
+      List of dictionaries details the types of devices that the templates can be applied to.
 
 
       .. raw:: html
@@ -2812,7 +2816,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Device family.
+      Denotes the family to which the device belongs.
 
 
       .. raw:: html
@@ -2846,7 +2850,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Device series.
+      Specifies the series classification of the device.
 
 
       .. raw:: html
@@ -2880,7 +2884,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Device type.
+      Describes the exact type of the device.
 
 
       .. raw:: html
@@ -2949,7 +2953,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of template.
+      A unique identifier, represented as a UUID.
 
 
       .. raw:: html
@@ -2983,7 +2987,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Template language
+      Programming language used for templating. Options are 'JINJA' for Jinja templating or 'VELOCITY' for Apache Velocity.
 
 
       .. rst-class:: ansible-option-line
@@ -3025,7 +3029,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Update time of template.
+      Indicates the most recent timestamp when the template was modified or revised.
 
 
       .. raw:: html
@@ -3059,7 +3063,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Latest versioned template time.
+      Indicates when the most recent version of a template was released or updated.
 
 
       .. raw:: html
@@ -3093,7 +3097,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Parent templateID.
+      Refers to the unique identifier of a template from which another template derives.
 
 
       .. raw:: html
@@ -3127,7 +3131,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Project Description.
+      Narrative that elaborates on the purpose and scope of the project.
 
 
       .. raw:: html
@@ -3161,7 +3165,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Project UUID.
+      A unique identifier for the project, formatted as a UUID.
 
 
       .. raw:: html
@@ -3195,7 +3199,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Project name.
+      Title of the project within which the template is categorized and managed.
 
 
       .. raw:: html
@@ -3229,7 +3233,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Rollback template content.
+      Refers to the process of reverting the content of a template back to a previous version or state.
 
 
       .. raw:: html
@@ -3263,7 +3267,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Create's rollbackTemplateParams.
+      A list of dictionaries defining parameters necessary for the rollback functionality of a template.
 
 
       .. raw:: html
@@ -3297,7 +3301,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Bind to source.
+      Associates the parameter with its source.
 
 
       .. raw:: html
@@ -3331,7 +3335,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      CustomOrder of template param.
+      Specifies a user-defined ordering for the parameter.
 
 
       .. raw:: html
@@ -3365,7 +3369,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Datatype of template param.
+      Identifies the data type of the parameter (e.g., string, integer, boolean).
 
 
       .. raw:: html
@@ -3399,7 +3403,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Default value of template param.
+      Establishes a default value for the parameter, used if no other value is provided.
 
 
       .. raw:: html
@@ -3433,7 +3437,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Description of template param.
+      Provides a descriptive explanation of the parameter's purpose.
 
 
       .. raw:: html
@@ -3467,7 +3471,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Display name of param.
+      The name of the parameter as displayed to users.
 
 
       .. raw:: html
@@ -3501,7 +3505,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Group.
+      Categorizes the parameter into a named group for organizational purposes.
 
 
       .. raw:: html
@@ -3535,7 +3539,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of template param.
+      A unique identifier for the parameter, formatted as a UUID.
 
 
       .. raw:: html
@@ -3569,7 +3573,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Instruction text for param.
+      Gives guidance or instructions regarding the parameter's use.
 
 
       .. raw:: html
@@ -3603,7 +3607,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Key.
+      A unique key that identifies the parameter within the template.
 
 
       .. raw:: html
@@ -3637,7 +3641,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is it not a variable.
+      Indicates whether the entry is not to be treated as a parameter.
 
 
       .. rst-class:: ansible-option-line
@@ -3679,7 +3683,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Order of template param.
+      Determines the sequence in which the parameter appears relative to others.
 
 
       .. raw:: html
@@ -3713,7 +3717,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is it an array.
+      Specifies if the parameter should be treated as an array.
 
 
       .. rst-class:: ansible-option-line
@@ -3755,7 +3759,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Name of template param.
+      The name of the parameter.
 
 
       .. raw:: html
@@ -3789,7 +3793,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Provider.
+      Denotes the provider associated with the parameter.
 
 
       .. raw:: html
@@ -3823,7 +3827,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Create's range.
+      Defines the permissible range for the parameter's value.
 
 
       .. raw:: html
@@ -3857,7 +3861,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of range.
+      Unique identifier for the range, represented as a UUID.
 
 
       .. raw:: html
@@ -3891,7 +3895,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Max value of range.
+      Specifies the maximum allowable value for the parameter.
 
 
       .. raw:: html
@@ -3925,7 +3929,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Min value of range.
+      Specifies the minimum allowable value for the parameter.
 
 
       .. raw:: html
@@ -3960,7 +3964,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is param required.
+      Dictates whether the parameter is mandatory for template operations.
 
 
       .. rst-class:: ansible-option-line
@@ -4002,7 +4006,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Create's selection.
+      Contains options for parameter selection when a choice is available.
 
 
       .. raw:: html
@@ -4036,7 +4040,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Default selection values.
+      Lists the default values that are preselected.
 
 
       .. raw:: html
@@ -4070,7 +4074,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of selection.
+      A unique identifier for the selection entity, represented as a UUID.
 
 
       .. raw:: html
@@ -4104,7 +4108,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Type of selection(SINGLE\_SELECT or MULTI\_SELECT).
+      Specifies the type of selection, such as 'SINGLE\_SELECT' or 'MULTI\_SELECT'.
 
 
       .. raw:: html
@@ -4138,7 +4142,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Selection values.
+      A dictionary of available values for selection.
 
 
       .. raw:: html
@@ -4208,7 +4212,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Applicable device software variant.
+      Refers to a version or edition of a software application that differs from the main or standard release.
 
 
       .. raw:: html
@@ -4276,7 +4280,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Template content.
+      The actual script or code constituting the body of the template.
 
 
       .. raw:: html
@@ -4310,7 +4314,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Description of template.
+      Provides a overview  of the template.
 
 
       .. raw:: html
@@ -4378,7 +4382,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Create's templateParams.
+      The customization of the contents within the template.
 
 
       .. raw:: html
@@ -4412,7 +4416,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Bind to source.
+      Associates the parameter with its source.
 
 
       .. raw:: html
@@ -4446,7 +4450,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      CustomOrder of template param.
+      Specifies a user-defined ordering for the parameter.
 
 
       .. raw:: html
@@ -4480,7 +4484,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Datatype of template param.
+      Identifies the data type of the parameter (e.g., string, integer, boolean).
 
 
       .. raw:: html
@@ -4514,7 +4518,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Default value of template param.
+      Establishes a default value for the parameter, used if no other value is provided.
 
 
       .. raw:: html
@@ -4548,7 +4552,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Description of template param.
+      Provides a descriptive explanation of the parameter's purpose.
 
 
       .. raw:: html
@@ -4582,7 +4586,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Display name of param.
+      The name of the parameter as displayed to users.
 
 
       .. raw:: html
@@ -4616,7 +4620,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Group.
+      Categorizes the parameter into a named group for organizational purposes.
 
 
       .. raw:: html
@@ -4650,7 +4654,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of template param.
+      A unique identifier for the parameter, formatted as a UUID.
 
 
       .. raw:: html
@@ -4684,7 +4688,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Instruction text for param.
+      Gives guidance or instructions regarding the parameter's use.
 
 
       .. raw:: html
@@ -4718,7 +4722,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Key.
+      A unique key that identifies the parameter within the template.
 
 
       .. raw:: html
@@ -4752,7 +4756,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is it not a variable.
+      Indicates whether the entry is not to be treated as a parameter.
 
 
       .. rst-class:: ansible-option-line
@@ -4794,7 +4798,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Order of template param.
+      Determines the sequence in which the parameter appears relative to others.
 
 
       .. raw:: html
@@ -4828,7 +4832,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is it an array.
+      Specifies if the parameter should be treated as an array.
 
 
       .. rst-class:: ansible-option-line
@@ -4870,7 +4874,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Name of template param.
+      The name of the parameter.
 
 
       .. raw:: html
@@ -4904,7 +4908,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Provider.
+      Denotes the provider associated with the parameter.
 
 
       .. raw:: html
@@ -4938,7 +4942,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Create's range.
+      Defines the permissible range for the parameter's value.
 
 
       .. raw:: html
@@ -4972,7 +4976,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of range.
+      Unique identifier for the range, represented as a UUID.
 
 
       .. raw:: html
@@ -5006,7 +5010,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Max value of range.
+      Specifies the maximum allowable value for the parameter.
 
 
       .. raw:: html
@@ -5040,7 +5044,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Min value of range.
+      Specifies the minimum allowable value for the parameter.
 
 
       .. raw:: html
@@ -5075,7 +5079,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is param required.
+      Dictates whether the parameter is mandatory for template operations.
 
 
       .. rst-class:: ansible-option-line
@@ -5117,7 +5121,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Create's selection.
+      Contains options for parameter selection when a choice is available.
 
 
       .. raw:: html
@@ -5151,7 +5155,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Default selection values.
+      Lists the default values that are preselected.
 
 
       .. raw:: html
@@ -5185,7 +5189,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of selection.
+      A unique identifier for the selection entity, represented as a UUID.
 
 
       .. raw:: html
@@ -5219,7 +5223,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Type of selection(SINGLE\_SELECT or MULTI\_SELECT).
+      Specifies the type of selection, such as 'SINGLE\_SELECT' or 'MULTI\_SELECT'.
 
 
       .. raw:: html
@@ -5253,7 +5257,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Selection values.
+      A dictionary of available values for selection.
 
 
       .. raw:: html
@@ -5289,7 +5293,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Create's tags.
+      Refers to a keyword, label, or metadata assigned to a template.
 
 
       .. raw:: html
@@ -5323,7 +5327,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of tag.
+      A unique identifier for the tag, represented as a UUID.
 
 
       .. raw:: html
@@ -5357,7 +5361,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Name of tag.
+      The name of the tag.
 
 
       .. raw:: html
@@ -5392,7 +5396,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Create's validationErrors.
+      Refer to issues or discrepancies identified during the validation process.
 
 
       .. raw:: html
@@ -5460,7 +5464,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Validation or design conflicts errors.
+      Refer to issues or discrepancies encountered during the processing of a template within a software application.
 
 
       .. raw:: html
@@ -5494,7 +5498,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of template.
+      A unique identifier for the template, represented as a UUID.
 
 
       .. raw:: html
@@ -5528,7 +5532,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Current version of template.
+      The current version of validation process in the template.
 
 
       .. raw:: html
@@ -5563,7 +5567,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Current version of template.
+      The current version of template.
 
 
       .. raw:: html
@@ -5632,7 +5636,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Export the project/template details.
+      Perform export on the projects and templates.
 
 
       .. raw:: html
@@ -5666,7 +5670,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Export the project.
+      Export the project(s) details.
 
 
       .. raw:: html
@@ -5700,7 +5704,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Export the template.
+      Export the template(s) details.
 
 
       .. raw:: html
@@ -5768,7 +5772,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Name of the template which we need to export
+      Name of the template which we need to be exported.
 
 
       .. raw:: html
@@ -5804,7 +5808,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Import the project/template details.
+      Perform import on the projects and templates.
 
 
       .. raw:: html
@@ -5838,7 +5842,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Import the project details.
+      Import the projects.
 
 
       .. raw:: html
@@ -5915,7 +5919,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Import the template details.
+      Import the templates.
 
 
       .. raw:: html
@@ -5991,7 +5995,11 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Import Template's payload.
+      The payload parameter is used to directly import configuration data into the system.
+
+      The payload provides an alternative way to import configurations without the need to reference an external file.
+
+      If both 'template\_file' and 'payload' are provided, the 'template\_file' will be given priority.
 
 
       .. raw:: html
@@ -6025,7 +6033,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Author of template.
+      Identifies the creator of the template.
 
 
       .. raw:: html
@@ -6059,7 +6067,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is it composite template.
+      Specifies if the template is composite.
 
 
       .. rst-class:: ansible-option-line
@@ -6101,7 +6109,11 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Import Template's containingTemplates.
+      Refer to a set of templates within the main template to define more complex or modular configurations.
+
+      This is particularly useful in systems that support hierarchical or nested templates.
+
+      Here parent templates may contain child templates to form a complete configuration.
 
 
       .. raw:: html
@@ -6135,7 +6147,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is it composite template.
+      Specifies if the template is composite.
 
 
       .. rst-class:: ansible-option-line
@@ -6177,7 +6189,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Description of template.
+      Provides a description of the template.
 
 
       .. raw:: html
@@ -6211,7 +6223,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Import Template's deviceTypes.
+      List of dictionaries details the types of devices that the templates can be applied to.
 
 
       .. raw:: html
@@ -6245,7 +6257,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Device family.
+      Denotes the family to which the device belongs.
 
 
       .. raw:: html
@@ -6279,7 +6291,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Device series.
+      Specifies the series classification of the device.
 
 
       .. raw:: html
@@ -6313,7 +6325,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Device type.
+      Describes the exact type of the device.
 
 
       .. raw:: html
@@ -6348,7 +6360,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of template.
+      Unique identifier for the template, represented as a UUID.
 
 
       .. raw:: html
@@ -6382,7 +6394,15 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Template language (JINJA or VELOCITY).
+      Programming language used for templating. Options are 'JINJA' for Jinja templating or 'VELOCITY' for Apache Velocity.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`"JINJA"`
+      - :ansible-option-choices-entry:`"VELOCITY"`
 
 
       .. raw:: html
@@ -6416,7 +6436,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Name of template.
+      Designation of the template, serving as its unique name.
 
 
       .. raw:: html
@@ -6450,7 +6470,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Project name.
+      Title of the project within which the template is categorized and managed.
 
 
       .. raw:: html
@@ -6484,7 +6504,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Import Template's rollbackTemplateParams.
+      A list of dictionaries defining parameters necessary for the rollback functionality of a template.
 
 
       .. raw:: html
@@ -6518,7 +6538,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Bind to source.
+      Associates the parameter with its source.
 
 
       .. raw:: html
@@ -6552,7 +6572,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      CustomOrder of template param.
+      Specifies a user-defined ordering for the parameter.
 
 
       .. raw:: html
@@ -6586,7 +6606,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Datatype of template param.
+      Identifies the data type of the parameter (e.g., string, integer, boolean).
 
 
       .. raw:: html
@@ -6620,7 +6640,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Default value of template param.
+      Establishes a default value for the parameter, used if no other value is provided.
 
 
       .. raw:: html
@@ -6654,7 +6674,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Description of template param.
+      Provides a descriptive explanation of the parameter's purpose.
 
 
       .. raw:: html
@@ -6688,7 +6708,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Display name of param.
+      The name of the parameter as displayed to users.
 
 
       .. raw:: html
@@ -6722,7 +6742,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Group.
+      Categorizes the parameter into a named group for organizational purposes.
 
 
       .. raw:: html
@@ -6756,7 +6776,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of template param.
+      A unique identifier for the parameter, formatted as a UUID.
 
 
       .. raw:: html
@@ -6790,7 +6810,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Instruction text for param.
+      Gives guidance or instructions regarding the parameter's use.
 
 
       .. raw:: html
@@ -6824,7 +6844,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Key.
+      A unique key that identifies the parameter within the template.
 
 
       .. raw:: html
@@ -6858,7 +6878,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is it not a variable.
+      Indicates whether the entry is not to be treated as a parameter.
 
 
       .. rst-class:: ansible-option-line
@@ -6900,7 +6920,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Order of template param.
+      Determines the sequence in which the parameter appears relative to others.
 
 
       .. raw:: html
@@ -6934,7 +6954,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is it an array.
+      Specifies if the parameter should be treated as an array.
 
 
       .. rst-class:: ansible-option-line
@@ -6976,7 +6996,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Name of template param.
+      The name of the parameter.
 
 
       .. raw:: html
@@ -7010,7 +7030,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Provider.
+      Denotes the provider associated with the parameter.
 
 
       .. raw:: html
@@ -7044,7 +7064,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Import Template's range.
+      Defines the permissible range for the parameter's value.
 
 
       .. raw:: html
@@ -7078,7 +7098,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of range.
+      Unique identifier for the range, represented as a UUID.
 
 
       .. raw:: html
@@ -7112,7 +7132,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Max value of range.
+      Specifies the maximum allowable value for the parameter.
 
 
       .. raw:: html
@@ -7146,7 +7166,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Min value of range.
+      Specifies the minimum allowable value for the parameter.
 
 
       .. raw:: html
@@ -7181,7 +7201,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is param required.
+      Dictates whether the parameter is mandatory for template operations.
 
 
       .. rst-class:: ansible-option-line
@@ -7223,7 +7243,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Import Template's selection.
+      Contains options for parameter selection when a choice is available.
 
 
       .. raw:: html
@@ -7257,7 +7277,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Default selection values.
+      Lists the default values that are preselected.
 
 
       .. raw:: html
@@ -7291,7 +7311,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of selection.
+      A unique identifier for the selection entity, represented as a UUID.
 
 
       .. raw:: html
@@ -7325,7 +7345,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Type of selection(SINGLE\_SELECT or MULTI\_SELECT).
+      Specifies the type of selection, such as 'SINGLE\_SELECT' or 'MULTI\_SELECT'.
 
 
       .. raw:: html
@@ -7359,7 +7379,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Selection values.
+      A dictionary of available values for selection.
 
 
       .. raw:: html
@@ -7395,7 +7415,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Import Template's tags.
+      A list of dictionaries representing tags associated with the Configuration Template during creation.
 
 
       .. raw:: html
@@ -7429,7 +7449,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of tag.
+      The unique identifier for each tag, presented as a UUID.
 
 
       .. raw:: html
@@ -7463,7 +7483,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Name of tag.
+      The descriptive label or name assigned to the tag.
 
 
       .. raw:: html
@@ -7498,7 +7518,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Template content.
+      The actual script or code constituting the body of the template.
 
 
       .. raw:: html
@@ -7532,7 +7552,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Import Template's templateParams.
+      The customization of the contents within the template.
 
 
       .. raw:: html
@@ -7566,7 +7586,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Bind to source.
+      Associates the parameter with its source.
 
 
       .. raw:: html
@@ -7600,7 +7620,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      CustomOrder of template param.
+      Specifies a user-defined ordering for the parameter.
 
 
       .. raw:: html
@@ -7634,7 +7654,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Datatype of template param.
+      Identifies the data type of the parameter (e.g., string, integer, boolean).
 
 
       .. raw:: html
@@ -7668,7 +7688,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Default value of template param.
+      Establishes a default value for the parameter, used if no other value is provided.
 
 
       .. raw:: html
@@ -7702,7 +7722,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Description of template param.
+      Provides a descriptive explanation of the parameter's purpose.
 
 
       .. raw:: html
@@ -7736,7 +7756,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Display name of param.
+      The name of the parameter as displayed to users.
 
 
       .. raw:: html
@@ -7770,7 +7790,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Group.
+      Categorizes the parameter into a named group for organizational purposes.
 
 
       .. raw:: html
@@ -7804,7 +7824,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of template param.
+      A unique identifier for the parameter, formatted as a UUID.
 
 
       .. raw:: html
@@ -7838,7 +7858,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Instruction text for param.
+      Gives guidance or instructions regarding the parameter's use.
 
 
       .. raw:: html
@@ -7872,7 +7892,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Key.
+      A unique key that identifies the parameter within the template.
 
 
       .. raw:: html
@@ -7906,7 +7926,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is it not a variable.
+      Indicates whether the entry is not to be treated as a parameter.
 
 
       .. rst-class:: ansible-option-line
@@ -7948,7 +7968,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Order of template param.
+      Determines the sequence in which the parameter appears relative to others.
 
 
       .. raw:: html
@@ -7982,7 +8002,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is it an array.
+      Specifies if the parameter should be treated as an array.
 
 
       .. rst-class:: ansible-option-line
@@ -8024,7 +8044,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Name of template param.
+      The name of the parameter.
 
 
       .. raw:: html
@@ -8058,7 +8078,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Provider.
+      Denotes the provider associated with the parameter.
 
 
       .. raw:: html
@@ -8092,7 +8112,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Import Template's range.
+      Defines the permissible range for the parameter's value.
 
 
       .. raw:: html
@@ -8126,7 +8146,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of range.
+      Unique identifier for the range, represented as a UUID.
 
 
       .. raw:: html
@@ -8160,7 +8180,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Max value of range.
+      Specifies the maximum allowable value for the parameter.
 
 
       .. raw:: html
@@ -8194,7 +8214,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Min value of range.
+      Specifies the minimum allowable value for the parameter.
 
 
       .. raw:: html
@@ -8229,7 +8249,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is param required.
+      Dictates whether the parameter is mandatory for template operations.
 
 
       .. rst-class:: ansible-option-line
@@ -8271,7 +8291,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Import Template's selection.
+      Contains options for parameter selection when a choice is available.
 
 
       .. raw:: html
@@ -8305,7 +8325,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Default selection values.
+      Lists the default values that are preselected.
 
 
       .. raw:: html
@@ -8339,7 +8359,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of selection.
+      A unique identifier for the selection entity, represented as a UUID.
 
 
       .. raw:: html
@@ -8373,7 +8393,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Type of selection(SINGLE\_SELECT or MULTI\_SELECT).
+      Specifies the type of selection, such as 'SINGLE\_SELECT' or 'MULTI\_SELECT'.
 
 
       .. raw:: html
@@ -8407,7 +8427,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Selection values.
+      A dictionary of available values for selection.
 
 
       .. raw:: html
@@ -8443,7 +8463,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Current version of template.
+      The current version of template.
 
 
       .. raw:: html
@@ -8478,7 +8498,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Create time of template.
+      The creation time of the template refers to the initial development.
 
 
       .. raw:: html
@@ -8512,7 +8532,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Custom Params Order.
+      Specifies the sequence in which custom parameters or variables should be arranged within the template.
 
 
       .. rst-class:: ansible-option-line
@@ -8521,40 +8541,6 @@ Parameters
 
       - :ansible-option-choices-entry:`false`
       - :ansible-option-choices-entry:`true`
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-config/import/template/payload/description"></div>
-
-      .. _ansible_collections.cisco.dnac.template_workflow_manager_module__parameter-config/import/template/payload/description:
-
-      .. rst-class:: ansible-option-title
-
-      **description**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-config/import/template/payload/description" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Description of template.
 
 
       .. raw:: html
@@ -8588,7 +8574,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Import Template's deviceTypes.
+      List of dictionaries details the types of devices that the templates can be applied to.
 
 
       .. raw:: html
@@ -8622,7 +8608,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Device family.
+      Denotes the family to which the device belongs.
 
 
       .. raw:: html
@@ -8656,7 +8642,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Device series.
+      Specifies the series classification of the device.
 
 
       .. raw:: html
@@ -8690,7 +8676,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Device type.
+      Describes the exact type of the device.
 
 
       .. raw:: html
@@ -8759,7 +8745,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of template.
+      A unique identifier, represented as a UUID.
 
 
       .. raw:: html
@@ -8793,7 +8779,15 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Template language (JINJA or VELOCITY).
+      Programming language used for templating. Options are 'JINJA' for Jinja templating or 'VELOCITY' for Apache Velocity.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`"JINJA"`
+      - :ansible-option-choices-entry:`"VELOCITY"`
 
 
       .. raw:: html
@@ -8827,7 +8821,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Update time of template.
+      Indicates the most recent timestamp when the template was modified or revised.
 
 
       .. raw:: html
@@ -8861,41 +8855,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Latest versioned template time.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-config/import/template/payload/name"></div>
-
-      .. _ansible_collections.cisco.dnac.template_workflow_manager_module__parameter-config/import/template/payload/name:
-
-      .. rst-class:: ansible-option-title
-
-      **name**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-config/import/template/payload/name" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Name of template.
+      Indicates when the most recent version of a template was released or updated.
 
 
       .. raw:: html
@@ -8929,7 +8889,41 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Parent templateID.
+      Refers to the unique identifier of a template from which another template derives.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/import/template/payload/project_description"></div>
+
+      .. _ansible_collections.cisco.dnac.template_workflow_manager_module__parameter-config/import/template/payload/project_description:
+
+      .. rst-class:: ansible-option-title
+
+      **project_description**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/import/template/payload/project_description" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Narrative that elaborates on the purpose and scope of the project.
 
 
       .. raw:: html
@@ -8963,7 +8957,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Project UUID.
+      A unique identifier for the project, formatted as a UUID.
 
 
       .. raw:: html
@@ -8997,7 +8991,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Project name.
+      Title of the project within which the template is categorized and managed.
 
 
       .. raw:: html
@@ -9031,7 +9025,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Rollback template content.
+      Refers to the process of reverting the content of a template back to a previous version or state.
 
 
       .. raw:: html
@@ -9065,7 +9059,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Import Template's rollbackTemplateParams.
+      A list of dictionaries defining parameters necessary for the rollback functionality of a template.
 
 
       .. raw:: html
@@ -9099,7 +9093,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Bind to source.
+      Associates the parameter with its source.
 
 
       .. raw:: html
@@ -9133,7 +9127,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      CustomOrder of template param.
+      Specifies a user-defined ordering for the parameter.
 
 
       .. raw:: html
@@ -9167,7 +9161,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Datatype of template param.
+      Identifies the data type of the parameter (e.g., string, integer, boolean).
 
 
       .. raw:: html
@@ -9201,7 +9195,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Default value of template param.
+      Establishes a default value for the parameter, used if no other value is provided.
 
 
       .. raw:: html
@@ -9235,7 +9229,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Description of template param.
+      Provides a descriptive explanation of the parameter's purpose.
 
 
       .. raw:: html
@@ -9269,7 +9263,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Display name of param.
+      The name of the parameter as displayed to users.
 
 
       .. raw:: html
@@ -9303,7 +9297,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Group.
+      Categorizes the parameter into a named group for organizational purposes.
 
 
       .. raw:: html
@@ -9337,7 +9331,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of template param.
+      A unique identifier for the parameter, formatted as a UUID.
 
 
       .. raw:: html
@@ -9371,7 +9365,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Instruction text for param.
+      Gives guidance or instructions regarding the parameter's use.
 
 
       .. raw:: html
@@ -9405,7 +9399,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Key.
+      A unique key that identifies the parameter within the template.
 
 
       .. raw:: html
@@ -9439,7 +9433,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is it not a variable.
+      Indicates whether the entry is not to be treated as a parameter.
 
 
       .. rst-class:: ansible-option-line
@@ -9481,7 +9475,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Order of template param.
+      Determines the sequence in which the parameter appears relative to others.
 
 
       .. raw:: html
@@ -9515,7 +9509,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is it an array.
+      Specifies if the parameter should be treated as an array.
 
 
       .. rst-class:: ansible-option-line
@@ -9557,7 +9551,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Name of template param.
+      The name of the parameter.
 
 
       .. raw:: html
@@ -9591,7 +9585,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Provider.
+      Denotes the provider associated with the parameter.
 
 
       .. raw:: html
@@ -9625,7 +9619,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Import Template's range.
+      Defines the permissible range for the parameter's value.
 
 
       .. raw:: html
@@ -9659,7 +9653,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of range.
+      Unique identifier for the range, represented as a UUID.
 
 
       .. raw:: html
@@ -9693,7 +9687,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Max value of range.
+      Specifies the maximum allowable value for the parameter.
 
 
       .. raw:: html
@@ -9727,7 +9721,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Min value of range.
+      Specifies the minimum allowable value for the parameter.
 
 
       .. raw:: html
@@ -9762,7 +9756,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is param required.
+      Dictates whether the parameter is mandatory for template operations.
 
 
       .. rst-class:: ansible-option-line
@@ -9804,7 +9798,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Import Template's selection.
+      Contains options for parameter selection when a choice is available.
 
 
       .. raw:: html
@@ -9838,7 +9832,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Default selection values.
+      Lists the default values that are preselected.
 
 
       .. raw:: html
@@ -9872,7 +9866,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of selection.
+      A unique identifier for the selection entity, represented as a UUID.
 
 
       .. raw:: html
@@ -9906,7 +9900,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Type of selection(SINGLE\_SELECT or MULTI\_SELECT).
+      Specifies the type of selection, such as 'SINGLE\_SELECT' or 'MULTI\_SELECT'.
 
 
       .. raw:: html
@@ -9940,7 +9934,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Selection values.
+      A dictionary of available values for selection.
 
 
       .. raw:: html
@@ -9976,7 +9970,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Applicable device software type.
+      Applicable device software type. This field is mandatory to create a new template.
 
 
       .. raw:: html
@@ -10010,7 +10004,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Applicable device software variant.
+      Refers to a version or edition of a software application that differs from the main or standard release.
 
 
       .. raw:: html
@@ -10054,109 +10048,6 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-config/import/template/payload/tags"></div>
-
-      .. _ansible_collections.cisco.dnac.template_workflow_manager_module__parameter-config/import/template/payload/tags:
-
-      .. rst-class:: ansible-option-title
-
-      **tags**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-config/import/template/payload/tags" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Configuration Template Import Template's tags.
-
-
-      .. raw:: html
-
-        </div>
-    
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-config/import/template/payload/tags/id"></div>
-
-      .. _ansible_collections.cisco.dnac.template_workflow_manager_module__parameter-config/import/template/payload/tags/id:
-
-      .. rst-class:: ansible-option-title
-
-      **id**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-config/import/template/payload/tags/id" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      UUID of tag.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-config/import/template/payload/tags/name"></div>
-
-      .. _ansible_collections.cisco.dnac.template_workflow_manager_module__parameter-config/import/template/payload/tags/name:
-
-      .. rst-class:: ansible-option-title
-
-      **name**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-config/import/template/payload/tags/name" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Name of tag.
-
-
-      .. raw:: html
-
-        </div>
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-config/import/template/payload/template_content"></div>
 
       .. _ansible_collections.cisco.dnac.template_workflow_manager_module__parameter-config/import/template/payload/template_content:
@@ -10181,7 +10072,75 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Template content.
+      The actual script or code constituting the body of the template.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/import/template/payload/template_description"></div>
+
+      .. _ansible_collections.cisco.dnac.template_workflow_manager_module__parameter-config/import/template/payload/template_description:
+
+      .. rst-class:: ansible-option-title
+
+      **template_description**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/import/template/payload/template_description" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Provides a overview  of the template.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/import/template/payload/template_name"></div>
+
+      .. _ansible_collections.cisco.dnac.template_workflow_manager_module__parameter-config/import/template/payload/template_name:
+
+      .. rst-class:: ansible-option-title
+
+      **template_name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/import/template/payload/template_name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Name of template. This field is mandatory to create a new template.
 
 
       .. raw:: html
@@ -10215,7 +10174,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Import Template's templateParams.
+      The customization of the contents within the template.
 
 
       .. raw:: html
@@ -10249,7 +10208,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Bind to source.
+      Associates the parameter with its source.
 
 
       .. raw:: html
@@ -10283,7 +10242,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      CustomOrder of template param.
+      Specifies a user-defined ordering for the parameter.
 
 
       .. raw:: html
@@ -10317,7 +10276,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Datatype of template param.
+      Identifies the data type of the parameter (e.g., string, integer, boolean).
 
 
       .. raw:: html
@@ -10351,7 +10310,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Default value of template param.
+      Establishes a default value for the parameter, used if no other value is provided.
 
 
       .. raw:: html
@@ -10385,7 +10344,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Description of template param.
+      Provides a descriptive explanation of the parameter's purpose.
 
 
       .. raw:: html
@@ -10419,7 +10378,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Display name of param.
+      The name of the parameter as displayed to users.
 
 
       .. raw:: html
@@ -10453,7 +10412,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Group.
+      Categorizes the parameter into a named group for organizational purposes.
 
 
       .. raw:: html
@@ -10487,7 +10446,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of template param.
+      A unique identifier for the parameter, formatted as a UUID.
 
 
       .. raw:: html
@@ -10521,7 +10480,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Instruction text for param.
+      Gives guidance or instructions regarding the parameter's use.
 
 
       .. raw:: html
@@ -10555,7 +10514,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Key.
+      A unique key that identifies the parameter within the template.
 
 
       .. raw:: html
@@ -10589,7 +10548,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is it not a variable.
+      Indicates whether the entry is not to be treated as a parameter.
 
 
       .. rst-class:: ansible-option-line
@@ -10631,7 +10590,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Order of template param.
+      Determines the sequence in which the parameter appears relative to others.
 
 
       .. raw:: html
@@ -10665,7 +10624,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is it an array.
+      Specifies if the parameter should be treated as an array.
 
 
       .. rst-class:: ansible-option-line
@@ -10707,7 +10666,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Name of template param.
+      The name of the parameter.
 
 
       .. raw:: html
@@ -10741,7 +10700,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Provider.
+      Denotes the provider associated with the parameter.
 
 
       .. raw:: html
@@ -10775,7 +10734,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Import Template's range.
+      Defines the permissible range for the parameter's value.
 
 
       .. raw:: html
@@ -10809,7 +10768,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of range.
+      Unique identifier for the range, represented as a UUID.
 
 
       .. raw:: html
@@ -10843,7 +10802,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Max value of range.
+      Specifies the maximum allowable value for the parameter.
 
 
       .. raw:: html
@@ -10877,7 +10836,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Min value of range.
+      Specifies the minimum allowable value for the parameter.
 
 
       .. raw:: html
@@ -10912,7 +10871,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Is param required.
+      Dictates whether the parameter is mandatory for template operations.
 
 
       .. rst-class:: ansible-option-line
@@ -10954,7 +10913,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Import Template's selection.
+      Contains options for parameter selection when a choice is available.
 
 
       .. raw:: html
@@ -10988,7 +10947,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Default selection values.
+      Lists the default values that are preselected.
 
 
       .. raw:: html
@@ -11022,7 +10981,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of selection.
+      A unique identifier for the selection entity, represented as a UUID.
 
 
       .. raw:: html
@@ -11056,7 +11015,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Type of selection(SINGLE\_SELECT or MULTI\_SELECT).
+      Specifies the type of selection, such as 'SINGLE\_SELECT' or 'MULTI\_SELECT'.
 
 
       .. raw:: html
@@ -11090,13 +11049,116 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Selection values.
+      A dictionary of available values for selection.
 
 
       .. raw:: html
 
         </div>
 
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/import/template/payload/template_tag"></div>
+
+      .. _ansible_collections.cisco.dnac.template_workflow_manager_module__parameter-config/import/template/payload/template_tag:
+
+      .. rst-class:: ansible-option-title
+
+      **template_tag**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/import/template/payload/template_tag" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Refers to a keyword, label, or metadata assigned to a template.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/import/template/payload/template_tag/id"></div>
+
+      .. _ansible_collections.cisco.dnac.template_workflow_manager_module__parameter-config/import/template/payload/template_tag/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/import/template/payload/template_tag/id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A unique identifier for the tag, represented as a UUID.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/import/template/payload/template_tag/name"></div>
+
+      .. _ansible_collections.cisco.dnac.template_workflow_manager_module__parameter-config/import/template/payload/template_tag/name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/import/template/payload/template_tag/name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The name of the tag.
+
+
+      .. raw:: html
+
+        </div>
 
 
   * - .. raw:: html
@@ -11126,7 +11188,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configuration Template Import Template's validationErrors.
+      Refer to issues or discrepancies identified during the validation process.
 
 
       .. raw:: html
@@ -11150,7 +11212,7 @@ Parameters
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`dictionary`
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
@@ -11160,7 +11222,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Validation or design conflicts errors of rollback template.
+      Refer to errors or issues encountered during the process of reverting a template to a previous version or state.
 
 
       .. raw:: html
@@ -11184,7 +11246,7 @@ Parameters
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`dictionary`
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
@@ -11194,7 +11256,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Validation or design conflicts errors.
+      Refer to issues or discrepancies encountered during the processing of a template within a software application.
 
 
       .. raw:: html
@@ -11228,7 +11290,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UUID of template.
+      A unique identifier for the template, represented as a UUID.
 
 
       .. raw:: html
@@ -11262,7 +11324,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Current version of template.
+      The current version of validation process in the template.
 
 
       .. raw:: html
@@ -11297,7 +11359,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Current version of template.
+      The current version of template.
 
 
       .. raw:: html
@@ -11333,6 +11395,42 @@ Parameters
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
       ProjectName path parameter. Project name to create template under the project.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-config/import/template/template_file"></div>
+
+      .. _ansible_collections.cisco.dnac.template_workflow_manager_module__parameter-config/import/template/template_file:
+
+      .. rst-class:: ansible-option-title
+
+      **template_file**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-config/import/template/template_file" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Specifies the path to a JSON file that contains an import template.
+
+      If both 'template\_file' and 'payload' are provided, the 'template\_file' will be given priority.
 
 
       .. raw:: html
@@ -12138,6 +12236,26 @@ Examples
               payload:
               - name: string
               - name: string
+
+    - name: Import the Templates.
+      cisco.dnac.template_workflow_manager:
+        dnac_host: "{{dnac_host}}"
+        dnac_username: "{{dnac_username}}"
+        dnac_password: "{{dnac_password}}"
+        dnac_verify: "{{dnac_verify}}"
+        dnac_port: "{{dnac_port}}"
+        dnac_version: "{{dnac_version}}"
+        dnac_debug: "{{dnac_debug}}"
+        dnac_log: True
+        dnac_log_level: "{{dnac_log_level}}"
+        state: merged
+        config_verify: True
+        config:
+          import:
+            template:
+              do_version: false
+              project_name: string
+              template_file: string
 
 
 
