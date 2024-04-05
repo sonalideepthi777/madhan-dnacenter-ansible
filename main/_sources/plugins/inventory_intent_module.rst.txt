@@ -3105,7 +3105,7 @@ Examples
             - device_ip: "1.1.1.1"
               site_name: "Global/USA/San Francisco/BGL_18/floor_pnp"
               resync_retry_count: 200
-              resync_interval: 2
+              resync_retry_interval: 2
             - device_ip: "2.2.2.2"
               site_name: "Global/USA/San Francisco/BGL_18/floor_test"
               resync_retry_count: 200
