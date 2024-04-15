@@ -922,7 +922,7 @@ GRE tunnels, or other types of overlay networks.</p>
 <a class="ansibleOptionLink" href="#parameter-config/reserve_pool_details/ipv4_global_pool_name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 <p><span class="ansible-option-versionadded">added in cisco.dnac 6.14.0</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Specifies the name assigned to the Ip v4 Global IP Pool.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Specifies the name to be associated with the IPv4 Global IP Pool.</p>
 <p>If both 'ipv4_global_pool' and 'ipv4_global_pool_name' are provided, the 'ipv4_global_pool' will be given priority.</p>
 </div></td>
 </tr>
@@ -996,8 +996,9 @@ GRE tunnels, or other types of overlay networks.</p>
 <div class="ansibleOptionAnchor" id="parameter-config/reserve_pool_details/ipv6_global_pool"></div><p class="ansible-option-title" id="ansible-collections-cisco-dnac-network-settings-workflow-manager-module-parameter-config-reserve-pool-details-ipv6-global-pool"><strong>ipv6_global_pool</strong></p>
 <a class="ansibleOptionLink" href="#parameter-config/reserve_pool_details/ipv6_global_pool" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IPv6 Global pool address with cidr, this is required when ipv6_address_space value is true, example 2001 db8 85a3 /64.</p>
-<p>If both 'ipv6_global_pool' and 'ipv6_global_pool_name' are provided, the 'ipv6_global_pool' will be given priority.</p>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The ipv6_global_pool is a mandatory when the ipv6_address_space is set to true.</p>
+<p>It specifies the global IPv6 address pool using CIDR notation, such as &quot;2001:db8:85a3::/64&quot;.</p>
+<p>In cases where both ipv6_global_pool and ipv6_global_pool_name are specified, ipv6_global_pool will take precedence.</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">

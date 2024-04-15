@@ -1922,7 +1922,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Specifies the name assigned to the Ip v4 Global IP Pool.
+      Specifies the name to be associated with the IPv4 Global IP Pool.
 
       If both 'ipv4\_global\_pool' and 'ipv4\_global\_pool\_name' are provided, the 'ipv4\_global\_pool' will be given priority.
 
@@ -2250,9 +2250,11 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      IPv6 Global pool address with cidr, this is required when ipv6\_address\_space value is true, example 2001 db8 85a3 /64.
+      The ipv6\_global\_pool is a mandatory when the ipv6\_address\_space is set to true.
 
-      If both 'ipv6\_global\_pool' and 'ipv6\_global\_pool\_name' are provided, the 'ipv6\_global\_pool' will be given priority.
+      It specifies the global IPv6 address pool using CIDR notation, such as "2001:db8:85a3::/64".
+
+      In cases where both ipv6\_global\_pool and ipv6\_global\_pool\_name are specified, ipv6\_global\_pool will take precedence.
 
 
       .. raw:: html
