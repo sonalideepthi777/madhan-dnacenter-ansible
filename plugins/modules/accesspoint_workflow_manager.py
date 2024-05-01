@@ -474,7 +474,7 @@ def main():
 
     # Check the Input file should not be empty accesspoints param
     if len(module.params.get('accesspoints')) < 1:
-        module.fail_json(msg='Access Point Should not be Empty, You may forget to pass input.yml file', **result)
+        module.fail_json(msg='Access Point Should not be Empty, You may forget to pass input.yml file', **ccc_network.result)
 
     ccc_network.validate_input(module.params).check_return_status()
     
