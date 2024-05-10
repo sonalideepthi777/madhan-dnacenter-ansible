@@ -26,5 +26,5 @@
         config_verify: True
         dnac_api_task_timeout: 1000
         dnac_task_poll_interval: 1
-        accesspoints: "{{ accesspoints }}"
+        config: "{{ config }}"
       register: output_list
