@@ -34,15 +34,26 @@ extends_documentation_fragment:
 author: A Mohamed Rafeek (@mohamedrafeek)
         Natarajan (@natarajan)
 
-accesspoints:
-    macAddress: It is string MAC address format
-      managementIpAddress: String IP address format
+options:
+    config_verify:
+        description: Set to True to verify the Cisco Catalyst Center config after applying the playbook config.
+    type: bool
+    default: False
+    state:
+        description: The state of Cisco Catalyst Center after module completion.
+    type: str
+    choices: [ merged ]
+    default: merged
+
+config:
+    macaddress: It is string MAC address format
+      managementipaddress: String IP address format
       accesspointradiotype: It is number and should be 1,2,3 and 6
         1 - Will be 2.4 Ghz
         2 - Will be 5 Ghz
         3 - Will be XOR
         6 - Will be 6 Ghz
-      apName: It should be String
+      apname: It should be String
 
 requirements:
 - dnacentersdk >= 2.4.5
@@ -79,7 +90,7 @@ EXAMPLES = r"""
         config_verify: True
         dnac_api_task_timeout: 1000
         dnac_task_poll_interval: 1
-        accesspoints: "{{ accesspoints }}"
+        config: "{{ config }}"
       register: output_list
     - name: iterate through module output (a list)
       debug:
@@ -103,7 +114,7 @@ response:
     }
 """
 
-class DnacAutomation(DnacBase):
+class Accesspoint(DnacBase):
     """Class containing member attributes for DNAC Access Point Automation module"""
 
     def __init__(self, module):
@@ -143,7 +154,7 @@ class DnacAutomation(DnacBase):
             CheckNames(names=inputdata["dnac_username"])
             CheckNames(names=inputdata["dnac_password"])
             CheckPort(port=inputdata["dnac_port"])
-            aplist = inputdata.get("accesspoints")
+            aplist = inputdata.get("config")
             for eachap in aplist:
                 CheckIPaddress(managementIpAddress=eachap["managementIpAddress"])
                 CheckMACaddress(macAddress=eachap["macAddress"])
@@ -172,7 +183,7 @@ class DnacAutomation(DnacBase):
             'lastUpdateTime': 1713755121303, 'macAddress': '52:54:00:01:c2:c0', 
             'deviceSupportLevel': 'Supported', 'softwareType': 'IOS-XE', 'softwareVersion': '17.9.20220318:182713', 'serialNumber': '9SB9FYAFA2O', 'collectionInterval': 'Global Default', 'managementState': 'Managed', 'upTime': '28 days, 0:13:42.00', 'roleSource': 'AUTO', 'lastUpdated': '2024-04-22 03:05:21', 'bootDateTime': '2024-03-25 02:52:21', 'series': 'Cisco Catalyst 9000 Series Virtual Switches', 'snmpContact': '', 'snmpLocation': '', 'apManagerInterfaceIp': '', 'collectionStatus': 'Partial Collection Failure', 'hostname': 'sw1', 'locationName': None, 'managementIpAddress': '10.10.20.175', 'platformId': 'C9KV-UADP-8P', 'reachabilityFailureReason': 'SNMP Connectivity Failed', 'reachabilityStatus': 'Unreachable', 'associatedWlcIp': '', 'apEthernetMacAddress': None, 'errorCode': 'DEV-UNREACHED', 'errorDescription': 'NCIM12013: SNMP timeouts are occurring with this device. }
         Example:
-            functions = DnacAutomation(module)
+            functions = Accesspoint(module)
             device_data = functions.get_network_info()
         """
         self.log('Getting Network Device information', "INFO")
@@ -297,16 +308,20 @@ class DnacAutomation(DnacBase):
                 "apMode": "string"
             }
         Example:
-            functions = DnacAutomation(module)
+            functions = Accesspoint(module)
             ap_data = functions.get_ap_configuration()
         """
         ap_config_data = []
-        for device in self.payload["accesspoints"]:
-            self.log('Getting Access Point Configuration Information' + device['macAddress'], "INFO")
+        for device in self.payload["config"]:
+            self.log('Getting Access Point Configuration Information' + device['macaddress'], "INFO")
             try:
                 # Below code might change once we receive the dev dnac credentials
-                jsondata = self.dnac.wireless.get_access_point_configuration(macAddress = device['macAddress'])
-                ap_config_data.append(jsondata.response)
+                jsondata = self.dnac.wireless.get_access_point_configuration(macAddress = device['macaddress'])
+                responsekey = list(jsondata.response.keys())
+                lower_case_key_data = {}
+                for eachkey in responsekey:
+                    lower_case_key_data[eachkey.lower()] = jsondata.response[eachkey]
+                ap_config_data.append(lower_case_key_data)
             except Exception as e:
                 self.log(jsondata['error'] + e, "ERROR")
         if self.payload["ap_selected_field"] == "" or self.payload["ap_selected_field"] == "all" : return ap_config_data
@@ -327,25 +342,25 @@ class DnacAutomation(DnacBase):
         Returns:
             This will be the return the final data for update AP detail.
             [{
-                "macAddress": "52:54:00:0f:25:4c",
-                "managementIpAddress": "10.10.20.178",
+                "macaddress": "52:54:00:0f:25:4c",
+                "managementipaddress": "10.10.20.178",
                 "accesspointradiotype": 1,
-                "apName": "HallAP"},
-                {"macAddress": "52:54:00:0e:1c:6a",
-                "managementIpAddress": "10.10.20.176",
+                "apname": "HallAP"},
+                {"macaddress": "52:54:00:0e:1c:6a",
+                "managementipaddress": "10.10.20.176",
                 "accesspointradiotype": 2,
-                "apName": "FloorAP"}]
+                "apname": "FloorAP"}]
         Example:
-            functions = DnacAutomation(module)
+            functions = Accesspoint(module)
             final_input_data = functions.compare_ap_cofig_with_inputdata(all_apconfig)
         """
         final_apchange = []
-        for each_input in self.payload["accesspoints"]:
+        for each_input in self.payload["config"]:
             for eachap in apconfig:
                 # We are identifing AP based on the AP mac Address so we cannot update this field.
-                if each_input["macAddress"] == eachap["macAddress"]:
+                if each_input["macaddress"] == eachap["macAddress"]:
                     for each_key in list(each_input.keys()):
-                        if each_input[each_key] != eachap[each_key]:
+                        if each_input[each_key.lower()] != eachap[each_key.lower()]:
                             final_apchange.append(each_input)
                             break
         if len(final_apchange) > 0:
@@ -379,7 +394,7 @@ class DnacAutomation(DnacBase):
                 "version": "string"
             }
         Example:
-            functions = DnacAutomation(module)
+            functions = Accesspoint(module)
             final_input_data = functions.update_ap_configuration(device_data)
         """
         all_response = []
@@ -414,7 +429,7 @@ class DnacAutomation(DnacBase):
                 "version": "string"
             }
         Example:
-            functions = DnacAutomation(module)
+            functions = Accesspoint(module)
             final_input_data = functions.reboot_ap_configuration(device_data)
         """
         response = None
@@ -443,7 +458,7 @@ def main():
     """ main entry point for module execution
     """
     # Basic Ansible type check or assign default.
-    element_spec = {'dnac_host': {'required': True, 'type': 'str'},
+    accepoint_spec = {'dnac_host': {'required': True, 'type': 'str'},
                     'dnac_port': {'type': 'str', 'default': '443'},
                     'dnac_username': {'type': 'str', 'default': 'admin'},
                     'dnac_password': {'type': 'str', 'no_log': True},
@@ -462,18 +477,18 @@ def main():
                     "dnac_log_append": {"type": 'bool', "default": True},
                     'dnac_api_task_timeout': {'type': 'int', "default": 1200},
                     'dnac_task_poll_interval': {'type': 'int', "default": 2},
-                    'accesspoints': {'required': True, 'type': 'list', 'elements': 'dict'},
+                    'config': {'required': True, 'type': 'list', 'elements': 'dict'},
                     'validate_response_schema': {'type': 'bool', 'default': True}
                 }
     module = AnsibleModule(
-        argument_spec=element_spec,
+        argument_spec=accepoint_spec,
         supports_check_mode=True
     )
 
-    ccc_network = DnacAutomation(module)
+    ccc_network = Accesspoint(module)
 
-    # Check the Input file should not be empty accesspoints param
-    if len(module.params.get('accesspoints')) < 1:
+    # Check the Input file should not be empty config param
+    if len(module.params.get('config')) < 1:
         module.fail_json(msg='Access Point Should not be Empty, You may forget to pass input.yml file', **ccc_network.result)
 
     ccc_network.validate_input(module.params).check_return_status()
