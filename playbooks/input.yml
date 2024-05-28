@@ -1,24 +1,17 @@
 ---
-device_fields: "id,family,type,macaddress,managementipaddress"
-ap_selected_field: "instanceid,displayname,internalkey,macaddress,radiodtos"
-device_filterfield: "hostname,macaddress"
-device_filter_string: "sw2,sw1|52:54:00:0e:1c:6a"
-display_selection: 1
-
 config:
-    - macaddress: "52:54:00:0f:25:4c"
-      managementipaddress: "10.10.20.178"
-      accesspointradiotype: 1
-      apname: "HallAP"
-    - macaddress: "52:54:00:0e:1c:6a"
-      managementipaddress: "10.10.20.176"
-      accesspointradiotype: 2
-      apname: "FloorAP"
-    - macaddress: "52:54:00:0e:1c:6a"
-      managementipaddress: "10.10.20.176"
-      accesspointradiotype: 3
-      apname: "MeetingRoomAP"
-    - macaddress: "52:54:00:0e:1c:6a"
-      managementipaddress: "10.10.20.176"
-      accesspointradiotype: 6
-      apname: "MeetingRoom2AP"
+    - mac_address: "90:e9:5e:03:f3:40"
+      led_brightness_level: 4
+      led_status: "Enabled"
+      location: "LTTS"
+      ap_name: "NFW-AP1-9130AXE"
+    - mac_address: "34:5d:a8:3b:d8:e0"
+      led_brightness_level: 4
+      led_status: "Enabled"
+      location: "LTTS2"
+      ap_name: "NY-AP2-9124AXI"
+
+device_fields: "id,hostname,family,type,mac_address,management_ip_address,ap_ethernet_mac_address,last_updated,up_time"
+#device_fields: "all"
+ap_selected_field: "mac_address,eth_mac,ap_name,led_brightness_level,led_status,location"
+#ap_selected_field: "all"
