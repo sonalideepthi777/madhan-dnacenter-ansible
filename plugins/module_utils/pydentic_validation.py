@@ -31,11 +31,11 @@ class CheckPort(BaseModel):
 
 # Pydentic model is available to check IP address either ipv4 or ipv6
 class CheckIPaddress(BaseModel):
-    managementIpAddress: IPvAnyAddress
+    ip_address: IPvAnyAddress
 
 # Pydentic model is available to check MAC address
 class CheckMACaddress(BaseModel):
-    macAddress: MacAddress
+    mac_address: MacAddress
 
 # This is used to check the UUID is correct format of UUID4 type
 class CheckUUIDtype(BaseModel):
@@ -54,3 +54,20 @@ def check_radiotype(v: int) -> int:
 class CheckRadioType(BaseModel):
     ap_radiotype: Annotated[int, AfterValidator(check_radiotype)]
 
+# This custom function added to the pydentic validate the specific led_brightness_level
+def check_brightness_level(v: int) -> int:
+    assert v in range(1, 11), f'{v} is not a correct brightness_level'
+    return v
+
+# This class to check the Led Brightness Level in 1 to 10
+class CheckBrightnessLevel(BaseModel):
+    led_brightness_level: Annotated[int, AfterValidator(check_brightness_level)]
+
+# This custom function added to the pydentic validate the specific LED Status
+def check_led_status(v: str) -> str:
+    assert v in ("Enabled", "Disabled"), f'{v} is not a correct Status'
+    return v
+
+# This class to check the Led Status should be Enabled or Disabled
+class CheckEnabledDisabledStatus(BaseModel):
+    EnabledDisabledStatus: Annotated[str, AfterValidator(check_led_status)]
