@@ -3,17 +3,14 @@
 # Copyright (c) 2024, Cisco Systems
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
+import time
+import pandas as pd
 from dnacentersdk import api
 from ansible_collections.cisco.dnac.plugins.module_utils.dnac import (
-    DnacBase,
-    validate_list_of_dicts,
-    get_dict_result,
-    dnac_compare_equality
+    DnacBase
 )
 from ansible_collections.cisco.dnac.plugins.module_utils.pydentic_validation import *
 from ansible.module_utils.basic import AnsibleModule
-
-import pandas as pd
 
 __metaclass__ = type
 __author__ = ("A Mohamed Rafeek, Natarajan")
@@ -46,14 +43,17 @@ options:
     default: merged
 
 config:
-    macaddress: It is string MAC address format
-      managementipaddress: String IP address format
-      accesspointradiotype: It is number and should be 1,2,3 and 6
+    mac_address: It is string MAC address format(also it is Required)
+    below param based on the requirement.
+    led_brightness_level: It should be Number 1 to 8
+    led_status: "Enabled" or "Disabled"
+    location: It should be String
+    ap_name: It should be String
+    accesspointradiotype: It is number and should be 1,2,3 and 6
         1 - Will be 2.4 Ghz
         2 - Will be 5 Ghz
         3 - Will be XOR
         6 - Will be 6 Ghz
-      apname: It should be String
 
 requirements:
 - dnacentersdk >= 2.4.5
@@ -73,9 +73,6 @@ EXAMPLES = r"""
   tasks:
     - name: Get Device info and updating access point details
       cisco.dnac.accesspoint_workflow_manager:
-        display_selection: "{{display_selection}}"
-        device_filterfield: "{{device_filterfield}}"
-        device_filter_string: "{{device_filter_string}}"
         device_fields: "{{device_fields}}"
         ap_selected_field: "{{ap_selected_field}}"
         dnac_host: "{{dnac_host}}"
@@ -122,6 +119,61 @@ class Accesspoint(DnacBase):
         self.result["response"] = []
         self.supported_states = ["merged"]
         self.payload = module.params
+        # Need to follow Camel Case to snake case
+        # So we are using the Key maping for API fields
+        self.keymap = {
+            "led_brightness_level": "ledBrightnessLevel",
+            "led_status": "ledStatus",
+            "primary_ip_address": "primaryIpAddress",
+            "eth_mac": "ethMac",
+            "ap_name": "apName",
+            "ap_ethernet_mac_address": "apEthernetMacAddress",
+            "ap_manager_interface_ip": "apManagerInterfaceIp",
+            "associated_wlc_ip": "associatedWlcIp",
+            "boot_date_time": "bootDateTime",
+            "collection_interval": "collectionInterval",
+            "collection_status": "collectionStatus",
+            "description": "description",
+            "device_support_level": "deviceSupportLevel",
+            "error_code": "errorCode",
+            "error_description": "errorDescription",
+            "family": "family",
+            "hostname": "hostname",
+            "id": "id",
+            "instance_tenantId": "instanceTenantId",
+            "instance_uuid": "instanceUuid",
+            "interface_count": "interfaceCount",
+            "inventory_status_detail": "inventoryStatusDetail",
+            "last_update_time": "lastUpdateTime",
+            "last_updated": "lastUpdated",
+            "line_card_count": "lineCardCount",
+            "line_card_id": "lineCardId",
+            "location": "location",
+            "location_name": "locationName",
+            "mac_address": "macAddress",
+            "managed_atleast_once": "managedAtleastOnce",
+            "management_ip_address": "managementIpAddress",
+            "management_state": "managementState",
+            "memory_size": "memorySize",
+            "platform_id": "platformId",
+            "reachability_failure_reason": "reachabilityFailureReason",
+            "reachability_status": "reachabilityStatus",
+            "role": "role",
+            "role_source": "roleSource",
+            "serial_number": "serialNumber",
+            "series": "series",
+            "snmp_contact": "snmpContact",
+            "snmp_location": "snmpLocation",
+            "software_type": "softwareType",
+            "software_version": "softwareVersion",
+            "tag_count": "tagCount",
+            "tunnel_udp_port": "tunnelUdpPort",
+            "type": "type",
+            "up_time": "upTime",
+            "uptime_seconds": "uptimeSeconds",
+            "waas_device_mode": "waasDeviceMode"
+        }
+
         self.baseurl = "https://" + module.params["dnac_host"]+ ":" + module.params["dnac_port"]
         self.log('Login DNAC using by user: ' + module.params["dnac_username"], "INFO")
         try:
@@ -156,9 +208,12 @@ class Accesspoint(DnacBase):
             CheckPort(port=inputdata["dnac_port"])
             aplist = inputdata.get("config")
             for eachap in aplist:
-                CheckIPaddress(managementIpAddress=eachap["managementIpAddress"])
-                CheckMACaddress(macAddress=eachap["macAddress"])
-                CheckRadioType(ap_radiotype=int(eachap["accesspointradiotype"]))
+                CheckMACaddress(mac_address=eachap["mac_address"])
+                CheckNames(names=eachap["location"])
+                CheckNames(names=eachap["ap_name"])
+                CheckBrightnessLevel(led_brightness_level=int(eachap["led_brightness_level"]))
+                CheckEnabledDisabledStatus(EnabledDisabledStatus=eachap["led_status"])
+                #CheckRadioType(ap_radiotype=int(eachap["accesspointradiotype"]))
             self.log("Successfully validated playbook config ", "INFO")
             self.msg = "Successfully validated input from the playbook"
             self.status = "success"
@@ -169,126 +224,91 @@ class Accesspoint(DnacBase):
             self.status = "failed"
             return self
 
+    # Below function used to show the current state of the network divices
+    # As Accesss point Device info, Config and Final field to pass in the Update data
+    def get_have(self):
+        """
+        This function used to get AP device details as json response from DNAC site.
+        by giving MAC address as a input in the URL GET Method
+        Device information given in the input file
+        Device Configuration Details 
+        Conpare with input data and current config data
+        """
+        responses = {}
+        ap_data = []
+        final_ap_data = []
+        devices_list = self.get_state()
+        # Check if AP list is empty due to MAC Addres might not be
+        # in the given DNAC
+        if devices_list is None:
+            responses["accesspoint"] = dict(
+                final_input=devices_list,
+                msg="Given MAC Address not available in DNAC")
+        else:
+            ap_data = self.get_ap_configuration()
+            final_ap_data = self.compare_ap_cofig_with_inputdata(ap_data)
+            # If the final_ap_data is None means no changes required to update
+            if final_ap_data is None:
+                responses["accesspoint"] = dict(
+                    final_input=final_ap_data,
+                    msg="Input Access Point Configuration remain same in Current AP configration")
+            else:
+                responses["accesspoint"] = {
+                    "device_list": devices_list,
+                    "device_configs": ap_data,
+                    "final_input": final_ap_data,
+                    "msg": "Filtered AP Device data list for update AP config"}
+
+        self.result["response"].append(responses)
+        self.log("Current AP State "+ str(responses["accesspoint"]) , "INFO")
+        return final_ap_data
+
     # below function not required for the current scenario but required for upcomming. 
     def get_state(self):
         """
-        This function used to get all device details as json response from DNAC site.
-        This will work based on the input yml file
+        This function used to get device details as json response from DNAC site based
+        on the config field given on the input yml file
         Parameters:
-          - No Parameters required
+          - config:
+            -   mac_address: "90:e9:5e:03:f3:40" (Required Field)
+                led_brightness_level: 4 
+                led_status: "Enabled"
+                location: "LTTS"
+                ap_name: "NFW-AP1-9130AXE"
         Returns:
-          {
-            'family': 'Switches and Hubs', 'type': 'Cisco Catalyst 9000 UADP 8 Port Virtual Switch',
-            'description': 'Cisco IOS Software [Cupertino], Catalyst L3 Switch Software (CAT9KV_IOSXE), Experimental Version 17.9.20220318:182713 [BLD_POLARIS_DEV_S2C_20220318_081310-10-g847b433944c4:/nobackup/rajavenk/vikagarw/git_ws/polaris_dev 101] Copyright (c) 1986-2022 by Cis', 4
-            'lastUpdateTime': 1713755121303, 'macAddress': '52:54:00:01:c2:c0', 
-            'deviceSupportLevel': 'Supported', 'softwareType': 'IOS-XE', 'softwareVersion': '17.9.20220318:182713', 'serialNumber': '9SB9FYAFA2O', 'collectionInterval': 'Global Default', 'managementState': 'Managed', 'upTime': '28 days, 0:13:42.00', 'roleSource': 'AUTO', 'lastUpdated': '2024-04-22 03:05:21', 'bootDateTime': '2024-03-25 02:52:21', 'series': 'Cisco Catalyst 9000 Series Virtual Switches', 'snmpContact': '', 'snmpLocation': '', 'apManagerInterfaceIp': '', 'collectionStatus': 'Partial Collection Failure', 'hostname': 'sw1', 'locationName': None, 'managementIpAddress': '10.10.20.175', 'platformId': 'C9KV-UADP-8P', 'reachabilityFailureReason': 'SNMP Connectivity Failed', 'reachabilityStatus': 'Unreachable', 'associatedWlcIp': '', 'apEthernetMacAddress': None, 'errorCode': 'DEV-UNREACHED', 'errorDescription': 'NCIM12013: SNMP timeouts are occurring with this device. }
+            {
+                "apEthernetMacAddress": "34:5d:a8:0e:20:b4",
+                "family": "Unified AP",
+                "hostname": "NFW-AP1-9130AXE",
+                "id": "37b05b0f-1b1e-496a-b101-8f277f0af8ff",
+                "lastUpdated": "2024-05-28 08:36:19",
+                "macAddress": "90:e9:5e:03:f3:40",
+                "managementIpAddress": "204.1.216.2",
+                "type": "Cisco Catalyst 9130AXE Unified Access Point",
+                "upTime": "08:22:37.080"
+            }
         Example:
             functions = Accesspoint(module)
-            device_data = functions.get_network_info()
+            device_data = functions.get_state()
         """
         self.log('Getting Network Device information', "INFO")
         try:
-            devices = self.dnac.devices.get_device_list()
-            dnac_data = self.parse_json_data(devices.response, self.payload)
-            responses = {}
-            responses["accesspoints"] = {"response": dnac_data,
-                         "msg": "DNAC Device data list"}
-            self.result["response"].append(responses)
-            return dnac_data
+            all_mac_address = [eachdevice["mac_address"] for eachdevice in self.payload["config"]]
+            device_list = self.dnac.devices.get_device_list(macAddress=all_mac_address)
+            if self.payload["device_fields"] == "" or self.payload["device_fields"] == "all":
+                self.payload["device_list"] = device_list['response']
+                return self.payload["device_list"]
+
+            fields = [str(self.keymap[x]) for x in self.payload["device_fields"].split(",")]
+            if len(device_list) != 0:
+                df = pd.DataFrame.from_records(device_list['response'])
+                selected_data = df[fields]
+                self.payload["device_list"] = selected_data.to_dict('records')
+                return self.payload["device_list"]
+            else:
+                return None
         except Exception as e:
             self.log("Unable to get device info "+ str(e) , "ERROR")
-
-    def parse_json_data(self, json_data, payload):
-        """
-        This function used from inside the get_network_info function for customize the dnac device information data
-        based on the display_selection number it should be 1,2,3,4or 5 
-        display_selection : 1 :-
-            This will show the all fields of the device info no filter
-        display_selection : 2 :-
-            This will show only filtered data based on the specific field mentioned in the urls.yml
-            device_filterfield: "hostname"  # single field no comma
-            device_filter_string: "sw2,sw1" # Full value like 'hostname': 'sw3'
-        display_selection : 3 :-
-            This will show only the fields need to be displayed from the device data no filter will be applied
-            any customization required can update in the urls.yml file
-            device_fields: "id,family,type,macAddress,managementIpAddress"
-        display_selection : 4 :-
-            This field combination of the 2 and 3, when used 4 need to give all below 3 fields
-            device_filterfield: "hostname"  # single field no comma
-            device_filter_string: "sw2,sw1" # Full value like 'hostname': 'sw3'
-            device_fields: "id,family,type,macAddress,managementIpAddress"
-        display_selection : 5 :-
-            This field combination of 2 & 3 also multiple field can be filtered  used pandas package
-            device_fields: "id,family,type,macAddress,managementIpAddress" # this must be given
-            device_filterfield: "hostname,macAddress" # List of field need to be filter given by comma seperater
-            device_filter_string: "sw2,sw1|52:54:00:0e:1c:6a" # added | seperated based on the list of field need filter
-        Parameters:
-          - json_data: this is respose of the all device details geting from device info url. 
-          - payload: used from yml input files like, urls.yml, credentials.yml and input.yml
-        Returns:
-            {
-            'id': 'c069bc2c-bfa3-47ef-a37e-35e2f8ed3f01'
-            'family': 'Switches and Hubs',
-            'type': 'Cisco Catalyst 9000 UADP 8 Port Virtual Switch',
-            'macAddress': '52:54:00:01:c2:c0', 
-            'managementIpAddress': '10.10.20.175'
-            }
-        Example:
-            self.parse_json_data(jsondata, payload)
-        """
-        if payload['display_selection'] == 1:
-            return json_data
-        elif payload['display_selection'] == 2:
-            field = payload['device_filterfield']
-            types = [str(x) for x in payload['device_filter_string'].split(",")]
-            if field != None:
-                filtered_data = [data for data in json_data if data[field] in types]
-                return filtered_data
-            else:
-                self.log('No data in filterfield', "ERROR")
-                return None
-        elif payload['display_selection'] == 3:
-            fields = [str(x) for x in payload['device_fields'].split(",")]
-            df = pd.DataFrame.from_records(json_data)
-            selected_fields = df[fields]
-            return selected_fields.to_dict('records')
-        elif payload['display_selection'] == 4:
-            fields = [str(x) for x in payload['device_fields'].split(",")]
-            field = payload['device_filterfield']
-            types = [str(x) for x in payload['device_filter_string'].split(",")]
-            if field != None:
-                filtered_data = [data for data in json_data if data[field] in types]
-                if len(fields) > 0:
-                    new_list = []
-                    for data in filtered_data:
-                        new_dict = {key: value for key, value in data.items() if key in fields}
-                        new_list.append(new_dict)
-                    return new_list
-                else:
-                    self.log('No data in field', "ERROR")
-                    return None
-        elif payload['display_selection'] == 5:
-            fields = [str(x) for x in payload['device_fields'].split(",")]
-            ffield = [str(x) for x in payload['device_filterfield'].split(",")]
-            types = [str(x) for x in payload['device_filter_string'].split("|")]
-            df = pd.DataFrame.from_records(json_data)
-            count = 0
-            for field in ffield:
-                eachtypes = [str(x) for x in types[count].split(",")]
-                df = df[df[field].isin(eachtypes)]
-                count += 1
-            selected_fields = df[fields]
-            return selected_fields.to_dict('records')
-
-    def get_have(self):
-        ap_data = self.get_ap_configuration()
-        final_ap_data = self.compare_ap_cofig_with_inputdata(ap_data)
-
-        responses = {}
-        responses["accesspoints"] = {"response": final_ap_data,
-            "msg": "Filtered AP Device data list for update AP config"}
-        self.result["response"].append(responses)
-        return final_ap_data
 
     def get_ap_configuration(self):
         """
@@ -298,34 +318,38 @@ class Accesspoint(DnacBase):
             We are not using input param already passed in the module.param
           - self.payload: used from yml input files input.yml we are using accesspoints section
             if ap_selected_field in input.yml is empty or all this will show all field
-            else ap_selected_field: "macAddress,displayName,apMode,apName"
+            else ap_selected_field: "mac_address,eth_mac,ap_name,led_status,location"
             then will show only listed field.
         Returns:
-            {
-                "macAddress": '52:54:00:01:c2:c0',
-                "apName": "string",
-                "displayName": "string",
-                "apMode": "string"
-            }
+            [
+                {
+                    "apName": "NFW-AP1-9130AXE",
+                    "ethMac": "34:5d:a8:0e:20:b4",
+                    "ledBrightnessLevel": 3,
+                    "ledStatus": "Enabled",
+                    "location": "LTTS",
+                    "macAddress": "90:e9:5e:03:f3:40"
+                }
+            ]
         Example:
             functions = Accesspoint(module)
             ap_data = functions.get_ap_configuration()
         """
         ap_config_data = []
-        for device in self.payload["config"]:
-            self.log('Getting Access Point Configuration Information' + device['macaddress'], "INFO")
+        for device in self.payload["device_list"]:
+            self.log('Getting Access Point Configuration Information for ' \
+                     + device['apEthernetMacAddress'], "INFO")
             try:
-                # Below code might change once we receive the dev dnac credentials
-                jsondata = self.dnac.wireless.get_access_point_configuration(macAddress = device['macaddress'])
-                responsekey = list(jsondata.response.keys())
-                lower_case_key_data = {}
-                for eachkey in responsekey:
-                    lower_case_key_data[eachkey.lower()] = jsondata.response[eachkey]
-                ap_config_data.append(lower_case_key_data)
+                jsondata = self.dnac.wireless.get_access_point_configuration(
+                    key=str(device['apEthernetMacAddress']))
+                ap_config_data.append(jsondata)
             except Exception as e:
                 self.log(jsondata['error'] + e, "ERROR")
-        if self.payload["ap_selected_field"] == "" or self.payload["ap_selected_field"] == "all" : return ap_config_data
-        fields = [str(x) for x in self.payload["ap_selected_field"].split(",")]
+        self.log('Access Point Configuration Information: ' + str(ap_config_data), "INFO")
+        if self.payload["ap_selected_field"] == "" or self.payload["ap_selected_field"] == "all":
+            return ap_config_data
+
+        fields = [str(self.keymap[x]) for x in self.payload["ap_selected_field"].split(",")]
         if len(ap_config_data) != 0:
             df = pd.DataFrame.from_records(ap_config_data)
             selected_data = df[fields]
@@ -341,15 +365,18 @@ class Accesspoint(DnacBase):
           - apconfig: This is response of the get_ap_configuration
         Returns:
             This will be the return the final data for update AP detail.
-            [{
-                "macaddress": "52:54:00:0f:25:4c",
-                "managementipaddress": "10.10.20.178",
-                "accesspointradiotype": 1,
-                "apname": "HallAP"},
-                {"macaddress": "52:54:00:0e:1c:6a",
-                "managementipaddress": "10.10.20.176",
-                "accesspointradiotype": 2,
-                "apname": "FloorAP"}]
+            "final_input": [
+                {
+                    "adminStatus": true,
+                    "apList": [
+                        {
+                            "macAddress": "34:5d:a8:0e:20:b4"
+                        }
+                    ],
+                    "configureLedBrightnessLevel": true,
+                    "ledBrightnessLevel": 4,
+                    "macAddress": "34:5d:a8:0e:20:b4"
+                } ]
         Example:
             functions = Accesspoint(module)
             final_input_data = functions.compare_ap_cofig_with_inputdata(all_apconfig)
@@ -358,25 +385,36 @@ class Accesspoint(DnacBase):
         for each_input in self.payload["config"]:
             for eachap in apconfig:
                 # We are identifing AP based on the AP mac Address so we cannot update this field.
-                if each_input["macaddress"] == eachap["macAddress"]:
+                if each_input["mac_address"] == eachap["macAddress"]:
+                    newdict = {}
                     for each_key in list(each_input.keys()):
-                        if each_input[each_key.lower()] != eachap[each_key.lower()]:
-                            final_apchange.append(each_input)
-                            break
+                        if each_input[each_key] != eachap[self.keymap[each_key]]:
+                            if each_key == "ap_name":
+                                newdict[self.keymap[each_key]] = eachap[self.keymap[each_key]]
+                                newdict[self.keymap[each_key] + "New"] = each_input[each_key]
+                            else:
+                                newdict[self.keymap[each_key]] = each_input[each_key]
+
+                    if newdict:
+                        newdict["macAddress"] = eachap["ethMac"]
+                        final_apchange.append(newdict)
         if len(final_apchange) > 0:
             return final_apchange
         else:
-            self.log('Input Access Point Configuration remains same in the Current AP configration', "INFO")
-            exit()
+            self.log('Input Access Point Configuration remain same in Current AP configration',
+                      "INFO")
+            return None
 
     def get_want(self, device_data):
         update_apconfig = self.update_ap_configuration(device_data)
-        reboot_response = self.reboot_ap_configuration(update_apconfig)
+        time.sleep(30)
+        devices_config = self.get_ap_configuration()
         responses = {}
-        responses["accesspoints"] = {"response": reboot_response,
-            "msg": "Below list APs rebooted successfully"}
+        responses["accesspoints_updates"] = {"response": update_apconfig,
+                                             "after_update": devices_config,
+            "msg": "Below list APs updated successfully"}
         self.result["response"].append(responses)
-        return reboot_response
+        return update_apconfig
 
     def update_ap_configuration(self, device_data):
         """
@@ -400,58 +438,36 @@ class Accesspoint(DnacBase):
         all_response = []
         for device in device_data:
             try:
-                self.log("Updating Access Point Configuration Information of " + device["managementIpAddress"], "INFO")
+                self.log("Updating Access Point Configuration Information "+ device["macAddress"],
+                          "INFO")
                 # Below code might changed once we receive the dev dnac credentials
+                device["adminStatus"] = True
+                if device.get("apName") is not None:
+                    device["apList"] = [dict(apName = device["apName"],
+                                        apNameNew = device["apNameNew"],
+                                        macAddress = device["macAddress"])]
+                    del device["apName"]
+                    del device["apNameNew"]
+                elif device.get("apName") is None and device.get("macAddress") is not None:
+                    device["apList"] = [dict(macAddress = device["macAddress"])]
+
+                if device.get("location") is not None:
+                    device["configureLocation"] = True
+                if device.get("ledBrightnessLevel") is not None:
+                    device["configureLedBrightnessLevel"] = True
+                if device.get("ledStatus") is not None:
+                    device["configureLedStatus"] = True
+                    device["ledStatus"] = True if device["ledStatus"] == "Enabled" else False
+
+                self.log("Response of Access Point Configuration: " + str(device), "INFO")
                 response = self.dnac.wireless.configure_access_points(**device)
-                if response.get("Status") == 200:
-                    device["update_status"] == "success"
-                    all_response.append(device)
+                self.log("Response of Access Point Configuration: " + str(response), "INFO")
+                all_response.append(dict(macAdress=device["macAddress"], response=response))
             except Exception as e:
-                self.log(str(response['error']) + e, "ERROR")
+                self.log("AP config update Error" + device["macAddress"] + str(e), "ERROR")
 
         if len(all_response) > 0:
             return all_response
-        else:
-            return None
-
-    def reboot_ap_configuration(self, device_data):
-        """
-        This function used to reboot the ap after updated the ap information.
-        Parameters:
-          - device_data: DNAC final device data response from update_ap_configuration
-            in data of device["update_status"] == success then only this will reboot device.
-        Returns:
-            {
-                "response": {
-                    "taskId": "string",
-                    "url": "string"
-                },
-                "version": "string"
-            }
-        Example:
-            functions = Accesspoint(module)
-            final_input_data = functions.reboot_ap_configuration(device_data)
-        """
-        response = None
-        all_macaddress = []
-
-        for device in device_data:
-            if device["update_status"] == "success":
-                all_macaddress.append(device["apMacAddresses"])
-
-        if len(all_macaddress) > 0:
-            try:
-                self.log('Rebooting below Access Point(s)' + str(all_macaddress.join(", ")), "INFO")
-                # Below code might change once we receive the dev dnac credentials
-                response = self.dnac.wireless.reboot_access_points(apMacAddresses = all_macaddress)
-            except Exception as e:
-                self.log(str(response['error']) + e, "ERROR")
-
-        if response.get("Status") == 200:
-            self.log('Rebooted below Access Point(s)' + str(all_macaddress.join(", ")), "INFO")
-            return response
-        else:
-            return None
 
 
 def main():
@@ -462,9 +478,6 @@ def main():
                     'dnac_port': {'type': 'str', 'default': '443'},
                     'dnac_username': {'type': 'str', 'default': 'admin'},
                     'dnac_password': {'type': 'str', 'no_log': True},
-                    'display_selection': {'required': True, 'type': 'int'},
-                    'device_filterfield': {'required': True, 'type': 'str'},
-                    'device_filter_string': {'required': True, 'type': 'str'},
                     'device_fields': {'required': True, 'type': 'str'},
                     'ap_selected_field': {'required': True, 'type': 'str'},
                     'dnac_verify': {'type': 'bool', 'default': 'True'},
@@ -489,22 +502,19 @@ def main():
 
     # Check the Input file should not be empty config param
     if len(module.params.get('config')) < 1:
-        module.fail_json(msg='Access Point Should not be Empty, You may forget to pass input.yml file', **ccc_network.result)
+        module.fail_json(msg='Access Point Should not be Empty, You may forget to pass input.yml',
+                         **ccc_network.result)
 
     ccc_network.validate_input(module.params).check_return_status()
-    
-    # Get the Device data from DNAC based on the input.yaml details.
-    device_data = ccc_network.get_state()
 
-    """
     # Getting the AP details by passing the Mac Address of the device
     # Comparing input data with current AP configuration detail
     final_config = ccc_network.get_have()
 
-    # Updating the final filtered data to the update AP information
-    # Calling Reboot AP configuration.
-    reboot_response = ccc_network.get_want(final_config)
-    """
+    if final_config:
+        # Updating the final filtered data to the update AP information
+        ccc_network.get_want(final_config)
+
     module.exit_json(**ccc_network.result)
 
 if __name__ == '__main__':
