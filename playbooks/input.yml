@@ -1,17 +1,17 @@
 ---
 config:
+  display_fields:
+      device_fields: "id,hostname,family,type,mac_address,management_ip_address,ap_ethernet_mac_address,last_updated,up_time"
+      ap_selected_field: "mac_address,eth_mac,ap_name,led_brightness_level,led_status,location"
+  config_devices:
     - mac_address: "90:e9:5e:03:f3:40"
-      led_brightness_level: 4
+      led_brightness_level: 3
       led_status: "Enabled"
-      location: "LTTS"
-      ap_name: "NFW-AP1-9130AXE"
+      location: "LTTS-Bangalore"
+      ap_name: "LTTS-Test1"
+      ap_name_new: "NFW-AP1-9130AXE"
     - mac_address: "34:5d:a8:3b:d8:e0"
-      led_brightness_level: 4
+      led_brightness_level: 3
       led_status: "Enabled"
-      location: "LTTS2"
-      ap_name: "NY-AP2-9124AXI"
-
-device_fields: "id,hostname,family,type,mac_address,management_ip_address,ap_ethernet_mac_address,last_updated,up_time"
-#device_fields: "all"
-ap_selected_field: "mac_address,eth_mac,ap_name,led_brightness_level,led_status,location"
-#ap_selected_field: "all"
+      location: "LTTS-Cisco"
+      ap_name: "LTTS-Test2"
