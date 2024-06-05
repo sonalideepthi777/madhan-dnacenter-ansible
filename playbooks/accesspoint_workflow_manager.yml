@@ -9,8 +9,6 @@
   tasks:
     - name: Get Device info and updating access point details
       cisco.dnac.accesspoint_workflow_manager:
-        device_fields: "{{device_fields}}"
-        ap_selected_field: "{{ap_selected_field}}"
         dnac_host: "{{dnac_host}}"
         dnac_username: "{{dnac_username}}"
         dnac_password: "{{dnac_password}}"
