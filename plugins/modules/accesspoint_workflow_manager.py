@@ -33,7 +33,7 @@ options:
     choices: [ merged ]
     default: merged
 
-config:
+  config:
     description: List of details of AP being managed
     type: list
     elements: dict
@@ -194,7 +194,6 @@ class Accesspoint(DnacBase):
         self.result["response"] = []
         self.supported_states = ["merged"]
         self.payload = module.params
-        self.log('Login DNAC using by user: ' + str(module.params), "INFO")
         self.keymap = {}
         self.baseurl = "https://" + module.params["dnac_host"]+ ":" + module.params["dnac_port"]
         self.log('Login DNAC using by user: ' + module.params["dnac_username"], "INFO")
@@ -229,7 +228,7 @@ class Accesspoint(DnacBase):
             for eachap in aplist:
                 temp_spec = dict(eachap=dict(type='dict'))
                 eachap = self.camel_to_snake_case(eachap)
-                spec = dict(mac_address=dict(type='str'),
+                accesspoint_spec = dict(mac_address=dict(type='str'),
                            led_brightness_level=dict(type='int'),
                            led_status = dict(type='str'),
                            location = dict(type='str'),
@@ -238,7 +237,7 @@ class Accesspoint(DnacBase):
                            management_ip_address = dict(type='str'),
                            hostname = dict(type='str'),
                            )
-                valid_param, invalid_param = validate_list_of_dicts(eachap, spec)
+                valid_param, invalid_param = validate_list_of_dicts(eachap, accesspoint_spec)
                 if len(invalid_param) > 0:
                     errormsg.append("Invalid param found '{0}' in input"\
                                     .format(", ".join(invalid_param)))
@@ -279,12 +278,12 @@ class Accesspoint(DnacBase):
                                   errormsg)
 
                 if len(errormsg) > 0:
-                    self.log("Invalid Input in input file: " + "\n".join(errormsg), "ERROR")
+                    self.log("Invalid Input in input file: '{0}' ".format(str("\n".join(errormsg))), "ERROR")
                     self.module.fail_json(msg=str("\n".join(errormsg)))
 
         except Exception as e:
-            self.log("Invalid Param provided in input Yml File." + str(e), "ERROR")
-            self.msg = "Invalid parameters in playbook: " + str(e) + str("\n".join(errormsg))
+            self.log("Invalid Param provided in input Yml File. {0}".format(str(e)), "ERROR")
+            self.msg = "Invalid parameters in playbook: {0}".format(str("\n".join(errormsg)))
             self.status = "failed"
             return self
 
@@ -352,6 +351,10 @@ class Accesspoint(DnacBase):
         """
         This function used to get AP device details as json response from DNAC site.
         by giving MAC address as a input in the URL GET Method
+        parameters:
+          key = ap_ethernet_mac_address from the device list
+        returns:
+          This will return the filtered data.
         Device information given in the input file
         Device Configuration Details 
         Conpare with input data and current config data
@@ -492,7 +495,7 @@ class Accesspoint(DnacBase):
                 taskdetails.append(task)
             devices_config = self.get_ap_configuration()
             responses = {}
-            responses["accesspoints_updates"] = {"response": update_apconfig,
+            responses["accesspoints_updates"] = {"response": taskdetails,
                                              "after_update": devices_config,
             "msg": "Below list APs updated successfully"}
             self.result["changed"] = True
