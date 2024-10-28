@@ -675,7 +675,7 @@ class Site(DnacBase):
             response = self.get_site(name_hierarchy)
 
             if not response:
-                self.log(f"No site information found for name hierarchy: {name_hierarchy}", "WARNING")
+                self.log("No site information found for name hierarchy: {}".format(name_hierarchy), "WARNING")
                 return site_exists, current_site
 
             response_data = response.get("response", [])
