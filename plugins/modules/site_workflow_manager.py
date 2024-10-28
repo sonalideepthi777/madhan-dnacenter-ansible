@@ -679,7 +679,7 @@ class Site(DnacBase):
                 return site_exists, current_site
 
             response_data = response.get("response", [])
-            self.log(f"Received API response from 'get_sites': {response_data}", "DEBUG")
+            self.log("Received API response from 'get_sites': {}".format(response_data), "DEBUG")
 
             for site in response_data:
                 if isinstance(site, dict):
@@ -692,7 +692,7 @@ class Site(DnacBase):
                     site_exists = True
 
         except Exception as e:
-            self.log(f"Error during site existence check: {str(e)}", "WARNING")
+            self.log("Error during site existence check: {}".format(str(e)), "WARNING")
 
         return site_exists, current_site
 
