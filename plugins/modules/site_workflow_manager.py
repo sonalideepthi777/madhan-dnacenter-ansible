@@ -1753,8 +1753,7 @@ class Site(DnacBase):
                     while True:
                         if site_type != "floor":
                             if task_details.get("progress") == "Group is deleted successfully":
-                                self.log(
-                                    "Area site '{0}' deleted successfully.".format(site_name_hierarchy), "INFO")
+                                self.log("Area site '{0}' deleted successfully.".format(site_name_hierarchy), "INFO")
                                 self.result['changed'] = True
                                 self.result['response'] = task_details
                                 self.deleted_site_list.append(site_name_hierarchy)
