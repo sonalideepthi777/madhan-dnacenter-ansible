@@ -1530,7 +1530,7 @@ class Site(DnacBase):
 
         if site_updated:
             self.updated_site_list.append(site_name_hierarchy)
-            self.log("Site - {0} Updated Successfully".format(site_name_hierarchy), "INFO")
+            self.log("Site {0} Updated Successfully".format(site_name_hierarchy), "INFO")
         else:
             site_exists, current_site = self.site_exists()
             if site_exists:
