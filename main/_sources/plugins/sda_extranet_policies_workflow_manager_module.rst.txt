@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.dnac.sda_extranet_policies_workflow_manager module -- SDA Extranet Policies Module provides functionality for managing SDA Extranet Policy in Cisco Catalyst Center.
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.dnac.sda_extranet_policies_workflow_manager module -- SDA Extranet Policies Module provides functionality for managing SD-Access Extranet Policies in Cisco Catalyst Center.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.18.0).
+    This module is part of the `cisco.dnac collection <https://galaxy.ansible.com/cisco/dnac>`_ (version 6.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.dnac`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage extranet policy operations such as add/update/delete.
+- Manage SD-Access Extranet Policy operations such as create, update, or delete extranet policies in Cisco Catalyst Center.
 - API to create a new extranet policy.
 - API to update an existing or edit an existing extranet policy.
 - API for deletion of an existing extranet policy using the policy name.
@@ -169,7 +169,13 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Name of the SDA Extranet Policy. This parameter allows you to specify the desired name when creating a new extranet policy. The same name can be used to update or delete the policy. Note - This parameter is required when creating, updating or deleting extranet policy.
+      Name of the SDA Extranet Policy.
+
+      Used to create, update, or delete the policy.
+
+      Required for all operations (create, update, delete).
+
+      Cannot be modified once set.
 
 
       .. raw:: html
@@ -203,7 +209,17 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Specifies the Fabric Site(s) where this Extranet Policy will be applied. The Provider Virtual Network must be added to a Fabric Site before applying the policy. Fabric Site(s) connected to the same SD-Access Transit must have consistent Extranet Policies. Selecting a Fabric Site connected to an SD-Access Transit will automatically select all other Sites connected to that Transit.
+      Specifies the Fabric Site(s) where this Extranet Policy will be applied.
+
+      The Provider Virtual Network must already be added to a Fabric Site before applying the policy.
+
+      Updating this field is allowed, but once an extranet policy is applied to a site, it cannot be removed.
+
+      Fabric Site(s) connected to the same SD-Access Transit must have consistent Extranet Policies.
+
+      Selecting a Fabric Site connected to an SD-Access Transit will automatically select all other Sites connected to that Transit.
+
+      Example - ["Global/USA/San Jose/Building23", "Global/India/Bangalore/Building18"]
 
 
       .. raw:: html
@@ -237,7 +253,17 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Specifies the Provider Virtual Network containing shared services resources that subscribers need to access. If a virtual network is already defined as a Provider, it cannot be assigned as a provider again. Ensure the default route is present in the Global Routing Table if INFRA\_VN is defined as the Provider. For Subscriber Virtual Networks with multiple Providers having overlapping routes, traffic will be load-balanced across those Provider Virtual Networks. This parameter is required when creating or updating extranet policy.
+      Specifies the Provider Virtual Network containing shared services resources that subscribers need to access.
+
+      If a virtual network is already defined as a Provider, it cannot be assigned as a provider again.
+
+      Ensure the default route is present in the Global Routing Table if INFRA\_VN is defined as the Provider.
+
+      For Subscriber Virtual Networks with multiple Providers having overlapping routes, traffic will be load-balanced across those Provider Virtual Networks.
+
+      Required for creating or updating the policy.
+
+      Updating this field is not allowed.
 
 
       .. raw:: html
@@ -271,7 +297,15 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Specifies a list of Subscriber Virtual Networks that require access to the Provider Virtual Network containing shared services resources. A Virtual Network previously defined as a Provider cannot be selected as a subscriber. This parameter is required when creating or updating extranet policy.
+      Specifies a list of Subscriber Virtual Networks that require access to the Provider Virtual Network containing shared services resources.
+
+      A Virtual Network previously defined as a Provider cannot be selected as a subscriber.
+
+      Required for creating or updating the policy.
+
+      Can be modified.
+
+      Example - ["VN\_2", "VN\_4"]
 
 
       .. raw:: html
