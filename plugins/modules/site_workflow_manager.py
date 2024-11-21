@@ -1413,7 +1413,6 @@ class Site(DnacBase):
 
                 if self.compare_dnac_versions(self.get_ccc_version(), "2.3.7.6") >= 0:
                     units_of_measure = site.get(site_type, {}).get("units_of_measure")
-
                     if units_of_measure:
                         if units_of_measure not in ("feet", "meters"):
                             errormsg.append(
