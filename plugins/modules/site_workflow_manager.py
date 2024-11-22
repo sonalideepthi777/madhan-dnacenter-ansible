@@ -6,15 +6,6 @@
 # https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
-import copy
-import os
-from ansible_collections.cisco.dnac.plugins.module_utils.dnac import (
-    DnacBase,
-    validate_list_of_dicts,
-    get_dict_result,
-    validate_str
-)
-from ansible.module_utils.basic import AnsibleModule
 
 __metaclass__ = type
 __author__ = (
@@ -448,6 +439,17 @@ response_5:
 
 """
 
+import copy
+import os
+from ansible_collections.cisco.dnac.plugins.module_utils.dnac import (
+    DnacBase,
+    validate_list_of_dicts,
+    get_dict_result,
+    validate_str
+)
+from ansible.module_utils.basic import AnsibleModule
+
+
 floor_plan = {
     '101101': 'Cubes And Walled Offices',
     '101102': 'Drywall Office Only',
@@ -872,7 +874,7 @@ class Site(DnacBase):
                 str(e))
             self.log(error_message, "ERROR")
             return None
-  
+
     def compare_float_values(self, ele1, ele2, precision=2):
         """
         Compare two floating-point values with a specified precision.
@@ -1345,7 +1347,7 @@ class Site(DnacBase):
 
             if site_type == "floor":
                 self.log("Performing floor-specific validations.", "DEBUG")
-                floor_number = site.get(site_type, {}).get("floor_number")      
+                floor_number = site.get(site_type, {}).get("floor_number")
                 if self.compare_dnac_versions(self.get_ccc_version(), "2.3.7.6") >= 0:
                     if floor_number:
                         self.log("Validating 'floor_number': " +
@@ -1377,8 +1379,7 @@ class Site(DnacBase):
                     ]
                     if rf_model not in rf_model_list:
                         errormsg.append(
-                            "rf_model: Invalid value '{0}' for rf_model in playbook. Must be one of: '{1}'".
-                                        format(site_type, str(rf_model)))
+                            "rf_model: Invalid value '{0}' for rf_model in playbook. Must be one of: '{1}'".format(site_type, str(rf_model)))
                         self.log("Invalid 'rf_model': " + str(rf_model), "ERROR")
                 else:
                     errormsg.append("RF should not be None or empty")
@@ -2826,7 +2827,6 @@ def main():
     config_verify = ccc_site.params.get("config_verify")
     ccc_site.validate_site_input_data(
         ccc_site.validated_config, state).check_return_status()
-
 
     if ccc_site.compare_dnac_versions(
             ccc_site.get_ccc_version(),
